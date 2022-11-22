@@ -80,21 +80,28 @@ class Parameters extends React.Component {
     {
       if (this.state.data === null)
         return (
-          <p>Aucun port de communication</p>
+          <p aria-hidden='true'>Aucun truc de com</p>
         );
       else if (this.state.data.length === 0)
         return (
-        <p>Aucun port de communication</p>
+        <p aria-hidden='true'>Aucun truc de com</p>
             );
       else  
           return (
-         
-         <select aria-label="Port de communication " onChange={this.handleChangePort} value={this.state.options.comport} name="selectport">
-               {this.state.data.map ((line, index)=> (
-                  <option key={line.device} value={line.device}>{line.device} {line.description}</option>))}
+         <>
+         <p aria-label={'Port de communication ' + this.state.options.comport + ' : '} >{'Port de communication ' + this.state.options.comport}</p>
+         <label aria-hidden='true' htmlFor='selectport'>Port de communication</label>
+         <select  onChange={this.handleChangePort} value={this.state.options.comport} name="selectport">
+               {this.state.data.map ((line, index)=> {
+                  if (line.device === this.state.options.comport)
+                    return (<option  aria-selected='true' key={line.device} value={line.device}>{line.device} {line.description}</option>);
+                  else
+                  return (<option  aria-selected='false' key={line.device} value={line.device}>{line.device} {line.description}</option>);
+               })
+              }
                     
          </select>
-         
+         </>
         );
     }
     
@@ -110,17 +117,17 @@ class Parameters extends React.Component {
               <form className='pure-form pure-form-aligned'>
                 <fieldset>
                 <div className="pure-control-group">
-                <label aria-label='Nombre de caractères par ligne ' for='nbcol'><span aria-hidden="true">Nombre de caractères par ligne:</span></label>
-                  <input type="number" step="1" min="5" max="35" name="nbcol" value={this.state.options.nbcol} onChange={this.handleChangeNbCol}/>
+                <label  htmlFor='nbcol' aria-label='Nombre de caractères par ligne : '>Nombre de caractères par ligne:</label>
+                  <input type="number" aria-label='Nombre de caractères par ligne : ' step="1" min="5" max="35" name="nbcol" value={this.state.options.nbcol} onChange={this.handleChangeNbCol}/>
                 
                 </div>
                 <div className="pure-control-group">
-                <label aria-label='Nombre de lignes par page ' for='nbline'><span aria-hidden="true">Nombre de lignes par page:</span></label> 
-                  <input type="number" step="1" min="5" max="35" name="nbline" value={this.state.options.nbline} onChange={this.handleChangeNbLine} />
+                <label  aria-label='Nombre de lignes par page : ' htmlFor='nbline'>Nombre de lignes par page:</label> 
+                  <input  aria-label='Nombre de lignes par page : ' type="number" step="1" min="5" max="35" name="nbline" value={this.state.options.nbline} onChange={this.handleChangeNbLine} />
                 
                 </div>
                 <div className="pure-control-group">
-                  <label aria-label='Port de communication' for='selectport'><span aria-hidden='true'>Port de communication</span></label>
+                  
                     {this.render_comport()}
                 
                 </div>

@@ -96,13 +96,13 @@ class BrailleView extends React.Component {
             
             
             <div >
-            <label aria-label="Visualisation de la transcription Braille "></label>
+            <label aria-label="Visualisation de la transcription Braille : "></label>
             <h1 aria-hidden="true">Visualisation Braille</h1>  
-            <label aria-label="Boutons de commandes: "></label>
-            <button aria-label="page précédente " className="pure-button pure-button-primary pad-button" onClick={this.HandlePrec}>Page précédente</button>
-            <button aria-label="page suivante " className="pure-button pure-button-primary pad-button" onClick={this.HandleNext}>Page suivante</button>
-            <button aria-label="imprimer  " className="pure-button pure-button-primary pad-button" onClick={this.HandlePrint}>Imprimer</button>
-            <label aria-label="Informations: "></label>
+            <label aria-label="Boutons de commandes : "></label>
+            <button aria-label="page précédente : " className="pure-button pure-button-primary pad-button" onClick={this.HandlePrec}>Page précédente</button>
+            <button aria-label="page suivante : " className="pure-button pure-button-primary pad-button" onClick={this.HandleNext}>Page suivante</button>
+            <button aria-label="imprimer  : " className="pure-button pure-button-primary pad-button" onClick={this.HandlePrint}>Imprimer</button>
+            <label aria-label="Informations : "></label>
             <p aria-label='Page  {this.state.page + 1}'>Page {this.state.page + 1}</p>
             <PageDisplay pagenbr={this.state.page} pages={this.paginator} />  
             </div>
