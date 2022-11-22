@@ -1,3 +1,9 @@
+# AccessBrailleRAP
+Braille transcription software for BrailleRAP. NVDA compatible.
+
+
+# Instruction for build
+
 # React Eel GUI App
 
 ![](./sample.png)
@@ -24,4 +30,6 @@ $ yarn start
 $ yarn build
 ```
 
-check `dist/react-eel-app`
+check `dist/AccessBrailleRAP.exe`
+=======
+
