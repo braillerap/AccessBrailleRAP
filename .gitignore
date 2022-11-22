@@ -30,3 +30,4 @@ yarn-error.log*
 __pycache__
 yarn.lock
 AccessBrailleRAP.spec
+parameters.json
