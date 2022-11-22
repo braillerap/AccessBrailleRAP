@@ -83,10 +83,7 @@
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+
 
 
 svg {cursor: default;

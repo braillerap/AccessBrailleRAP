@@ -67,7 +67,7 @@ class BrailleView extends React.Component {
       gcoder.GeomToGCode (ptcloud);
       let gcode = gcoder.GetGcode ();
       console.log (gcode);
-      eel.PrintGcode (gcode, "COM3")
+      eel.PrintGcode (gcode, this.props.options.comport)
 
     }
     componentDidMount ()
@@ -85,6 +85,9 @@ class BrailleView extends React.Component {
       let linesb = this.Braille.getBrailleLines ();
       
       console.log ("Braille pagination " + this.state.page.toString());
+      this.paginator.setcols (this.props.options.nbcol);
+      this.paginator.setrow (this.props.options.nbline);
+
       this.paginator.setSrcLines(linesb);
       this.paginator.Update ();
       console.log ("brailleview " + this.state.page.toString());

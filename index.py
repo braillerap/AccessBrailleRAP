@@ -45,7 +45,10 @@ def save_parameters ():
 def load_parameters ():
     try:
         with open ('parameters.json', 'r', encoding='utf-8') as inf:
-            json.load(app_options, inf)
+            data = json.load(inf)
+            for k,v in data.items():
+                if k in app_options:
+                    app_options[k] = v
     
     except Exception as e: 
         print(e)
@@ -54,14 +57,19 @@ def load_parameters ():
 def gcode_set_parameters (opt):
     print ("parameters", opt, type(opt))
     try:
-        for k,v in opt:
+        for k,v in opt.items():
             if (k in app_options):
                 app_options[k] = v
 
     except Exception as e:
         print (e)            
     save_parameters ()
-    
+
+@eel.expose
+def gcode_get_parameters ():
+    js = json.dumps (app_options)
+    return js
+
 @eel.expose
 def PrintGcode (gcode, comport):
     
@@ -140,6 +148,9 @@ def gcode_get_serial ():
 
 if __name__ == '__main__':
     devel = False
+
+    load_parameters ()
+    print (app_options)
 
     if len(sys.argv) > 1:
         if sys.argv[1] == '--develop':

@@ -29,3 +29,4 @@ yarn-error.log*
 /react-eel-app.spec
 __pycache__
 yarn.lock
+AccessBrailleRAP.spec

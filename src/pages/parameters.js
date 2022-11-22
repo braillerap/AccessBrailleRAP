@@ -91,7 +91,7 @@ class Parameters extends React.Component {
          
          <select aria-label="Port de communication " onChange={this.handleChangePort} value={this.state.options.comport} name="selectport">
                {this.state.data.map ((line, index)=> (
-                  <option key={line.device}>{line.device} {line.description}</option>))}
+                  <option key={line.device} value={line.device}>{line.device} {line.description}</option>))}
                     
          </select>
          
