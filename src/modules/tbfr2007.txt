@@ -1,0 +1,256 @@
+0	null	123458
+1	start of heading	1234678
+2	start of text	1258
+3	end of text	123468
+4	end of transmission	14578
+5	enquiry	158
+6	acknowledge	12478
+7	bell	12458
+8	backspace	12578
+9	horizontal tabulation	124678
+10	line feed	24568
+11	vertical tabulation	138
+12	form feed	12378
+13	carriage return	13478
+14	shift out	13458
+15	shift in	2368
+16	data link escape	123478
+17	device control 1	1234578
+18	device control 2	123578
+19	device control 3	23478
+20	device control 4	234578
+21	negative acknowledge	13678
+22	synchronous idle	123678
+23	end of transmission block	245678
+24	cancel	134678
+25	end of medium	12368
+26	substitute	15678
+27	escape	125678
+28	file separator	14678
+29	group separator	12678
+30	record separator	2357
+31	unit separator	2367
+32	espace	
+33	point d'exclamation	235
+34	guillemet	2356
+35	dièse	34568
+36	dollar	357
+37	pourcentage	3468
+38	e commercial	1234568
+39	apostrophe	3
+40	parenthèse gauche	236
+41	parenthèse droite	356
+42	astérisque	35
+43	plus	23578
+44	virgule	2
+45	trait d'union	36
+46	point	256
+47	barre oblique	34
+48	zéro	3456
+49	un	16
+50	deux	126
+51	trois	146
+52	quatre	1456
+53	cinq	156
+54	six	1246
+55	sept	12456
+56	huit	1256
+57	neuf	246
+58	deux-points	25
+59	point-virgule	23
+60	inférieur	238
+61	égalité	235678
+62	supérieur	567
+63	point d'interrogation	26
+64	a commercial	345
+65	a majuscule	17
+66	b majuscule	127
+67	c majuscule	147
+68	d majuscule	1457
+69	e majuscule	157
+70	f majuscule	1247
+71	g majuscule	12457
+72	h majuscule	1257
+73	i majuscule	247
+74	j majuscule	2457
+75	k majuscule	137
+76	l majuscule	1237
+77	m majuscule	1347
+78	n majuscule	13457
+79	o majuscule	1357
+80	p majuscule	12347
+81	q majuscule	123457
+82	r majuscule	12357
+83	s majuscule	2347
+84	t majuscule	23457
+85	u majuscule	1367
+86	v majuscule	12367
+87	w majuscule	24567
+88	x majuscule	13467
+89	y majuscule	134567
+90	z majuscule	13567
+91	crochet gauche	23678
+92	barre oblique inversée	348
+93	crochet droit	35678
+94	accent circonflexe	4
+95	trait de soulignement	578
+96	accent grave	6
+97	a minuscule	1
+98	b minuscule	12
+99	c minuscule	14
+100	d minuscule	145
+101	e minuscule	15
+102	f minuscule	124
+103	g minuscule	1245
+104	h minuscule	125
+105	i minuscule	24
+106	j minuscule	245
+107	k minuscule	13
+108	l minuscule	123
+109	m minuscule	134
+110	n minuscule	1345
+111	o minuscule	135
+112	p minuscule	1234
+113	q minuscule	12345
+114	r minuscule	1235
+115	s minuscule	234
+116	t minuscule	2345
+117	u minuscule	136
+118	v minuscule	1236
+119	w minuscule	2456
+120	x minuscule	1346
+121	y minuscule	13456
+122	z minuscule	1356
+123	accolade gauche	2378
+124	barre verticale	4568
+125	accolade droite	5678
+126	tilde	38
+127	caractère d'annulation	1238
+128	euro	1578
+129	non utilisé	12345678
+130	guillemet virgule inférieur	67
+131	f hameçon minuscule	1248
+132	guillemet virgule double inférieur	56
+133	points de suspension	368
+134	obèle	3568
+135	double obèle	3567
+136	lettre modificative accent circonflexe	48
+137	pour mille	34678
+138	s caron majuscule	234678
+139	guillemet simple vers la gauche	57
+140	œ majuscule	2467
+141	non utilisé	12345678
+142	z caron majuscule	135678
+143	non utilisé	12345678
+144	non utilisé	12345678
+145	guillemet apostrophe culbuté	68
+146	guillemet apostrophe	37
+147	guillemet apostrophe double culbuté	378
+148	guillemet apostrophe double	678
+149	puce	124578
+150	tiret demi-cadratin	478
+151	tiret cadratin	4578
+152	petit tilde avec chasse	467
+153	marque de commerce	23458
+154	s caron minuscule	23468
+155	guillemet simple vers la droite	58
+156	œ minuscule	2468
+157	non utilisé	12345678
+158	z caron minuscule	13568
+159	y tréma majuscule	145678
+160	espace insécable	7
+161	point d'exclamation inversé	2358
+162	cent	1478
+163	livre	237
+164	symbole monétaire	45
+165	yen	25678
+166	barre verticale interrompue	458
+167	paragraphe (alinéa)	12348
+168	tréma avec chasse	46
+169	copyright	148
+170	indicateur ordinal féminin	1678
+171	guillemet gauche	23568
+172	négation	2567
+173	trait d'union conditionnel	78
+174	marque déposée	12358
+175	macron avec chasse	1348
+176	degré	267
+177	plus ou moins	3678
+178	exposant deux	457
+179	exposant trois	4567
+180	accent aigu avec chasse	5
+181	micron	257
+182	pied de mouche	45678
+183	point médian	8
+184	cédille avec chasse	456
+185	exposant un	47
+186	indicateur ordinal masculin	2678
+187	guillemet droit	23567
+188	un quart	1368
+189	une demie	468
+190	trois quarts	13468
+191	point d'interrogation inversé	268
+192	a accent grave majuscule	123567
+193	a accent aigu majuscule	1235678
+194	a accent circonflexe majuscule	167
+195	a tilde majuscule	178
+196	a tréma majuscule	34567
+197	a rond en chef majuscule	27
+198	æ majuscule	3457
+199	c cédille majuscule	123467
+200	e accent grave majuscule	23467
+201	e accent aigu majuscule	1234567
+202	e accent circonflexe majuscule	1267
+203	e tréma majuscule	12467
+204	i accent grave majuscule	2478
+205	i accent aigu majuscule	347
+206	i accent circonflexe majuscule	1467
+207	i tréma majuscule	124567
+208	eth majuscule	1278
+209	n tilde majuscule	134578
+210	o accent grave majuscule	13578
+211	o accent aigu majuscule	3467
+212	o accent circonflexe majuscule	14567
+213	o tilde majuscule	1378
+214	o tréma majuscule	24678
+215	multiplication	3578
+216	o majuscule barré obliquement	345678
+217	u accent grave majuscule	234567
+218	u accent aigu majuscule	2345678
+219	u accent circonflexe majuscule	1567
+220	u tréma majuscule	12567
+221	y accent aigu majuscule	1345678
+222	thorn majuscule	24578
+223	s dur minuscule szet allemand	2348
+224	a accent grave minuscule	12356
+225	a accent aigu minuscule	123568
+226	a accent circonflexe minuscule	168
+227	a tilde minuscule	18
+228	a tréma minuscule	34578
+229	a rond en chef minuscule	28
+230	ae minuscule	3458
+231	c cédille minuscule	12346
+232	e accent grave minuscule	2346
+233	e accent aigu minuscule	123456
+234	e accent circonflexe minuscule	1268
+235	e tréma minuscule	12468
+236	i accent grave minuscule	248
+237	i accent aigu minuscule	3478
+238	i accent circonflexe minuscule	1468
+239	i tréma minuscule	124568
+240	eth minuscule	128
+241	n tilde minuscule	1245678
+242	o accent grave minuscule	1358
+243	o accent aigu minuscule	346
+244	o accent circonflexe minuscule	14568
+245	o tilde minuscule	4678
+246	o tréma minuscule	358
+247	division	2578
+248	o minuscule barré obliquement	568
+249	u accent grave minuscule	23456
+250	u accent aigu minuscule	234568
+251	u accent circonflexe minuscule	1568
+252	u tréma minuscule	12568
+253	y accent aigu minuscule	134568
+254	thorn minuscule	2458
+255	y tréma minuscule	2568
