@@ -80,7 +80,7 @@ class App extends Component {
       <BrowserRouter>
             <Routes >
               <Route path="/" element={<Layout />}>
-                <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText}/> } />
+                <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options}/> } />
                 <Route path="/braille" element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} options={this.state.options}/>} />
                 <Route path="/parametre" element={<Parameters logger={this.LogCallBack} src={this.state.srctxt} 
                    options={this.state.options} nblinecb={this.SetNbLine} nbcolcb={this.SetNbCol} comportcb={this.SetComPort} optioncb={this.SetOption}/> } />

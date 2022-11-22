@@ -35,7 +35,8 @@ class TextInput extends React.Component {
               <h1 aria-label='Formulaire de saisie du texte'>Saisie du texte</h1>
               
               <form onSubmit={this.handleSubmit} >
-                <textarea  aria-label='zone de saisie du texte pour transcription' value={this.state.txt} onChange={this.handleChange} rows={27} cols={30} className="BrailleInput">{this.state.txt}</textarea>
+                <textarea  aria-label='zone de saisie du texte pour transcription' value={this.state.txt} onChange={this.handleChange} 
+                rows={this.props.options.nbline} cols={this.props.options.nbcol} className="BrailleInput">{this.state.txt}</textarea>
             
               </form>
             
