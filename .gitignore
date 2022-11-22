@@ -3,11 +3,15 @@
 # dependencies
 /node_modules
 
+#pycharm
+/.idea
+
 # testing
 /coverage
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
