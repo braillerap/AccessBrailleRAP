@@ -15,23 +15,26 @@ const Layout = () => {
           <div className="pure-u-1-5 divblack"></div>
           <div className='pure-u-3-5 '>
             <div className="pure-menu pure-menu-horizontal menu_font" role={'presentation'} >
-              <ul className="pure-menu-list" role={'presentation'}>
+            <a href="https://www.braillerap.org"><span class="pure-menu-heading">BrailleRAP</span></a>
+              <ul className="pure-menu-list">
                 <li className="pure-menu-item ">
-                  <Link to="/" className="pure-button">
+                  <Link to="/" className="pure-menu-link">
                     Saisie
                   </Link>
 
                 </li>
 
                 <li className="pure-menu-item">
-                  <Link to="/braille" className="pure-button">
+                  <Link to="/braille" className="pure-menu-link">
                     Braille
                   </Link>
-                  <Link to="/parametre" className="pure-button">
+                </li>
+                <li className="pure-menu-item">  
+                  <Link to="/parametre" className="pure-menu-link">
                     Paramètres
                   </Link>
-
                 </li>
+                
 
               </ul>
             </div>
