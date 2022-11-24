@@ -10,7 +10,7 @@ serial_port = None
 
 
 app_options = {
-    'comport':'com1',
+    'comport':'COM1',
     'nbcol':28,
     'nbline':21,
 }

@@ -20,6 +20,7 @@ class Parameters extends React.Component {
         this.handleChangeNbCol = this.handleChangeNbCol.bind (this);
         this.handleChangeNbLine = this.handleChangeNbLine.bind (this);
         this.handleChangePort =this.handleChangePort.bind(this);
+        this.handleSelectPort = this.handleSelectPort.bind(this);
     }
 
     async componentDidMount()
@@ -61,23 +62,57 @@ class Parameters extends React.Component {
 
     handleChangePort (event)
     {
+      console.log("change")
       console.log (event);
       console.log (event.target.value);
-      console.log (event);
-      console.log (event.target.value);
+      
       let option = this.state.options
       option.comport = event.target.value;
 
       if (this.props.optioncb)
         this.props.optioncb(option);
       this.setState({options:option});  
-      
-        
+   
      
+    }
+
+    handleSelectPort (event)
+    {
+      console.log ("select");
+      console.log (event);
+      console.log (event.target.value);
+      
+      //let option = this.state.options
+      //option.comport = event.target.value;
+
+      //if (this.props.optioncb)
+      //  this.props.optioncb(option);
+      //this.setState({options:option});  
+   
+     
+    }
+
+    force_render_current ()
+    {
+      if (this.state.data === null || this.state.options === null)
+        return (<></>);
+      let found = false;
+
+      for (let i = 0; i < this.state.data.length; i++)
+        if (this.state.options.comport === this.state.data[i].device)
+        {
+          found = true;
+          break;
+        }
+      if (found)  
+        return (<></>);
+      else
+        return (<option  aria-selected='false' key={this.state.options.comport} value={this.state.options.comport}>{this.state.options.comport} Inconnu</option>);
     }
 
     render_comport ()
     {
+
       if (this.state.data === null)
         return (
           <p aria-hidden='true'>Aucun truc de com</p>
@@ -91,8 +126,10 @@ class Parameters extends React.Component {
          <>
          <p aria-label={'Port de communication ' + this.state.options.comport + ' : '} >{'Port de communication ' + this.state.options.comport}</p>
          <label aria-hidden='true' htmlFor='selectport'>Port de communication</label>
-         <select  onChange={this.handleChangePort} value={this.state.options.comport} name="selectport">
-               {this.state.data.map ((line, index)=> {
+         <select onChange={this.handleChangePort} onSelect={this.handleSelectPort}  value={this.state.options.comport} name="selectport">
+               
+         {this.force_render_current ()}
+         {this.state.data.map ((line, index)=> {
                   if (line.device === this.state.options.comport)
                     return (<option  aria-selected='true' key={line.device} value={line.device}>{line.device} {line.description}</option>);
                   else
