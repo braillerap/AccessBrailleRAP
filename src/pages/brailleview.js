@@ -84,10 +84,12 @@ class BrailleView extends React.Component {
       
       let linesb = this.Braille.getBrailleLines ();
       
-      console.log ("Braille pagination " + this.state.page.toString());
-      this.paginator.setcols (this.props.options.nbcol);
-      this.paginator.setrow (this.props.options.nbline);
-
+      //console.log ("Braille pagination " + this.state.page.toString());
+      if (! this.props.options)
+      {
+        this.paginator.setcols (this.props.options.nbcol);
+        this.paginator.setrow (this.props.options.nbline);
+      }  
       this.paginator.setSrcLines(linesb);
       this.paginator.Update ();
       console.log ("brailleview " + this.state.page.toString());

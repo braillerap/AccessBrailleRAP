@@ -5,6 +5,7 @@ import serial.tools.list_ports
 import time
 import json
 
+
 serial_port = None
 
 
@@ -148,6 +149,8 @@ def gcode_get_serial ():
 
 if __name__ == '__main__':
     devel = False
+
+   
 
     load_parameters ()
     print (app_options)

@@ -43,7 +43,7 @@ class App extends Component {
         let option = await eel.gcode_get_parameters ()();
         console.log (option)
         let params = JSON.parse(option);
-
+        
         this.setState ({options:params})
     }
 
@@ -85,7 +85,7 @@ class App extends Component {
                 <Route path="/parametre" element={<Parameters logger={this.LogCallBack} src={this.state.srctxt} 
                    options={this.state.options} nblinecb={this.SetNbLine} nbcolcb={this.SetNbCol} comportcb={this.SetComPort} optioncb={this.SetOption}/> } />
 
-                <Route path="*" element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText}/>} />
+                <Route path="*" element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options}/>} />
               </Route>
             </Routes>
           </BrowserRouter>
