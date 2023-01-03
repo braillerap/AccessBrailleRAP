@@ -2,11 +2,12 @@
 Braille transcription software for BrailleRAP. NVDA compatible.
 
 
-# Instruction for build
+Instruction for build
+=====================
 
 # React Eel GUI App
 
-![](./sample.png)
+![](./screenshot.jpg)
 
 Install
 =======
