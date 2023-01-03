@@ -4,7 +4,7 @@ Braille transcription software for BrailleRAP. NVDA compatible.
 
 
 
-# React Eel GUI App
+# Screenshot
 
 ![](./screenshot.jpg)
 
