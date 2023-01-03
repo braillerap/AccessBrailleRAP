@@ -147,18 +147,17 @@ class BrailleTranslatorUEB extends BrailleTranslator {
 
     convert_special (c)
     {
-        console.log ("special : ");
-        console.log(BRAILLE_special);
+        //console.log ("special : ");
+        //console.log(BRAILLE_special);
         if (c in BRAILLE_special)
         {
             
-            console.log (c + " " + BRAILLE_special[c]);
+            //console.log (c + " " + BRAILLE_special[c]);
             return (BRAILLE_special[c]);
         }
         else
-
         {
-            console.log ("unknown special " + c);
+            //console.log ("unknown special " + c);
             if (this.UnknownCharInBraille)
                 this.UnknownCharInBraille (c);
             return '';    
@@ -239,8 +238,8 @@ class BrailleTranslatorUEB extends BrailleTranslator {
             }
         }
 
-        console.log (prefix);
-        console.log (suffix);
+        //console.log (prefix);
+        //console.log (suffix);
         for (let i = 0; i < word.length; i++)
         {
             if(prefix[i] !== 0)
@@ -268,15 +267,15 @@ class BrailleTranslatorUEB extends BrailleTranslator {
             for (let w = 0; w < words.length; w++)
             {
                 let tmp = this.transcript (words[w]);
-                console.log (words[w] + ":" + tmp);
+                //console.log (words[w] + ":" + tmp);
                 this.braille_lines[i] += tmp;
                 if (w < words.length - 1)
                     this.braille_lines[i] += ' ';
             }
-            console.log (this.braille_lines[i]);
+            //console.log (this.braille_lines[i]);
         }
 
-        console.log (this.braille_lines);
+        //console.log (this.braille_lines);
 
     }
 }

@@ -25,18 +25,22 @@ class Parameters extends React.Component {
 
     async componentDidMount()
     {
-        let list = await eel.gcode_get_serial()();
-        console.log (list)
-        let portinfo = JSON.parse(list);
-        this.setState ({data:portinfo})
+      let list = await eel.gcode_get_serial()();
+      //console.log (list)
+      let portinfo = JSON.parse(list);
+      this.setState ({data:portinfo})
+     
+      if (this.props.focusref)
+          this.props.focusref.current.focus ();
+    
     }
     
 
     
     handleChangeNbCol(event)
     {
-      console.log (event);
-      console.log (event.target.value);
+      //console.log (event);
+      //console.log (event.target.value);
       let option = this.state.options
       option.nbcol = event.target.value;
 
@@ -48,8 +52,8 @@ class Parameters extends React.Component {
     }
     handleChangeNbLine(event)
     {
-      console.log (event);
-      console.log (event.target.value);
+      //console.log (event);
+      //console.log (event.target.value);
       let option = this.state.options
       option.nbline = event.target.value;
 
@@ -62,9 +66,9 @@ class Parameters extends React.Component {
 
     handleChangePort (event)
     {
-      console.log("change")
-      console.log (event);
-      console.log (event.target.value);
+      //console.log("change")
+      //console.log (event);
+      //console.log (event.target.value);
       
       let option = this.state.options
       option.comport = event.target.value;
@@ -78,9 +82,9 @@ class Parameters extends React.Component {
 
     handleSelectPort (event)
     {
-      console.log ("select");
-      console.log (event);
-      console.log (event.target.value);
+      //console.log ("select");
+      //console.log (event);
+      //console.log (event.target.value);
       
       //let option = this.state.options
       //option.comport = event.target.value;
@@ -144,23 +148,37 @@ class Parameters extends React.Component {
     
     render ()
     {
-        console.log (this.state.data);
-        console.log ("type :" + typeof(this.state.data).toString());
+      if (this.state.data.length === 0)
+        return (
+          <div>
+            Patientez
+          </div>
+        );
+        //console.log (this.state.data);
+        //console.log ("type :" + typeof(this.state.data).toString());
       return (
             
-              <div>
-                <label aria-label="Formulaire de paramétrage de l'application"></label>
-                <h1 aria-hidden="true">Paramètres</h1>
-              <form className='pure-form pure-form-aligned'>
+              <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>
+                
+              <form aria-label="Formulaire de paramétrage de l'application" className='pure-form pure-form-aligned' aria-live="assertive" role="log" aria-relevant="all" aria-atomic={true}>
+                
                 <fieldset>
+               
+                <h1>Formulaire de paramétrage de l'application</h1>
                 <div className="pure-control-group">
-                <label  htmlFor='nbcol' aria-label='Nombre de caractères par ligne : '>Nombre de caractères par ligne:</label>
-                  <input type="number" aria-label='Nombre de caractères par ligne : ' step="1" min="5" max="35" name="nbcol" value={this.state.options.nbcol} onChange={this.handleChangeNbCol}/>
+                <label  htmlFor='nbcol' aria-label='Nombre de caractères par ligne'>Nombre de caractères par ligne</label>
+                  <input type="number" aria-label='Nombre de caractères par ligne' 
+                    step="1" min="5" max="35" name="nbcol" id="nbcol"
+                    value={this.state.options.nbcol} 
+                    onChange={this.handleChangeNbCol} 
+                    autofocus
+                    ref={this.props.focusref}
+                  />
                 
                 </div>
                 <div className="pure-control-group">
-                <label  aria-label='Nombre de lignes par page : ' htmlFor='nbline'>Nombre de lignes par page:</label> 
-                  <input  aria-label='Nombre de lignes par page : ' type="number" step="1" min="5" max="35" name="nbline" value={this.state.options.nbline} onChange={this.handleChangeNbLine} />
+                <label  aria-label='Nombre de lignes par page' htmlFor='nbline'>Nombre de lignes par page</label> 
+                  <input  aria-label='Nombre de lignes par page' type="number" step="1" min="5" max="35" name="nbline" id="nbline" value={this.state.options.nbline} onChange={this.handleChangeNbLine} />
                 
                 </div>
                 <div className="pure-control-group">

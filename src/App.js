@@ -35,16 +35,23 @@ class App extends Component {
         this.SetNbCol = this.SetNbCol.bind(this);
         this.SetComPort = this.SetComPort.bind(this);
         this.SetOption = this.SetOption.bind(this);
+        this.onMenuClick = this.onMenuClick.bind (this);    
 
+        this.focusReference = React.createRef();
     }
 
     async componentDidMount ()
     {
         let option = await eel.gcode_get_parameters ()();
-        console.log (option)
         let params = JSON.parse(option);
         
         this.setState ({options:params})
+    }
+
+    onMenuClick ()
+    {
+        if (this.focusReference)
+          this.focusReference.current.focus ();
     }
 
     SetText (str)
@@ -65,7 +72,6 @@ class App extends Component {
     }
     SetOption (opt)
     {
-      console.log (opt);
       this.setState ({option:opt});
       eel.gcode_set_parameters(opt);
     }
@@ -79,13 +85,13 @@ class App extends Component {
       return (
       <BrowserRouter>
             <Routes >
-              <Route path="/" element={<Layout />}>
-                <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options}/> } />
-                <Route path="/impression" element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} options={this.state.options}/>} />
+              <Route path="/" element={<Layout focuscb={this.onMenuClick}/>}>
+                <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options} focusref={this.focusReference}/> } />
+                <Route path="/impression" element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} options={this.state.options} focusref={this.focusReference}/>} />
                 <Route path="/parametre" element={<Parameters logger={this.LogCallBack} src={this.state.srctxt} 
-                   options={this.state.options} nblinecb={this.SetNbLine} nbcolcb={this.SetNbCol} comportcb={this.SetComPort} optioncb={this.SetOption}/> } />
+                   options={this.state.options} nblinecb={this.SetNbLine} nbcolcb={this.SetNbCol} comportcb={this.SetComPort} optioncb={this.SetOption} focusref={this.focusReference}/> } />
 
-                <Route path="*" element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options}/>} />
+                <Route path="*" element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options} focusref={this.focusReference}/>} />
               </Route>
             </Routes>
           </BrowserRouter>

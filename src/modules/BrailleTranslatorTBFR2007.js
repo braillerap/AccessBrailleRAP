@@ -55,7 +55,7 @@ class BrailleTranslatorTBFR2007 extends BrailleTranslator{
 
     translate ()
     {
-        console.log ("Translate TBFR2007");
+        //console.log ("Translate TBFR2007");
         // split lines
         this.lines = this.src.split (/\r?\n/)
         this.braille_lines = new Array(this.lines.length);
@@ -74,7 +74,7 @@ class BrailleTranslatorTBFR2007 extends BrailleTranslator{
                 if (w < words.length - 1)
                     this.braille_lines[i] += this.transcript (' ');
             }
-            console.log (this.braille_lines[i]);
+            //console.log (this.braille_lines[i]);
         }
 
         //console.log (this.braille_lines);

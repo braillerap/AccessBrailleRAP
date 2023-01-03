@@ -62,10 +62,10 @@ class GeomToGCode
 
         for (let p = 0; p < pts.length; p++)
         {
-            console.log (p);
-            console.log (typeof(pts));
-            console.log (typeof(pts[p]));
-            console.log (pts[p].x, pts[p].y);
+            //console.log (p);
+            //console.log (typeof(pts));
+            //console.log (typeof(pts[p]));
+            //console.log (pts[p].x, pts[p].y);
             this.gcode += this.MoveTo(pts[p].x, pts[p].y)
             this.gcode += this.PrintDot ();
         }

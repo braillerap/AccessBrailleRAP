@@ -16,7 +16,7 @@ class TestSerial extends React.Component {
     async componentDidMount()
     {
         let list = await eel.gcode_get_serial()();
-        console.log (list)
+        //console.log (list)
         this.setState ({data:list.toString()})
     }
     handleSubmit(event)

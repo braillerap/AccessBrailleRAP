@@ -1,66 +1,85 @@
+import React, { Component } from "react";
 import { Outlet, Link } from "react-router-dom";
 
-import React from 'react'
+
 
 import './App.css';
 
 
+class Layout extends Component 
+{
+  constructor (props)
+  {
+    super (props);
 
-const Layout = () => {
-  return (
-    <div className='main_div'>
+    this.onClickMenu = this.onClickMenu.bind(this);
+  }
 
-      <header>
-        <div className='pure-g'>
-          <div className="pure-u-1-5 divblack"></div>
-          <div className='pure-u-3-5 '>
-            <div className="pure-menu pure-menu-horizontal menu_font" role={'presentation'} >
-            <a href="https://www.braillerap.org" target="_blank"><span class="pure-menu-heading">BrailleRAP</span></a>
-              <ul className="pure-menu-list">
-                <li className="pure-menu-item ">
-                  <Link to="/" className="pure-menu-link">
-                    Saisie
-                  </Link>
+  onClickMenu ()
+  {
+    if (this.props.focuscb)
+      this.props.focuscb ();
+  }
+  render ()
+  {
+      return (
+        <div className='main_div'>
 
-                </li>
+          <header>
+            <div className='pure-g'>
+              <div className="pure-u-1-5 divblack"></div>
+              <div className='pure-u-3-5 '>
+                <div className="pure-menu pure-menu-horizontal menu_font" role={'presentation'} >
+                <a href="https://www.braillerap.org" target="_blank"><span className="pure-menu-headi">BrailleRAP</span></a>
+                  <nav>
+                    <ul className="pure-menu-list" >
+                      <li className="pure-menu-item ">
+                        <Link to="/" className="pure-menu-link" 
+                          onClick={this.onClickMenu}
+                          
+                          >
+                          Saisie
+                        </Link>
 
-                <li className="pure-menu-item">
-                  <Link to="/impression" className="pure-menu-link">
-                    Impression
-                  </Link>
-                </li>
-                <li className="pure-menu-item">  
-                  <Link to="/parametre" className="pure-menu-link">
-                    Paramètres
-                  </Link>
-                </li>
-                
+                      </li>
 
-              </ul>
+                      <li className="pure-menu-item">
+                        <Link to="/impression" className="pure-menu-link" onClick={this.onClickMenu}>
+                          Impression
+                        </Link>
+                      </li>
+                      <li className="pure-menu-item">  
+                        <Link to="/parametre" className="pure-menu-link" onClick={this.onClickMenu}>
+                          Paramètres
+                        </Link>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              <div className="pure-u-1-5 divblack"></div>
             </div>
-          </div>
-          <div className="pure-u-1-5 divblack"></div>
-        </div>
-      </header>
+          </header>
 
-      <main>
-        <div className="pure-g main_layout">
-          <div className="pure-u-1-5 divblack"></div>
+          <main>
+            <div className="pure-g main_layout">
+              <div className="pure-u-1-5 divblack"></div>
 
-          <div className="pure-u-3-5 divwhite">
-            <div aria-live="assertive">
-            <Outlet />
+              <div className="pure-u-3-5 divwhite">
+                <div aria-live={"polite"} aria-atomic={false} role={"log"} aria-relevant={"all"}>
+                <Outlet />
+              </div>
+              </div>
+              <div className="pure-u-1-5 divblack"></div>
+              
             </div>
-          </div>
-          <div className="pure-u-1-5 divblack"></div>
-          
-        </div>
 
-      </main>
-    
-    
-    </div >
-  )
+          </main>
+        
+        
+        </div >
+      )
+  }
 }
 
 export default Layout;

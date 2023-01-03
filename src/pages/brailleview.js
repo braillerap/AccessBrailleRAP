@@ -29,7 +29,7 @@ class BrailleView extends React.Component {
       this.HandlePrec = this.HandlePrec.bind(this);
       this.HandleNext = this.HandleNext.bind(this);
       this.HandlePrint = this.HandlePrint.bind (this);
-      console.log ("BrailleView constructor ")
+      //console.log ("BrailleView constructor ")
 
     }
 
@@ -41,7 +41,7 @@ class BrailleView extends React.Component {
 
     HandleNext ()
     {
-      console.log (this.state.page);
+      //console.log (this.state.page);
       if (this.state.page < this.paginator.getPageNumber() - 1)
         this.setState ({page:this.state.page + 1});
     }
@@ -50,11 +50,11 @@ class BrailleView extends React.Component {
     {
       let geom = new BrailleToGeometry ();
       let ptcloud = geom.BraillePageToGeom (this.paginator.getPage (this.state.page), 5, 5);
-      console.log (typeof(ptcloud));
+      //console.log (typeof(ptcloud));
       let gcoder = new GeomToGCode ();
       gcoder.GeomToGCode (ptcloud);
       let gcode = gcoder.GetGcode ();
-      console.log (gcode);
+      //console.log (gcode);
       let blob = new Blob([gcode], {type: "text/plain;charset=utf-8"});
       FileSaver.saveAs(blob, "braille.gcode"); 
     }
@@ -62,11 +62,11 @@ class BrailleView extends React.Component {
     {
       let geom = new BrailleToGeometry ();
       let ptcloud = geom.BraillePageToGeom (this.paginator.getPage (this.state.page), 5, 5);
-      console.log (typeof(ptcloud));
+      //console.log (typeof(ptcloud));
       let gcoder = new GeomToGCode ();
       gcoder.GeomToGCode (ptcloud);
       let gcode = gcoder.GetGcode ();
-      console.log (gcode);
+      //console.log (gcode);
       eel.PrintGcode (gcode, this.props.options.comport)
 
     }
@@ -74,7 +74,23 @@ class BrailleView extends React.Component {
     {
         
         this.cnt += 1;
-        
+        if (this.props.focusref)
+          this.props.focusref.current.focus ();
+    }
+
+    fpageprec ()
+    {
+      if (this.paginator.getPageNumber() > 1 && this.state.page > 0)
+        return (<button  className="pure-button pure-button-primary pad-button" onClick={this.HandlePrec}>Page précédente</button>);
+      else
+      return (<button  aria-label='bouton page précédente' disabled={true}   className="pure-button pure-button-primary pad-button" onClick={this.HandlePrec}>Page précédente</button>);
+    }
+    fpagenext ()
+    {
+      if (this.state.page + 1 < this.paginator.getPageNumber())
+      return (<button  className="pure-button pure-button-primary pad-button" onClick={this.HandleNext}>Page suivante</button>);
+      else
+      return (<button  aria-label='bouton page suivante' disabled={true}  className="pure-button pure-button-primary pad-button" onClick={this.HandleNext}>Page suivante</button>);
     }
     render ()
     {
@@ -92,19 +108,22 @@ class BrailleView extends React.Component {
       }  
       this.paginator.setSrcLines(linesb);
       this.paginator.Update ();
-      console.log ("brailleview " + this.state.page.toString());
+      //console.log ("brailleview " + this.state.page.toString());
       return (
                    
             
-            <div >
-            <label aria-label="Visualisation de la transcription Braille : "></label>
-            <h1 aria-hidden="true">Visualisation Braille</h1>  
+            <div>
+            <label aria-label="Sélection de la page à imprimer : "></label>
+            <h1 aria-hidden={true}>Sélection de la page à imprimer</h1>  
             <label aria-label="Boutons de commandes  : "></label>
-            <button aria-label="page précédente : " className="pure-button pure-button-primary pad-button" onClick={this.HandlePrec}>Page précédente</button>
-            <button aria-label="page suivante : " className="pure-button pure-button-primary pad-button" onClick={this.HandleNext}>Page suivante</button>
-            <button aria-label="imprimer  : " className="pure-button pure-button-primary pad-button" onClick={this.HandlePrint}>Imprimer</button>
+            <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={false}>
+            {this.fpageprec()}
+            {this.fpagenext()}
+            <button aria-label="imprimer  : " ref={this.props.focusref} className="pure-button pure-button-primary pad-button" onClick={this.HandlePrint}>Imprimer</button>
+            </div>
             <label aria-label="Informations  : "></label>
-            <p aria-label='Page  {this.state.page + 1} sur {this.paginator.getPageNumber()}'>Page {this.state.page + 1} sur {this.paginator.getPageNumber()}</p>
+            
+            <p aria-live="assertive" role="alert" aria-relevant="all" aria-atomic={true}>Page {this.state.page + 1} sur {this.paginator.getPageNumber()}</p>
             <PageDisplay pagenbr={this.state.page} pages={this.paginator} />  
             </div>
                       

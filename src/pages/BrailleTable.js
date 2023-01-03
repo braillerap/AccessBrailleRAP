@@ -16,23 +16,23 @@ class BrailleTable extends React.Component {
 
     myhandleOnChange (event)
     {
-        console.log (event);
+        //console.log (event);
         let bit = parseInt(event.target.id)
         let tmp = this.state.check;
         tmp[bit] = ! tmp[bit];
         this.setState ({check:tmp});
-        console.log (tmp);
+        //console.log (tmp);
     }
     myhandleOnClick (event)
     {
-        console.log (event);
+        //console.log (event);
         let bit = parseInt(event.target.id)
-        console.log (bit);
+        //console.log (bit);
         let tmp = this.state.check;
-        console.log (tmp);
+        //console.log (tmp);
         tmp[bit] = ! tmp[bit];
         this.setState ({check:tmp});
-        console.log (tmp);
+        //console.log (tmp);
     }    
     render () 
     {

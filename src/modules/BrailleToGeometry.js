@@ -23,9 +23,9 @@ class BrailleToGeometry
 
     BrailleCharToGeom (char, offsetx, offsety)
     {
-        console.log (char);
+        //console.log (char);
         let val = char.charCodeAt (0);
-        console.log (val);
+        //console.log (val);
         let pts = [];
         for (let i = 0; i < 8; i++)
         {
@@ -117,7 +117,7 @@ class BrailleToGeometry
         this.SortGeom(geom);
         let sorted = this.SortGeomZigZag(geom);
 
-        console.log (geom);
+        //console.log (geom);
 
         return sorted;
     }

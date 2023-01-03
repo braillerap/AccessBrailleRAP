@@ -4,7 +4,7 @@ import sys
 import serial.tools.list_ports
 import time
 import json
-
+import platform
 
 serial_port = None
 
@@ -158,9 +158,18 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         if sys.argv[1] == '--develop':
             eel.init('client')
-            eel.start({"port": 3000}, host="localhost", port=8888)
+            
+            eel.start({"port": 3000}, host="localhost", port=8888, mode='chrome-app')
             devel = True
 
     if devel == False:
         eel.init('build')
-        eel.start('index.html', host="localhost", port=8888)
+        try:
+            print ("start edge")
+            eel.start('index.html', host="localhost", port=8888)
+        except EnvironmentError:
+            if sys.platform in ['win32', 'win64'] and int(platform.release()) >= 10:
+                print ("start chrome")
+                eel.start('index.html', host="localhost", port=8888, mode='edge')
+            else:
+                raise                
