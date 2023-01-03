@@ -8,6 +8,11 @@ Braille transcription software for BrailleRAP. NVDA compatible.
 
 ![](./screenshot.jpg)
 
+# How to install
+Install Chrome
+Install BrailleRAP [drivers](https://braillerap.readthedocs.io/fr/latest/drivers_mks.html) 
+Run the application AccesBrailleRAP.exe
+
 
 # Instruction for build
 
