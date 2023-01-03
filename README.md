@@ -12,7 +12,9 @@ Instruction for build
 Install
 =======
 
+You'll need to have Chrome installed.
 You’ll need to have Python >= 3.6, Eel, pyinstaller, pySerial...
+
 First make a python virtual env.
 
 Install all python depencies with:
