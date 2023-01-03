@@ -2,15 +2,17 @@
 Braille transcription software for BrailleRAP. NVDA compatible.
 
 
-Instruction for build
-=====================
+
 
 # React Eel GUI App
 
 ![](./screenshot.jpg)
 
-Install
-=======
+
+# Instruction for build
+
+Environnement Install
+=====================
 
 You'll need to have Chrome installed.
 You’ll need to have Python >= 3.6, Eel, pyinstaller, pySerial...
