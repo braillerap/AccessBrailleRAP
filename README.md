@@ -11,11 +11,12 @@ Braille transcription software for BrailleRAP. NVDA compatible.
 Install
 =======
 
-You’ll need to have Python >= 3.6, Eel, pyinstaller.
+You’ll need to have Python >= 3.6, Eel, pyinstaller, pySerial...
+First make a python virtual env.
 
+Install all python depencies with:
 ```
-$ python3 -m pip install eel
-$ python3 -m pip install pyinstaller
+$ pip install -r requirement.txt 
 ```
 
 Develop on GUI
