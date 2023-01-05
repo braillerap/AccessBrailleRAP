@@ -27,8 +27,9 @@ yarn-error.log*
 # eel
 /dist
 /react-eel-app.spec
+/venv
 __pycache__
 yarn.lock
 AccessBrailleRAP.spec
 parameters.json
-
+package-lock.json
