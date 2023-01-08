@@ -6,8 +6,12 @@ import time
 import json
 import platform
 
-serial_port = None
+class SerialStatus :
+    Ready = 0
+    Busy = 2
 
+serial_port = None
+serial_status = SerialStatus.Ready
 
 app_options = {
     'comport':'COM1',
@@ -31,6 +35,7 @@ def file_len(fname):
     return counter + 1
 
 def save_parameters ():
+    """Save parameters in local json file"""
     try:
         
         print ("data", app_options)
@@ -72,34 +77,48 @@ def gcode_get_parameters ():
     return js
 
 @eel.expose
+def printer_get_status ():
+    return serial_status
+
+@eel.expose
 def PrintGcode (gcode, comport):
-    
+    global serial_status
     print('Opening Serial Port', comport)
-    Printer = serial.Serial(comport, 250000)
-    
- 
-    
-    # Hit enter a few times to wake up
-    Printer.write(str.encode("\r\n\r\n"))
-    time.sleep(2)  # Wait for initialization
-    Printer.flushInput()  # Flush startup text in serial input
-    print('Sending GCode')
-    gcodelines = gcode.split ("\r\n")
-    for line in gcodelines:
-        cmd_gcode = remove_comment(line)
-        cmd_gcode = cmd_gcode.strip()  # Strip all EOL characters for streaming
-        if (cmd_gcode.isspace() is False and len(cmd_gcode) > 0):
-            print('Sending: ' + cmd_gcode)
-            Printer.write(cmd_gcode.encode() +
-                                    str.encode('\n'))  # Send g-code block
-            # Wait for response with carriage return
-            while True:
-                grbl_out = Printer.readline()
-                print(grbl_out.strip().decode("utf-8"))
-                if str.encode("ok") in grbl_out:
-                    break
-    print ('End of printing')
-    Printer.close ();
+    try:
+        serial_status = SerialStatus.Busy
+        with serial.Serial(comport, 250000, timeout=2, write_timeout=2) as Printer:
+            print(comport, 'is open')
+            
+            
+            print('fin test js')
+
+            # Hit enter a few times to wake up
+            Printer.write(str.encode("\r\n\r\n"))
+            print(comport, 'cleanup')
+            eel.sleep(2)  # Wait for initialization
+            Printer.flushInput()  # Flush startup text in serial input
+            print('Sending GCode')
+            gcodelines = gcode.split ("\r\n")
+            for line in gcodelines:
+                cmd_gcode = remove_comment(line)
+                cmd_gcode = cmd_gcode.strip()  # Strip all EOL characters for streaming
+                if (cmd_gcode.isspace() is False and len(cmd_gcode) > 0):
+                    print('Sending: ' + cmd_gcode)
+                    Printer.write(cmd_gcode.encode() +
+                                            str.encode('\n'))  # Send g-code block
+                    # Wait for response with carriage return
+                    while True:
+                        grbl_out = Printer.readline()
+                        print(grbl_out.strip().decode("utf-8"))
+                        if str.encode("ok") in grbl_out:
+                            break
+            print ('End of printing')
+            Printer.close ();
+    except Exception as e:
+        print (e)
+       
+        
+    serial_status = SerialStatus.Ready
 
 @eel.expose
 def hello():
@@ -131,17 +150,19 @@ def gcode_set_nb_col (nbcol):
 @eel.expose
 def gcode_get_serial ():
     data = []
-
-    ports = serial.tools.list_ports.comports()
-    for port in ports:
-        print (port.device)
-        print (port.hwid)
-        print (port.name)
-        print (port.description)
-        print (port.product)
-        print (port.manufacturer)
-        data.append ({'device':port.device, 'description':port.description, 'name':port.name, 'product':port.product, 'manufacturer':port.manufacturer})
-    print(data)
+    try:
+        ports = serial.tools.list_ports.comports()
+        for port in ports:
+            print (port.device)
+            print (port.hwid)
+            print (port.name)
+            print (port.description)
+            print (port.product)
+            print (port.manufacturer)
+            data.append ({'device':port.device, 'description':port.description, 'name':port.name, 'product':port.product, 'manufacturer':port.manufacturer})
+        print(data)
+    except Exception as e:
+        print (e)
 
     js = json.dumps(data)
     
@@ -150,26 +171,29 @@ def gcode_get_serial ():
 if __name__ == '__main__':
     devel = False
 
-   
-
     load_parameters ()
     print (app_options)
+    
 
     if len(sys.argv) > 1:
         if sys.argv[1] == '--develop':
             eel.init('client')
             
-            eel.start({"port": 3000}, host="localhost", port=8888, mode='chrome-app')
+            eel.start({"port": 3000}, host="localhost", port=8888)
+              
             devel = True
 
     if devel == False:
         eel.init('build')
         try:
             print ("start edge")
+            
             eel.start('index.html', host="localhost", port=8888)
+            
         except EnvironmentError:
             if sys.platform in ['win32', 'win64'] and int(platform.release()) >= 10:
                 print ("start chrome")
                 eel.start('index.html', host="localhost", port=8888, mode='edge')
+                    
             else:
                 raise                

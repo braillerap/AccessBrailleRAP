@@ -25,8 +25,8 @@ class App extends Component {
             {
                 logstr : '',
                 srctxt : '',
-                options : AppOption
-
+                options : AppOption,
+                serialstatus:0
             }
         );
         this.LogCallBack = this.LogCallBack.bind(this);
@@ -75,6 +75,10 @@ class App extends Component {
       this.setState ({option:opt});
       eel.gcode_set_parameters(opt);
     }
+    SetStatus (status)
+    {
+      this.setState({serialstatus: status})
+    }
     LogCallBack (str)
     {
       this.setState ({logstr : this.state.logstr + str + '\r\n'});
@@ -85,9 +89,9 @@ class App extends Component {
       return (
       <BrowserRouter>
             <Routes >
-              <Route path="/" element={<Layout focuscb={this.onMenuClick}/>}>
+              <Route path="/" element={<Layout focuscb={this.onMenuClick} status={this.state.serialstatus}/>}>
                 <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options} focusref={this.focusReference}/> } />
-                <Route path="/impression" element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} options={this.state.options} focusref={this.focusReference}/>} />
+                <Route path="/impression" element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} options={this.state.options} focusref={this.focusReference} statuscb={this.SetStatus}/>} />
                 <Route path="/parametre" element={<Parameters logger={this.LogCallBack} src={this.state.srctxt} 
                    options={this.state.options} nblinecb={this.SetNbLine} nbcolcb={this.SetNbCol} comportcb={this.SetComPort} optioncb={this.SetOption} focusref={this.focusReference}/> } />
 

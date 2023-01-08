@@ -68,7 +68,11 @@ class BrailleView extends React.Component {
       let gcode = gcoder.GetGcode ();
       //console.log (gcode);
       eel.PrintGcode (gcode, this.props.options.comport)
-
+      if (this.props.statuscb)
+      {
+        let status = eel.printer_get_status ();
+        this.props.statuscb(status);
+      }
     }
     componentDidMount ()
     {
@@ -81,16 +85,16 @@ class BrailleView extends React.Component {
     fpageprec ()
     {
       if (this.paginator.getPageNumber() > 1 && this.state.page > 0)
-        return (<button  className="pure-button pure-button-primary pad-button" onClick={this.HandlePrec}>Page précédente</button>);
+        return (<button  className="pure-button pad-button" onClick={this.HandlePrec}>Page précédente</button>);
       else
-      return (<button  aria-label='bouton page précédente' disabled={true}   className="pure-button pure-button-primary pad-button" onClick={this.HandlePrec}>Page précédente</button>);
+      return (<button  aria-label='bouton page précédente' disabled={true}   className="pure-button pad-button" onClick={this.HandlePrec}>Page précédente</button>);
     }
     fpagenext ()
     {
       if (this.state.page + 1 < this.paginator.getPageNumber())
-      return (<button  className="pure-button pure-button-primary pad-button" onClick={this.HandleNext}>Page suivante</button>);
+      return (<button  className="pure-button pad-button" onClick={this.HandleNext}>Page suivante</button>);
       else
-      return (<button  aria-label='bouton page suivante' disabled={true}  className="pure-button pure-button-primary pad-button" onClick={this.HandleNext}>Page suivante</button>);
+      return (<button  aria-label='bouton page suivante' disabled={true}  className="pure-button pad-button" onClick={this.HandleNext}>Page suivante</button>);
     }
     render ()
     {
@@ -116,10 +120,10 @@ class BrailleView extends React.Component {
             <label aria-label="Sélection de la page à imprimer : "></label>
             <h1 aria-hidden={true}>Sélection de la page à imprimer</h1>  
             <label aria-label="Boutons de commandes  : "></label>
-            <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={false}>
+            <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={false} className="menu_font">
             {this.fpageprec()}
             {this.fpagenext()}
-            <button aria-label="imprimer  : " ref={this.props.focusref} className="pure-button pure-button-primary pad-button" onClick={this.HandlePrint}>Imprimer</button>
+            <button aria-label="imprimer  : " ref={this.props.focusref} className="pure-button pad-button" onClick={this.HandlePrint}>Imprimer</button>
             </div>
             <label aria-label="Informations  : "></label>
             

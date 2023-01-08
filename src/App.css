@@ -1,13 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .App {
   text-align: center;
   min-height: 100vh;
+  height: 100%;
+}
+
+
+
+
+
+.menu_font {
+  font-size: calc(4px + 2vmin);
+}
+
+.main_div {
+  width:100%;
+  min-height: 100vh;
+  background-color:rgb(255, 255, 255);
+}
+
+.main_layout {
+  width:100%;
+  min-height: 80vh;
+  height:100%;
+  
+}
+
+.headermain {
+  border-color: rgb(175, 129, 69);
+  background-color: rgb(255, 253, 253);
+  height: 10vh;
+}
+.headerside {
+  border-color: burlywood;
+  background-color: rgb(58, 53, 53);
+  height: 10vh;
+}
+
+.bodymain {
+  border-color: rgb(175, 129, 69);
+  background-color: rgb(255, 253, 253);
+  height: 90vh;
+}
+
+.bodyside {
+  border-color: burlywood;
+  background-color: rgb(58, 53, 53);
+  height: 90vh;
+}
+
+.statusbar {
+  background-color: rgb(80, 82, 81);
+  height: 10vh;
 }
 
 
 .BrailleInput
 {
-  border-color: red;
-  font-size: calc(4px + 4vmin);
+  border-color: black;
+  font-size: calc(2px + 3vmin);
+  height:70vh;
 }
 .BrailleInputTable
 {
@@ -38,13 +95,29 @@
 }
 
 .BrailleOutput {
-    font-size: calc(4px + 2.5vw);
+    font-size: calc(1em + 0.8vw);
+    min-height: 100%;
+    background-color: white;
+}
+
+
+.pad-button {
+  color:greenyellow;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  
 }
 
 .divcolor {
   border-color: burlywood;
   background-color: red;
 }
+.divwhite {
+  border-color: rgb(175, 129, 69);
+  background-color: rgb(255, 253, 253);
+  
+}
+
 .divred {
   border-color: burlywood;
   background-color: red;
@@ -56,35 +129,8 @@
 .divblack {
   border-color: burlywood;
   background-color: rgb(58, 53, 53);
-
-}
-.divwhite {
-  border-color: rgb(175, 129, 69);
-  background-color: rgb(255, 253, 253);
-
-}
-
-.menu_font {
-  font-size: calc(4px + 2vmin);
-}
-
-.main_div {
-  width:100%;
-  min-height: 100vh;
-  background-color:rgb(255, 255, 255);
-}
-.main_layout {
-  width:100%;
-  min-height: 100%;
   
 }
-
-.pad-button {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-}
-
-
 
 svg {cursor: default;
   -webkit-user-select: none;

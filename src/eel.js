@@ -1,6 +1,6 @@
 export const eel = window["eel"];
 
-eel.expose(hello);
-function hello(x) {
-  console.log(x);
+eel.expose(consolelog_js);
+function consolelog_js() {
+  console.log('call from python');
 }

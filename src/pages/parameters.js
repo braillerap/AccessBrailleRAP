@@ -171,7 +171,7 @@ class Parameters extends React.Component {
                     step="1" min="5" max="35" name="nbcol" id="nbcol"
                     value={this.state.options.nbcol} 
                     onChange={this.handleChangeNbCol} 
-                    autofocus
+                    autoFocus
                     ref={this.props.focusref}
                   />
                 
