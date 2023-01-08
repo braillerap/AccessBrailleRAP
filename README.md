@@ -10,7 +10,9 @@ Braille transcription software for BrailleRAP. NVDA compatible.
 
 # How to install
 Install Firefox.
+
 Install BrailleRAP [drivers](https://braillerap.readthedocs.io/fr/latest/drivers_mks.html).
+
 Run the application AccesBrailleRAP.exe.
 
 
