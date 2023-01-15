@@ -107,11 +107,17 @@ def PrintGcode (gcode, comport):
                     Printer.write(cmd_gcode.encode() +
                                             str.encode('\n'))  # Send g-code block
                     # Wait for response with carriage return
+                    tbegin = time.time()
                     while True:
                         grbl_out = Printer.readline()
                         print(grbl_out.strip().decode("utf-8"))
                         if str.encode("ok") in grbl_out:
                             break
+                        if len(grbl_out) > 0:
+                            tbegin = time.time ()
+                        if time.time() - tbegin > 5:
+                            raise Exception("Timeout in printer communication")
+
             print ('End of printing')
             Printer.close ();
     except Exception as e:
