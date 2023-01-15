@@ -15,8 +15,8 @@ serial_status = SerialStatus.Ready
 
 app_options = {
     'comport':'COM1',
-    'nbcol':28,
-    'nbline':21,
+    'nbcol':27,
+    'nbline':20,
 }
 
 def remove_comment(string):
@@ -164,6 +164,12 @@ def gcode_get_serial ():
     except Exception as e:
         print (e)
 
+    #check if com port in parameters is present in port enumeration
+    if not any(d.get('device', "???") == app_options['comport'] for d in data):
+        print ("adding com port in parameters")
+        data.append ({'device':app_options['comport'], 'description':'inconnu', 'name':'inconnu', 'product':'inconnu', 'manufacturer':'inconnu'})
+
+    # dump data in json format for frontend
     js = json.dumps(data)
     
     return js
@@ -186,13 +192,13 @@ if __name__ == '__main__':
     if devel == False:
         eel.init('build')
         try:
-            print ("start edge")
+            print ("start chrome")
             
             eel.start('index.html', host="localhost", port=8888)
             
         except EnvironmentError:
             if sys.platform in ['win32', 'win64'] and int(platform.release()) >= 10:
-                print ("start chrome")
+                print ("start edge")
                 eel.start('index.html', host="localhost", port=8888, mode='edge')
                     
             else:

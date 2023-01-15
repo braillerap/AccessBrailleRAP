@@ -21,8 +21,6 @@ class BrailleView extends React.Component {
         page:0
       };
     
-    
-      this.cnt = 0;
       let f = new BrailleTranslatorFactory ();
       this.Braille = f.getTranslator("TBFR2007");
       this.paginator = new BraillePaginator ();
@@ -41,6 +39,7 @@ class BrailleView extends React.Component {
 
     HandleNext ()
     {
+      
       //console.log (this.state.page);
       if (this.state.page < this.paginator.getPageNumber() - 1)
         this.setState ({page:this.state.page + 1});
@@ -60,6 +59,7 @@ class BrailleView extends React.Component {
     }
     HandlePrint ()
     {
+      
       let geom = new BrailleToGeometry ();
       let ptcloud = geom.BraillePageToGeom (this.paginator.getPage (this.state.page), 5, 5);
       //console.log (typeof(ptcloud));
@@ -76,8 +76,6 @@ class BrailleView extends React.Component {
     }
     componentDidMount ()
     {
-        
-        this.cnt += 1;
         if (this.props.focusref)
           this.props.focusref.current.focus ();
     }
@@ -123,9 +121,9 @@ class BrailleView extends React.Component {
             <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={false} className="menu_font">
             {this.fpageprec()}
             {this.fpagenext()}
-            <button aria-label="imprimer  : " ref={this.props.focusref} className="pad-button pure-button " onClick={this.HandlePrint}>Imprimer</button>
+            <button aria-label="imprimer " ref={this.props.focusref} className="pad-button pure-button " onClick={this.HandlePrint}>Imprimer</button>
             </div>
-            <label aria-label="Informations  : "></label>
+            <label aria-label="Informations "></label>
             
             <p aria-live="assertive" role="alert" aria-relevant="all" aria-atomic={true}>Page {this.state.page + 1} sur {this.paginator.getPageNumber()}</p>
             <PageDisplay pagenbr={this.state.page} pages={this.paginator} />  
