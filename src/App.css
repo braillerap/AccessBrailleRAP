@@ -102,9 +102,18 @@ body {
 
 
 .pad-button {
-  color:greenyellow;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  padding: 0.5em !important;
+  border-width: 0.1em !important;
+  border-style: hidden !important ;
+  border-radius: 4px !important;
+}
+.pad-button:focus {
+  border:black !important;
+  border-width: 0.1em !important;
+  border-style: solid !important;
   
 }
 

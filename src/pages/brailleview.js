@@ -123,7 +123,7 @@ class BrailleView extends React.Component {
             <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={false} className="menu_font">
             {this.fpageprec()}
             {this.fpagenext()}
-            <button aria-label="imprimer  : " ref={this.props.focusref} className="pure-button pad-button" onClick={this.HandlePrint}>Imprimer</button>
+            <button aria-label="imprimer  : " ref={this.props.focusref} className="pad-button pure-button " onClick={this.HandlePrint}>Imprimer</button>
             </div>
             <label aria-label="Informations  : "></label>
             
