@@ -9,35 +9,47 @@ Braille transcription software for BrailleRAP. NVDA compatible.
 ![](./screenshot.jpg)
 
 # How to install
-Install Firefox.
+Install Chrome.
 
 Install BrailleRAP [drivers](https://braillerap.readthedocs.io/fr/latest/drivers_mks.html).
 
 Run the application AccesBrailleRAP.exe.
 
 
-# Instruction for build
+# Instruction for build (Windows)
 
 Environnement Install
 =====================
 
-You'll need to have Firefox  installed.
+You'll need to have Chrome  installed.
 
 You’ll need to have Python >= 3.6, Eel, pyinstaller, pySerial...
 
 
-First make a python virtual env.
+First make a python virtual env in a power shell.
+```
+$ python -m venv venv 
+```
+
+Activate the virtual env (power shell)
+```
+$ .\venv\Scripts\activate.ps1  
+```
 
 Install all python depencies with:
 ```
 $ pip install -r requirement.txt 
 ```
 
-Develop on GUI
-==============
-
+Install all react/js dependencies
 ```
 $ yarn install
+```
+
+Develop on React GUI
+====================
+
+```
 $ yarn start
 ```
 
