@@ -85,6 +85,9 @@ def PrintGcode (gcode, comport):
     global serial_status
     print('Opening Serial Port', comport)
     try:
+        if serial_status == SerialStatus.Busy:
+            print ("Printer busy")
+            return
         serial_status = SerialStatus.Busy
         with serial.Serial(comport, 250000, timeout=2, write_timeout=2) as Printer:
             print(comport, 'is open')
