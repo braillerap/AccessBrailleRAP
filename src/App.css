@@ -83,6 +83,15 @@ body {
   text-align: center;
 }
 
+.ModalView {
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  min-height: 100%;
+}
 .BrailleView {
   text-align: center;
   margin-left: auto;

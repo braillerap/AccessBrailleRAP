@@ -13,6 +13,8 @@ import './App.css';
 import { eel } from "./eel.js";
 
 import AppOption from "./pages/components/AppOption";
+import Modal from "react-modal"
+
 
 
 class App extends Component {

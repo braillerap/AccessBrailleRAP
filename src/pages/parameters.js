@@ -13,7 +13,8 @@ class Parameters extends React.Component {
             data:null,
             nbcol:28,
             nbline:21,
-            options:this.props.options
+            options:this.props.options,
+            comevent:""
         }
 
         this.handleChangeNbCol = this.handleChangeNbCol.bind (this);
@@ -43,9 +44,11 @@ class Parameters extends React.Component {
 
     handleRefreshPort ()
     {
+      this.setState ({comevent:"Patientez"})
       eel.gcode_get_serial()(list => {
           let portinfo = JSON.parse(list);
-          this.setState ({data:portinfo})
+          this.setState ({data:portinfo, comevent:"Ports de communications actualisés"})
+
         }
       );
     }
@@ -185,7 +188,8 @@ class Parameters extends React.Component {
                 />
                 
                 </div>
-                <div className="pure-control-group">
+                <div 
+                >
                   
                     {this.render_comport()}
                     <button  
@@ -201,7 +205,7 @@ class Parameters extends React.Component {
                
                 
               </form>
-              
+              <h2>{this.state.comevent}</h2>
               
               </div>
 

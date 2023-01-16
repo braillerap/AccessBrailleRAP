@@ -93,7 +93,7 @@ def PrintGcode (gcode, comport):
             print(comport, 'is open')
             
             
-            print('fin test js')
+            
 
             # Hit enter a few times to wake up
             Printer.write(str.encode("\r\n\r\n"))
@@ -125,9 +125,12 @@ def PrintGcode (gcode, comport):
             Printer.close ();
     except Exception as e:
         print (e)
-       
+        serial_status = SerialStatus.Ready   
+        return ("Erreur d'impression :" + str(e))
+    
         
     serial_status = SerialStatus.Ready
+    return (" ")
 
 @eel.expose
 def hello():
