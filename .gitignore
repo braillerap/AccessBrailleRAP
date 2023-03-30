@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-
+/venv
 #pycharm
 /.idea
 
@@ -32,5 +32,5 @@ __pycache__
 yarn.lock
 parameters.json
 package-lock.json
-venv/
+
 
