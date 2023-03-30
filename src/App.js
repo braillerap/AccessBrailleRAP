@@ -12,7 +12,7 @@ import "./App.css";
 import { eel } from "./eel.js";
 
 import AppOption from "./pages/components/AppOption";
-
+import libLouis from "./modules/libLouisReact";
 
 class App extends Component {
     constructor(props)
@@ -35,8 +35,15 @@ class App extends Component {
         this.SetComPort = this.SetComPort.bind(this);
         this.SetOption = this.SetOption.bind(this);
 
+        this.louis = new libLouis();
     }
-
+    componentDidMount ()
+    {
+      alert ("load");
+      this.louis.load ();
+      if (this.louis.isInit())
+        alert ("liblouis ok");
+    }
     SetText (str)
     {
       this.setState ({srctxt :str});
