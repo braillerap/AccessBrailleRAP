@@ -7,7 +7,7 @@ import BrailleToGeometry from '../modules/BrailleToGeometry';
 import GeomToGCode from '../modules/GeomToGCode';
 import FileSaver from 'file-saver';
 import Modal from 'react-modal';
-import { eel } from "./../eel.js";
+import { eel } from "../eel.js";
 
 
 

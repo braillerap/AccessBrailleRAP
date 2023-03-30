@@ -2,7 +2,7 @@
 import React from 'react';
 import { json } from 'react-router-dom';
 
-import { eel } from "./../eel.js";
+import { eel } from "../eel.js";
 
 class Parameters extends React.Component {
 

@@ -7,14 +7,11 @@ import Home from './pages/home'
 import TextInput from './pages/textinput'
 import BrailleTable from './pages/BrailleTable'
 import Parameters from "./pages/parameters";
-
 import './App.css';
-
 import { eel } from "./eel.js";
-
 import AppOption from "./pages/components/AppOption";
 import Modal from "react-modal"
-
+import libLouis from "./modules/libLouisReact";
 
 
 class App extends Component {
@@ -48,12 +45,22 @@ class App extends Component {
         let params = JSON.parse(option);
         
         this.setState ({options:params})
+        this.louis = new libLouis();
     }
 
     onMenuClick ()
     {
         if (this.focusReference)
           this.focusReference.current.focus ();
+
+        
+    }
+    componentDidMount ()
+    {
+      
+      this.louis.load ();
+      if (this.louis.isInit())
+        alert ("liblouis ok");
     }
 
     SetText (str)
