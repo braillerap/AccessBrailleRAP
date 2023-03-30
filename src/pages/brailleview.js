@@ -173,8 +173,8 @@ class BrailleView extends React.Component {
         </div>
         <label aria-label="Informations "></label>
 
-        <p aria-live="assertive" role="alert" aria-relevant="all" aria-atomic={true}>Page {this.state.page + 1} sur {this.paginator.getPageNumber()}</p>
-        <p aria-live="assertive" role="alert" aria-relevant="all" aria-atomic={true}>{this.state.comevent}</p>
+        <p aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>Page {this.state.page + 1} sur {this.paginator.getPageNumber()}</p>
+        <p aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>{this.state.comevent}</p>
 
         <PageDisplay pagenbr={this.state.page} pages={this.paginator} />
       </div>
