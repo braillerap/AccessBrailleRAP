@@ -17,6 +17,7 @@ app_options = {
     'comport':'COM1',
     'nbcol':27,
     'nbline':20,
+    'brailletbl':70
 }
 
 def remove_comment(string):

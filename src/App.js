@@ -25,7 +25,8 @@ class App extends Component {
                 logstr : '',
                 srctxt : '',
                 options : AppOption,
-                serialstatus:0
+                serialstatus:0,
+                louisloaded:false
             }
         );
         this.LogCallBack = this.LogCallBack.bind(this);
@@ -35,7 +36,8 @@ class App extends Component {
         this.SetComPort = this.SetComPort.bind(this);
         this.SetOption = this.SetOption.bind(this);
         this.onMenuClick = this.onMenuClick.bind (this);    
-
+        this.GetLouis = this.GetLouis.bind(this);
+        this.LouisLoaded = this.LouisLoaded.bind (this);
         this.focusReference = React.createRef();
     }
 
@@ -46,6 +48,8 @@ class App extends Component {
         
         this.setState ({options:params})
         this.louis = new libLouis();
+        this.louis.load (this.LouisLoaded);
+        
     }
 
     onMenuClick ()
@@ -55,14 +59,7 @@ class App extends Component {
 
         
     }
-    componentDidMount ()
-    {
-      
-      this.louis.load ();
-      if (this.louis.isInit())
-        alert ("liblouis ok");
-    }
-
+   
     SetText (str)
     {
       this.setState ({srctxt :str});
@@ -93,15 +90,27 @@ class App extends Component {
       this.setState ({logstr : this.state.logstr + str + '\r\n'});
 
     }
+    LouisLoaded (success)
+    {
+      this.setState({louisloaded:success});
+    }
+    GetLouis()
+    {
+      return this.louis;
+    }
     render ()
     {
+      if (! this.state.louisloaded)
+        return (<h1>Chargement...</h1>);
+
       return (
       <BrowserRouter>
             <Routes >
               <Route path="/" element={<Layout focuscb={this.onMenuClick} status={this.state.serialstatus}/>}>
                 <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options} focusref={this.focusReference}/> } />
-                <Route path="/impression" element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} options={this.state.options} focusref={this.focusReference} statuscb={this.SetStatus}/>} />
-                <Route path="/parametre" element={<Parameters logger={this.LogCallBack} src={this.state.srctxt} 
+                <Route path="/impression" element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} glouis={this.GetLouis}
+                    options={this.state.options} focusref={this.focusReference} statuscb={this.SetStatus}/>} />
+                <Route path="/parametre" element={<Parameters logger={this.LogCallBack} src={this.state.srctxt} glouis={this.GetLouis}
                    options={this.state.options} nblinecb={this.SetNbLine} nbcolcb={this.SetNbCol} comportcb={this.SetComPort} optioncb={this.SetOption} focusref={this.focusReference}/> } />
 
                 <Route path="*" element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options} focusref={this.focusReference}/>} />

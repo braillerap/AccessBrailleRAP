@@ -53,7 +53,7 @@ class BraillePaginator
 
         this.pages = [];
         this.current_page = [];
-
+        
         for (let lsrc = 0; lsrc < this.src.length; lsrc++)
         {
             let words = this.src[lsrc].split (String.fromCharCode(0x2800));    

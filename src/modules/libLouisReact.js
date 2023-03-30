@@ -306,12 +306,13 @@ class libLouis
     */
     
 
-    load ()
+    load (callback)
     {
         createModule().then((Module) => {
             
             this.init (Module);
-            console.log ("liblouisreact ok");
+            console.log ("liblouisreact loaded");
+            callback(true);
             
           }).catch ((error)=> {
             console.log(error);

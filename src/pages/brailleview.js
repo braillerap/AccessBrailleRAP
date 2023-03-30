@@ -25,9 +25,9 @@ class BrailleView extends React.Component {
       comevent: "",
       printstatus:""
     };
-
+    let louis = this.props.glouis();
     let f = new BrailleTranslatorFactory();
-    this.Braille = f.getTranslator("TBFR2007");
+    this.Braille = f.getTranslator("LOUIS", louis, this.props.options.brailletbl);
     this.paginator = new BraillePaginator();
     this.HandlePrec = this.HandlePrec.bind(this);
     this.HandleNext = this.HandleNext.bind(this);
@@ -35,11 +35,18 @@ class BrailleView extends React.Component {
     //console.log ("BrailleView constructor ")
     
   }
-
+  componentDidMount() {
+    // set focus on screen creation
+    if (this.props.focusref)
+      this.props.focusref.current.focus();
+      
+  }
   componentWillUnmount ()
   {
     if (this.timer)
       clearInterval(this.timer);
+    if (this.props.glouis())
+      this.props.glouis().lou_free ();
   }
 
   HandlePrec() {
@@ -101,12 +108,7 @@ class BrailleView extends React.Component {
     );
   }
  
-  componentDidMount() {
-    // set focus on screen creation
-    if (this.props.focusref)
-      this.props.focusref.current.focus();
-      
-  }
+  
 
   fpageprec() {
     // display prev button according to page position
@@ -129,7 +131,8 @@ class BrailleView extends React.Component {
     let linesb = this.Braille.getBrailleLines();
 
     //console.log ("Braille pagination " + this.state.page.toString());
-    if (!this.props.options) {
+    
+    if (this.props.options) {
       this.paginator.setcols(this.props.options.nbcol);
       this.paginator.setrow(this.props.options.nbline);
     }

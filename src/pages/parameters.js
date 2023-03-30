@@ -4,6 +4,14 @@ import { json } from 'react-router-dom';
 
 import { eel } from "../eel.js";
 
+function  braille_info (fname, desc, lang, region) {
+  this.fname =fname;
+  this.desc = desc;
+  this.lang = lang;
+  this.region = region;
+  
+}
+
 class Parameters extends React.Component {
 
     constructor (props)
@@ -14,7 +22,9 @@ class Parameters extends React.Component {
             nbcol:28,
             nbline:21,
             options:this.props.options,
-            comevent:""
+            comevent:"",
+            louis:this.props.louis,
+            brailleinfo:[]
         }
 
         this.handleChangeNbCol = this.handleChangeNbCol.bind (this);
@@ -22,7 +32,8 @@ class Parameters extends React.Component {
         this.handleChangePort =this.handleChangePort.bind(this);
         this.handleRefreshPort = this.handleRefreshPort.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        console.log ("constructor");
+        this.handleChangeBraille = this.handleChangeBraille.bind(this);
+        //console.log ("constructor");
     }
 
     async componentDidMount()
@@ -32,9 +43,35 @@ class Parameters extends React.Component {
       let portinfo = JSON.parse(list);
       this.setState ({data:portinfo})
      
-      if (this.props.focusref)
+      
+      //console.log ("louis es tu la ?");  
+      //console.log (this.props.glouis());  
+      if (this.props.glouis())
+      {
+        let brtable = [];
+        let louis = this.props.glouis();
+        let nbr = this.props.glouis().get_table_nbr();
+        for (let i = 0; i < nbr; i++)
+        {
+          let description = louis.get_table_description(i);
+          let br = new braille_info(
+            louis.get_table_fname(i), 
+            description,
+            louis.get_table_lang(i), 
+            louis.get_table_region(i)
+          );
+          brtable.push (
+            br
+          );
+          //console.log (this.props.glouis().get_table_fname(i));
+        }
+        this.setState({brailleinfo:brtable})
+      }
+      //else
+      //  console.log ("louis dead");
+
+        if (this.props.focusref)
           this.props.focusref.current.focus ();
-    
     }
     
     handleSubmit (event)
@@ -77,6 +114,17 @@ class Parameters extends React.Component {
       
       if (this.props.optioncb)
         this.props.optioncb(option)
+      else
+        this.setState({options:option});  
+    }
+
+    handleChangeBraille(event)
+    {
+      let option = this.props.options
+      option.brailletbl = event.target.value;
+
+      if (this.props.optioncb)
+        this.props.optioncb(option);
       else
         this.setState({options:option});  
     }
@@ -127,7 +175,38 @@ class Parameters extends React.Component {
         );
       }
     }
-    
+    render_braille_lang ()
+    {
+      if (this.state.brailleinfo.length === 0)
+      {
+        return (<p aria-hidden='true'>Aucune table de transcription</p>)
+      }
+      let selectedtable ="vide";
+      if (this.state.options.brailletbl < this.state.brailleinfo.length)
+        selectedtable = this.state.brailleinfo[this.state.options.brailletbl].desc;
+      return (
+        <>
+        <p aria-label={'Table de transcription ' + selectedtable + ' : '} >{'Table de transcription  ' + selectedtable}</p>
+        <label aria-hidden='true' htmlFor='selectbraille'>Table Braille</label>
+        <select onChange={this.handleChangeBraille}  value={this.props.options.brailletbl} name="selectbraille"
+           autoFocus
+           ref={this.props.focusref}>
+           
+        
+        {this.state.brailleinfo.map ((item, index)=> {
+                 if (index === this.props.options.brailletbl)
+                   return (<option  aria-selected='true' key={index} value={index}>{item.lang + " - " + item.desc}</option>);
+                 else
+                   return (<option  aria-selected='false' key={index} value={index}>{item.lang + " - " + item.desc}</option>);
+              })
+             }
+                   
+        </select>
+
+        </>
+       );
+
+    }
     render ()
     {
       if (! this.state.data || this.state.data.length === 0)
@@ -159,13 +238,17 @@ class Parameters extends React.Component {
                
                 <h1>Formulaire de paramétrage de l'application</h1>
                 <div className="pure-control-group">
-                <label  htmlFor='nbcol' aria-label='Nombre de caractères par ligne'>Nombre de caractères par ligne</label>
+                {this.render_braille_lang()}
+                </div>
+                <div className="pure-control-group">
+                <label  htmlFor='nbcol' aria-label='Nombre de caractères par ligne'>
+                  Nombre de caractères par ligne
+                </label>
                   <input type="number" aria-label='Nombre de caractères par ligne' 
                     step="1" min="5" max="35" name="nbcol" id="nbcol"
                     value={this.props.options.nbcol} 
                     onChange={this.handleChangeNbCol} 
-                    autoFocus
-                    ref={this.props.focusref}
+                   
                   />
                 
                 </div>
