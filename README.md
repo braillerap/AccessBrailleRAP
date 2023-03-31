@@ -1,6 +1,13 @@
 # AccessBrailleRAP
 Braille transcription software for BrailleRAP. NVDA compatible.
+The project now use a liblouis version slightly modified to run in react.js environnement.
 
+LibLouis
+========
+The original version of liblouis is available here [https://github.com/liblouis/liblouis](https://github.com/liblouis/liblouis)
+The modified version for react.js is available here [https://github.com/crocsg/liblouis](https://github.com/crocsg/liblouis)
+
+liblouis is licensed under GNU LGPL V2.1
 
 
 
