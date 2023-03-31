@@ -13,6 +13,7 @@ liblouis and liblouisreact are licensed under GNU LGPL V2.1
 # Screenshot
 
 ![](./screenshot.jpg)
+
 ![](./screenshot2.jpg)
 
 # How to install
