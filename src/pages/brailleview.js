@@ -7,6 +7,7 @@ import BrailleToGeometry from '../modules/BrailleToGeometry';
 import GeomToGCode from '../modules/GeomToGCode';
 import FileSaver from 'file-saver';
 import Modal from 'react-modal';
+import { FormattedMessage } from 'react-intl';
 import { eel } from "../eel.js";
 
 
@@ -113,16 +114,25 @@ class BrailleView extends React.Component {
   fpageprec() {
     // display prev button according to page position
     if (this.paginator.getPageNumber() > 1 && this.state.page > 0)
-      return (<button className="pure-button pad-button" onClick={this.HandlePrec}>Page précédente</button>);
+      return (<button className="pure-button pad-button" onClick={this.HandlePrec}>
+        
+        <FormattedMessage id="print_button_prec" defaultMessage="Page précédente"/>
+        </button>);
     else
-      return (<button aria-label='bouton page précédente' disabled={true} className="pure-button pad-button" onClick={this.HandlePrec}>Page précédente</button>);
+      return (<button aria-label='bouton page précédente' disabled={true} className="pure-button pad-button" onClick={this.HandlePrec}>
+        <FormattedMessage id="print_button_prec" defaultMessage="Page précédente"/>
+        </button>);
   }
   fpagenext() {
     // display next button according to page position
     if (this.state.page + 1 < this.paginator.getPageNumber())
-      return (<button className="pure-button pad-button" onClick={this.HandleNext}>Page suivante</button>);
+      return (<button className="pure-button pad-button" onClick={this.HandleNext}>
+        <FormattedMessage id="print_button_next" defaultMessage="Page suivante"/>
+        </button>);
     else
-      return (<button aria-label='bouton page suivante' disabled={true} className="pure-button pad-button" onClick={this.HandleNext}>Page suivante</button>);
+      return (<button aria-label='bouton page suivante' disabled={true} className="pure-button pad-button" onClick={this.HandleNext}>
+        <FormattedMessage id="print_button_next" defaultMessage="Page suivante"/>
+        </button>);
   }
   render() {
     this.Braille.setSrc(this.state.src);
@@ -152,14 +162,20 @@ class BrailleView extends React.Component {
           <div aria-hidden={false} className='ModalView'>
             <label aria-label=' '></label>
             <br/>
-            <label aria-label='Impression en cours'>Impression en cours</label>
+            <label aria-label='Impression en cours'>
+            <FormattedMessage id="print.printinprogress" defaultMessage="Impression en cours"/>
+              </label>
             <br/>
-            <label aria-label='Merci de patienter'>Merci de patienter</label>
+            <label aria-label='Merci de patienter'>
+            <FormattedMessage id="print.printwait" defaultMessage="Merci de patienter"/>
+              </label>
 
           </div>
         </Modal>
         <label aria-label="Sélection de la page à imprimer : "></label>
-        <h1 aria-hidden={true}>Sélection de la page à imprimer</h1>
+        <h1 aria-hidden={true}>
+        <FormattedMessage id="print.printselectpage" defaultMessage="Sélection de la page à imprimer"/>
+          </h1>
 
         <label aria-label="Boutons de commandes  : "></label>
         <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={false} className="menu_font">

@@ -1,0 +1,26 @@
+{
+    "app.header":"coucou les gars et les filles",
+    "param.header":"Paramètres de l'application",
+    "param.nocomport":"Aucun port de communication",
+    "param.labelport":"Port de communication Série ",
+    "param.nobrailletable":"Aucune table de transcription",
+    "param.brailletable":"Table de transcription  ",
+    "param.brailleselectlabel":"Table Braille",
+    "param.charperline":"Nombre de caractères par ligne",
+    "param.lineperpage":"Nombre de lignes par page",
+    "param.buttonrefresh":"Actualiser",
+    "param.langtitle":"Langue de l'application ",
+
+    "layout.param_menu":"Paramètres",
+    "layout.param_print":"Impression",
+    "layout.param_input":"Saisie",
+
+    "input.title":"Saisie du texte",
+    "input.title2":"Formulaire de saisie du texte",
+
+    "print_button_prec":"Page précédente",
+    "print_button_next":"Page suivante",
+    "print.printinprogress":"Impression en cours",
+    "print.printwait":"Merci de patienter",
+    "print.printselectpage":"Sélection de la page à imprimer"
+}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 import { Outlet, Link } from "react-router-dom";
 
 
@@ -31,6 +32,7 @@ class Layout extends Component
   }
   render ()
   {
+    
       return (
         <div className='main_div'>
 
@@ -47,19 +49,22 @@ class Layout extends Component
                           onClick={this.onClickMenu}
                           
                           >
-                          Saisie
+                          <FormattedMessage id="layout.param_input" defaultMessage="Saisie"/>  
+                          
                         </Link>
 
                       </li>
 
                       <li className="pure-menu-item">
                         <Link to="/impression" className="pure-menu-link" onClick={this.onClickMenu}>
-                          Impression
+                          
+                          <FormattedMessage id="layout.param_print" defaultMessage="Impression"/>
                         </Link>
                       </li>
                       <li className="pure-menu-item">  
                         <Link to="/parametre" className="pure-menu-link" onClick={this.onClickMenu}>
-                          Paramètres
+                          
+                          <FormattedMessage id="layout.param_menu" defaultMessage="Paramètres"/>
                         </Link>
                       </li>
                     </ul>
@@ -75,6 +80,7 @@ class Layout extends Component
               <div className="pure-u-1-5 bodyside"></div>
 
               <div className="pure-u-3-5 bodymain">
+              
                 <div aria-live={"polite"} aria-atomic={false} role={"log"} aria-relevant={"all"}>
                 <Outlet />
               </div>

@@ -150,6 +150,21 @@ body {
   
 }
 
+.formparam {
+  text-align: left;
+  width:100%;
+  margin-left: 5%;
+}
+.formparam h1
+{
+  text-align: left;
+  margin-left: 20%;
+}
+.formparam p
+{
+  text-align: left;
+  margin-left: 20%;
+}
 svg {cursor: default;
   -webkit-user-select: none;
   -moz-user-select: none;

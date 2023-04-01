@@ -12,7 +12,7 @@ import { eel } from "./eel.js";
 import AppOption from "./pages/components/AppOption";
 import Modal from "react-modal"
 import libLouis from "./modules/libLouisReact";
-
+import { IntlProvider } from "react-intl";
 
 class App extends Component {
     constructor(props)
@@ -104,7 +104,8 @@ class App extends Component {
         return (<h1>Chargement...</h1>);
 
       return (
-      <BrowserRouter>
+      
+        <BrowserRouter>
             <Routes >
               <Route path="/" element={<Layout focuscb={this.onMenuClick} status={this.state.serialstatus}/>}>
                 <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options} focusref={this.focusReference}/> } />
@@ -117,6 +118,7 @@ class App extends Component {
               </Route>
             </Routes>
           </BrowserRouter>
+      
       );
     }
 }

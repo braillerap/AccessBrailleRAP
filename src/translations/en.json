@@ -1,0 +1,26 @@
+{
+    "app.header":"Hello the f.. world",
+    "param.header":"Application parameters",
+    "param.nocomport":"No serial port",
+    "param.labelport":"Communication serial port ",
+    "param.nobrailletable":"No Braille transcription table",
+    "param.brailletable":"Transcription table  ",
+    "param.brailleselectlabel":"Braille table",
+    "param.charperline":"Charactèrs per line",
+    "param.lineperpage":"Lines per page",
+    "param.buttonrefresh":"Refresh",
+    "param.langtitle":"Application language ",
+
+    "layout.param_menu":"Parameters",
+    "layout.param_print":"Printing",
+    "layout.param_input":"Text input", 
+    "input.title":"Text input",
+    "input.title2":"Text input form",
+
+    "print_button_prec":"Previous page",
+    "print_button_next":"Next page",
+    "print.printinprogress":"Print in progress",
+    "print.printwait":"Please wait",
+    "print.printselectpage":"Select page to print"
+}
+

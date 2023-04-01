@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { json } from 'react-router-dom';
+import { IntlContext } from '../components/intlwrapper.js';
+import { FormattedMessage } from 'react-intl';
 
 import { eel } from "../eel.js";
 
@@ -13,6 +15,8 @@ function  braille_info (fname, desc, lang, region) {
 }
 
 class Parameters extends React.Component {
+
+    static contextType = IntlContext;
 
     constructor (props)
     {
@@ -145,19 +149,22 @@ class Parameters extends React.Component {
     {
       if (this.state.data === null)
         return (
-          <p aria-hidden='true'>Aucun port de com</p>
+          <p aria-hidden='true'><FormattedMessage id="param.nocomport" defaultMessage="Aucun port de communication"/></p>
         );
       else if (this.state.data.length === 0)
         return (
-        <p aria-hidden='true'>Aucun port de com</p>
+        <p aria-hidden='true'><FormattedMessage id="param.nocomport" defaultMessage="Aucun port de communication"/></p>
             );
       else  
       { 
         
         return (
          <>
-         <p aria-label={'Port de communication ' + this.props.options.comport + ' : '} >{'Port de communication ' + this.state.options.comport}</p>
-         <label aria-hidden='true' htmlFor='selectport'>Port de communication</label>
+         <p aria-label={'Port de communication ' + this.props.options.comport + ' : '} >
+         <FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> 
+            <b>{this.state.options.comport}</b>
+        </p>
+         <label aria-hidden='true' htmlFor='selectport'><FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> </label>
          <select onChange={this.handleChangePort}  value={this.props.options.comport} name="selectport">
             
          
@@ -179,15 +186,19 @@ class Parameters extends React.Component {
     {
       if (this.state.brailleinfo.length === 0)
       {
-        return (<p aria-hidden='true'>Aucune table de transcription</p>)
+        return (<p aria-hidden='true'><FormattedMessage id="param.nobrailletable" defaultMessage="Aucune table de transcription"/> </p>)
       }
       let selectedtable ="vide";
       if (this.state.options.brailletbl < this.state.brailleinfo.length)
         selectedtable = this.state.brailleinfo[this.state.options.brailletbl].desc;
       return (
         <>
-        <p aria-label={'Table de transcription ' + selectedtable + ' : '} >{'Table de transcription  ' + selectedtable}</p>
-        <label aria-hidden='true' htmlFor='selectbraille'>Table Braille</label>
+        <p aria-label={'Table de transcription ' + selectedtable + ' : '} >
+          <FormattedMessage id="param.brailletable" defaultMessage="Table de transcription  "/>
+          <b>{selectedtable}</b></p>
+        <label aria-hidden='true' htmlFor='selectbraille'>
+        <FormattedMessage id="param.brailleselectlabel" defaultMessage="Table Braille"/>
+          </label>
         <select onChange={this.handleChangeBraille}  value={this.props.options.brailletbl} name="selectbraille"
            autoFocus
            ref={this.props.focusref}>
@@ -226,7 +237,7 @@ class Parameters extends React.Component {
                 
               <form 
                 aria-label="Formulaire de paramétrage de l'application" 
-                className='pure-form pure-form-aligned' 
+                className='formparam pure-form pure-form-aligned' 
                 aria-live="assertive" 
                 role="log" 
                 aria-relevant="all" 
@@ -235,57 +246,75 @@ class Parameters extends React.Component {
                 >
                 
                 <fieldset>
-               
-                <h1>Formulaire de paramétrage de l'application</h1>
+                                
+                <h1>
+                  <FormattedMessage
+                    id = "param.header"
+                    defaultMessage="Formulaire de paramétrage de l'application"
+                  />
+              </h1>
                 <div className="pure-control-group">
                 {this.render_braille_lang()}
                 </div>
                 <div className="pure-control-group">
-                <label  htmlFor='nbcol' aria-label='Nombre de caractères par ligne'>
-                  Nombre de caractères par ligne
-                </label>
-                  <input type="number" aria-label='Nombre de caractères par ligne' 
-                    step="1" min="5" max="35" name="nbcol" id="nbcol"
-                    value={this.props.options.nbcol} 
-                    onChange={this.handleChangeNbCol} 
-                   
-                  />
-                
+                  <label  htmlFor='nbcol' aria-label='Nombre de caractères par ligne'>
+                  <FormattedMessage id="param.charperline" defaultMessage="Nombre de caractères par ligne"/>
+                  </label>
+                    <input type="number" aria-label='Nombre de caractères par ligne' 
+                      step="1" min="5" max="35" name="nbcol" id="nbcol"
+                      value={this.props.options.nbcol} 
+                      onChange={this.handleChangeNbCol} 
+                    
+                    />
                 </div>
                 <div className="pure-control-group">
-                <label  
-                  aria-label='Nombre de lignes par page' 
-                  htmlFor='nbline'>
-                  Nombre de lignes par page
-                </label> 
-                <input  
-                  aria-label='Nombre de lignes par page' 
-                  type="number" 
-                  step="1" 
-                  min="5" 
-                  max="35" 
-                  name="nbline" 
-                  id="nbline" 
-                  value={this.props.options.nbline} 
-                  onChange={this.handleChangeNbLine} 
-                />
-                
+                  <label  
+                    aria-label='Nombre de lignes par page' 
+                    htmlFor='nbline'>
+                    <FormattedMessage id="param.lineperpage" defaultMessage="Nombre de lignes par page"/>
+                    
+                  </label> 
+                  <input  
+                    aria-label='Nombre de lignes par page' 
+                    type="number" 
+                    step="1" 
+                    min="5" 
+                    max="35" 
+                    name="nbline" 
+                    id="nbline" 
+                    value={this.props.options.nbline} 
+                    onChange={this.handleChangeNbLine} 
+                  />
                 </div>
-                <div 
-                >
+                <div className='pure-control-group'>
                   
                     {this.render_comport()}
                     <button  
                       aria-label='bouton actualiser les ports de communications' 
                       className="pure-button pad-button" 
                       onClick={this.handleRefreshPort}
-                      >Actualiser
+                      >
+                        <FormattedMessage id="param.buttonrefresh" defaultMessage="Actualiser"/>
+                        
                     </button>      
-
                 </div>
-                
+
+                <div className='pure-control-group'>
+                  <p>
+                  <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application "/>
+                    
+                    <b>{this.context.locale}</b></p>
+                  <label  htmlFor='langid' aria-label="Langue de l'application">
+                  <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application "/>
+                  </label>
+                  <select id="langid" value = {this.context.locale} onChange={this.context.selectLanguage}>
+                    <option value= 'en'>English</option>
+                    <option value= 'fr'>French</option>
+                    
+                  </select>
+                </div>
                 </fieldset> 
-               
+             
                 
               </form>
               <h2>{this.state.comevent}</h2>

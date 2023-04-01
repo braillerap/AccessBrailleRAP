@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import { FormattedMessage } from 'react-intl';
 
 
 class TextInput extends React.Component {
@@ -40,7 +40,10 @@ class TextInput extends React.Component {
         return (
         <div aria-label='Formulaire de saisie du texte'>
         
-        <h1 aria-label='Formulaire de saisie du texte'>Saisie du texte</h1>
+        <h1 aria-label='Formulaire de saisie du texte'>
+          
+          <FormattedMessage id="input.title" defaultMessage="Saisie du texte"/>
+          </h1>
         
         <form onSubmit={this.handleSubmit} >
           <textarea  aria-label='zone de saisie du texte pour transcription' value={this.state.txt} onChange={this.handleChange} 
@@ -57,7 +60,11 @@ class TextInput extends React.Component {
             <div >
               
               <form onSubmit={this.handleSubmit} >
-                <h1 aria-atomic={true}>Formulaire de saisie du texte</h1>  
+                <h1 aria-atomic={true}>
+                  
+                  
+                  <FormattedMessage id="input.title2" defaultMessage="Formulaire de saisie du texte"/>
+                  </h1>  
                 
                 <textarea  aria-label='zone de saisie du texte pour transcription' 
                   value={this.state.txt} 
