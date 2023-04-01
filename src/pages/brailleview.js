@@ -187,7 +187,9 @@ class BrailleView extends React.Component {
             ref={this.props.focusref}
             className="pad-button pure-button"
             onClick={this.HandlePrint}
-          >Imprimer
+          >
+            <FormattedMessage id="print.button_print" defaultMessage="Imprimer"/>
+            
           </button>
         </div>
         <label aria-label="Informations "></label>

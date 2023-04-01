@@ -21,6 +21,7 @@
     "print_button_next":"Next page",
     "print.printinprogress":"Print in progress",
     "print.printwait":"Please wait",
-    "print.printselectpage":"Select page to print"
+    "print.printselectpage":"Select page to print",
+    "print.button_print":"Print"
 }
 
