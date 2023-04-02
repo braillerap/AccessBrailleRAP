@@ -10,18 +10,39 @@
     "param.lineperpage":"Nombre de lignes par page",
     "param.buttonrefresh":"Actualiser",
     "param.langtitle":"Langue de l'application ",
+    "param.form_aria":"Formulaire de paramétrage de l'application",
+    "param.cols_aria":"Nombre de caractères par ligne",
+    "param.rows_aria":"Nombre de lignes par page",
+    "param.button_refresh_com_aria":"bouton actualiser les ports de communications",
+    "param.language_aria":"Langue de l'application",
+    "param.wait":"Patientez",
+    "param.comportrefreshed":"Ports de communications actualisés",
 
     "layout.param_menu":"Paramètres",
     "layout.param_print":"Impression",
     "layout.param_input":"Saisie",
+    "layout.print_in_progress":"Impression en cours",
+    "layout.print_not_progress":"Aucune impression en cours",
 
     "input.title":"Saisie du texte",
     "input.title2":"Formulaire de saisie du texte",
+    "input.text_aria":"zone de saisie du texte pour transcription", 
 
     "print_button_prec":"Page précédente",
     "print_button_next":"Page suivante",
     "print.printinprogress":"Impression en cours",
     "print.printwait":"Merci de patienter",
     "print.printselectpage":"Sélection de la page à imprimer",
-    "print.button_print":"Imprimer"
+    "print.button_print":"Imprimer",
+    "print.print_end_aria":"Impression terminée ",
+    "print.button_prec_aria":"bouton page précédente",
+    "print.button_next_aria":"bouton page suivante",
+    "print.print_progress_aria":"Impression en cours",
+    "print.print_wait_aria":"Merci de patienter",
+    "print.select_page_aria":"Sélection de la page à imprimer : ",
+    "print.button_cmd_aria":"Boutons de commandes  : ",
+    "print.info_aria":"Informations ",
+    "print.info_page_aria":"Page",
+    "print.info_over_aria":"sur"
 }
+

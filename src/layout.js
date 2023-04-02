@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Outlet, Link } from "react-router-dom";
-
+import { injectIntl } from 'react-intl';
 
 
 import './App.css';
@@ -24,10 +24,10 @@ class Layout extends Component
   fstatus ()
   {
     if (this.props.status === 0)
-      return (<p>Pas d'impression en cours</p>);
+      return (<p><FormattedMessage id="layout.print_not_progress" defaultMessage="Aucune impression en cours"/></p>);
     else
       return (
-        <h2>Impression en cours</h2>
+        <h2><FormattedMessage id="layout.print_in_progress" defaultMessage="Impression en cours"/></h2>
       )  ;
   }
   render ()
@@ -97,4 +97,4 @@ class Layout extends Component
   }
 }
 
-export default Layout;
+export default injectIntl(Layout);

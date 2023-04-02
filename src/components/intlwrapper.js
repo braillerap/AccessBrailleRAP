@@ -20,6 +20,8 @@ if (local === 'en') {
 const IntlWrapper = (props) => {
    const [locale, setLocale] = useState(local);
    const [messages, setMessages] = useState(lang);
+   
+   
    function selectLanguage(e) {
        const newLocale = e.target.value;
        setLocale(newLocale);
@@ -33,6 +35,8 @@ const IntlWrapper = (props) => {
            }
        }
    }
+
+   
    return (
        <IntlContext.Provider value = {{locale, selectLanguage}}>
            <IntlProvider messages={messages} locale={locale}>

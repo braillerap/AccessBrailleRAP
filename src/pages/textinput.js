@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-
+import { injectIntl } from 'react-intl';
 
 class TextInput extends React.Component {
     
@@ -46,8 +46,9 @@ class TextInput extends React.Component {
           </h1>
         
         <form onSubmit={this.handleSubmit} >
-          <textarea  aria-label='zone de saisie du texte pour transcription' value={this.state.txt} onChange={this.handleChange} 
-          rows={21} cols={27} className="BrailleInput">{this.state.txt}</textarea>
+          <textarea  aria-label={this.props.intl.formatMessage({id:"input.text_aria"})} 
+            value={this.state.txt} onChange={this.handleChange} 
+            rows={21} cols={27} className="BrailleInput">{this.state.txt}</textarea>
       
         </form>
         </div>
@@ -66,7 +67,7 @@ class TextInput extends React.Component {
                   <FormattedMessage id="input.title2" defaultMessage="Formulaire de saisie du texte"/>
                   </h1>  
                 
-                <textarea  aria-label='zone de saisie du texte pour transcription' 
+                <textarea  aria-label={this.props.intl.formatMessage({id:"input.text_aria"})}
                   value={this.state.txt} 
                   onChange={this.handleChange} 
                   rows={this.props.options.nbline} 
@@ -80,4 +81,4 @@ class TextInput extends React.Component {
     }
   }
   
-  export default TextInput;
+  export default injectIntl(TextInput);

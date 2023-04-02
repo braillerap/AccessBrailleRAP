@@ -6,16 +6,27 @@
     "param.nobrailletable":"No Braille transcription table",
     "param.brailletable":"Transcription table  ",
     "param.brailleselectlabel":"Braille table",
-    "param.charperline":"Charactèrs per line",
+    "param.charperline":"Characters per line",
     "param.lineperpage":"Lines per page",
     "param.buttonrefresh":"Refresh",
     "param.langtitle":"Application language ",
 
+    "param.form_aria":"Application parameters form",
+    "param.cols_aria":"Characters per line",
+    "param.rows_aria":"Lines per page",
+    "param.button_refresh_com_aria":"Refresh communication port button",
+    "param.language_aria":"Application language ",
+
+
     "layout.param_menu":"Parameters",
     "layout.param_print":"Printing",
     "layout.param_input":"Text input", 
+    "layout.print_in_progress":"Print in progress",
+    "layout.print_not_progress":"No current print",
+
     "input.title":"Text input",
     "input.title2":"Text input form",
+    "input.text_aria":"Input text area for transcription", 
 
     "print_button_prec":"Previous page",
     "print_button_next":"Next page",

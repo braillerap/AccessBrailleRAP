@@ -2,7 +2,8 @@
 import React from 'react';
 import { json } from 'react-router-dom';
 import { IntlContext } from '../components/intlwrapper.js';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 import { eel } from "../eel.js";
 
@@ -85,10 +86,12 @@ class Parameters extends React.Component {
 
     handleRefreshPort ()
     {
-      this.setState ({comevent:"Patientez"})
+      let msg = this.props.intl.formatMessage({id:"param.wait"});
+      this.setState ({comevent:msg})
       eel.gcode_get_serial()(list => {
           let portinfo = JSON.parse(list);
-          this.setState ({data:portinfo, comevent:"Ports de communications actualisés"})
+          let success = this.props.intl.formatMessage({id:"param.comportrefreshed"});
+          this.setState ({data:portinfo, comevent:success})
 
         }
       );
@@ -160,12 +163,12 @@ class Parameters extends React.Component {
         
         return (
          <>
-         <p aria-label={'Port de communication ' + this.props.options.comport + ' : '} >
+         <p aria-label={this.props.intl.formatMessage({id:"param.labelport"}) + this.props.options.comport + " : "} >
          <FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> 
             <b>{this.state.options.comport}</b>
         </p>
          <label aria-hidden='true' htmlFor='selectport'><FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> </label>
-         <select onChange={this.handleChangePort}  value={this.props.options.comport} name="selectport">
+         <select className='selectbraille' onChange={this.handleChangePort}  value={this.props.options.comport} name="selectport">
             
          
          {this.state.data.map ((line, index)=> {
@@ -199,7 +202,7 @@ class Parameters extends React.Component {
         <label aria-hidden='true' htmlFor='selectbraille'>
         <FormattedMessage id="param.brailleselectlabel" defaultMessage="Table Braille"/>
           </label>
-        <select onChange={this.handleChangeBraille}  value={this.props.options.brailletbl} name="selectbraille"
+        <select className='selectbraille' onChange={this.handleChangeBraille}  value={this.props.options.brailletbl} name="selectbraille"
            autoFocus
            ref={this.props.focusref}>
            
@@ -225,18 +228,23 @@ class Parameters extends React.Component {
         
         return (
           <div aria-hidden='true'>
-            Patientez
+            {this.props.intl.formatMessage({id:"param.wait"})}
           </div>
         );
       }  
         //console.log (this.state.data);
         //console.log ("type :" + typeof(this.state.data).toString());
+        console.log (this.context);
+        console.log (this.props.IntlContext);
+        //const intl = this.props;
+        let tat = this.props.intl.formatMessage({id:"param.langtitle"});
+        //const tat ="toto";
       return (
             
               <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>
-                
+               
               <form 
-                aria-label="Formulaire de paramétrage de l'application" 
+                aria-label={this.props.intl.formatMessage({id:"param.form_aria"})}  
                 className='formparam pure-form pure-form-aligned' 
                 aria-live="assertive" 
                 role="log" 
@@ -246,7 +254,7 @@ class Parameters extends React.Component {
                 >
                 
                 <fieldset>
-                                
+                
                 <h1>
                   <FormattedMessage
                     id = "param.header"
@@ -257,10 +265,10 @@ class Parameters extends React.Component {
                 {this.render_braille_lang()}
                 </div>
                 <div className="pure-control-group">
-                  <label  htmlFor='nbcol' aria-label='Nombre de caractères par ligne'>
+                  <label  htmlFor='nbcol' aria-label={this.props.intl.formatMessage({id:"param.cols_aria"})}>
                   <FormattedMessage id="param.charperline" defaultMessage="Nombre de caractères par ligne"/>
                   </label>
-                    <input type="number" aria-label='Nombre de caractères par ligne' 
+                    <input type="number" aria-label={this.props.intl.formatMessage({id:"param.cols_aria"})} 
                       step="1" min="5" max="35" name="nbcol" id="nbcol"
                       value={this.props.options.nbcol} 
                       onChange={this.handleChangeNbCol} 
@@ -269,13 +277,13 @@ class Parameters extends React.Component {
                 </div>
                 <div className="pure-control-group">
                   <label  
-                    aria-label='Nombre de lignes par page' 
+                    aria-label={this.props.intl.formatMessage({id:"param.rows_aria"})} 
                     htmlFor='nbline'>
                     <FormattedMessage id="param.lineperpage" defaultMessage="Nombre de lignes par page"/>
                     
                   </label> 
                   <input  
-                    aria-label='Nombre de lignes par page' 
+                    aria-label={this.props.intl.formatMessage({id:"param.rows_aria"})}
                     type="number" 
                     step="1" 
                     min="5" 
@@ -290,7 +298,7 @@ class Parameters extends React.Component {
                   
                     {this.render_comport()}
                     <button  
-                      aria-label='bouton actualiser les ports de communications' 
+                      aria-label={this.props.intl.formatMessage({id:"param.button_refresh_com_aria"})} 
                       className="pure-button pad-button" 
                       onClick={this.handleRefreshPort}
                       >
@@ -304,7 +312,7 @@ class Parameters extends React.Component {
                   <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application "/>
                     
                     <b>{this.context.locale}</b></p>
-                  <label  htmlFor='langid' aria-label="Langue de l'application">
+                  <label  htmlFor='langid' aria-label={this.props.intl.formatMessage({id:"param.language_aria"})} >
                   <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application "/>
                   </label>
                   <select id="langid" value = {this.context.locale} onChange={this.context.selectLanguage}>
@@ -327,4 +335,4 @@ class Parameters extends React.Component {
     }
   }
 
-  export default Parameters;
+  export default injectIntl(Parameters);
