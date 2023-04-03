@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     eel.set_host("ws://localhost:8888");
-    eel.hello();
+    //eel.hello();
   }
   render() {
     return (

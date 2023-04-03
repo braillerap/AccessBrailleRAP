@@ -10,13 +10,14 @@ import Parameters from "./pages/parameters";
 import './App.css';
 import { eel } from "./eel.js";
 import AppOption from "./pages/components/AppOption";
-import Modal from "react-modal"
+
 import libLouis from "./modules/libLouisReact";
-import { IntlProvider } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { IntlContext } from './components/intlwrapper.js';
 
+
 class App extends Component {
-    static contextType = IntlContext;
+  static contextType = IntlContext;
 
     constructor(props)
     {
@@ -49,15 +50,17 @@ class App extends Component {
         let option = await eel.gcode_get_parameters ()();
         let params = JSON.parse(option);
         
-        if (params["lang"] === "")
-        {
-            let lang = navigator.language;
-            console.log(lang);
-            this.context.selectLocale (lang);
-            params["lang"] = lang;
-        }
 
-        this.setState ({options:params})
+        console.log (navigator.language);
+        if (params.lang === "")
+        {
+            params.lang = "fr";
+            this.SetOption (params);
+        }
+        else
+          this.setState ({options:params})
+        this.context.setLanguage (params["lang"]);
+
         this.louis = new libLouis();
         this.louis.load (this.LouisLoaded);
         
@@ -112,7 +115,10 @@ class App extends Component {
     render ()
     {
       if (! this.state.louisloaded)
-        return (<h1>Chargement...</h1>);
+        return (
+        <h1>
+          <FormattedMessage id="app.loading" defaultMessage="Chargement..."/>
+        </h1>);
 
       return (
       

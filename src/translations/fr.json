@@ -1,4 +1,6 @@
 {
+    "app.loading":"Chargement...",
+
     "app.header":"coucou les gars et les filles",
     "param.header":"Paramètres de l'application",
     "param.nocomport":"Aucun port de communication",

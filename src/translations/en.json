@@ -1,5 +1,7 @@
 {
-    "app.header":"Hello the f.. world",
+    "app.loading":"Loading...",
+
+    
     "param.header":"Application parameters",
     "param.nocomport":"No serial port",
     "param.labelport":"Communication serial port ",
@@ -16,7 +18,8 @@
     "param.rows_aria":"Lines per page",
     "param.button_refresh_com_aria":"Refresh communication port button",
     "param.language_aria":"Application language ",
-
+    "param.wait":"Please wait",
+    "param.comportrefreshed":"Communication ports actualized",
 
     "layout.param_menu":"Parameters",
     "layout.param_print":"Printing",
@@ -33,6 +36,16 @@
     "print.printinprogress":"Print in progress",
     "print.printwait":"Please wait",
     "print.printselectpage":"Select page to print",
-    "print.button_print":"Print"
+    "print.button_print":"Print",
+    "print.print_end_aria":"Print finished ",
+    "print.button_prec_aria":"previous page button",
+    "print.button_next_aria":"next page button",
+    "print.print_progress_aria":"Print in progress",
+    "print.print_wait_aria":"Please wait",
+    "print.select_page_aria":"Page to print selection : ",
+    "print.button_cmd_aria":"command buttons  : ",
+    "print.info_aria":"Informations ",
+    "print.info_page_aria":"Page ",
+    "print.info_over_aria":" over "
 }
 

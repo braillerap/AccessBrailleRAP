@@ -3,8 +3,8 @@ import React from 'react';
 import { json } from 'react-router-dom';
 import { IntlContext } from '../components/intlwrapper.js';
 import { injectIntl } from 'react-intl';
-import { FormattedMessage, useIntl } from 'react-intl';
-
+import { FormattedMessage} from 'react-intl';
+import { locales } from '../components/locale.js';
 import { eel } from "../eel.js";
 
 function  braille_info (fname, desc, lang, region) {
@@ -38,6 +38,7 @@ class Parameters extends React.Component {
         this.handleRefreshPort = this.handleRefreshPort.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeBraille = this.handleChangeBraille.bind(this);
+        this.handleChangeLanguage = this.handleChangeLanguage.bind(this);
         //console.log ("constructor");
     }
 
@@ -125,6 +126,16 @@ class Parameters extends React.Component {
         this.setState({options:option});  
     }
 
+    handleChangeLanguage (event)
+    {
+      let option = this.props.options
+      option.lang = event.target.value;
+      this.context.setLanguage (event.target.value);
+
+      if (this.props.optioncb)
+        this.props.optioncb(option);
+      
+    }
     handleChangeBraille(event)
     {
       let option = this.props.options
@@ -315,9 +326,26 @@ class Parameters extends React.Component {
                   <label  htmlFor='langid' aria-label={this.props.intl.formatMessage({id:"param.language_aria"})} >
                   <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application "/>
                   </label>
-                  <select id="langid" value = {this.context.locale} onChange={this.context.selectLanguage}>
+                  <select id="langid" 
+                      value={this.context.locale} 
+                      onChange={this.context.selectLanguage}>
                     <option value= 'en'>English</option>
                     <option value= 'fr'>French</option>
+                    
+                  </select>
+
+                  <select id="langid2"
+                  value={this.context.locale} 
+                  onChange={this.handleChangeLanguage}
+                  >
+                  {locales.map ((item, index)=> {
+                    if (this.context.locale === item.lang)
+                      return (<option  aria-selected={true} key={item.lang} value={item.lang}>{item.desc}</option>);
+                    else
+                    return (<option  aria-selected={false} key={item.lang} value={item.lang}>{item.desc}</option>);
+              })
+             }
+                    
                     
                   </select>
                 </div>
