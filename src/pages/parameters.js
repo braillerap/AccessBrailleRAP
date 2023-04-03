@@ -336,7 +336,7 @@ class Parameters extends React.Component {
                     if (this.context.locale === item.lang)
                       return (<option  aria-selected={true} key={item.lang} value={item.lang}>{item.desc}</option>);
                     else
-                    return (<option  aria-selected={false} key={item.lang} value={item.lang}>{item.desc}</option>);
+                      return (<option  aria-selected={false} key={item.lang} value={item.lang}>{item.desc}</option>);
               })
              }
                     
