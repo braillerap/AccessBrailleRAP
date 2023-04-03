@@ -5,7 +5,8 @@ The project now use liblouisreact, a liblouis version slightly modified to run i
 LibLouis
 ========
 The original version of liblouis is available here [https://github.com/liblouis/liblouis](https://github.com/liblouis/liblouis)
-The modified version for react.js is available here [https://github.com/crocsg/liblouisreact](https://github.com/crocsg/liblouisreact)
+The modified version for react.js is available here [https://github.com/crocsg/liblouis](https://github.com/crocsg/liblouis)
+The module for react.js is available here [https://github.com/crocsg/liblouisreact](https://github.com/crocsg/liblouisreact)
 
 liblouis and liblouisreact are licensed under GNU LGPL V2.1
 
