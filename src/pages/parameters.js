@@ -326,15 +326,9 @@ class Parameters extends React.Component {
                   <label  htmlFor='langid' aria-label={this.props.intl.formatMessage({id:"param.language_aria"})} >
                   <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application "/>
                   </label>
-                  <select id="langid" 
-                      value={this.context.locale} 
-                      onChange={this.context.selectLanguage}>
-                    <option value= 'en'>English</option>
-                    <option value= 'fr'>French</option>
-                    
-                  </select>
+                  
 
-                  <select id="langid2"
+                  <select id="langid"
                   value={this.context.locale} 
                   onChange={this.handleChangeLanguage}
                   >
