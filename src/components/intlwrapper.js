@@ -36,9 +36,19 @@ const IntlWrapper = (props) => {
        }
    }
 
+   function selectLocale(e) {
+        setLocale(e);
+        if (e === 'fr') {
+            setMessages(French);
+        } else {
+            setMessages(English);
+             
+        }
+   }
+
    
    return (
-       <IntlContext.Provider value = {{locale, selectLanguage}}>
+       <IntlContext.Provider value = {{locale, selectLanguage, selectLocale}}>
            <IntlProvider messages={messages} locale={locale}>
                {props.children}
            </IntlProvider>

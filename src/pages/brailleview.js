@@ -215,7 +215,7 @@ class BrailleView extends React.Component {
         </label>
 
         <p aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>
-          {this.props.intl.formatMessage({id:"print.info_page_aria"})} {this.state.page + 1} {this.props.intl.formatMessage({id:"print.info_over_aria"})} {this.paginator.getPageNumber()}
+          {this.props.intl.formatMessage({id:"print.info_page_aria"}) + (this.state.page + 1) + this.props.intl.formatMessage({id:"print.info_over_aria"})} {this.paginator.getPageNumber()}
         </p>
         <p aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>
           {this.state.comevent}

@@ -9,7 +9,7 @@ import  IntlWrapper  from './components/intlwrapper'
 require('purecss')
 
 ReactDOM.render(
-    <IntlWrapper  locale="en" defaultLocale="en">
+    <IntlWrapper  locale="" defaultLocale="fr">
         <App />
     </IntlWrapper>
     , document.getElementById('root'));

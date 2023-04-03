@@ -42,7 +42,7 @@
     "print.select_page_aria":"Sélection de la page à imprimer : ",
     "print.button_cmd_aria":"Boutons de commandes  : ",
     "print.info_aria":"Informations ",
-    "print.info_page_aria":"Page",
-    "print.info_over_aria":"sur"
+    "print.info_page_aria":"Page ",
+    "print.info_over_aria":" sur "
 }
 

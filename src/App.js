@@ -13,8 +13,11 @@ import AppOption from "./pages/components/AppOption";
 import Modal from "react-modal"
 import libLouis from "./modules/libLouisReact";
 import { IntlProvider } from "react-intl";
+import { IntlContext } from './components/intlwrapper.js';
 
 class App extends Component {
+    static contextType = IntlContext;
+
     constructor(props)
     {
         super(props);
@@ -46,6 +49,14 @@ class App extends Component {
         let option = await eel.gcode_get_parameters ()();
         let params = JSON.parse(option);
         
+        if (params["lang"] === "")
+        {
+            let lang = navigator.language;
+            console.log(lang);
+            this.context.selectLocale (lang);
+            params["lang"] = lang;
+        }
+
         this.setState ({options:params})
         this.louis = new libLouis();
         this.louis.load (this.LouisLoaded);
