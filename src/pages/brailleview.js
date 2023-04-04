@@ -79,7 +79,7 @@ class BrailleView extends React.Component {
   {
     if (this.timer)
       clearInterval(this.timer);
-    let msg = this.props.intl.formatMessage({id:"view.print_end_aria"}) + this.state.printstatus;
+    let msg = this.props.intl.formatMessage({id:"print.print_end_aria"}) + this.state.printstatus;
     this.setState({comevent:msg});
   }
 
