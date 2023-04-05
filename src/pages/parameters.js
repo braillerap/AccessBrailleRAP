@@ -173,30 +173,30 @@ class Parameters extends React.Component {
       { 
         
         return (
-         <>
-         <p aria-label={this.props.intl.formatMessage({id:"param.labelport"}) + this.props.options.comport + " : "} >
-         <FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> 
+        <>
+        <p aria-hidden='true' toto-label={this.props.intl.formatMessage({id:"param.labelport"}) + this.props.options.comport + " : "} >
+          <FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> 
             <b>{this.state.options.comport}</b>
         </p>
-         <label aria-hidden='true' htmlFor='selectport'><FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> </label>
-         <select className='selectbraille' 
+        <label htmlFor='selectport'>
+          <FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> 
+        </label>
+        <select 
+            className='selectbraille' 
             onChange={this.handleChangePort}  
             value={this.props.options.comport} 
             id="selectport"
-            name="selectport">
-            
+            name="selectport">    
          
-         {this.state.data.map ((line, index)=> {
+        {this.state.data.map ((line, index)=> {
                   if (line.device === this.props.options.comport)
                     return (<option  aria-selected='true' key={line.device} value={line.device}>{line.device} {line.description}</option>);
                   else
                     return (<option  aria-selected='false' key={line.device} value={line.device}>{line.device} {line.description}</option>);
                })
-              }
-                    
-         </select>
-
-         </>
+        }     
+        </select>
+        </>
         );
       }
     }
@@ -211,10 +211,11 @@ class Parameters extends React.Component {
         selectedtable = this.state.brailleinfo[this.state.options.brailletbl].desc;
       return (
         <>
-        <p aria-label={'Table de transcription ' + selectedtable + ' : '} >
+        <p aria-hidden='true' toto-label={'Table de transcription ' + selectedtable + ' : '} >
           <FormattedMessage id="param.brailletable" defaultMessage="Table de transcription  "/>
-          <b>{selectedtable}</b></p>
-        <label aria-hidden='true' htmlFor='combobraille'>
+          <b>{selectedtable}</b>
+        </p>
+        <label htmlFor='combobraille'>
         <FormattedMessage id="param.brailleselectlabel" defaultMessage="Table Braille"/>
           </label>
         <select className='selectbraille' 
