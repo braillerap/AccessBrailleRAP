@@ -179,7 +179,11 @@ class Parameters extends React.Component {
             <b>{this.state.options.comport}</b>
         </p>
          <label aria-hidden='true' htmlFor='selectport'><FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> </label>
-         <select className='selectbraille' onChange={this.handleChangePort}  value={this.props.options.comport} name="selectport">
+         <select className='selectbraille' 
+            onChange={this.handleChangePort}  
+            value={this.props.options.comport} 
+            id="selectport"
+            name="selectport">
             
          
          {this.state.data.map ((line, index)=> {
@@ -210,11 +214,15 @@ class Parameters extends React.Component {
         <p aria-label={'Table de transcription ' + selectedtable + ' : '} >
           <FormattedMessage id="param.brailletable" defaultMessage="Table de transcription  "/>
           <b>{selectedtable}</b></p>
-        <label aria-hidden='true' htmlFor='selectbraille'>
+        <label aria-hidden='true' htmlFor='combobraille'>
         <FormattedMessage id="param.brailleselectlabel" defaultMessage="Table Braille"/>
           </label>
-        <select className='selectbraille' onChange={this.handleChangeBraille}  value={this.props.options.brailletbl} name="selectbraille"
-           autoFocus
+        <select className='selectbraille' 
+            onChange={this.handleChangeBraille}  
+            value={this.props.options.brailletbl} 
+            name="combobraille"
+            id="combobraille"
+           
            ref={this.props.focusref}>
            
         
