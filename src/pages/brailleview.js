@@ -190,8 +190,8 @@ class BrailleView extends React.Component {
 
           </div>
         </Modal>
-        <label aria-label={this.props.intl.formatMessage({id:"print.select_page_aria"})}></label>
-        <h1 aria-hidden={true}>
+        
+        <h1 aria-label={this.props.intl.formatMessage({id:"print.select_page_aria"})}>
           <FormattedMessage id="print.printselectpage" defaultMessage="Sélection de la page à imprimer"/>
         </h1>
 
