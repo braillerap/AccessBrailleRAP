@@ -10,10 +10,6 @@ body {
   height: 100%;
 }
 
-
-
-
-
 .menu_font {
   font-size: calc(4px + 2vmin);
 }
@@ -92,6 +88,7 @@ body {
   margin-top: 1em;
   min-height: 100%;
 }
+
 .BrailleView {
   text-align: center;
   margin-left: auto;
