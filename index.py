@@ -5,8 +5,6 @@ import serial.tools.list_ports
 import time
 import json
 import platform
-import win32event
-import win32api
 import sys
 
 class SerialStatus :
