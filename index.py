@@ -5,6 +5,9 @@ import serial.tools.list_ports
 import time
 import json
 import platform
+import win32event
+import win32api
+import sys
 
 class SerialStatus :
     Ready = 0
@@ -188,8 +191,20 @@ def gcode_get_serial ():
     
     return js
 
+"""
+def single_instance():
+    mutexname = 'Global\\' + sys.argv[0]
+    mutex = win32event.CreateMutex(None, 1, mutexname)
+    lasterror = win32api.GetLastError()
+    print (lasterror)
+    if lasterror != 0:
+        sys.exit("Une autre instance de ce programme est déjà en cours d'exécution.")
+"""        
+
 if __name__ == '__main__':
     devel = False
+    
+    #single_instance ()
 
     load_parameters ()
     print (app_options)
