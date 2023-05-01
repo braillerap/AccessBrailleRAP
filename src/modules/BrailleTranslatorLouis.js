@@ -39,6 +39,16 @@ class BrailleTranslatorLouis extends BrailleTranslator{
         return (this.lines);
     }
 
+    getLinePadding ()
+    {
+        if (this.louis != null)
+            if (this.louis.get_table_flags (this.louis_tbl) & 0x001 != 0)
+                return 12;
+            else
+                return 10;
+        return 12;
+    }
+
     getBrailleLines ()
     {
         return (this.braille_lines);

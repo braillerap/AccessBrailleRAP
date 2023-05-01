@@ -261,10 +261,10 @@ lou_translateString(const char *tableList, const widechar *inbuf, int *inlen,
                             ["number"], 
                             [i]
                             );
-            let str = module.AsciiToString (result);
+            //let str = module.AsciiToString (result);
 
             
-            return (str);
+            return (result);
             });
     }
 class libLouis 

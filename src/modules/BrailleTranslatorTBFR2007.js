@@ -31,6 +31,11 @@ class BrailleTranslatorTBFR2007 extends BrailleTranslator{
     {
         return (this.braille_lines);
     }
+
+    getLinePadding ()
+    {
+        return 12;
+    }
     
 
     transcript (word)

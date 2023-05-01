@@ -31,7 +31,10 @@ class BrailleTranslator {
         return (this.braille_lines);
     }
     
-    
+    getLinePadding ()
+    {
+        return 10;
+    }
  
     translate ()
     {

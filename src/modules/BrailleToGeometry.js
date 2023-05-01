@@ -41,7 +41,10 @@ class BrailleToGeometry
         
         return (pts);
     }
-    
+    setPaddingY (value)
+    {
+        this.char_paddingy = value;
+    }
     SortGeom (geom)
     {
         geom.sort (function (a,b) {

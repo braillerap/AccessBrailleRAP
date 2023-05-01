@@ -7,12 +7,12 @@ import { FormattedMessage} from 'react-intl';
 import { locales } from '../components/locale.js';
 import { eel } from "../eel.js";
 
-function  braille_info (fname, desc, lang, region) {
+function  braille_info (fname, desc, lang, region, flags) {
   this.fname =fname;
   this.desc = desc;
   this.lang = lang;
   this.region = region;
-  
+  this.flags = flags;
 }
 
 class Parameters extends React.Component {
@@ -60,11 +60,14 @@ class Parameters extends React.Component {
         for (let i = 0; i < nbr; i++)
         {
           let description = louis.get_table_description(i);
+          let flags = louis.get_table_flags(i);
+          //console.log (description + " " + typeof(flags) + " " + flags.toString(16));
           let br = new braille_info(
             louis.get_table_fname(i), 
             description,
             louis.get_table_lang(i), 
-            louis.get_table_region(i)
+            louis.get_table_region(i),
+            louis.get_table_flags (i)
           );
           brtable.push (
             br
@@ -190,9 +193,9 @@ class Parameters extends React.Component {
          
         {this.state.data.map ((line, index)=> {
                   if (line.device === this.props.options.comport)
-                    return (<option  aria-selected='true' key={line.device} value={line.device}>{line.device} {line.description}</option>);
+                    return (<option  aria-selected='true' key={line.device} value={line.device}>{line.device} {line.description} </option>);
                   else
-                    return (<option  aria-selected='false' key={line.device} value={line.device}>{line.device} {line.description}</option>);
+                    return (<option  aria-selected='false' key={line.device} value={line.device}>{line.device} {line.description} </option>);
                })
         }     
         </select>
@@ -229,9 +232,9 @@ class Parameters extends React.Component {
         
         {this.state.brailleinfo.map ((item, index)=> {
                  if (index === this.props.options.brailletbl)
-                   return (<option  aria-selected='true' key={index} value={index}>{item.lang + " - " + item.desc}</option>);
+                   return (<option  aria-selected='true' key={index} value={index}>{item.lang + " - " + item.desc }</option>);
                  else
-                   return (<option  aria-selected='false' key={index} value={index}>{item.lang + " - " + item.desc}</option>);
+                   return (<option  aria-selected='false' key={index} value={index}>{item.lang + " - " + item.desc }</option>);
               })
              }
                    
