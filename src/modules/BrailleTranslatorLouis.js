@@ -63,12 +63,13 @@ class BrailleTranslatorLouis extends BrailleTranslator{
         // split lines
         this.lines = this.src.split (/\r?\n/)
         this.braille_lines = new Array(this.lines.length);
-
+        console.log (this.lines.length);
         for (let i = 0; i < this.lines.length; i++)
         {
             let line = this.lines[i];
             this.braille_lines[i] = this.louis.unicode_translate_string(line, this.louis_tbl);
-
+            //console.log (this.lines[i]);
+            //console.log (this.braille_lines[i]);
             
         }
 

@@ -57,6 +57,7 @@ class BraillePaginator
         for (let lsrc = 0; lsrc < this.src.length; lsrc++)
         {
             let words = this.src[lsrc].split (String.fromCharCode(0x2800));    
+            console.log (words);
             let current_line ='';
             for (let w = 0; w < words.length; w++)
             {
@@ -67,7 +68,9 @@ class BraillePaginator
                         //console.log ("add :"+ current_line);
                         this.#addline (current_line);
                         
-                        current_line = words[w];                     
+                        current_line = words[w];    
+                        current_line += String.fromCharCode(0x2800);  
+                        //console.log (">" + current_line)  ;               
                     }        
                     else // we need to cut a long word
                     {
@@ -83,7 +86,7 @@ class BraillePaginator
                 {
                     current_line += words[w];
                     current_line += String.fromCharCode(0x2800);
-                      
+                    //console.log (current_line)  ;
                 }
             }   
             if (current_line !== '')
