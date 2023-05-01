@@ -68,17 +68,44 @@ class BraillePaginator
                         //console.log ("add :"+ current_line);
                         this.#addline (current_line);
                         
-                        current_line = words[w];    
-                        current_line += String.fromCharCode(0x2800);  
-                        //console.log (">" + current_line)  ;               
+                        if (words[w].length < this.cols)
+                        {
+                            current_line = words[w];    
+                            current_line += String.fromCharCode(0x2800);  
+                            //console.log (">" + current_line)  ;               
+                        }
+                        else // we need to cut a long word
+                        {
+                            current_line = '';
+                            let start = current_line.length;
+                            let cut = 1;
+                            for (let l = 0; l < words[w].length; l += cut)
+                            {
+                                cut = Math.min (start + this.cols, words[w].length - l)
+                                
+                                current_line = words[w].substring (l, l + cut);
+                                
+                                this.#addline (current_line);
+                                start = 0;
+                            }
+                            current_line = "";
+                        }
                     }        
                     else // we need to cut a long word
                     {
-                        for (let l = 0; l < words[w].length; l+= this.cols)
+                        //console.log (">" + words[w]);
+                        let start = current_line.length;
+                        let cut = 1;
+                        for (let l = 0; l < words[w].length; l += cut)
                         {
-                            current_line = words[w].substring (l, Math.min (l + this.cols, words[w].length - l));
+                            cut = Math.min (start + this.cols, words[w].length - l)
+                            //console.log ("-" +  l.toString() + "-" + cut.toString());
+                            current_line = words[w].substring (l, l + cut);
+                            //console.log ("+" +  l.toString() + "+" + current_line);
                             this.#addline (current_line);
+                            start = 0;
                         }
+                        current_line = "";
                     }
                     
                 }
