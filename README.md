@@ -52,21 +52,21 @@ $ pip install -r requirement.txt
 
 Install all react/js dependencies
 ```
-$ yarn install
+$ npm i
 ```
 
 Develop on React GUI
 ====================
 
 ```
-$ yarn start
+$ npm start
 ```
 
 Build as GUI App
 ================
 
 ```
-$ yarn build
+$ npm build
 ```
 
 check `dist/AccessBrailleRAP.exe`
