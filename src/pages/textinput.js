@@ -57,27 +57,31 @@ class TextInput extends React.Component {
     
       }
       else
-      return (
-            <div >
-              
-              <form onSubmit={this.handleSubmit} >
-                <h1 aria-atomic={true}>
-                  
-                  
-                  <FormattedMessage id="input.title2" defaultMessage="Formulaire de saisie du texte"/>
-                  </h1>  
+      {
+        const ncols = parseInt(this.props.options.nbcol);
+        const nlines = parseInt(this.props.options.nbline);
+        return (
+              <div >
                 
-                <textarea  aria-label={this.props.intl.formatMessage({id:"input.text_aria"})}
-                  value={this.state.txt} 
-                  onChange={this.handleChange} 
-                  rows={this.props.options.nbline} 
-                  cols={this.props.options.nbcol} 
-                  ref={this.props.focusref}
-                  className="BrailleInput">{this.state.txt}</textarea>
-                
-              </form>
-          </div>
-        );
+                <form onSubmit={this.handleSubmit} >
+                  <h1 aria-atomic={true}>
+                    
+                    
+                    <FormattedMessage id="input.title2" defaultMessage="Formulaire de saisie du texte"/>
+                    </h1>  
+                  
+                  <textarea  aria-label={this.props.intl.formatMessage({id:"input.text_aria"})}
+                    value={this.state.txt} 
+                    onChange={this.handleChange} 
+                    rows={ncols} 
+                    cols={nlines} 
+                    ref={this.props.focusref}
+                    className="BrailleInput">{this.state.txt}</textarea>
+                  
+                </form>
+            </div>
+          );
+      }
     }
   }
   

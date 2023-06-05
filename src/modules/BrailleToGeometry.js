@@ -17,7 +17,7 @@ class BrailleToGeometry
     {
         this.dotx_padding = 2.3;
         this.doty_padding = 2.3;
-        this.char_paddingx = 7;
+        this.char_paddingx = 6;
         this.char_paddingy = 12;
     }
 

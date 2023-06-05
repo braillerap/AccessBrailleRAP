@@ -90,13 +90,11 @@ def PrintGcode (gcode, comport):
     try:
         if serial_status == SerialStatus.Busy:
             print ("Printer busy")
-            return
+            return ("Print in progress :")
+        
         serial_status = SerialStatus.Busy
         with serial.Serial(comport, 250000, timeout=2, write_timeout=2) as Printer:
             print(comport, 'is open')
-            
-            
-            
 
             # Hit enter a few times to wake up
             Printer.write(str.encode("\r\n\r\n"))
