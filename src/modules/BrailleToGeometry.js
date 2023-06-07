@@ -15,8 +15,8 @@ class BrailleToGeometry
 {
     constructor ()
     {
-        this.dotx_padding = 2.3;
-        this.doty_padding = 2.3;
+        this.dotx_padding = 2.2;
+        this.doty_padding = 2.2;
         this.char_paddingx = 6;
         this.char_paddingy = 12;
     }

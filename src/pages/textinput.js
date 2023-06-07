@@ -14,6 +14,22 @@ class TextInput extends React.Component {
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
+      this.handleimport = this.handleimport.bind(this);
+    }
+
+    async handleimport(event)
+    {
+        event.preventDefault();
+        let ret = await eel.import_pandoc ()();
+        console.log (ret);
+        if (ret.length > 0)
+        {
+          let data = JSON.parse(ret);
+          console.log (data);
+          //for (let i = 0; i < ret.length; i++)
+          this.props.textcb(data);
+          this.setState({txt: data});
+        }
     }
 
     handleSubmit(event) 
@@ -48,7 +64,7 @@ class TextInput extends React.Component {
         <form onSubmit={this.handleSubmit} >
           <textarea  aria-label={this.props.intl.formatMessage({id:"input.text_aria"})} 
             value={this.state.txt} onChange={this.handleChange} 
-            rows={21} cols={27} className="BrailleInput">{this.state.txt}</textarea>
+            rows={10} cols={10} className="BrailleInput">{this.state.txt}</textarea>
       
         </form>
         </div>
@@ -64,11 +80,11 @@ class TextInput extends React.Component {
               <div >
                 
                 <form onSubmit={this.handleSubmit} >
+                
+                  <button onClick={this.handleimport} className="pure-button pad-button" >{this.props.intl.formatMessage({id:"input.loadfile"})}</button>
                   <h1 aria-atomic={true}>
-                    
-                    
                     <FormattedMessage id="input.title2" defaultMessage="Formulaire de saisie du texte"/>
-                    </h1>  
+                  </h1>  
                   
                   <textarea  aria-label={this.props.intl.formatMessage({id:"input.text_aria"})}
                     value={this.state.txt} 

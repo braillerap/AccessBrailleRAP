@@ -6,6 +6,10 @@ import time
 import json
 import platform
 import sys
+import zipfile
+import tkinter as tk
+import tkinter.filedialog 
+import pypandoc
 
 class SerialStatus :
     Ready = 0
@@ -82,6 +86,28 @@ def gcode_get_parameters ():
 @eel.expose
 def printer_get_status ():
     return serial_status
+
+@eel.expose 
+def import_pandoc():
+    js =""
+    root = tk.Tk()
+    #top_level = tk.Toplevel(root)
+    #top_level.title("AccessBrailleRAP File")
+    
+
+    
+    fname = tkinter.filedialog.askopenfilename(title = "Select file",filetypes = (("all files","*.*"),))
+    #print ("fname", fname)
+    root.destroy()
+    if fname != "":
+         
+        linel = int (app_options['nbcol'])-1
+        
+        data = pypandoc.convert_file(fname, "plain+simple_tables", extra_args=(), encoding='utf-8', outputfile=None)
+        #print (data)
+        js = json.dumps(data)
+    
+    return js
 
 @eel.expose
 def PrintGcode (gcode, comport):

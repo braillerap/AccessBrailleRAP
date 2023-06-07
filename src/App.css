@@ -61,6 +61,7 @@ body {
   border-color: black;
   font-size: calc(2px + 3vmin);
   height:70vh;
+  font-family: monospace;
 }
 .BrailleInputTable
 {

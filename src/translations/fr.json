@@ -29,6 +29,7 @@
     "input.title":"Saisie du texte",
     "input.title2":"Formulaire de saisie du texte",
     "input.text_aria":"zone de saisie du texte pour transcription", 
+    "input.loadfile":"Importer ...",
 
     "print_button_prec":"Page précédente",
     "print_button_next":"Page suivante",
