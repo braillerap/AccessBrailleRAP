@@ -91,10 +91,6 @@ def printer_get_status ():
 def import_pandoc():
     js =""
     root = tk.Tk()
-    #top_level = tk.Toplevel(root)
-    #top_level.title("AccessBrailleRAP File")
-    
-
     
     fname = tkinter.filedialog.askopenfilename(title = "Select file",filetypes = (("all files","*.*"),))
     #print ("fname", fname)

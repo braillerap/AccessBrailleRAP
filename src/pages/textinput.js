@@ -80,8 +80,8 @@ class TextInput extends React.Component {
               <div >
                 
                 <form onSubmit={this.handleSubmit} >
-                
-                  <button onClick={this.handleimport} className="pure-button pad-button" >{this.props.intl.formatMessage({id:"input.loadfile"})}</button>
+                  <h1 aria-hidden={true}></h1>
+                  <button onClick={this.handleimport} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.loadfile"})}</button>
                   <h1 aria-atomic={true}>
                     <FormattedMessage id="input.title2" defaultMessage="Formulaire de saisie du texte"/>
                   </h1>  
