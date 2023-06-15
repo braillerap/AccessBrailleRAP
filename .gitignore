@@ -30,7 +30,7 @@ yarn-error.log*
 /venv
 __pycache__
 yarn.lock
-parameters.json
+/parameters.json
 package-lock.json
 
 
