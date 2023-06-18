@@ -43,3 +43,7 @@ ply-3.11-py2.py3-none-any.whl
 nsis/AccessBrailleRAP.exe
 nsis/pandoc.exe
 nsis/AccessBrailleRAPSetup.exe
+.vscode/settings.json
+nsis/HeaderBitmap.exe
+nsis/InstallerLogo.bmp
+nsis/HeaderBitmap.nsi
