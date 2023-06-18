@@ -30,7 +30,10 @@
     "input.title":"Text input",
     "input.title2":"Text input form",
     "input.text_aria":"Input text area for transcription", 
-    "input.loadfile":"Import ...",
+    "input.importfile":"Import ...",
+    "input.loadfile":"Load ...",
+    "input.savefile":"Save",
+    "input.saveasfile":"Save As ...",
 
     "print_button_prec":"Previous page",
     "print_button_next":"Next page",

@@ -204,7 +204,7 @@ class BrailleView extends React.Component {
           {this.fpageprec()}
           {this.fpagenext()}
           <button
-            aria-label="imprimer "
+            aria-label={this.props.intl.formatMessage({id:"print.button_print"})}
             ref={this.props.focusref}
             className="pad-button pure-button"
             onClick={this.HandlePrint}

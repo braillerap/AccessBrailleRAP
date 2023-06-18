@@ -15,8 +15,37 @@ class TextInput extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleChange = this.handleChange.bind(this);
       this.handleimport = this.handleimport.bind(this);
+      this.handleload = this.handleload.bind(this);
+      this.handlesave = this.handlesave.bind(this);
+      this.handlesaveas = this.handlesaveas.bind(this);
     }
 
+    async handlesave (event)
+    {
+      event.preventDefault();
+      let ret = await eel.save_file (this.state.txt);
+            
+    }
+    async handlesaveas (event)
+    {
+      event.preventDefault();
+      let ret = await eel.saveas_file (this.state.txt);
+            
+    }
+    async handleload (event)
+    {
+      event.preventDefault();
+      let ret = await eel.load_file ()();
+      console.log (ret);
+      if (ret.length > 0)
+      {
+        let data = JSON.parse(ret);
+        console.log (data);
+        //for (let i = 0; i < ret.length; i++)
+        this.props.textcb(data);
+        this.setState({txt: data});
+      }
+    }
     async handleimport(event)
     {
         event.preventDefault();
@@ -81,7 +110,10 @@ class TextInput extends React.Component {
                 
                 <form onSubmit={this.handleSubmit} >
                   <h1 aria-hidden={true}></h1>
-                  <button onClick={this.handleimport} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.loadfile"})}</button>
+                  <button onClick={this.handleload} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.loadfile"})}</button>
+                  <button onClick={this.handlesave} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.savefile"})}</button>
+                  <button onClick={this.handlesaveas} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.saveasfile"})}</button>
+                  <button onClick={this.handleimport} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.importfile"})}</button>
                   <h1 aria-atomic={true}>
                     <FormattedMessage id="input.title2" defaultMessage="Formulaire de saisie du texte"/>
                   </h1>  

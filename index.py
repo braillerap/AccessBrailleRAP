@@ -17,6 +17,7 @@ class SerialStatus :
 
 serial_port = None
 serial_status = SerialStatus.Ready
+filename = ""
 
 app_options = {
     'comport':'COM1',
@@ -88,17 +89,72 @@ def printer_get_status ():
     return serial_status
 
 @eel.expose 
-def import_pandoc():
+def saveas_file(data):
+    global filename
+    
+    root = tk.Tk()
+
+    fname = tkinter.filedialog.asksaveasfilename(title = "Select file",filetypes = (("all files","*.*"),))
+    
+    if fname =="":
+        return
+    filename = fname
+    root.destroy()
+
+    with open(filename, "w", encoding='utf8') as inf:
+        print (data)
+        inf.writelines(data)
+        
+
+@eel.expose 
+def save_file(data):
+    global filename
+    if filename == "":
+        root = tk.Tk()
+    
+        fname = tkinter.filedialog.asksaveasfilename(title = "Select file",filetypes = (("all files","*.*"),))
+        print ("fname", fname)
+        if fname =="":
+            return
+        filename = fname
+        root.destroy()
+
+    with open(filename, "w", encoding='utf8') as inf:
+        print (data)
+        inf.writelines(data)
+        
+    
+    
+
+@eel.expose 
+def load_file():
+    global filename
     js =""
     root = tk.Tk()
     
     fname = tkinter.filedialog.askopenfilename(title = "Select file",filetypes = (("all files","*.*"),))
     #print ("fname", fname)
     root.destroy()
+    if fname == "":
+        return js
+    with open(fname, "rt", encoding='utf8') as inf:
+        data = inf.read()
+        js = json.dumps(data)
+        filename = fname
+    
+    return js
+
+@eel.expose 
+def import_pandoc():
+    global filename
+    js =""
+    root = tk.Tk()
+    fname = tkinter.filedialog.askopenfilename(title = "Select file",filetypes = (("all files","*.*"),))
+    
+    #print ("fname", fname)
+    root.destroy()
     if fname != "":
-         
-        linel = int (app_options['nbcol'])-1
-        
+        filename = ""
         data = pypandoc.convert_file(fname, "plain+simple_tables", extra_args=(), encoding='utf-8', outputfile=None)
         #print (data)
         js = json.dumps(data)
