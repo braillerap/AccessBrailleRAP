@@ -121,8 +121,8 @@ class TextInput extends React.Component {
                   <textarea  aria-label={this.props.intl.formatMessage({id:"input.text_aria"})}
                     value={this.state.txt} 
                     onChange={this.handleChange} 
-                    rows={ncols} 
-                    cols={nlines} 
+                    rows={nlines} 
+                    cols={ncols} 
                     ref={this.props.focusref}
                     className="BrailleInput">{this.state.txt}</textarea>
                   
