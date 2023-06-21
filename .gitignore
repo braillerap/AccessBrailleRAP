@@ -47,3 +47,4 @@ nsis/AccessBrailleRAPSetup.exe
 nsis/HeaderBitmap.exe
 nsis/InstallerLogo.bmp
 nsis/HeaderBitmap.nsi
+testdialog.py

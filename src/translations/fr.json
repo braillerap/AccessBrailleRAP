@@ -33,6 +33,11 @@
     "input.loadfile":"Ouvrir ...",
     "input.savefile":"Enregistrer",
     "input.saveasfile":"Enregistrer sous ...",
+    "input.dialog_open_file":"Ouvrir un fichier",
+    "input.dialog_file_filter_text":"Fichiers texte",
+    "input.dialog_file_filter_generic":"Tous les fichiers",
+    "input.dialog_import_file":"Importer un fichier",
+    "input.dialog_saveas_file":"Enregistrer sous",
 
     "print_button_prec":"Page précédente",
     "print_button_next":"Page suivante",

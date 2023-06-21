@@ -11,7 +11,10 @@ import tkinter as tk
 import tkinter.filedialog 
 import pypandoc
 import os
-import pyi_splash
+try:    #pyi_splash only available while running in pyinstaller
+    import pyi_splash
+except ImportError:
+    pass
 
 class SerialStatus :
     Ready = 0
@@ -91,7 +94,7 @@ def printer_get_status ():
     return serial_status
 
 @eel.expose 
-def saveas_file(data):
+def saveas_file(data, dialogtitle, filterstring):
     global filename
     
     root = tk.Tk()
@@ -129,39 +132,57 @@ def save_file(data):
     
 
 @eel.expose 
-def load_file():
+def load_file(dialogtitle, filterstring):
     global filename
-    js =""
+    js ={
+        "data":"",
+        "error":""
+         }
     root = tk.Tk()
+    print (filterstring)
+    print (type(filterstring))
+    if len(filterstring) < 2:
+        js["error"] = "incorrect file filter"
+        return json.dumps(js)
     
-    fname = tkinter.filedialog.askopenfilename(title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*") ))
+    oldfilter = (("Text files", "*.txt"),("All files", "*.*"))
+    filter = ((filterstring[0], "*.txt"),(filterstring[1], "*.*"))
+    fname = tkinter.filedialog.askopenfilename(title = dialogtitle,filetypes = filter)
+    #fname = tkinter.filedialog.askopenfilename(title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*") ))
     #print ("fname", fname)
     root.destroy()
     if fname == "":
-        return js
+        return json.dumps(js)
     with open(fname, "rt", encoding='utf8') as inf:
-        data = inf.read()
-        js = json.dumps(data)
+        js["data"] = inf.read()
         filename = fname
     
-    return js
+    return json.dumps(js)
 
 @eel.expose 
-def import_pandoc():
+def import_pandoc(dialogtitle, filterstring):
     global filename
-    js =""
+    js ={
+        "data":"",
+        "error":""
+         }
     root = tk.Tk()
-    fname = tkinter.filedialog.askopenfilename(title = "Select file",filetypes = (("all files","*.*"),))
+    filter = ((filterstring[0], "*.*"),)
+    fname = tkinter.filedialog.askopenfilename(title = dialogtitle,filetypes = filter)
     
     #print ("fname", fname)
     root.destroy()
     if fname != "":
         filename = ""
-        data = pypandoc.convert_file(fname, "plain+simple_tables", extra_args=(), encoding='utf-8', outputfile=None)
-        #print (data)
-        js = json.dumps(data)
+        try:
+            js["data"] = pypandoc.convert_file(fname, "plain+simple_tables", extra_args=(), encoding='utf-8', outputfile=None)
+            #print (data)
+        except Exception as e:
+            js["error"] = str(e)
+        
+        
     
-    return js
+    return json.dumps(js)
 
 @eel.expose
 def PrintGcode (gcode, comport):

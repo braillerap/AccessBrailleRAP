@@ -23,41 +23,70 @@ class TextInput extends React.Component {
     async handlesave (event)
     {
       event.preventDefault();
-      let ret = await eel.save_file (this.state.txt);
+      let dialogtitle = this.props.intl.formatMessage({id:"input.dialog_saveas_file"})
+      let filter = [
+        this.props.intl.formatMessage({id:"input.dialog_file_filter_text"}),
+        this.props.intl.formatMessage({id:"input.dialog_file_filter_generic"}),
+      ]
+
+      let ret = await eel.save_file (this.state.txt, dialogtitle, filter);
             
     }
     async handlesaveas (event)
     {
       event.preventDefault();
-      let ret = await eel.saveas_file (this.state.txt);
+      let dialogtitle = this.props.intl.formatMessage({id:"input.dialog_saveas_file"})
+      let filter = [
+        this.props.intl.formatMessage({id:"input.dialog_file_filter_text"}),
+        this.props.intl.formatMessage({id:"input.dialog_file_filter_generic"}),
+      ]
+
+      let ret = await eel.saveas_file (this.state.txt, dialogtitle, filter);
             
     }
     async handleload (event)
     {
       event.preventDefault();
-      let ret = await eel.load_file ()();
+
+      let dialogtitle = this.props.intl.formatMessage({id:"input.dialog_open_file"})
+      let filter = [
+        this.props.intl.formatMessage({id:"input.dialog_file_filter_text"}),
+        this.props.intl.formatMessage({id:"input.dialog_file_filter_generic"}),
+      ]
+      let ret = await eel.load_file (dialogtitle, filter)();
       console.log (ret);
       if (ret.length > 0)
       {
+        //console.log (ret)
         let data = JSON.parse(ret);
         console.log (data);
         //for (let i = 0; i < ret.length; i++)
-        this.props.textcb(data);
-        this.setState({txt: data});
+        this.props.textcb(data.data);
+        this.setState({txt: data.data});
       }
     }
     async handleimport(event)
     {
         event.preventDefault();
-        let ret = await eel.import_pandoc ()();
+        let dialogtitle = this.props.intl.formatMessage({id:"input.dialog_import_file"})
+        let filter = [
+          this.props.intl.formatMessage({id:"input.dialog_file_filter_generic"}),
+        ]
+
+        let ret = await eel.import_pandoc (dialogtitle, filter)();
         console.log (ret);
         if (ret.length > 0)
         {
           let data = JSON.parse(ret);
-          console.log (data);
-          //for (let i = 0; i < ret.length; i++)
-          this.props.textcb(data);
-          this.setState({txt: data});
+          if (data.data.length > 0)
+          {
+            console.log (data);
+            //for (let i = 0; i < ret.length; i++)
+            this.props.textcb(data.data);
+            this.setState({txt: data.data});
+          }
+          else if (data.error.length > 0)
+            alert (data.error);
         }
     }
 

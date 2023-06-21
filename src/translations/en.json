@@ -34,7 +34,12 @@
     "input.loadfile":"Load ...",
     "input.savefile":"Save",
     "input.saveasfile":"Save As ...",
-
+    "input.dialog_open_file":"Open file",
+    "input.dialog_file_filter_text":"Text files",
+    "input.dialog_file_filter_generic":"All files",
+    "input.dialog_import_file":"Import file",
+    "input.dialog_saveas_file":"Save as",
+    
     "print_button_prec":"Previous page",
     "print_button_next":"Next page",
     "print.printinprogress":"Print in progress",
