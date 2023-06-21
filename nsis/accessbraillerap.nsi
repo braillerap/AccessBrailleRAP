@@ -114,6 +114,11 @@ Section "Start Menu Shortcuts"
 
 SectionEnd
 
+Section "-hidden section"
+  MessageBox MB_OK "AccessBrailleRAP need Chrome Browser. You will now be redirected to Chrome Browser website. Please ensure Chrome browser is installed on your PC"
+  ExecShell "open" "https://www.google.com/chrome"
+  
+SectionEnd
 
 ;--------------------------------
 ;Descriptions

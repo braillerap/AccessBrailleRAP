@@ -267,42 +267,6 @@ def gcode_get_serial ():
     
     return js
 
-def resource_path(relative_path):
-    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
-    return os.path.join(base_path, relative_path)
-
-def centerWindow(width, height, root):  # Return 4 values needed to center Window
-        screen_width = root.winfo_screenwidth()  # Width of the screen
-        screen_height = root.winfo_screenheight() # Height of the screen     
-        x = (screen_width/2) - (width/2)
-        y = (screen_height/2) - (height/2)
-        return int(x), int(y)
-       
-def splash ():
-    root = tk.Tk()
-    root.withdraw()
-
-    # SPLASH SCREEN CODE
-    splash_screen = tk.Toplevel(background="white")
-    splash_screen.overrideredirect(True)
-    splash_screen.title("Splash Screen")
-    
-
- 
-    x, y = centerWindow(640, 320, root)
-    splash_screen.geometry(f"640x320+{x}+{y}")
-    image = tk.PhotoImage(file=resource_path("brap.png")) 
-    label = tk.Label(splash_screen, image = image)
-    label.pack()
-    splash_screen.update()
- 
-    # MAIN WINDOW CODE + Other Processing
-    time.sleep(3)
-    root.deiconify ()
-    splash_screen.destroy()
-    #root.mainloop()
-    root.destroy()
-
 
 if __name__ == '__main__':
     devel = False
@@ -312,14 +276,16 @@ if __name__ == '__main__':
     load_parameters ()
     print (app_options)
     
-    try:
-        pyi_splash.close ()
-    except:
-        pass
+    
 
     if len(sys.argv) > 1:
         if sys.argv[1] == '--develop':
             eel.init('client')
+            
+            try:
+                pyi_splash.close ()
+            except:
+                pass    
             
             eel.start({"port": 3000}, host="localhost", port=8888)
             
@@ -327,6 +293,12 @@ if __name__ == '__main__':
 
     if devel == False:
         eel.init('build')
+        
+        try:
+            pyi_splash.close ()
+        except:
+            pass
+        
         try:
             print ("start chrome")
             

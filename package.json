@@ -18,7 +18,7 @@
     "start:js": "react-scripts start",
     "build:js": "react-scripts build",
     "start:eel": "python index.py --develop",
-    "build:eel": "python -m eel index.py build --onefile --noconsole --name AccessBrailleRAP --clean --icon=favicon-32x32.ico",
+    "build:eel": "python -m eel index.py build --onefile --noconsole --name AccessBrailleRAP --clean --icon=favicon-32x32.ico --splash=brap.png",
     "clean:build": "rm -rf build dist",
     "start": "npm-run-all -p start:*",
     "build": "npm-run-all clean:build build:*",
