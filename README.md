@@ -20,6 +20,8 @@ AccesBrailleRAP use pandoc via pypandoc python module, to extract plain text fro
 
 the original version of pandoc is available here [www.pandoc.org](https://www.pandoc.org)
 
+pandoc is licensed under GNU GPL V2.
+
 # Screenshot
 
 ![](./screenshot.jpg)

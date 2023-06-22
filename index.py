@@ -11,10 +11,12 @@ import tkinter as tk
 import tkinter.filedialog 
 import pypandoc
 import os
-try:    #pyi_splash only available while running in pyinstaller
-    import pyi_splash
-except ImportError:
-    pass
+
+if getattr(sys, 'frozen', False):
+    try:    #pyi_splash only available while running in pyinstaller
+        import pyi_splash
+    except ImportError:
+        pass
 
 class SerialStatus :
     Ready = 0
@@ -98,7 +100,7 @@ def saveas_file(data, dialogtitle, filterstring):
     global filename
     
     root = tk.Tk()
-
+    root.geometry("1x1+4096+4096")
     fname = tkinter.filedialog.asksaveasfilename(title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*")))
     root.destroy()
     if fname =="":
@@ -115,7 +117,7 @@ def save_file(data):
     global filename
     if filename == "":
         root = tk.Tk()
-    
+        root.geometry("1x1+4096+4096")
         fname = tkinter.filedialog.asksaveasfilename(title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*")))
         root.destroy()
         
@@ -139,6 +141,8 @@ def load_file(dialogtitle, filterstring):
         "error":""
          }
     root = tk.Tk()
+    root.geometry("1x1+4096+4096")
+
     print (filterstring)
     print (type(filterstring))
     if len(filterstring) < 2:
@@ -167,6 +171,7 @@ def import_pandoc(dialogtitle, filterstring):
         "error":""
          }
     root = tk.Tk()
+    root.geometry("1x1+4096+4096")
     filter = ((filterstring[0], "*.*"),)
     fname = tkinter.filedialog.askopenfilename(title = dialogtitle,filetypes = filter)
     
@@ -292,10 +297,11 @@ def gcode_get_serial ():
 if __name__ == '__main__':
     devel = False
     
+
     #single_instance ()
 
     load_parameters ()
-    print (app_options)
+    #print (app_options)
     
     
 
