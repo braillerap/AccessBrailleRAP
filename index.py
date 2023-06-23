@@ -9,8 +9,10 @@ import sys
 import zipfile
 import tkinter as tk
 import tkinter.filedialog 
+import tkinter.messagebox
 import pypandoc
 import os
+import webbrowser
 
 if getattr(sys, 'frozen', False):
     try:    #pyi_splash only available while running in pyinstaller
@@ -33,6 +35,35 @@ app_options = {
     'brailletbl':70,
     'lang':''
 }
+
+def is_chrome_intalled ():
+    import winreg as reg
+    reg_path = r'SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe'
+    chrome_path = None
+    for install_type in reg.HKEY_CURRENT_USER, reg.HKEY_LOCAL_MACHINE:
+        try:
+            reg_key = reg.OpenKey(install_type, reg_path, 0, reg.KEY_READ)
+            chrome_path = reg.QueryValue(reg_key, None)
+            reg_key.Close()
+            if not os.path.isfile(chrome_path):
+                continue
+            print (chrome_path)
+        except WindowsError:
+            chrome_path = None
+        else:
+            break
+    
+    return os.path.isfile(chrome_path)
+
+def check_chrome ():
+    if not is_chrome_intalled():
+        tk.messagebox.showerror("Error", message="Unable to find Chrome. Please install chrome to use AccessBrailleRAP");
+        
+        url = "https://www.google.com/chrome"
+        webbrowser.open(url, new=0, autoraise=True)
+        
+        return False
+    return True
 
 def remove_comment(string):
     """Remove comments from GCode if any"""
@@ -297,12 +328,15 @@ def gcode_get_serial ():
 if __name__ == '__main__':
     devel = False
     
-
+    print ("App start")
+    if not check_chrome ():
+        exit (-1)
+    
     #single_instance ()
 
     load_parameters ()
     #print (app_options)
-    
+
     
 
     if len(sys.argv) > 1:

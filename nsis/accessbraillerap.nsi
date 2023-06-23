@@ -114,11 +114,22 @@ Section "Start Menu Shortcuts"
 
 SectionEnd
 
-Section "-hidden section"
-  MessageBox MB_OK "AccessBrailleRAP need Chrome Browser. You will now be redirected to Chrome Browser website. Please ensure Chrome browser is installed on your PC"
-  ExecShell "open" "https://www.google.com/chrome"
+Section "Desktop Shortcuts"
+  SetShellVarContext current
+  CreateShortCut "$DESKTOP\AccessBrailleRAP.lnk" "$INSTDIR\AccessBrailleRAP.exe"
   
 SectionEnd
+
+Section Chrome
+  File "ChromeSetup.exe"
+  ExecWait '"$INSTDIR\ChromeSetup.exe"'
+SectionEnd
+
+;Section "-hidden section"
+;  MessageBox MB_OK "AccessBrailleRAP need Chrome Browser. You will now be redirected to Chrome Browser website. Please ensure Chrome browser is installed on your PC"
+;  ExecShell "open" "https://www.google.com/chrome"
+;  
+;SectionEnd
 
 ;--------------------------------
 ;Descriptions
@@ -128,7 +139,7 @@ SectionEnd
 
   ;Assign language strings to sections
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-    !insertmacro MUI_DESCRIPTION_TEXT ${SecDummy} $(DESC_SecDummy)
+  !insertmacro MUI_DESCRIPTION_TEXT ${SecDummy} $(DESC_SecDummy)
   !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 ;--------------------------------
@@ -147,12 +158,16 @@ Section "Uninstall"
   Delete $INSTDIR\uninstall.exe
   Delete $INSTDIR\CDM212364_Setup.exe
   Delete $INSTDIR\CH341SER.EXE
+  Delete $INSTDIR\ChromeSetup.EXE
 
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\AccessBrailleRAP\*.lnk"
-
+    
   ; Remove directories
   RMDir "$SMPROGRAMS\AccessBrailleRAP"
   RMDir "$INSTDIR"
+
+  SetShellVarContext current
+  Delete "$DESKTOP\AccessBrailleRAP.lnk" 
 
 SectionEnd
