@@ -27,6 +27,7 @@ class SerialStatus :
 serial_port = None
 serial_status = SerialStatus.Ready
 filename = ""
+root = None
 
 app_options = {
     'comport':'COM1',
@@ -129,7 +130,8 @@ def printer_get_status ():
 @eel.expose 
 def saveas_file(data, dialogtitle, filterstring):
     global filename
-    
+    global root
+
     root = tk.Tk()
     root.geometry("1x1+4096+4096")
     fname = tkinter.filedialog.asksaveasfilename(title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*")))
@@ -147,9 +149,18 @@ def saveas_file(data, dialogtitle, filterstring):
 def save_file(data):
     global filename
     if filename == "":
+        #init tk to give focus on common dialog
         root = tk.Tk()
-        root.geometry("1x1+4096+4096")
-        fname = tkinter.filedialog.asksaveasfilename(title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*")))
+        root.geometry("1x1+8192+8192")
+        root.focus_set ()
+        root.grab_set_global()
+        
+        start = time.time()
+        while (time.time() - start < 1):
+            root.update_idletasks()
+            root.update()
+
+        fname = tkinter.filedialog.asksaveasfilename(master=root, title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*")))
         root.destroy()
         
         if fname =="":
@@ -171,20 +182,30 @@ def load_file(dialogtitle, filterstring):
         "data":"",
         "error":""
          }
-    root = tk.Tk()
-    root.geometry("1x1+4096+4096")
-
-    print (filterstring)
-    print (type(filterstring))
+    
+    #print (filterstring)
+    #print (type(filterstring))
+    # check file filter
     if len(filterstring) < 2:
         js["error"] = "incorrect file filter"
         return json.dumps(js)
     
+    #init tk to give focus on common dialog
+    root = tk.Tk()
+    root.geometry("1x1+8192+8192")
+    root.focus_set ()
+    root.grab_set_global()
+    
+    start = time.time()
+    while (time.time() - start < 1):
+        root.update_idletasks()
+        root.update()
+    
+    # open common dialog
     oldfilter = (("Text files", "*.txt"),("All files", "*.*"))
     filter = ((filterstring[0], "*.txt"),(filterstring[1], "*.*"))
-    fname = tkinter.filedialog.askopenfilename(title = dialogtitle,filetypes = filter)
-    #fname = tkinter.filedialog.askopenfilename(title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*") ))
-    #print ("fname", fname)
+    fname = tkinter.filedialog.askopenfilename(master = root, title = dialogtitle,filetypes = filter)
+    
     root.destroy()
     if fname == "":
         return json.dumps(js)
@@ -201,13 +222,24 @@ def import_pandoc(dialogtitle, filterstring):
         "data":"",
         "error":""
          }
+    
+    #init tk to give focus on common dialog
     root = tk.Tk()
-    root.geometry("1x1+4096+4096")
+    root.geometry("1x1+8192+8192")
+    root.focus_set ()
+    root.grab_set_global()
+    
+    start = time.time()
+    while (time.time() - start < 1):
+        root.update_idletasks()
+        root.update()
+    
     filter = ((filterstring[0], "*.*"),)
-    fname = tkinter.filedialog.askopenfilename(title = dialogtitle,filetypes = filter)
+    fname = tkinter.filedialog.askopenfilename(master = root, title = dialogtitle,filetypes = filter)
     
     #print ("fname", fname)
     root.destroy()
+
     if fname != "":
         filename = ""
         try:
@@ -337,7 +369,23 @@ if __name__ == '__main__':
     load_parameters ()
     #print (app_options)
 
+    # Open a fake tk frame to init TK and avoid focus issue
+    # when opening common dialog !!
+    root = tk.Tk()
+    root.attributes('-fullscreen', True)
+    root.attributes('-topmost', True)
+   
+    label=tk.Label(root, text="AccessBrailleRAP Loading...", font=('Arial 36'), width=200, height=100)
+    label.pack()
     
+    start = time.time()
+    while (time.time() - start < 5):
+        
+        root.update_idletasks()
+        root.update()
+    root.destroy()
+
+    # end of TK mess, go back to AccessBrailleRAP    
 
     if len(sys.argv) > 1:
         if sys.argv[1] == '--develop':
