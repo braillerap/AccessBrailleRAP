@@ -11,7 +11,7 @@
     "react-intl": "^6.3.2",
     "react-intl-cli": "^0.1.2",
     "react-modal": "^3.16.1",
-    "react-router-dom": "^6.4.3",
+    "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {

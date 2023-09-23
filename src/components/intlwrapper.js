@@ -1,25 +1,20 @@
 import React, {useState} from 'react';
 import {IntlProvider} from 'react-intl';
 import French from '../translations/fr.json';
-//import Arabic from '../lang/ar.json';
 import English from '../translations/en.json';
+import { locales } from '../components/locale.js';
 
 export const IntlContext = React.createContext();
 
 const local = "fr"; //navigator.language;
-let lang;
-if (local === 'en') {
-   lang = English;
-}else {
-   if (local === 'fr') {
-       lang = French;
-   } else {
-       lang = Arabic;
-   }
-}
+let lang = French;
+let localinfo = locales[1];
+
+
 const IntlWrapper = (props) => {
    const [locale, setLocale] = useState(local);
    const [messages, setMessages] = useState(lang);
+   const [localeinfo, setLocaleInfo] = useState(localinfo);
    
    
    function selectLanguage(e) {
@@ -31,7 +26,7 @@ const IntlWrapper = (props) => {
            if (newLocale === 'fr'){
                setMessages(French);
            } else {
-               setMessages(Arabic);
+               setMessages(English);
            }
        }
    }
@@ -41,19 +36,27 @@ const IntlWrapper = (props) => {
         setLocale(lang);
         if (lang === 'en') {
             setMessages(English);
+
         } else 
         {
             setMessages(French);
-            
-
         }
+        locales.map ((item, index)=> {
+            console.log (item);
+            if (lang === item.lang)
+            {
+              setLocaleInfo (item);
+              console.log ("set locale info" + item);
+            }
+            
+        })
    }
 
    
    return (
 
-       <IntlContext.Provider value = {{locale, selectLanguage, setLanguage}}>
-           <IntlProvider messages={messages} locale={locale}>
+       <IntlContext.Provider value = {{locale, localeinfo, selectLanguage, setLanguage}}>
+           <IntlProvider messages={messages} locale={locale} localeinfo={localeinfo}>
                {props.children}
            </IntlProvider>
        </IntlContext.Provider>

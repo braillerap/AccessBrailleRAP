@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
 import { Outlet, Link } from "react-router-dom";
+import { IntlContext } from './components/intlwrapper.js';
 import { injectIntl } from 'react-intl';
+import { FormattedMessage} from 'react-intl';
+import { locales } from './components/locale.js';
 
 
 import './App.css';
@@ -9,6 +11,7 @@ import './App.css';
 
 class Layout extends Component 
 {
+  static contextType = IntlContext;
   constructor (props)
   {
     super (props);
@@ -32,9 +35,13 @@ class Layout extends Component
   }
   render ()
   {
-    
+      
+      let direction = "ltr";
+      if (this.context.localeinfo.dir)
+        direction = this.context.localeinfo.dir;
+
       return (
-        <div className='main_div'>
+        <div className='main_div' dir={direction}>
 
           <header>
             <div className='pure-g'>
@@ -80,7 +87,11 @@ class Layout extends Component
               <div className="pure-u-1-5 bodyside"></div>
 
               <div className="pure-u-3-5 bodymain">
-              
+                
+                <div>
+                  <p>locale:<b>{this.context.locale}</b></p>
+                </div>
+
                 <div aria-live={"polite"} aria-atomic={false} role={"log"} aria-relevant={"all"}>
                 <Outlet />
               </div>

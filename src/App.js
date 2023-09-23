@@ -10,7 +10,6 @@ import Parameters from "./pages/parameters";
 import './App.css';
 import { eel } from "./eel.js";
 import AppOption from "./pages/components/AppOption";
-
 import libLouis from "./modules/libLouisReact";
 import { FormattedMessage } from "react-intl";
 import { IntlContext } from './components/intlwrapper.js';
