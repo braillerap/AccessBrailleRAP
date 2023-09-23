@@ -5,8 +5,10 @@ The project use several open source licensed software:
 - liblouis 
 - pandoc
 
-LibLouis
-========
+## Release
+You wil find packaged installation in [release](https://github.com/braillerap/AccessBrailleRAP/releases).
+
+## LibLouis
 AccessBrailleRAP use lilouis to translate text into Braille. You can select the Braille language (English, French...), contracted or uncontacted Braille, and 6 dots or 8 Dots Braille standard.
 The original version of liblouis is available here [https://github.com/liblouis/liblouis](https://github.com/liblouis/liblouis)
 The modified version for react.js is available here [https://github.com/crocsg/liblouis](https://github.com/crocsg/liblouis)
@@ -14,15 +16,14 @@ The module for react.js is available here [https://github.com/crocsg/liblouisrea
 
 liblouis and liblouisreact are licensed under GNU LGPL V2.1
 
-Pandoc
-======
+## Pandoc
 AccesBrailleRAP use pandoc via pypandoc python module, to extract plain text from various file format as word or open office document. So you can open an .odt file, translate it into Braille and emboss.
 
 the original version of pandoc is available here [www.pandoc.org](https://www.pandoc.org)
 
 pandoc is licensed under GNU GPL V2.
 
-# Screenshot
+## Screenshot
 
 ![](./screenshot.jpg)
 
@@ -30,12 +31,12 @@ pandoc is licensed under GNU GPL V2.
 
 ![](./screenshot2.jpg)
 
-# How to install
+## How to install
 Download the latest installer from github [release](https://github.com/braillerap/AccessBrailleRAP/releases)
 
 The installer will install AccesBrailleRAP, the needed drivers to control BrailleRAP and Chrome browser.
 
-# Instruction for build (Windows)
+## Instruction for build (Windows)
 
 Environnement Install
 =====================
