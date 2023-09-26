@@ -11,13 +11,15 @@ body {
 }
 
 .menu_font {
-  font-size: calc(4px + 2vmin);
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 .main_div {
   width:100%;
   min-height: 100vh;
   background-color:rgb(255, 255, 255);
+  
 }
 
 .main_layout {
@@ -30,24 +32,25 @@ body {
 .headermain {
   border-color: rgb(175, 129, 69);
   background-color: rgb(255, 253, 253);
-  height: 10vh;
+  height: 8vh;
+  
 }
 .headerside {
   border-color: burlywood;
   background-color: rgb(58, 53, 53);
-  height: 10vh;
+  height: 8vh;
 }
 
 .bodymain {
   border-color: rgb(175, 129, 69);
   background-color: rgb(255, 253, 253);
-  height: 90vh;
+  height: 92vh;
 }
 
 .bodyside {
   border-color: burlywood;
   background-color: rgb(58, 53, 53);
-  height: 90vh;
+  height: 92vh;
 }
 
 .statusbar {
@@ -72,7 +75,7 @@ body {
   margin-top: 80px;
   margin-bottom: 80px;
   /*font-size: calc(10px + 8vmin);*/
-  scale: 2;
+  scale: 1;
 }
 
 .BrailleDotInput {
@@ -111,12 +114,14 @@ body {
 
 .pad-button {
   
-  margin-left: 0.4em;
-  margin-right: 0.4em;
-  padding: 0.5em !important;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  padding: 0.5rem !important;
   border-width: 0.1em !important;
   border-style: hidden !important ;
   border-radius: 4px !important;
+  font-size: 1.5rem !important;
+  
 }
 .pad-button:focus {
   border:black !important;
@@ -167,10 +172,17 @@ body {
   text-align: start;
   margin-left: 20%;
   margin-right: 20%;
+  font-size: 1.5em;
+}
+.formparam label
+{
+  font-size: 1.3em;
 }
 .selectbraille {
    width:50%; 
 }
+
+
 
 svg {cursor: default;
   -webkit-user-select: none;

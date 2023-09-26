@@ -87,12 +87,10 @@ class Layout extends Component
               <div className="pure-u-1-5 bodyside"></div>
 
               <div className="pure-u-3-5 bodymain">
-                
-                
-
+                <p>&nbsp;</p>
                 <div aria-live={"polite"} aria-atomic={false} role={"log"} aria-relevant={"all"}>
                 <Outlet />
-              </div>
+                </div>
               </div>
               <div className="pure-u-1-5 bodyside"></div>
               

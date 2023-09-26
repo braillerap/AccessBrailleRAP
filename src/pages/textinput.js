@@ -136,13 +136,14 @@ class TextInput extends React.Component {
         const nlines = parseInt(this.props.options.nbline);
         return (
               <div >
+                <h1 aria-hidden={true}></h1>
+                <button onClick={this.handleload} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.loadfile"})}</button>
+                <button onClick={this.handlesave} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.savefile"})}</button>
+                <button onClick={this.handlesaveas} className="pad-button pure-button  " >{this.props.intl.formatMessage({id:"input.saveasfile"})}</button>
+                <button onClick={this.handleimport} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.importfile"})}</button>
                 
                 <form onSubmit={this.handleSubmit} >
-                  <h1 aria-hidden={true}></h1>
-                  <button onClick={this.handleload} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.loadfile"})}</button>
-                  <button onClick={this.handlesave} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.savefile"})}</button>
-                  <button onClick={this.handlesaveas} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.saveasfile"})}</button>
-                  <button onClick={this.handleimport} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.importfile"})}</button>
+                  
                   <h1 aria-atomic={true}>
                     <FormattedMessage id="input.title2" defaultMessage="Formulaire de saisie du texte"/>
                   </h1>  
