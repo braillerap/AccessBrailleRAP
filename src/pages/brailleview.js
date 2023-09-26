@@ -1,4 +1,3 @@
-
 import React from 'react';
 import BrailleTranslatorFactory from '../modules/BrailleTranslatorFactory';
 import BraillePaginator from '../modules/BraillePaginator';
@@ -7,13 +6,14 @@ import BrailleToGeometry from '../modules/BrailleToGeometry';
 import GeomToGCode from '../modules/GeomToGCode';
 import FileSaver from 'file-saver';
 import Modal from 'react-modal';
-import { FormattedMessage } from 'react-intl';
-import { injectIntl } from 'react-intl';
 import { eel } from "../eel.js";
-
-
+import { IntlContext } from '../components/intlwrapper.js';
+import { injectIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 class BrailleView extends React.Component {
+
+  static contextType = IntlContext;
 
   constructor(props) {
 
@@ -156,8 +156,13 @@ class BrailleView extends React.Component {
             );
   }
   render() {
-    this.Braille.setSrc(this.state.src);
-    this.Braille.translate();
+    let reverse = false;
+    
+    if (this.context.localeinfo)
+      reverse = this.context.localeinfo.reverse;
+    
+      this.Braille.setSrc(this.state.src);
+    this.Braille.translate(this.context.localeinfo.reverse);
 
     let linesb = this.Braille.getBrailleLines();
 

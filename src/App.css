@@ -158,13 +158,15 @@ body {
 }
 .formparam h1
 {
-  text-align: left;
+  text-align: start;
   margin-left: 20%;
+  margin-right: 20%;
 }
 .formparam p
 {
-  text-align: left;
+  text-align: start;
   margin-left: 20%;
+  margin-right: 20%;
 }
 .selectbraille {
    width:50%; 

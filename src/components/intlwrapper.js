@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {IntlProvider} from 'react-intl';
 import French from '../translations/fr.json';
 import English from '../translations/en.json';
+import Arabic from '../translations/ar.json';
 import { locales } from '../components/locale.js';
 
 export const IntlContext = React.createContext();
@@ -22,12 +23,19 @@ const IntlWrapper = (props) => {
        setLocale(newLocale);
        if (newLocale === 'en') {
            setMessages(English);
-       } else {
-           if (newLocale === 'fr'){
-               setMessages(French);
-           } else {
-               setMessages(English);
-           }
+       } 
+       else if (newLocale === 'fr')
+       {
+            setMessages(French);
+       } 
+       else if (newLocale === 'ar')
+       {
+            setMessages(Arabic);
+       
+       }
+       else
+       {
+            setMessages(English);
        }
    }
 
@@ -37,9 +45,18 @@ const IntlWrapper = (props) => {
         if (lang === 'en') {
             setMessages(English);
 
-        } else 
+        } else if (lang === 'fr')
         {
             setMessages(French);
+        }
+        else if (lang === 'ar')
+        {
+            setMessages(Arabic);
+        }
+        else
+        {
+            setMessages(English);
+            lang = 'en';
         }
         locales.map ((item, index)=> {
             console.log (item);

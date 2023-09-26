@@ -88,9 +88,7 @@ class Layout extends Component
 
               <div className="pure-u-3-5 bodymain">
                 
-                <div>
-                  <p>locale:<b>{this.context.locale}</b></p>
-                </div>
+                
 
                 <div aria-live={"polite"} aria-atomic={false} role={"log"} aria-relevant={"all"}>
                 <Outlet />
