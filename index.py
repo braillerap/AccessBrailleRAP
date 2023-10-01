@@ -196,10 +196,10 @@ def load_file(dialogtitle, filterstring):
     root.focus_set ()
     root.grab_set_global()
     
-    start = time.time()
-    while (time.time() - start < 1):
-        root.update_idletasks()
-        root.update()
+    #start = time.time()
+    #while (time.time() - start < 1):
+    #    root.update_idletasks()
+    #    root.update()
     
     # open common dialog
     oldfilter = (("Text files", "*.txt"),("All files", "*.*"))
@@ -377,12 +377,10 @@ if __name__ == '__main__':
    
     label=tk.Label(root, text="AccessBrailleRAP Loading...", font=('Arial 36'), width=200, height=100)
     label.pack()
-    
-    start = time.time()
-    while (time.time() - start < 5):
-        
-        root.update_idletasks()
-        root.update()
+
+    #root.after(1000, root.quit) # kill window after 1s
+    root.after_idle(root.quit)
+    root.mainloop()    
     root.destroy()
 
     # end of TK mess, go back to AccessBrailleRAP    
