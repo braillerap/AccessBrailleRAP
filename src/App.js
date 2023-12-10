@@ -8,7 +8,7 @@ import TextInput from './pages/textinput'
 import BrailleTable from './pages/BrailleTable'
 import Parameters from "./pages/parameters";
 import './App.css';
-import { eel } from "./eel.js";
+import { eel } from "./eelext.js";
 import AppOption from "./pages/components/AppOption";
 import libLouis from "./modules/libLouisReact";
 import { FormattedMessage } from "react-intl";

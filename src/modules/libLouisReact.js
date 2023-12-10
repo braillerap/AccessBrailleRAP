@@ -353,7 +353,7 @@ class libLouis
         {
             return this.f_loureact_get_table_fname (i);
         }
-        return "plop";
+        return "";
     }
     get_table_description (i)
     {
@@ -361,7 +361,7 @@ class libLouis
         {
             return this.f_loureact_get_table_description (i);
         }
-        return "plop";
+        return "";
     }
     get_table_lang (i)
     {

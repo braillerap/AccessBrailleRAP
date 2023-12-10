@@ -182,7 +182,7 @@ def load_file(dialogtitle, filterstring):
         "data":"",
         "error":""
          }
-    
+    eel.consolelog_js("tata for test")
     #print (filterstring)
     #print (type(filterstring))
     # check file filter
@@ -378,7 +378,7 @@ if __name__ == '__main__':
     label=tk.Label(root, text="AccessBrailleRAP Loading...", font=('Arial 36'), width=200, height=100)
     label.pack()
 
-    #root.after(1000, root.quit) # kill window after 1s
+    
     root.after_idle(root.quit)
     root.mainloop()    
     root.destroy()
@@ -394,7 +394,7 @@ if __name__ == '__main__':
             except:
                 pass    
             
-            eel.start({"port": 3000}, host="localhost", port=8888)
+            eel.start({"port": 3000}, host="localhost", mode='chrome', port=8888)
             
             devel = True
 
@@ -409,12 +409,14 @@ if __name__ == '__main__':
         try:
             print ("start chrome")
             
-            eel.start('index.html', host="localhost", port=8888)
+            eel.start('index.html', mode='chrome', host="localhost", port=8888)
             
         except EnvironmentError:
             if sys.platform in ['win32', 'win64'] and int(platform.release()) >= 10:
                 print ("start edge")
-                eel.start('index.html', host="localhost", port=8888, mode='edge')
+                eel.start('index.html', host="localhost", port=8888, mode='default')
                     
             else:
                 raise                
+    
+    print ("end of python script")

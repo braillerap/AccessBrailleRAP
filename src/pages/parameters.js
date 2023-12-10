@@ -5,7 +5,7 @@ import { IntlContext } from '../components/intlwrapper.js';
 import { injectIntl } from 'react-intl';
 import { FormattedMessage} from 'react-intl';
 import { locales } from '../components/locale.js';
-import { eel } from "../eel.js";
+import { eel } from "../eelext.js";
 
 function  braille_info (fname, desc, lang, region, flags) {
   this.fname =fname;
