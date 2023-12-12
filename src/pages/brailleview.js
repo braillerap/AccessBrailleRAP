@@ -101,8 +101,9 @@ class BrailleView extends React.Component {
     this.setState({ showModal: true });
 
     // request backend to print gcode
-    eel.PrintGcode(gcode, this.props.options.comport)(status => {
+    window.pywebview.api.PrintGcode(gcode, this.props.options.comport).then(status => {
         // remove modal status screen
+        console.log (status);
         this.setState({ showModal: false, printstatus:status});
         // set a timer to call setstate with a little delay
         // because form change are disabled for screen reader due to

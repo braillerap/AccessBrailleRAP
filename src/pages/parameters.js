@@ -44,14 +44,13 @@ class Parameters extends React.Component {
 
     async componentDidMount()
     {
-      let list = await eel.gcode_get_serial()();
-      //console.log (list)
+      let list = await window.pywebview.api.gcode_get_serial();
+      console.log (list)
       let portinfo = JSON.parse(list);
       this.setState ({data:portinfo})
      
       
-      //console.log ("louis es tu la ?");  
-      //console.log (this.props.glouis());  
+      
       if (this.props.glouis())
       {
         let brtable = [];
@@ -92,7 +91,7 @@ class Parameters extends React.Component {
     {
       let msg = this.props.intl.formatMessage({id:"param.wait"});
       this.setState ({comevent:msg})
-      eel.gcode_get_serial()(list => {
+      window.pywebview.api.gcode_get_serial().then(list => {
           let portinfo = JSON.parse(list);
           let success = this.props.intl.formatMessage({id:"param.comportrefreshed"});
           this.setState ({data:portinfo, comevent:success})

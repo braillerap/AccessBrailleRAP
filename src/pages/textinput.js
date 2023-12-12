@@ -23,6 +23,11 @@ class TextInput extends React.Component {
     async handlesave (event)
     {
       event.preventDefault();
+
+      console.log(window.pywebview);
+      window.pywebview.api.fullscreen();
+
+
       let dialogtitle = this.props.intl.formatMessage({id:"input.dialog_saveas_file"})
       let filter = [
         this.props.intl.formatMessage({id:"input.dialog_file_filter_text"}),

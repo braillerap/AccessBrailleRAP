@@ -8,7 +8,7 @@ import TextInput from './pages/textinput'
 import BrailleTable from './pages/BrailleTable'
 import Parameters from "./pages/parameters";
 import './App.css';
-import { eel } from "./eel.js";
+//import { eel } from "./eel.js";
 import AppOption from "./pages/components/AppOption";
 import libLouis from "./modules/libLouisReact";
 import { FormattedMessage } from "react-intl";
@@ -21,7 +21,7 @@ class App extends Component {
     constructor(props)
     {
         super(props);
-        eel.set_host("ws://localhost:8888");
+        //eel.set_host("ws://localhost:8888");
         //eel.hello();
         this.state= (
             {
@@ -29,7 +29,8 @@ class App extends Component {
                 srctxt : '',
                 options : AppOption,
                 serialstatus:0,
-                louisloaded:false
+                louisloaded:false,
+                webviewready:false
             }
         );
         this.LogCallBack = this.LogCallBack.bind(this);
@@ -41,12 +42,42 @@ class App extends Component {
         this.onMenuClick = this.onMenuClick.bind (this);    
         this.GetLouis = this.GetLouis.bind(this);
         this.LouisLoaded = this.LouisLoaded.bind (this);
+        this.webviewloaded = this.webviewloaded.bind(this);
         this.focusReference = React.createRef();
     }
 
+    async webviewloaded ()
+    {
+      if (!window.pywebview.state) {
+        console.log ("pywebviewready event");
+        
+        window.pywebview.state = {};
+        let option = await window.pywebview.api.gcode_get_parameters();
+        console.log (option);
+        let params = JSON.parse(option);
+
+        this.setState({webviewready:true});
+        console.log (navigator.language);
+        if (params.lang === "")
+        {
+            params.lang = "fr";
+            this.SetOption (params);
+        }
+        else
+          this.setState ({options:params})
+        this.context.setLanguage (params["lang"]);
+        this.louis = new libLouis();
+        this.louis.load (this.LouisLoaded);
+        
+      }
+      
+    }
     async componentDidMount ()
     {
-        let option = await eel.gcode_get_parameters ()();
+      window.addEventListener('pywebviewready', this.webviewloaded);
+      /*
+        //let option = await eel.gcode_get_parameters ()();
+        let option = await window.pywebview.api.gcode_get_parameters();
         let params = JSON.parse(option);
         
 
@@ -59,9 +90,7 @@ class App extends Component {
         else
           this.setState ({options:params})
         this.context.setLanguage (params["lang"]);
-
-        this.louis = new libLouis();
-        this.louis.load (this.LouisLoaded);
+        */
         
     }
 
@@ -92,7 +121,8 @@ class App extends Component {
     SetOption (opt)
     {
       this.setState ({option:opt});
-      eel.gcode_set_parameters(opt);
+      window.pywebview.api.gcode_set_parameters (opt);
+      //eel.gcode_set_parameters(opt);
     }
     SetStatus (status)
     {
@@ -113,6 +143,12 @@ class App extends Component {
     }
     render ()
     {
+      if (! this.state.webviewready)
+        return (
+        <h1>
+          <FormattedMessage id="app.loading" defaultMessage="Waiting webview..."/>
+        </h1>);
+
       if (! this.state.louisloaded)
         return (
         <h1>
