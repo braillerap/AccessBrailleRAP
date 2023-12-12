@@ -22,7 +22,7 @@
     "clean:build": "rm -rf build dist",
     "start": "npm-run-all -p start:*",
     "build": "npm-run-all clean:build build:*",
-    "buildp": "npm-run-all build:*",
+    "buildp": "npm-run-all clean:build build:js",
     "extract": "react-intl-cli  extract -l fr,en -d fr ",
     "extracth": "react-intl-cli  extract -h",
     "test": "react-scripts test --env=jsdom",
