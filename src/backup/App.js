@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import { eel } from "./eel.js";
+//import { eel } from "./eel.js";
 
 class App extends Component {
   constructor(props) {
