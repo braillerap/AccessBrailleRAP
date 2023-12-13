@@ -9,6 +9,7 @@ import tkinter as tk
 import tkinter.filedialog 
 import tkinter.messagebox
 import serial.tools.list_ports
+import pypandoc
 
 from time import time
 
@@ -83,13 +84,13 @@ class Api:
     
     def saveas_file(self, data, dialogtitle, filterstring):
         global filename
-        global root
-
-        root = tk.Tk()
-        root.geometry("1x1+4096+4096")
-        fname = tkinter.filedialog.asksaveasfilename(title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*")))
-        root.destroy()
-        if fname =="":
+        
+        
+        fname = window.create_file_dialog(
+                webview.SAVE_DIALOG, allow_multiple=False, file_types = (filterstring[0] +' (*.txt)',filterstring[1] + ' (*.*)' )
+        )
+        
+        if fname =="" or fname == None:
             return
         filename = fname
     
@@ -97,24 +98,26 @@ class Api:
         with open(filename, "w", encoding='utf8') as inf:
             inf.writelines(data)
 
-    def save_file(self, data):
+    def save_file(self, data, dialogtitle, filterstring):
         global filename
         if filename == "":
             #init tk to give focus on common dialog
-            root = tk.Tk()
-            root.geometry("1x1+8192+8192")
-            root.focus_set ()
-            root.grab_set_global()
+            # root = tk.Tk()
+            # root.geometry("1x1+8192+8192")
+            # root.focus_set ()
+            # root.grab_set_global()
             
-            start = time.time()
-            while (time.time() - start < 1):
-                root.update_idletasks()
-                root.update()
+            # start = time.time()
+            # while (time.time() - start < 1):
+            #     root.update_idletasks()
+            #     root.update()
 
-            fname = tkinter.filedialog.asksaveasfilename(master=root, title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*")))
-            root.destroy()
-            
-            if fname =="":
+            # fname = tkinter.filedialog.asksaveasfilename(master=root, title = "Select file",filetypes = (("Text files", "*.txt"),("All files", "*.*")))
+            # root.destroy()
+            fname = window.create_file_dialog(
+                webview.SAVE_DIALOG, allow_multiple=False, file_types = (filterstring[0] +' (*.txt)',filterstring[1] + ' (*.*)' )
+            )   
+            if fname =="" or fname == None:
                 return
             filename = fname
             
@@ -138,24 +141,26 @@ class Api:
             return json.dumps(js)
         
         #init tk to give focus on common dialog
-        root = tk.Tk()
-        root.geometry("1x1+8192+8192")
-        root.focus_set ()
-        root.grab_set_global()
-        
-        #start = time.time()
-        #while (time.time() - start < 1):
-        #    root.update_idletasks()
-        #    root.update()
-        
+        # root = tk.Tk()
+        # root.geometry("1x1+8192+8192")
+        # root.focus_set ()
+        # root.grab_set_global()
+                
         # open common dialog
         oldfilter = (("Text files", "*.txt"),("All files", "*.*"))
         filter = ((filterstring[0], "*.txt"),(filterstring[1], "*.*"))
-        fname = tkinter.filedialog.askopenfilename(master = root, title = dialogtitle,filetypes = filter)
+        #fname = tkinter.filedialog.askopenfilename(master = root, title = dialogtitle,filetypes = filter)
         
-        root.destroy()
-        if fname == "":
+        #root.destroy()
+        listfiles = window.create_file_dialog(
+                webview.OPEN_DIALOG, allow_multiple=False, file_types = (filterstring[0] +' (*.txt)',filterstring[1] + ' (*.*)' )
+        )
+        if len(listfiles) != 1:
             return json.dumps(js)
+        fname = listfiles[0]
+        if fname == "" or fname == None:
+            return json.dumps(js)
+        
         with open(fname, "rt", encoding='utf8') as inf:
             js["data"] = inf.read()
             filename = fname
@@ -171,21 +176,27 @@ class Api:
             }
         
         #init tk to give focus on common dialog
-        root = tk.Tk()
-        root.geometry("1x1+8192+8192")
-        root.focus_set ()
-        root.grab_set_global()
+        # root = tk.Tk()
+        # root.geometry("1x1+8192+8192")
+        # root.focus_set ()
+        # root.grab_set_global()
         
-        start = time.time()
-        while (time.time() - start < 1):
-            root.update_idletasks()
-            root.update()
+        # start = time.time()
+        # while (time.time() - start < 1):
+        #     root.update_idletasks()
+        #     root.update()
         
-        filter = ((filterstring[0], "*.*"),)
-        fname = tkinter.filedialog.askopenfilename(master = root, title = dialogtitle,filetypes = filter)
-        
+        #filter = ((filterstring[0], "*.*"),)
+        #fname = tkinter.filedialog.askopenfilename(master = root, title = dialogtitle,filetypes = filter)
+        listfiles = window.create_file_dialog(
+                webview.OPEN_DIALOG, allow_multiple=False, file_types = (filterstring[0] +' (*.*)', )
+        )
+        if len(listfiles) != 1:
+            return json.dumps(js)
+        fname = listfiles[0]
+
         #print ("fname", fname)
-        root.destroy()
+        #root.destroy()
 
         if fname != "":
             filename = ""
@@ -350,5 +361,19 @@ if __name__ == '__main__':
     api = Api()
     print ("start html=", entry)
     load_parameters ()
+
+    
+    # root = tk.Tk()
+    # root.attributes('-fullscreen', True)
+    # root.attributes('-topmost', True)
+   
+    # label=tk.Label(root, text="AccessBrailleRAP Loading...", font=('Arial 36'), width=200, height=100)
+    # label.pack()
+    
+    # root.after_idle(root.quit)
+    # root.mainloop()    
+    # root.destroy()
+
+
     window = webview.create_window('AccessBrailleRAP', entry, js_api=api)
     webview.start(http_server=False, debug=True)

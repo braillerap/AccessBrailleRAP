@@ -14,4 +14,4 @@ ReactDOM.render(
     </IntlWrapper>
     , document.getElementById('root'));
 Modal.setAppElement(document.getElementById('root'));
-registerServiceWorker();
+//registerServiceWorker();
