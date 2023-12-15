@@ -28,6 +28,7 @@ yarn-error.log*
 /dist
 /react-eel-app.spec
 /venv
+/wvenv
 __pycache__
 yarn.lock
 /parameters.json
@@ -49,3 +50,4 @@ nsis/InstallerLogo.bmp
 nsis/HeaderBitmap.nsi
 testdialog.py
 nsis/ChromeSetup.exe
+
