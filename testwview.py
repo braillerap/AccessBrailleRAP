@@ -13,11 +13,18 @@ import pypandoc
 
 from time import time
 
+if getattr(sys, 'frozen', False):
+    try:    #pyi_splash only available while running in pyinstaller
+        import pyi_splash
+    except ImportError:
+        pass
+
 app_options = {
     'comport':'COM1',
-    'nbcol':27,
-    'nbline':20,
-    'brailletbl':70,
+    'nbcol':'31',
+    'nbline':'24',
+    'linespacing':'0',
+    'brailletbl':'70',
     'lang':''
 }
 
@@ -288,12 +295,12 @@ class Api:
         try:
             ports = serial.tools.list_ports.comports()
             for port in ports:
-                print (port.device)
-                print (port.hwid)
-                print (port.name)
-                print (port.description)
-                print (port.product)
-                print (port.manufacturer)
+                #print (port.device)
+                #print (port.hwid)
+                #print (port.name)
+                #print (port.description)
+                #print (port.product)
+                #print (port.manufacturer)
                 data.append ({'device':port.device, 'description':port.description, 'name':port.name, 'product':port.product, 'manufacturer':port.manufacturer})
             print(data)
         except Exception as e:
@@ -355,13 +362,25 @@ def update_ticker():
     if len(webview.windows) > 0:
         webview.windows[0].evaluate_js('window.pywebview.state.setTicker("%d")' % time())
 
+
+
+def delete_splash ():
+    try:
+        pyi_splash.close ()
+    except:
+        pass
+    print ("started", time())
+
 entry = get_entrypoint()
 
 if __name__ == '__main__':
+    
     api = Api()
     print ("start html=", entry)
     load_parameters ()
-
+    print (app_options)
+    
+    
     
     # root = tk.Tk()
     # root.attributes('-fullscreen', True)
@@ -374,6 +393,8 @@ if __name__ == '__main__':
     # root.mainloop()    
     # root.destroy()
 
-
+    print ("start", time())
     window = webview.create_window('AccessBrailleRAP', entry, js_api=api)
-    webview.start(http_server=False, debug=True)
+    print ("created", time())
+
+    webview.start(delete_splash, http_server=False, debug=True)

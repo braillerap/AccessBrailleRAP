@@ -24,8 +24,9 @@ class Parameters extends React.Component {
         super (props);
         this.state = {
             data:null,
-            nbcol:28,
-            nbline:21,
+            nbcol:31,
+            nbline:24,
+            linespacing:0,
             options:this.props.options,
             comevent:"",
             louis:this.props.louis,
@@ -39,6 +40,8 @@ class Parameters extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeBraille = this.handleChangeBraille.bind(this);
         this.handleChangeLanguage = this.handleChangeLanguage.bind(this);
+        this.handleChangeLinespacing = this.handleChangeLinespacing.bind(this);
+
         //console.log ("constructor");
     }
 
@@ -48,9 +51,7 @@ class Parameters extends React.Component {
       console.log (list)
       let portinfo = JSON.parse(list);
       this.setState ({data:portinfo})
-     
-      
-      
+
       if (this.props.glouis())
       {
         let brtable = [];
@@ -151,7 +152,7 @@ class Parameters extends React.Component {
 
     handleChangePort (event)
     {
-      let option = this.props.options
+      let option = this.props.options;
       option.comport = event.target.value;
 
       if (this.props.optioncb)
@@ -160,7 +161,16 @@ class Parameters extends React.Component {
         this.setState({options:option});  
     
     }
-
+    handleChangeLinespacing (event)
+    {
+      let option = this.props.options;
+      option.linespacing = event.target.value;
+      console.log (event.target.value);
+      if (this.props.optioncb)
+        this.props.optioncb(option);
+      else
+        this.setState({options:option});  
+    }
     render_comport ()
     {
       if (this.state.data === null)
@@ -176,7 +186,7 @@ class Parameters extends React.Component {
         
         return (
         <>
-        <p aria-hidden='true' toto-label={this.props.intl.formatMessage({id:"param.labelport"}) + this.props.options.comport + " : "} >
+        <p aria-hidden='true' aria-label={this.props.intl.formatMessage({id:"param.labelport"}) + this.props.options.comport + " : "} >
           <FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> 
             <b>{this.state.options.comport}</b>
         </p>
@@ -213,7 +223,7 @@ class Parameters extends React.Component {
         selectedtable = this.state.brailleinfo[this.state.options.brailletbl].desc;
       return (
         <>
-        <p aria-hidden='true' toto-label={'Table de transcription ' + selectedtable + ' : '} >
+        <p aria-hidden='true' aria-label={'Table de transcription ' + selectedtable + ' : '} >
           <FormattedMessage id="param.brailletable" defaultMessage="Table de transcription  "/>
           <b>{selectedtable}</b>
         </p>
@@ -315,6 +325,22 @@ class Parameters extends React.Component {
                     value={this.props.options.nbline} 
                     onChange={this.handleChangeNbLine} 
                   />
+                </div>
+                <div className="pure-control-group">
+                  <label  
+                    aria-label={this.props.intl.formatMessage({id:"param.linespacing_aria"})} 
+                    htmlFor='linespacing'>
+                    <FormattedMessage id="param.linespacing" defaultMessage="Interligne"/>
+                    
+                  </label> 
+                  <select value={this.props.options.linespacing} onChange={this.handleChangeLinespacing}
+                    name="linespacing" id="linespacing"
+                  >
+                    <option value="0">1</option>
+                    <option value="1">1.5</option>
+                    <option value="2">2</option>                    
+                  </select>
+                  
                 </div>
                 <div className='pure-control-group'>
                   

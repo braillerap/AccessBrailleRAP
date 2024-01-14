@@ -20,6 +20,8 @@
     "param.language_aria":"لغة التطبيق ",
     "param.wait":"انتظر من فضلك",
     "param.comportrefreshed":"تم تفعيل منافذ الاتصال",
+    "param.linespacing_aria":"تباعد الأسطر",
+    "param.linespacing":"تباعد الأسطر",
 
     "layout.param_menu":"حدود",
     "layout.param_print":"الطباعة",

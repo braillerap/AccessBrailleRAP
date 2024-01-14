@@ -19,7 +19,10 @@
     "param.language_aria":"Langue de l'application",
     "param.wait":"Patientez",
     "param.comportrefreshed":"Ports de communications actualisés",
-
+    "param.linespacing_aria":"Interligne",
+    "param.linespacing":"Interligne",
+    
+    
     "layout.param_menu":"Paramètres",
     "layout.param_print":"Impression",
     "layout.param_input":"Saisie",

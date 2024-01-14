@@ -60,11 +60,13 @@ InstallDirRegKey HKLM "Software\AccessBrailleRAP" "Install_Dir"
 !insertmacro MUI_UNPAGE_INSTFILES
 
 !insertmacro MUI_LANGUAGE "English"
+!addplugindir ".\"
+
 ;--------------------------------
 
 ; The stuff to install
 Section "AcessBrailleRAP (required)"
-
+  InitPluginsDir
   SectionIn RO
   
     ; Set output path to the installation directory.
@@ -73,6 +75,7 @@ Section "AcessBrailleRAP (required)"
     ; Put file there
     File "AccessBrailleRAP.exe"
     File "parameters.json"
+    File "_internal.zip"
     ; pandoc
     File "pandoc.exe"
   
@@ -91,8 +94,15 @@ Section "AcessBrailleRAP (required)"
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\AccessBrailleRAP" "NoRepair" 1
   WriteUninstaller "$INSTDIR\uninstall.exe"
   
-  
-SectionEnd
+  RMDir /r $INSTDIR\_internal
+  Pop $0
+  nsisunz::UnzipToLog "$INSTDIR\_internal.zip" "$INSTDIR"
+  ; Always check result on stack
+  Pop $0
+  StrCmp $0 "success" ok
+  DetailPrint "$0" ;print error message to log
+ok:
+  SectionEnd
 
 Section "USB Drivers"
   
@@ -120,10 +130,10 @@ Section "Desktop Shortcuts"
   
 SectionEnd
 
-Section Chrome
-  File "ChromeSetup.exe"
-  ExecWait '"$INSTDIR\ChromeSetup.exe"'
-SectionEnd
+;Section Chrome
+;  File "ChromeSetup.exe"
+;  ExecWait '"$INSTDIR\ChromeSetup.exe"'
+;SectionEnd
 
 ;Section "-hidden section"
 ;  MessageBox MB_OK "AccessBrailleRAP need Chrome Browser. You will now be redirected to Chrome Browser website. Please ensure Chrome browser is installed on your PC"
@@ -135,11 +145,11 @@ SectionEnd
 ;Descriptions
 
   ;Language strings
-  LangString DESC_SecDummy ${LANG_ENGLISH} "A test section."
+  ;LangString DESC_SecDummy ${LANG_ENGLISH} "A test section."
 
   ;Assign language strings to sections
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-  !insertmacro MUI_DESCRIPTION_TEXT ${SecDummy} $(DESC_SecDummy)
+  ;!insertmacro MUI_DESCRIPTION_TEXT ${SecDummy} $(DESC_SecDummy)
   !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 ;--------------------------------
@@ -158,7 +168,9 @@ Section "Uninstall"
   Delete $INSTDIR\uninstall.exe
   Delete $INSTDIR\CDM212364_Setup.exe
   Delete $INSTDIR\CH341SER.EXE
-  Delete $INSTDIR\ChromeSetup.EXE
+  ;Delete $INSTDIR\ChromeSetup.EXE
+  Delete $INSTDIR\_internal.zip
+  RMDir $INSTDIR\_internal
 
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\AccessBrailleRAP\*.lnk"
