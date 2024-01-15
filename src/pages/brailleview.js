@@ -31,6 +31,13 @@ class BrailleView extends React.Component {
     let f = new BrailleTranslatorFactory();
     this.Braille = f.getTranslator("LOUIS", louis, this.props.options.brailletbl);
     this.paginator = new BraillePaginator();
+    
+    if (this.props.options) {
+      this.paginator.setcols(this.props.options.nbcol);
+      this.paginator.setrows(this.props.options.nbline);
+      this.paginator.setspacing(this.props.options.linespacing);
+    }
+
     this.HandlePrec = this.HandlePrec.bind(this);
     this.HandleNext = this.HandleNext.bind(this);
     this.HandlePrint = this.HandlePrint.bind(this);
@@ -65,7 +72,7 @@ class BrailleView extends React.Component {
 
   HandleDownload() {
     let geom = new BrailleToGeometry();
-    geom.setPaddingY (this.Braille.getLinePadding ());
+    geom.setPaddingY (this.Braille.getLinePadding () * ((this.props.linespacing * 0.5 ) + 1));
     let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 5, 5);
     //console.log (typeof(ptcloud));
     let gcoder = new GeomToGCode();
@@ -169,10 +176,7 @@ class BrailleView extends React.Component {
 
     //console.log ("Braille pagination " + this.state.page.toString());
     
-    if (this.props.options) {
-      this.paginator.setcols(this.props.options.nbcol);
-      this.paginator.setrow(this.props.options.nbline);
-    }
+    
     this.paginator.setSrcLines(linesb);
     this.paginator.Update();
     //console.log ("brailleview " + this.state.page.toString());

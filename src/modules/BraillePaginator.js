@@ -5,6 +5,8 @@ class BraillePaginator
     {
         this.cols = 28;
         this.rows = 21;
+        this.computedrows = 21;
+        this.spacing = 0;
         this.pages = [];
         this.pagenbr = 0;
         this.src = [];
@@ -21,12 +23,17 @@ class BraillePaginator
         return (this.cols);
     }
 
-    setrow (rows)
+    setrows (rows)
     {
         this.rows = rows;
         this.Update ();
     }
 
+    setspacing (spacing)
+    {
+        this.spacing = spacing;
+        this.Update ();
+    }
     setSrcLines (lines)
     {
         this.src = lines;
@@ -34,7 +41,7 @@ class BraillePaginator
     #addline (line)
     {
         this.current_page.push (line);
-        if (this.current_page.length >= this.rows)
+        if (this.current_page.length >= this.computedrows)
         {
             this.pages.push (this.current_page);
             this.current_page = [];
@@ -46,6 +53,10 @@ class BraillePaginator
         this.pages.push (this.current_page);
         this.current_page = [];
     }
+    #computerows ()
+    {
+        this.computedrows = Math.floor (this.rows / ((this.spacing * 0.5) + 1));
+    }
     Update ()
     {
         if (! this.src)
@@ -53,6 +64,7 @@ class BraillePaginator
 
         this.pages = [];
         this.current_page = [];
+        this.#computerows();
         
         for (let lsrc = 0; lsrc < this.src.length; lsrc++)
         {
