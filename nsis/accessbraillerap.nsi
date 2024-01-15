@@ -177,6 +177,7 @@ Section "Uninstall"
     
   ; Remove directories
   RMDir "$SMPROGRAMS\AccessBrailleRAP"
+  RMDir /r $INSTDIR\_internal
   RMDir "$INSTDIR"
 
   SetShellVarContext current

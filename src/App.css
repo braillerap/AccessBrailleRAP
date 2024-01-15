@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(58, 53, 53);
 }
 
 .App {
@@ -18,7 +19,7 @@ body {
 .main_div {
   width:100%;
   min-height: 100vh;
-  background-color:rgb(255, 255, 255);
+  background-color:rgb(58, 53, 53);
   
 }
 
@@ -26,7 +27,7 @@ body {
   width:100%;
   min-height: 80vh;
   height:100%;
-  
+  background-color: rgb(58, 53, 53);
 }
 
 .headermain {
@@ -35,6 +36,7 @@ body {
   height: 8vh;
   
 }
+
 .headerside {
   border-color: burlywood;
   background-color: rgb(58, 53, 53);
@@ -43,27 +45,26 @@ body {
 
 .bodymain {
   border-color: rgb(175, 129, 69);
-  background-color: rgb(255, 253, 253);
-  height: 92vh;
+  background-color: rgb(255, 255, 255);
+  border-width: 1;
+  min-height:92vh;
 }
+
 
 .bodyside {
   border-color: burlywood;
   background-color: rgb(58, 53, 53);
-  height: 92vh;
+  height: 100%;
 }
 
-.statusbar {
-  background-color: rgb(80, 82, 81);
-  height: 10vh;
-}
+
 
 
 .BrailleInput
 {
   border-color: black;
   font-size: calc(2px + 3vmin);
-  height:70vh;
+  max-height:70vh;
   font-family: monospace;
 }
 .BrailleInputTable
@@ -105,9 +106,9 @@ body {
 }
 
 .BrailleOutput {
-    font-size: calc(1em + 0.8vw);
+    font-size: calc(1em + 0.4vw);
     min-height: 100%;
-    background-color: white;
+    background-color: rgb(253, 253, 253);
     font-family: monospace !important;
 }
 
@@ -178,6 +179,7 @@ body {
 {
   font-size: 1.3em;
 }
+
 .selectbraille {
    width:50%; 
 }
