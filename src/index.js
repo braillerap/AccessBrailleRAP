@@ -9,9 +9,11 @@ import  IntlWrapper  from './components/intlwrapper'
 require('purecss')
 
 ReactDOM.render(
+    <React.StrictMode>
     <IntlWrapper  locale="" defaultLocale="fr">
         <App />
     </IntlWrapper>
+    </React.StrictMode>
     , document.getElementById('root'));
 Modal.setAppElement(document.getElementById('root'));
 //registerServiceWorker();

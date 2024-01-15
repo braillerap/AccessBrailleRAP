@@ -6,7 +6,7 @@ import BrailleToGeometry from '../modules/BrailleToGeometry';
 import GeomToGCode from '../modules/GeomToGCode';
 import FileSaver from 'file-saver';
 import Modal from 'react-modal';
-import { eel } from "../eel.js";
+import { eel } from "../eelext.js";
 import { IntlContext } from '../components/intlwrapper.js';
 import { injectIntl } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
