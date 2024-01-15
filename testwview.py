@@ -397,4 +397,4 @@ if __name__ == '__main__':
     window = webview.create_window('AccessBrailleRAP', entry, js_api=api)
     print ("created", time())
 
-    webview.start(delete_splash, http_server=False, debug=True)
+    webview.start(delete_splash, http_server=False, debug=False)
