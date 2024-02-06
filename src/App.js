@@ -3,9 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Layout from './layout'
 import BrailleView from './pages/brailleview';
-import Home from './pages/home'
 import TextInput from './pages/textinput'
-import BrailleTable from './pages/BrailleTable'
 import Parameters from "./pages/parameters";
 import './App.css';
 
