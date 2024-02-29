@@ -1,6 +1,6 @@
 {
   "name": "access-braillerap",
-  "version": "0.1.0",
+  "version": "0.5.1",
   "private": true,
   "dependencies": {
     "electron": "^25.0.1",
