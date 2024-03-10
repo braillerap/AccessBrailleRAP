@@ -51,3 +51,4 @@ nsis/HeaderBitmap.nsi
 testdialog.py
 nsis/ChromeSetup.exe
 
+nsis/_internal.zip

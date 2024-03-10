@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['testwview.py'],
+    ['accessbraillerap.py'],
     pathex=[],
     binaries=[],
     datas=[('build', 'build')],
@@ -39,7 +39,7 @@ exe = EXE(
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
-    codesign_identity=None,
+    codesign_identity=True,
     entitlements_file=None,
     icon=['favicon-32x32.ico'],
 )
