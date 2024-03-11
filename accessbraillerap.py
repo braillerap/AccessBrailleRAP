@@ -7,7 +7,7 @@ import sys
 import serial.tools.list_ports
 import pypandoc
 
-from time import time
+import time
 
 if getattr(sys, "frozen", False):
     try:  # pyi_splash only available while running in pyinstaller
@@ -64,6 +64,12 @@ class Api:
     def ls(self):
         return os.listdir(".")
 
+    def remove_comment(self, string):
+        """Remove comments from GCode if any"""
+        if string.find(';') == -1:
+            return string
+        return string[:string.index(';')]
+    
     def gcode_get_parameters(self):
         js = json.dumps(app_options)
         return js

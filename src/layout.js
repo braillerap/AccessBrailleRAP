@@ -48,7 +48,7 @@ class Layout extends Component
               <div className="pure-u-1-5 headerside"></div>
               <div className='pure-u-3-5  headermain'>
                 <div className="pure-menu pure-menu-horizontal menu_font" role={'presentation'} >
-                <a href="https://www.braillerap.org" target="_blank"><span className="pure-menu-heading">BrailleRAP</span></a>
+                <a href="https://www.braillerap.org" target="_blank">AccessBrailleRAP {`${process.env.REACT_APP_VERSION}`}</a>
                   <nav>
                     <ul className="pure-menu-list" >
                       <li className="pure-menu-item ">
