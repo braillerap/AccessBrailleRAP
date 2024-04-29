@@ -23,16 +23,13 @@ class BrailleToGeometry
 
     BrailleCharToGeom (char, offsetx, offsety)
     {
-        //console.log (char);
         let val = char.charCodeAt (0);
-        //console.log (val);
         let pts = [];
+
         for (let i = 0; i < 8; i++)
         {
             if ((val & (1 << i)) !== 0)
             {
-                
-                
                 let pt = new GeomPoint(_dots[i]['x'] * this.dotx_padding + offsetx, _dots[i]['y'] * this.doty_padding+ offsety);
                 
                 pts.push (pt);
@@ -67,20 +64,21 @@ class BrailleToGeometry
 
 		while (e < geom.length)
 		{
-			while ((geom[s].y == geom[e].y) )
+            //console.log ("e=" + e.toString() + " s=" + s.toString() + " geom.length=" + geom.length.toString());
+            //console.log ("geom[s]=" + geom[s].y.toString() + " geom[e]=" + geom[e].y.toString());
+            while (geom[s].y === geom[e].y)
 			{
-				e++;
+            	e++;
 				if (e == (geom.length))
 				{
 						break;
 				}
 			}
 
-			//if (e - s >= 0)
 			{
 				for (i = s; i < e; i++)
 				{
-					tmp.push (geom[i]);
+                    tmp.push (geom[i]);
 				}
 				tmp.sort (function (a,b) {
 					if (a.y == b.y) return ((a.x - b.x) * dir);
@@ -96,7 +94,6 @@ class BrailleToGeometry
 			}
 			
 		}
-
 		return (sorted);
     }
     BraillePageToGeom (lines, offsetx, offsety)
@@ -104,10 +101,12 @@ class BrailleToGeometry
         
         let starty = offsety;
         let geom = [];
+
         for (let l = 0; l < lines.length; l++)
         {
             let startx = offsetx;
             let line = lines[l];
+
             for (let c = 0; c < line.length; c++)
             {
                 let pts = this.BrailleCharToGeom (line[c], startx, starty);
@@ -117,6 +116,7 @@ class BrailleToGeometry
             starty += this.char_paddingy;
         }
         
+
         this.SortGeom(geom);
         let sorted = this.SortGeomZigZag(geom);
 
