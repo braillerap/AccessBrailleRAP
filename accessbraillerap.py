@@ -146,8 +146,12 @@ class Api:
             allow_multiple=False,
             file_types=(filterstring[0] + " (*.txt)", filterstring[1] + " (*.*)"),
         )
+        
+        if listfiles is None:
+            return json.dumps(js)
         if len(listfiles) != 1:
             return json.dumps(js)
+        
         fname = listfiles[0]
         if fname == "" or fname == None:
             return json.dumps(js)
@@ -167,6 +171,8 @@ class Api:
             allow_multiple=False,
             file_types=(filterstring[0] + " (*.*)",),
         )
+        if listfiles is None:
+            return json.dumps(js)
         if len(listfiles) != 1:
             return json.dumps(js)
         fname = listfiles[0]
