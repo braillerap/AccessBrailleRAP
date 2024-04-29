@@ -57,6 +57,8 @@
     "print.button_cmd_aria":"command buttons  : ",
     "print.info_aria":"Informations ",
     "print.info_page_aria":"Page ",
-    "print.info_over_aria":" over "
+    "print.info_over_aria":" over ",
+    "print.cancel_print":"Cancel Printing",
+    "print.cancel_print_pending":"Cancellation in progress"
 }
 

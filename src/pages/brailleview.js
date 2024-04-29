@@ -25,7 +25,8 @@ class BrailleView extends React.Component {
       page: 0,
       showModal: false,
       comevent: "",
-      printstatus: ""
+      printstatus: "",
+      cancelprint: false
     };
     let louis = this.props.glouis();
     let f = new BrailleTranslatorFactory();
@@ -41,8 +42,9 @@ class BrailleView extends React.Component {
     this.HandlePrec = this.HandlePrec.bind(this);
     this.HandleNext = this.HandleNext.bind(this);
     this.HandlePrint = this.HandlePrint.bind(this);
-    //console.log ("BrailleView constructor ")
-
+    this.HandleDownload = this.HandleDownload.bind(this);
+    this.CancelPrint = this.CancelPrint.bind(this);
+    
   }
   componentDidMount() {
     // set focus on screen creation
@@ -82,6 +84,17 @@ class BrailleView extends React.Component {
     FileSaver.saveAs(blob, "braille.gcode");
   }
 
+  CancelPrint() {
+    // request to cancel the print
+    this.setState(
+      { 
+        cancelprint: true
+      }
+    );
+    window.pywebview.api.CancelPrint();
+  }
+
+  
   StatusPrintEnd() {
     if (this.timer)
       clearInterval(this.timer);
@@ -89,34 +102,44 @@ class BrailleView extends React.Component {
     this.setState({ comevent: msg });
   }
 
-  HandlePrint() {
-    // clear print status for screen reader
-    this.setState({ comevent: "" });
-
-    // build Braille GCODE for current page
-    let geom = new BrailleToGeometry();
-    console.log ("Padding " + this.Braille.getLinePadding() + " spacing " + this.props.options.linespacing);
-    geom.setPaddingY(this.Braille.getLinePadding() * ((this.props.options.linespacing * 0.5) + 1));
-    console.log ("padding " + this.Braille.getLinePadding ());
-    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 1, 1);
-    let gcoder = new GeomToGCode();
-    gcoder.GeomToGCode(ptcloud);
-    let gcode = gcoder.GetGcode();
-
-    // display modal status screen
-    this.setState({ showModal: true });
-
-    // request backend to print gcode
-    window.pywebview.api.PrintGcode(gcode, this.props.options.comport).then(status => {
-      // remove modal status screen
-      console.log(status);
-      this.setState({ showModal: false, printstatus: status });
+  #endprint () {
       // set a timer to call setstate with a little delay
       // because form change are disabled for screen reader due to
       // modal status box
       this.timer = setInterval(() => {
         this.StatusPrintEnd();
       }, 500);
+  }
+  
+  HandlePrint() {
+    // clear print status for screen reader
+    this.setState({ comevent: "" });
+
+    // build Braille GCODE for current page
+    let geom = new BrailleToGeometry();
+    
+    geom.setPaddingY(this.Braille.getLinePadding() * ((this.props.options.linespacing * 0.5) + 1));
+    
+    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 1, 1);
+    let gcoder = new GeomToGCode();
+    gcoder.GeomToGCode(ptcloud);
+    let gcode = gcoder.GetGcode();
+
+    // display modal status screen
+    this.setState(
+      { 
+        showModal: true,
+        cancelprint: false
+      }
+    );
+
+    // request backend to print gcode
+    window.pywebview.api.PrintGcode(gcode, this.props.options.comport).then(status => {
+      // remove modal status screen
+      console.log(status);
+      this.setState({ showModal: false, printstatus: status });
+      
+      this.#endprint();
     }
     );
   }
@@ -185,17 +208,29 @@ class BrailleView extends React.Component {
           contentLabel=""
           aria={{ hidden: false, label: ' ' }}
         >
-          <div aria-hidden={false} className='ModalView'>
-            <label aria-label=' '></label>
-            <br />
-            <label aria-label={this.props.intl.formatMessage({ id: "print.print_progress_aria" })}>
+          <div 
+          aria-live="polite" 
+          role="log" 
+          aria-relevant="all" 
+          aria-atomic={false}
+          
+          className='ModalView'>
+          
+            
+            <p aria-label={this.props.intl.formatMessage({ id: "print.print_progress_aria" })}>
               <FormattedMessage id="print.printinprogress" defaultMessage="Impression en cours" />
-            </label>
-            <br />
-            <label aria-label={this.props.intl.formatMessage({ id: "print.print_wait_aria" })}>
+            </p>
+            
+            <p aria-label={this.props.intl.formatMessage({ id: "print.print_wait_aria" })}>
               <FormattedMessage id="print.printwait" defaultMessage="Merci de patienter" />
-            </label>
+            </p>
 
+            <button className="pure-button pad-button" onClick={this.CancelPrint}>
+              <FormattedMessage id="print.cancel_print" defaultMessage="Cancel" />
+            </button>
+            <p>
+              {this.state.cancelprint ? this.props.intl.formatMessage({ id: "print.cancel_print_pending"})  : ""}
+            </p>
           </div>
         </Modal>
 
@@ -203,7 +238,7 @@ class BrailleView extends React.Component {
           <FormattedMessage id="print.printselectpage" defaultMessage="Sélection de la page à imprimer" />
         </h1>
 
-        <label aria-label={this.props.intl.formatMessage({ id: "print.button_cmd_aria" })}></label>
+        <p aria-label={this.props.intl.formatMessage({ id: "print.button_cmd_aria" })}></p>
         <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={false} className="menu_font">
 
           {this.fpageprec()}
@@ -218,9 +253,9 @@ class BrailleView extends React.Component {
 
           </button>
         </div>
-        <label aria-label={this.props.intl.formatMessage({ id: "print.info_aria" })}>
+        <p aria-label={this.props.intl.formatMessage({ id: "print.info_aria" })}>
 
-        </label>
+        </p>
 
         <p aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>
           {this.props.intl.formatMessage({ id: "print.info_page_aria" }) + (this.state.page + 1) + this.props.intl.formatMessage({ id: "print.info_over_aria" })} {this.paginator.getPageNumber()}

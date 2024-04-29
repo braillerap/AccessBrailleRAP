@@ -35,7 +35,7 @@ serial_port = None
 serial_status = SerialStatus.Ready
 filename = ""
 root = None
-
+cancel_print = False
 
 def load_parameters():
     try:
@@ -66,10 +66,10 @@ class Api:
 
     def remove_comment(self, string):
         """Remove comments from GCode if any"""
-        if string.find(';') == -1:
+        if string.find(";") == -1:
             return string
-        return string[:string.index(';')]
-    
+        return string[: string.index(";")]
+
     def gcode_get_parameters(self):
         js = json.dumps(app_options)
         return js
@@ -146,12 +146,12 @@ class Api:
             allow_multiple=False,
             file_types=(filterstring[0] + " (*.txt)", filterstring[1] + " (*.*)"),
         )
-        
+
         if listfiles is None:
             return json.dumps(js)
         if len(listfiles) != 1:
             return json.dumps(js)
-        
+
         fname = listfiles[0]
         if fname == "" or fname == None:
             return json.dumps(js)
@@ -193,10 +193,18 @@ class Api:
 
         return json.dumps(js)
 
+    def CancelPrint(self):
+        global cancel_print
+        cancel_print = True
+        print ("Printing cenceled")
+        return
+
     def PrintGcode(self, gcode, comport):
-        global serial_status
+        global serial_status, cancel_print
         print("Opening Serial Port", comport)
+
         try:
+            cancel_print = False
             if serial_status == SerialStatus.Busy:
                 print("Printer busy")
                 return "Print in progress :"
@@ -207,10 +215,10 @@ class Api:
 
                 # Hit enter a few times to wake up
                 Printer.write(str.encode("\r\n\r\n"))
-                #print(comport, "cleanup")
+                # print(comport, "cleanup")
                 time.sleep(1)
                 Printer.flushInput()  # Flush startup text in serial input
-                #print("Sending GCode")
+                # print("Sending GCode")
                 gcodelines = gcode.split("\r\n")
                 for line in gcodelines:
                     cmd_gcode = self.remove_comment(line)
@@ -233,6 +241,13 @@ class Api:
                                 tbegin = time.time()
                             if time.time() - tbegin > 5:
                                 raise Exception("Timeout in printer communication")
+
+                    if cancel_print:
+                        Printer.write(
+                            str.encode("M84;\n") # disable motor
+                        )  
+                        Printer.readline()
+                        break
 
                 print("End of printing")
                 Printer.close()
@@ -307,8 +322,6 @@ def get_entrypoint():
         print(os.path.join(os.path.dirname(__file__), path))
         return os.path.exists(os.path.join(os.path.dirname(__file__), path))
 
-    
-
     if exists("./build/index.html"):  # unfrozen development
         return "./build/index.html"
 
@@ -360,21 +373,23 @@ entry = get_entrypoint()
 
 if __name__ == "__main__":
     api = Api()
-    
+
     debugihm = False
 
-    #print(sys.argv)
+    # print(sys.argv)
     dir, script = os.path.splitext(sys.argv[0])
     if len(sys.argv) > 1 and script == ".py":
         if sys.argv[1] == "--debug":
             debugihm = True
 
     print("start html=", entry)
-    load_parameters() 
+    load_parameters()
     # print (app_options)
 
     # print ("start", time())
-    window = webview.create_window("AccessBrailleRAP", entry, js_api=api, maximized=True)
+    window = webview.create_window(
+        "AccessBrailleRAP", entry, js_api=api, maximized=True
+    )
     # print ("created", time())
 
     webview.start(delete_splash, http_server=False, debug=debugihm)

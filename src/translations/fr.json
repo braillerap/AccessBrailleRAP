@@ -57,6 +57,9 @@
     "print.button_cmd_aria":"Boutons de commandes  : ",
     "print.info_aria":"Informations ",
     "print.info_page_aria":"Page ",
-    "print.info_over_aria":" sur "
+    "print.info_over_aria":" sur ",
+    "print.cancel_print":"Annuler l'impression",
+    "print.cancel_print_pending":"Annulation en cours"
+    
 }
 

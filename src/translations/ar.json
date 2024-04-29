@@ -57,6 +57,8 @@
     "print.button_cmd_aria":" :أزرار الأوامر",
     "print.info_aria":" معلومات",
     "print.info_page_aria":" صفحة",
-    "print.info_over_aria":" زيادة "
+    "print.info_over_aria":" زيادة ",
+    "print.cancel_print":"إلغاء الطباعة",
+    "print.cancel_print_pending":"جارٍ الإلغاء"
 }
 
