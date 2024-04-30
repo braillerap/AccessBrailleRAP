@@ -2,9 +2,11 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { injectIntl } from 'react-intl';
+import { IntlContext } from '../components/intlwrapper.js';
 
 class TextInput extends React.Component {
-    
+    static contextType = IntlContext;
+
     constructor(props) {
 
       super(props);
@@ -125,9 +127,16 @@ class TextInput extends React.Component {
           </h1>
         
         <form onSubmit={this.handleSubmit} >
-          <textarea  aria-label={this.props.intl.formatMessage({id:"input.text_aria"})} 
-            value={this.state.txt} onChange={this.handleChange} 
-            rows={10} cols={10} className="BrailleInput">{this.state.txt}</textarea>
+          <textarea  
+            aria-label={this.props.intl.formatMessage({id:"input.text_aria"})} 
+            value={this.state.txt} 
+            onChange={this.handleChange} 
+            rows={10} 
+            cols={10} 
+            className={this.context.getStyleClass('BrailleInput')}
+          >
+              {this.state.txt}
+          </textarea>
       
         </form>
         </div>
@@ -140,26 +149,29 @@ class TextInput extends React.Component {
         const ncols = parseInt(this.props.options.nbcol);
         const nlines = parseInt(this.props.options.nbline);
         return (
-              <div >
+              <div className={this.context.getStyleClass('general')}>
                 <h1 aria-hidden={true}></h1>
-                <button onClick={this.handleload} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.loadfile"})}</button>
-                <button onClick={this.handlesave} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.savefile"})}</button>
-                <button onClick={this.handlesaveas} className="pad-button pure-button  " >{this.props.intl.formatMessage({id:"input.saveasfile"})}</button>
-                <button onClick={this.handleimport} className="pad-button pure-button " >{this.props.intl.formatMessage({id:"input.importfile"})}</button>
+                <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({id:"input.loadfile"})}</button>
+                <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({id:"input.savefile"})}</button>
+                <button onClick={this.handlesaveas} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({id:"input.saveasfile"})}</button>
+                <button onClick={this.handleimport} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({id:"input.importfile"})}</button>
                 
                 <form onSubmit={this.handleSubmit} >
                   
-                  <h1 aria-atomic={true}>
+                  <h1 aria-atomic={true} >
                     <FormattedMessage id="input.title2" defaultMessage="Formulaire de saisie du texte"/>
                   </h1>  
                   
-                  <textarea  aria-label={this.props.intl.formatMessage({id:"input.text_aria"})}
-                    value={this.state.txt} 
-                    onChange={this.handleChange} 
-                    rows={nlines} 
-                    cols={ncols} 
+                  <textarea aria-label={this.props.intl.formatMessage({ id: "input.text_aria" })}
+                    value={this.state.txt}
+                    onChange={this.handleChange}
+                    rows={nlines}
+                    cols={ncols}
                     ref={this.props.focusref}
-                    className="BrailleInput">{this.state.txt}</textarea>
+                    className={this.context.getStyleClass('BrailleInput')}
+                  >
+                    {this.state.txt}
+                  </textarea>
                   
                 </form>
             </div>

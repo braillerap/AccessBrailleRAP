@@ -22,6 +22,8 @@
     "param.comportrefreshed":"تم تفعيل منافذ الاتصال",
     "param.linespacing_aria":"تباعد الأسطر",
     "param.linespacing":"تباعد الأسطر",
+    "param.theme":"سمة",
+    "param.theme_aria":"موضوع التطبيق",
 
     "layout.param_menu":"حدود",
     "layout.param_print":"الطباعة",

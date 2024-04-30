@@ -12,10 +12,86 @@ body {
   height: 100%;
 }
 
+.mainmenu
+{
+  background-color: red;
+}
 .menu_font {
   font-size: 1.5em;
   margin-bottom: 0.5em;
+ 
 }
+
+.menu-link
+{
+  text-decoration: none;
+  color:black;
+  padding: 0.3rem;
+  margin:0;
+}
+.menu-link:focus
+{
+  text-decoration: none;
+  background-color:rgb(198, 193, 193) ;
+  color:black;
+  
+}
+.menu-link:hover
+{
+  text-decoration: underline;
+  
+  background-color:rgb(198, 193, 193) ;
+  color:black;
+  
+}
+
+.menu-link-dark
+{
+  text-decoration: none;
+  color:whitesmoke;
+  padding: 0.3rem;
+  margin:0;
+}
+.menu-link-dark:focus
+{
+  text-decoration: none;
+  background-color:rgb(28, 23, 23) ;
+  color:white;
+  
+}
+.menu-link-dark:hover
+{
+  text-decoration: underline;
+  
+  background-color:rgb(28, 23, 23) ;
+  color:white;
+  
+}
+
+.menu-item {
+  color:aqua !important;
+}
+.menu-item-dark {
+  color:red !important;
+  background-color:rgb(8, 8, 8) !important;
+}
+
+
+
+.navbar {
+ 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   
+}
+.navbar li {
+  float: left;
+  margin:0;
+  padding: 0.5rem;
+  
+  }
+
 
 .main_div {
   width:100%;
@@ -43,15 +119,34 @@ body {
   
 }
 
+.headermain-dark {
+  
+  background-color: rgb(7, 7, 7);
+  height: 8vh;
+  
+}
+
 .headerside {
   
   background-color: rgb(58, 53, 53);
   height: 8vh;
 }
 
+.headerside-dark {
+  
+  background-color: rgb(198, 193, 193);
+  height: 8vh;
+}
+
 .bodymain {
   
   background-color: rgb(255, 255, 255);
+  border-width: 1;
+  min-height:92vh;
+}
+.bodymain-dark {
+  
+  background-color: rgb(0, 0, 0);
   border-width: 1;
   min-height:92vh;
 }
@@ -62,17 +157,33 @@ body {
   background-color: rgb(58, 53, 53);
   height: 100%;
 }
-
-
-
+.bodyside-dark {
+  
+  background-color: rgb(198, 193, 193);
+  height: 100%;
+}
 
 .BrailleInput
 {
   border-color: black;
+  color:black;
   font-size: calc(2px + 3vmin);
   max-height:70vh;
   font-family: monospace;
+  background-color: white;
 }
+
+.BrailleInput-dark
+{
+  border-color: white;
+  color:white;
+  font-size: calc(2px + 3vmin);
+  max-height:70vh;
+  font-family: monospace;
+  background-color: black;
+}
+
+
 .BrailleInputTable
 {
 
@@ -130,8 +241,27 @@ body {
   font-size: 1.5rem !important;
   
 }
+.pad-button-dark {
+  color:white !important;
+  background-color: rgb(58,53,53) !important;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  padding: 0.5rem !important;
+  border-width: 0.1em !important;
+  border-style: hidden !important ;
+  border-radius: 4px !important;
+  font-size: 1.5rem !important;
+  
+}
+
 .pad-button:focus {
   border:black !important;
+  border-width: 0.1em !important;
+  border-style: solid !important;
+  
+}
+.pad-button-dark:focus {
+  border:white !important;
   border-width: 0.1em !important;
   border-style: solid !important;
   
@@ -166,14 +296,15 @@ body {
   width:90%;
   margin-left: 5%;
   margin-right:5%;
-  
 }
+
 .formparam h1
 {
   text-align: start;
   margin-left: 20%;
   margin-right: 20%;
 }
+
 .formparam p
 {
   text-align: start;
@@ -181,16 +312,94 @@ body {
   margin-right: 20%;
   font-size: 1.5em;
 }
+
+.input
+{
+  color:black !important;
+  height:100%;
+  margin:0.2em ! important;
+}
+.input:focus
+{
+  color:black !important;
+  height:100%;
+  
+  border-color: white !important;
+  border-width: 0.3em !important;
+  border-style: solid !important;
+  margin:0 !important;
+}
+
+.input-dark
+{
+  height:100%;
+  color:white !important;
+  background-color: rgb(8, 8, 8) !important;
+  margin:0.2em !important;
+}
+.input-dark:focus
+{
+  color:white !important;
+  height:100%;
+  background-color: rgb(8, 8, 8) !important;
+  border-color: white !important;
+  border-width: 0.3em !important;
+  border-style: solid !important;
+  margin:0 !important;
+}
+
+.input:focus
+{
+  color:black !important;
+  padding: auto;
+  background-color: white !important;
+  border-color: black !important;
+  border-width: 0.3em !important;
+  border-style: solid !important;
+}
+
 .formparam label
 {
-  font-size: 1.3em;
+  font-size: 1.3em; 
 }
 
 .selectbraille {
-   width:50%; 
+   width:45%; 
 }
 
+.general {
+  color:black !important;
+  background-color: white !important;
+}
+.general-dark {
+  color:white !important;
+  background-color: black !important;
+}
 
+.h1 {
+  color:black;
+}
+
+.h1-dark {
+  color:white;
+}
+
+/*
+.h2 {
+  color:black;
+}
+
+.h2-dark {
+  color:white;
+}
+
+.h3 {
+  color:black;
+}
+.general-dark {
+  color:white;
+  background-color: black;
+}
 
 svg {cursor: default;
   -webkit-user-select: none;
@@ -198,3 +407,40 @@ svg {cursor: default;
   -ms-user-select: none;
   user-select: none; } 
 
+.h1 {
+  color:black;
+}
+
+.h1-dark {
+  color:white;
+}
+
+/*
+.h2 {
+  color:black;
+}
+
+.h2-dark {
+  color:white;
+}
+
+.h3 {
+  color:black;
+}
+
+.h3-dark {
+  color:white;
+}
+
+.h4 {
+  color:black;
+}
+
+.h4-dark {
+  color:white;
+}
+
+.h5 {
+  color:black;
+}
+*/

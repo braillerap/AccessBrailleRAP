@@ -14,6 +14,6 @@ ReactDOM.render(
         <App />
     </IntlWrapper>
     </React.StrictMode>
-    , document.getElementById('root'));
+    , document.getElementById('root')); 
 Modal.setAppElement(document.getElementById('root'));
 //registerServiceWorker();

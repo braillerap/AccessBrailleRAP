@@ -21,6 +21,8 @@
     "param.comportrefreshed":"Ports de communications actualisés",
     "param.linespacing_aria":"Interligne",
     "param.linespacing":"Interligne",
+    "param.theme":"Thème",
+    "param.theme_aria":"Thème de l'application",
     
     
     "layout.param_menu":"Paramètres",

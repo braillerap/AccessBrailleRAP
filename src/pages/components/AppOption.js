@@ -4,7 +4,8 @@ const AppOption = {
     nbcol:31,
     linespacing:0,
     brailletbl:70,
-    lang:"fr"
+    lang:"fr",
+    theme:"dark"
 }
 
 export default AppOption;

@@ -22,6 +22,8 @@
     "param.comportrefreshed":"Communication ports actualized",
     "param.linespacing_aria":"Line spacing",
     "param.linespacing":"Line spacing",
+    "param.theme":"Theme",
+    "param.theme_aria":"Application theme",
 
     "layout.param_menu":"Parameters",
     "layout.param_print":"Printing",

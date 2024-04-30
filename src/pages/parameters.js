@@ -40,7 +40,7 @@ class Parameters extends React.Component {
         this.handleChangeBraille = this.handleChangeBraille.bind(this);
         this.handleChangeLanguage = this.handleChangeLanguage.bind(this);
         this.handleChangeLinespacing = this.handleChangeLinespacing.bind(this);
-
+        this.handleChangeTheme = this.handleChangeTheme.bind(this);
         //console.log ("constructor");
     }
 
@@ -170,6 +170,17 @@ class Parameters extends React.Component {
       else
         this.setState({options:option});  
     }
+    handleChangeTheme (event)
+    {
+      let option = this.props.options;
+      option.theme = event.target.value;
+      if (this.props.optioncb)
+        this.props.optioncb(option);
+      else
+        this.setState({options:option});
+      console.log (event.target.value);
+      this.context.setTheme (event.target.value);
+    }
     render_comport ()
     {
       if (this.state.data === null)
@@ -184,7 +195,7 @@ class Parameters extends React.Component {
       { 
         
         return (
-        <>
+        <div>
         <p aria-hidden='true' aria-label={this.props.intl.formatMessage({id:"param.labelport"}) + this.props.options.comport + " : "} >
           <FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> 
             <b>{this.state.options.comport}</b>
@@ -193,7 +204,7 @@ class Parameters extends React.Component {
           <FormattedMessage id="param.labelport" defaultMessage="Port de communication"/> 
         </label>
         <select 
-            className='selectbraille' 
+            className={this.context.getStyleClass('input') + ' selectbraille'}
             onChange={this.handleChangePort}  
             value={this.props.options.comport} 
             id="selectport"
@@ -207,7 +218,7 @@ class Parameters extends React.Component {
                })
         }     
         </select>
-        </>
+        </div>
         );
       }
     }
@@ -229,13 +240,16 @@ class Parameters extends React.Component {
         <label htmlFor='combobraille'>
         <FormattedMessage id="param.brailleselectlabel" defaultMessage="Table Braille"/>
           </label>
-        <select className='selectbraille' 
-            onChange={this.handleChangeBraille}  
-            value={this.props.options.brailletbl} 
+          <select 
+            className={this.context.getStyleClass('input') + ' selectbraille'}
+            onChange={this.handleChangeBraille}
+            value={this.props.options.brailletbl}
             name="combobraille"
             id="combobraille"
-           
-           ref={this.props.focusref}>
+
+            ref={this.props.focusref}
+            
+          >
            
         
         {this.state.brailleinfo.map ((item, index)=> {
@@ -272,7 +286,12 @@ class Parameters extends React.Component {
         //const tat ="toto";
       return (
             
-              <div aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>
+              <div 
+                aria-live="polite" 
+                role="log" 
+                aria-relevant="all" 
+                aria-atomic={true}
+                className={this.context.getStyleClass('general')}>
                
               <form 
                 aria-label={this.props.intl.formatMessage({id:"param.form_aria"})}  
@@ -291,7 +310,7 @@ class Parameters extends React.Component {
                     id = "param.header"
                     defaultMessage="Formulaire de paramétrage de l'application"
                   />
-              </h1>
+                </h1>
                 <div className="pure-control-group">
                 {this.render_braille_lang()}
                 </div>
@@ -299,11 +318,12 @@ class Parameters extends React.Component {
                   <label  htmlFor='nbcol' aria-label={this.props.intl.formatMessage({id:"param.cols_aria"})}>
                   <FormattedMessage id="param.charperline" defaultMessage="Nombre de caractères par ligne"/>
                   </label>
-                    <input type="number" aria-label={this.props.intl.formatMessage({id:"param.cols_aria"})} 
+                    <input type="number" 
+                      aria-label={this.props.intl.formatMessage({id:"param.cols_aria"})} 
+                      className={this.context.getStyleClass('input')}
                       step="1" min="5" max="35" name="nbcol" id="nbcol"
                       value={this.props.options.nbcol} 
                       onChange={this.handleChangeNbCol} 
-                    
                     />
                 </div>
                 <div className="pure-control-group">
@@ -323,6 +343,7 @@ class Parameters extends React.Component {
                     id="nbline" 
                     value={this.props.options.nbline} 
                     onChange={this.handleChangeNbLine} 
+                    className={this.context.getStyleClass('input')}
                   />
                 </div>
                 <div className="pure-control-group">
@@ -332,8 +353,11 @@ class Parameters extends React.Component {
                     <FormattedMessage id="param.linespacing" defaultMessage="Interligne"/>
                     
                   </label> 
-                  <select value={this.props.options.linespacing} onChange={this.handleChangeLinespacing}
+                  <select 
+                    value={this.props.options.linespacing} 
+                    onChange={this.handleChangeLinespacing}
                     name="linespacing" id="linespacing"
+                    className={this.context.getStyleClass('input')}
                   >
                     <option value="0">1</option>
                     <option value="1">1.5</option>
@@ -344,10 +368,14 @@ class Parameters extends React.Component {
                 <div className='pure-control-group'>
                   
                     {this.render_comport()}
+                    <label  htmlFor='refreshbutton' aria-label="hidden">
+                    </label>
                     <button  
                       aria-label={this.props.intl.formatMessage({id:"param.button_refresh_com_aria"})} 
-                      className="pure-button pad-button" 
+                      className={this.context.getStyleClass('pad-button') + " pure-button "}
                       onClick={this.handleRefreshPort}
+                      name="refreshbutton"
+                      id="refreshbutton"
                       >
                         <FormattedMessage id="param.buttonrefresh" defaultMessage="Actualiser"/>
                         
@@ -365,19 +393,36 @@ class Parameters extends React.Component {
                   
 
                   <select id="langid"
-                  value={this.context.locale} 
-                  onChange={this.handleChangeLanguage}
+                    value={this.context.locale} 
+                    onChange={this.handleChangeLanguage}
+                    className={this.context.getStyleClass('input')}
                   >
-                  {locales.map ((item, index)=> {
-                    if (this.context.locale === item.lang)
-                      return (<option  aria-selected={true} key={item.lang} value={item.lang}>{item.desc}</option>);
-                    else
-                      return (<option  aria-selected={false} key={item.lang} value={item.lang}>{item.desc}</option>);
-              })
-             }
+                    {locales.map ((item, index)=> {
+                      if (this.context.locale === item.lang)
+                        return (<option  aria-selected={true} key={item.lang} value={item.lang}>{item.desc}</option>);
+                      else
+                        return (<option  aria-selected={false} key={item.lang} value={item.lang}>{item.desc}</option>);
+                      })
+                    }
                     
                     
                   </select>
+                  <label  
+                    aria-label={this.props.intl.formatMessage({id:"param.theme_aria"})} 
+                    htmlFor='themeselect'>
+                    <FormattedMessage id="param.theme" defaultMessage="Thème"/>
+                    
+                  </label> 
+                  <select 
+                    value={this.props.options.theme} 
+                    onChange={this.handleChangeTheme}
+                    name="themeselect" id="themeselect"
+                    className={this.context.getStyleClass('input')}
+                  >
+                    <option value="dark">White on Black</option>
+                    <option value="light">Black on White</option>
+                  </select>
+
                 </div>
                 </fieldset> 
              
