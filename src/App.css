@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(58, 53, 53);
+  /* background-color: rgb(58, 53, 53); */
+  
 }
 
 .App {
@@ -22,7 +23,12 @@ body {
   background-color:rgb(58, 53, 53);
   
 }
-
+.main_div_dark {
+  width:100%;
+  min-height: 100vh;
+  background-color:rgb(198, 193, 193);
+  
+}
 .main_layout {
   width:100%;
   min-height: 80vh;
@@ -31,20 +37,20 @@ body {
 }
 
 .headermain {
-  border-color: rgb(175, 129, 69);
+  
   background-color: rgb(255, 253, 253);
   height: 8vh;
   
 }
 
 .headerside {
-  border-color: burlywood;
+  
   background-color: rgb(58, 53, 53);
   height: 8vh;
 }
 
 .bodymain {
-  border-color: rgb(175, 129, 69);
+  
   background-color: rgb(255, 255, 255);
   border-width: 1;
   min-height:92vh;
@@ -52,7 +58,7 @@ body {
 
 
 .bodyside {
-  border-color: burlywood;
+  
   background-color: rgb(58, 53, 53);
   height: 100%;
 }
@@ -180,7 +186,6 @@ body {
   font-size: 1.3em;
 }
 
-
 .selectbraille {
    width:50%; 
 }
@@ -191,5 +196,5 @@ svg {cursor: default;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; } /* whole rectangle */
+  user-select: none; } 
 
