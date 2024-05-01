@@ -1,4 +1,6 @@
 import React from 'react';
+import { IntlContext } from '../../components/intlwrapper.js';
+import { injectIntl } from 'react-intl';
 
 const BrailleStyle = {
     
@@ -7,6 +9,7 @@ const BrailleStyle = {
 }
 
 class PageDisplay extends React.Component {
+    static contextType = IntlContext;
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +20,7 @@ class PageDisplay extends React.Component {
         
     }
     
-      
+    /*  
     getsvg ()
     {
         if (this.state.checked !== false)
@@ -32,7 +35,7 @@ class PageDisplay extends React.Component {
                     </g>
                     );
     }  
-    
+    */
     render() {
         
         let page = this.state.braillepages.getPage (this.props.pagenbr);
@@ -40,7 +43,7 @@ class PageDisplay extends React.Component {
         
         <div style={BrailleStyle} aria-hidden="true">
                                
-            {page.map ((line, index)=> (<div className="BrailleOutput" key={index}>{line}</div>))}
+            {page.map ((line, index)=> (<div className={this.context.getStyleClass("BrailleOutput")} key={index}>{line}</div>))}
             
         </div>  
         
@@ -49,4 +52,4 @@ class PageDisplay extends React.Component {
 
 }
 
-export default PageDisplay;
+export default injectIntl(PageDisplay);

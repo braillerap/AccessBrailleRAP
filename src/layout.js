@@ -52,34 +52,31 @@ class Layout extends Component
                 <a href="https://www.braillerap.org" target="_blank">
                   AccessBrailleRAP {`${process.env.REACT_APP_VERSION}`}
                 </a>
-                </div>
-                <div className="mainmenu" >
+                
                 <nav>
-                    <ul className="navbar">
-                    <li className={this.context.getStyleClass('menu-item')}>
+                    <ul className={this.context.getStyleClass('menu')}>
+                    <li >
                         <Link to="/" 
                           onClick={this.onClickMenu}
-                          className={this.context.getStyleClass('menu-link')}>
+                          >
                           <FormattedMessage id="layout.param_input" defaultMessage="Saisie"/>  
                         </Link>
 
                       </li>
 
-                      <li className={this.context.getStyleClass('menu-item')}>
+                      <li >
                         
                         <Link 
                           to="/impression" 
                           onClick={this.onClickMenu}
-                          className={this.context.getStyleClass('menu-link')}
+                          
                           >
                           
                           <FormattedMessage id="layout.param_print" defaultMessage="Impression"/>
                         </Link>
                       </li>
-                      <li className={this.context.getStyleClass('menu-item')}>  
-                        <Link to="/parametre" onClick={this.onClickMenu}
-                        className={this.context.getStyleClass('menu-link')}
-                        >
+                      <li>  
+                        <Link to="/parametre" onClick={this.onClickMenu}>
                           
                           <FormattedMessage id="layout.param_menu" defaultMessage="Paramètres"/>
                         </Link>

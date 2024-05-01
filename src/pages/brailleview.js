@@ -201,7 +201,7 @@ class BrailleView extends React.Component {
     return (
 
 
-      <div >
+      <div className={this.context.getStyleClass('general')}>
 
         <Modal
           isOpen={this.state.showModal}
@@ -253,6 +253,7 @@ class BrailleView extends React.Component {
 
           </button>
         </div>
+        
         <p aria-label={this.props.intl.formatMessage({ id: "print.info_aria" })}>
 
         </p>

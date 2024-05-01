@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>Access BrailleRAP</title>
+</head>
+<style>
+    body {
+        background-color: rgb(8,8,8);
+        color:aquamarine;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    
+
+.menu {
+    box-sizing: border-box;
+    display: flex;                
+    margin:0.3rem;                
+    padding:0.3rem;               
+    
+    justify-content: center;/* Alignements des liens dans le menu */
+}
+.menu li {
+    list-style-type: none ;       /* Suppression des puces */
+  
+}
+.menu a {
+    box-sizing: border-box;
+    display:block;                /* Transformation en block */
+    text-align: center;           /* Centrage du texte */   
+    text-decoration: none;        /* Suppression du soulignement */
+    
+    margin: 0.5rem;               /* Marges externes */
+    padding: 1rem ;            /* Marges internes */
+    
+    
+    color: rgb(192,192,192);                  /* Couleur du texte */
+    
+    border:rgb(128,128,128) solid 1px;      /* Bordure */
+    border-radius: 4px;           /* Arrondis des bordures */
+    
+    
+}
+.menu a:hover
+{
+    text-decoration: underline;
+    
+    background-color: rgb(38,38,38);
+    color: rgb(255,255,255);
+    border:rgb(255,255,255) solid 2px;      /* Bordure */
+}
+.menu a:focus
+{
+    text-decoration: none;
+    background-color: rgb(8,8,8);
+    color: rgb(255,255,255);
+    outline: 2px solid white;
+    border-radius: 4px;
+}
+
+</style>
+<body>
+    <h1>Hello</h1>
+    <div>
+        <div class="menu-horizontal">
+            <ul class="menu-list">
+                <li class="menu-item"><a class="menu-link" href="#">option1</a></li>
+                <li class="menu-item"><a class="menu-link" href="#">option2</a></li>
+                <li class="menu-item"><a class="menu-link" href="#">option3</a></li>
+            </ul>
+        </div>
+    </div>
+    <div >
+        <div>
+            <ul class="menu">
+                <li ><a  href="#">option1</a></li>
+                <li ><a  href="#">option2</a></li>
+                <li ><a  href="#">option3</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

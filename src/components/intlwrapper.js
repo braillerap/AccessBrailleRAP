@@ -26,6 +26,8 @@ const _themedb = {
         "input":"input-dark",
         "menu-item":"menu-item-dark",
         "menu-link":"menu-link-dark",
+
+        "menu":"menu-dark"
     },
     "light": {
         "main_div":"main_div",
@@ -40,6 +42,7 @@ const _themedb = {
         "input":"input",
         "menu-item":"menu-item",
         "menu-link":"menu-link",
+        "menu":"menu"
     }
 
 }

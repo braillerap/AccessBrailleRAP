@@ -16,65 +16,107 @@ body {
 {
   background-color: red;
 }
+
 .menu_font {
   font-size: 1.5em;
   margin-bottom: 0.5em;
+  align-items: center;
+}
+
+.menu {
  
+  display: flex;                
+  margin:0.1rem;                
+  padding:0.1rem;               
+  
+  justify-content: center;/* Alignements des liens dans le menu */
+}
+.menu-dark {
+ 
+  display: flex;                
+  margin:0.1rem;                
+  padding:0.1rem;               
+  
+  justify-content: center;/* Alignements des liens dans le menu */
 }
 
-.menu-link
-{
-  text-decoration: none;
-  color:black;
-  padding: 0.3rem;
-  margin:0;
+.menu li {
+  list-style-type: none ;       /* Suppression des puces */
+
 }
-.menu-link:focus
-{
-  text-decoration: none;
-  background-color:rgb(198, 193, 193) ;
-  color:black;
+.menu-dark li {
+  list-style-type: none ;       /* Suppression des puces */
+
+}
+
+.menu a {
+  box-sizing: border-box;
+  display:block;                /* Transformation en block */
+  text-align: center;           /* Centrage du texte */   
+  text-decoration: none;        /* Suppression du soulignement */
+  
+  margin: 0.2rem;               /* Marges externes */
+  padding: 0.25rem ;            /* Marges internes */
+  
+  
+  color: rgb(48,48,48);                  /* Couleur du texte */
+  
+  border:rgb(48,48,48) solid 1px;      /* Bordure */
+  border-radius: 4px;           /* Arrondis des bordures */
+  
   
 }
-.menu-link:hover
+.menu a:hover
 {
   text-decoration: underline;
   
-  background-color:rgb(198, 193, 193) ;
-  color:black;
-  
+  background-color: rgb(198,198,198);
+  color: black;
+  border:black solid 2px;      /* Bordure */
+}
+.menu a:focus
+{
+  text-decoration: none;
+  background-color: rgb(8,8,8);
+  color: rgb(255,255,255);
+  outline: 2px solid white;
+  border-radius: 4px;
 }
 
-.menu-link-dark
-{
-  text-decoration: none;
-  color:whitesmoke;
-  padding: 0.3rem;
-  margin:0;
-}
-.menu-link-dark:focus
-{
-  text-decoration: none;
-  background-color:rgb(28, 23, 23) ;
-  color:white;
+.menu-dark a {
+  box-sizing: border-box;
+  display:block;                /* Transformation en block */
+  text-align: center;           /* Centrage du texte */   
+  text-decoration: none;        /* Suppression du soulignement */
+  
+  margin: 0.2rem;               /* Marges externes */
+  padding: 0.25rem ;            /* Marges internes */
+  
+  
+  color: rgb(192,192,192);                  /* Couleur du texte */
+  
+  border:rgb(128,128,128) solid 0px;      /* Bordure */
+  border-radius: 4px;           /* Arrondis des bordures */
+  
   
 }
-.menu-link-dark:hover
+.menu-dark a:hover
 {
   text-decoration: underline;
   
-  background-color:rgb(28, 23, 23) ;
-  color:white;
-  
+  background-color: rgb(38,38,38);
+  color: rgb(255,255,255);
+  border:rgb(255,255,255) solid 2px;      /* Bordure */
+}
+.menu-dark a:focus
+{
+  text-decoration: none;
+  background-color: rgb(8,8,8);
+  color: rgb(255,255,255);
+  outline: 2px solid white;
+  border-radius: 4px;
 }
 
-.menu-item {
-  color:aqua !important;
-}
-.menu-item-dark {
-  color:red !important;
-  background-color:rgb(8, 8, 8) !important;
-}
 
 
 
@@ -121,7 +163,7 @@ body {
 
 .headermain-dark {
   
-  background-color: rgb(7, 7, 7);
+  background-color: rgb(8, 8, 8);
   height: 8vh;
   
 }
@@ -134,7 +176,7 @@ body {
 
 .headerside-dark {
   
-  background-color: rgb(198, 193, 193);
+  background-color:rgb(58, 53, 53);
   height: 8vh;
 }
 
@@ -146,7 +188,7 @@ body {
 }
 .bodymain-dark {
   
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(8, 8, 8);
   border-width: 1;
   min-height:92vh;
 }
@@ -225,8 +267,16 @@ body {
 .BrailleOutput {
     font-size: calc(1em + 0.4vw);
     min-height: 100%;
+    color:black;
     background-color: rgb(253, 253, 253);
     font-family: monospace !important;
+}
+.BrailleOutput-dark {
+  font-size: calc(1em + 0.4vw);
+  min-height: 100%;
+  color:white;
+  background-color: rgb(8, 8, 8);
+  font-family: monospace !important;
 }
 
 
@@ -373,7 +423,7 @@ body {
 }
 .general-dark {
   color:white !important;
-  background-color: black !important;
+  background-color: rgb(8,8,8) !important;
 }
 
 .h1 {
@@ -384,63 +434,11 @@ body {
   color:white;
 }
 
-/*
-.h2 {
-  color:black;
-}
-
-.h2-dark {
-  color:white;
-}
-
-.h3 {
-  color:black;
-}
-.general-dark {
-  color:white;
-  background-color: black;
-}
 
 svg {cursor: default;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; } 
+  user-select: none; 
+} 
 
-.h1 {
-  color:black;
-}
-
-.h1-dark {
-  color:white;
-}
-
-/*
-.h2 {
-  color:black;
-}
-
-.h2-dark {
-  color:white;
-}
-
-.h3 {
-  color:black;
-}
-
-.h3-dark {
-  color:white;
-}
-
-.h4 {
-  color:black;
-}
-
-.h4-dark {
-  color:white;
-}
-
-.h5 {
-  color:black;
-}
-*/
