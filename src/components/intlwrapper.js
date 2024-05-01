@@ -10,8 +10,8 @@ export const IntlContext = React.createContext();
 const _local = "fr"; //navigator.language;
 let _lang = French;
 let _localinfo = locales[1];
-
 let _theme = "dark";
+
 const _themedb = {
     "dark":{
         "main_div":"main_div_dark",
@@ -27,7 +27,8 @@ const _themedb = {
         
         "menu":"menu-dark",
         "BrailleOutput":"BrailleOutput-dark",
-        "ModalView":"ModalView-dark"
+        "ModalView":"ModalView-dark",
+        "ModalBox":"ModalBox-dark"
     },
     "light": {
         "main_div":"main_div",
@@ -43,7 +44,8 @@ const _themedb = {
         
         "menu":"menu",
         "BrailleOutput":"BrailleOutput",
-        "ModalView":"ModalView"
+        "ModalView":"ModalView",
+        "ModalBox":"ModalBox"
     }
 
 }

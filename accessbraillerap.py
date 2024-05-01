@@ -23,6 +23,7 @@ app_options = {
     "linespacing": "0",
     "brailletbl": "70",
     "lang": "",
+    "theme": "light"
 }
 
 
@@ -88,8 +89,8 @@ class Api:
     def save_parameters(self):
         """Save parameters in local json file"""
         try:
-            # print ("data", app_options)
-            # print ("json", json.dumps(app_options))
+            #print ("data", app_options)
+            #print ("json", json.dumps(app_options))
             with open("parameters.json", "w", encoding="utf-8") as of:
                 json.dump(app_options, of)
 
@@ -201,7 +202,7 @@ class Api:
 
     def PrintGcode(self, gcode, comport):
         global serial_status, cancel_print
-        print("Opening Serial Port", comport)
+        #print("Opening Serial Port", comport)
 
         try:
             cancel_print = False
@@ -211,7 +212,7 @@ class Api:
 
             serial_status = SerialStatus.Busy
             with serial.Serial(comport, 250000, timeout=2, write_timeout=2) as Printer:
-                print(comport, "is open")
+                #print(comport, "is open")
 
                 # Hit enter a few times to wake up
                 Printer.write(str.encode("\r\n\r\n"))
@@ -226,7 +227,7 @@ class Api:
                         cmd_gcode.strip()
                     )  # Strip all EOL characters for streaming
                     if cmd_gcode.isspace() is False and len(cmd_gcode) > 0:
-                        print("Sending: " + cmd_gcode)
+                        #print("Sending: " + cmd_gcode)
                         Printer.write(
                             cmd_gcode.encode() + str.encode("\n")
                         )  # Send g-code block
@@ -234,7 +235,7 @@ class Api:
                         tbegin = time.time()
                         while True:
                             grbl_out = Printer.readline()
-                            print(grbl_out.strip().decode("utf-8"))
+                            #print(grbl_out.strip().decode("utf-8"))
                             if str.encode("ok") in grbl_out:
                                 break
                             if len(grbl_out) > 0:
@@ -249,7 +250,7 @@ class Api:
                         Printer.readline()
                         break
 
-                print("End of printing")
+                #print("End of printing")
                 Printer.close()
         except Exception as e:
             print(e)

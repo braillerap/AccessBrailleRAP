@@ -174,6 +174,7 @@ class Parameters extends React.Component {
     {
       let option = this.props.options;
       option.theme = event.target.value;
+      console.log ("option in param " + option.toString());    
       if (this.props.optioncb)
         this.props.optioncb(option);
       else

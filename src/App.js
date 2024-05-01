@@ -64,6 +64,7 @@ class App extends Component {
         else
           this.setState ({options:params})
         this.context.setLanguage (params["lang"]);
+        this.context.setTheme(params["theme"]);
         this.louis = new libLouis();
         this.louis.load (this.LouisLoaded);
         
@@ -99,9 +100,10 @@ class App extends Component {
     }
     SetOption (opt)
     {
+      console.log ("theme received " + opt.theme.toString());
+      console.log ("option received " + opt.toString());
       this.setState ({option:opt});
       window.pywebview.api.gcode_set_parameters (opt);
-      //eel.gcode_set_parameters(opt);
     }
     SetStatus (status)
     {

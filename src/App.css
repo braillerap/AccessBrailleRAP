@@ -266,6 +266,48 @@ body {
   min-height: 100%;
 }
 
+.ModalBox {
+  position: absolute;
+  margin: 40px;
+  
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: auto;
+  WebkitOverflowScrolling: touch;
+  borderRadius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.ModalBox {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left:40px;
+  right:40px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+.ModalBox-dark {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left:40px;
+  right:40px;
+  border: 1px solid #ccc;
+  background-color: #080808;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
 .BrailleView {
   text-align: center;
   margin-left: auto;

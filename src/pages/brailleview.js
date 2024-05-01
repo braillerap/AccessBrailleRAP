@@ -209,6 +209,7 @@ class BrailleView extends React.Component {
           isOpen={this.state.showModal}
           contentLabel=""
           aria={{ hidden: false, label: ' ' }}
+          className={this.context.getStyleClass('ModalBox')}
         >
           <div 
           aria-live="polite" 
