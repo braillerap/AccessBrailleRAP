@@ -24,10 +24,10 @@ const _themedb = {
         "h1":"h1-dark",
         "general":"general-dark",
         "input":"input-dark",
-        "menu-item":"menu-item-dark",
-        "menu-link":"menu-link-dark",
-
-        "menu":"menu-dark"
+        
+        "menu":"menu-dark",
+        "BrailleOutput":"BrailleOutput-dark",
+        "ModalView":"ModalView-dark"
     },
     "light": {
         "main_div":"main_div",
@@ -40,9 +40,10 @@ const _themedb = {
         "h1":"h1",
         "general":"general",
         "input":"input",
-        "menu-item":"menu-item",
-        "menu-link":"menu-link",
-        "menu":"menu"
+        
+        "menu":"menu",
+        "BrailleOutput":"BrailleOutput",
+        "ModalView":"ModalView"
     }
 
 }

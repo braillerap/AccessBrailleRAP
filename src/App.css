@@ -244,6 +244,19 @@ body {
 }
 
 .ModalView {
+  color:black;
+  background-color: white;
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  min-height: 100%;
+}
+.ModalView-dark {
+  color:white;
+  background-color: rgb(8,8,8);
   font-size: 2em;
   font-weight: bolder;
   text-align: center;
@@ -271,6 +284,7 @@ body {
     background-color: rgb(253, 253, 253);
     font-family: monospace !important;
 }
+
 .BrailleOutput-dark {
   font-size: calc(1em + 0.4vw);
   min-height: 100%;
