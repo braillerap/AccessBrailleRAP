@@ -150,7 +150,9 @@ class BrailleView extends React.Component {
     // display prev button according to page position
     if (this.paginator.getPageNumber() > 1 && this.state.page > 0)
       return (
-        <button className="pure-button pad-button" onClick={this.HandlePrec}>
+        <button 
+          className={this.context.getStyleClass('pad-button') + " pure-button"}
+          onClick={this.HandlePrec}>
           <FormattedMessage id="print_button_prec"
             defaultMessage="Page précédente" />
         </button>
@@ -159,7 +161,7 @@ class BrailleView extends React.Component {
       return (
         <button aria-label={this.props.intl.formatMessage({ id: "print.button_prec_aria" })}
           disabled={true}
-          className="pure-button pad-button"
+          className={this.context.getStyleClass('pad-button') + " pure-button"}
           onClick={this.HandlePrec}>
           <FormattedMessage id="print_button_prec"
             defaultMessage="Page précédente" />
@@ -170,7 +172,7 @@ class BrailleView extends React.Component {
     // display next button according to page position
     if (this.state.page + 1 < this.paginator.getPageNumber())
       return (
-        <button className="pure-button pad-button"
+        <button className={this.context.getStyleClass('pad-button') + " pure-button"}
           onClick={this.HandleNext}>
           <FormattedMessage id="print_button_next" defaultMessage="Page suivante" />
         </button>
@@ -179,7 +181,7 @@ class BrailleView extends React.Component {
       return (
         <button aria-label={this.props.intl.formatMessage({ id: "print.button_next_aria" })}
           disabled={true}
-          className="pure-button pad-button"
+          className={this.context.getStyleClass('pad-button') + " pure-button"}
           onClick={this.HandleNext}>
           <FormattedMessage id="print_button_next" defaultMessage="Page suivante" />
         </button>
@@ -214,9 +216,7 @@ class BrailleView extends React.Component {
           aria-relevant="all" 
           aria-atomic={false}
           
-          className='ModalView'>
-          
-            
+          className={this.context.getStyleClass('ModalView')}>
             <p aria-label={this.props.intl.formatMessage({ id: "print.print_progress_aria" })}>
               <FormattedMessage id="print.printinprogress" defaultMessage="Impression en cours" />
             </p>
@@ -225,7 +225,7 @@ class BrailleView extends React.Component {
               <FormattedMessage id="print.printwait" defaultMessage="Merci de patienter" />
             </p>
 
-            <button className="pure-button pad-button" onClick={this.CancelPrint}>
+            <button className={this.context.getStyleClass('pad-button') + " pure-button"} onClick={this.CancelPrint}>
               <FormattedMessage id="print.cancel_print" defaultMessage="Cancel" />
             </button>
             <p>
@@ -246,7 +246,7 @@ class BrailleView extends React.Component {
           <button
             aria-label={this.props.intl.formatMessage({ id: "print.button_print" })}
             ref={this.props.focusref}
-            className="pad-button pure-button"
+            className={this.context.getStyleClass('pad-button') + " pure-button"}
             onClick={this.HandlePrint}
           >
             <FormattedMessage id="print.button_print" defaultMessage="Imprimer" />
