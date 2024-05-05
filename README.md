@@ -4,12 +4,13 @@ The project use several open source licensed software:
 - liblouisreact, a liblouis version slightly modified to run in react.js environnement.
 - liblouis 
 - pandoc
+- pywebview
 
 ## Release
 You wil find packaged installation in [release](https://github.com/braillerap/AccessBrailleRAP/releases).
 
 ## LibLouis
-AccessBrailleRAP use lilouis to translate text into Braille. You can select the Braille language (English, French...), contracted or uncontacted Braille, and 6 dots or 8 Dots Braille standard.
+AccessBrailleRAP use liblouis to translate text into Braille. You can select the Braille language (English, French...), contracted or uncontacted Braille, and 6 dots or 8 Dots Braille standard.
 The original version of liblouis is available here [https://github.com/liblouis/liblouis](https://github.com/liblouis/liblouis)
 The modified version for react.js is available here [https://github.com/crocsg/liblouis](https://github.com/crocsg/liblouis)
 The module for react.js is available here [https://github.com/crocsg/liblouisreact](https://github.com/crocsg/liblouisreact)
@@ -23,6 +24,22 @@ the original version of pandoc is available here [www.pandoc.org](https://www.pa
 
 pandoc is licensed under GNU GPL V2.
 
+## Pywebview
+
+AccessBrailleRAP use pywebview to display the react.js GUI in embedded in Python backend.
+Pywebview is a cross-platform wrapper around the webview library.
+The original version of pywebview is available here [https://github.com/r0x0/pywebview](https://github.com/r0x0/pywebview)
+
+pywebview is licensed under MIT.
+
+## License
+
+AccessBrailleRAP is licensed under GNU GPL V3.
+
+## Features
+
+- Translate text into Braille
+- Translate word document into Braille
 ## Screenshot
 
 ![](./screenshot.jpg)
