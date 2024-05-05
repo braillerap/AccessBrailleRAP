@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import { eel } from "./../eel.js";
+
 
 class TestSerial extends React.Component {
 
