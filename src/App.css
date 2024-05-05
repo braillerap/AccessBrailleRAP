@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   /* background-color: rgb(58, 53, 53); */
-  
+
 }
 
 .App {
@@ -12,8 +12,7 @@ body {
   height: 100%;
 }
 
-.mainmenu
-{
+.mainmenu {
   background-color: red;
 }
 
@@ -24,95 +23,111 @@ body {
 }
 
 .menu {
- 
-  display: flex;                
-  margin:0.1rem;                
-  padding:0.1rem;               
-  
-  justify-content: center;/* Alignements des liens dans le menu */
+
+  display: flex;
+  margin: 0.2rem;
+  padding: 0.1rem;
+
+  justify-content: center;
+  /* Alignements des liens dans le menu */
 }
+
 .menu-dark {
- 
-  display: flex;                
-  margin:0.1rem;                
-  padding:0.1rem;               
-  
-  justify-content: center;/* Alignements des liens dans le menu */
+
+  display: flex;
+  margin: 0.2rem;
+  padding: 0.1rem;
+
+  justify-content: center;
+  /* Alignements des liens dans le menu */
 }
 
 .menu li {
-  list-style-type: none ;       /* Suppression des puces */
+  list-style-type: none;
+  /* Suppression des puces */
 
 }
+
 .menu-dark li {
-  list-style-type: none ;       /* Suppression des puces */
+  list-style-type: none;
+  /* Suppression des puces */
 
 }
 
 .menu a {
   box-sizing: border-box;
-  display:block;                /* Transformation en block */
-  text-align: center;           /* Centrage du texte */   
-  text-decoration: none;        /* Suppression du soulignement */
-  
-  margin: 0.2rem;               /* Marges externes */
-  padding: 0.25rem ;            /* Marges internes */
-  
-  
-  color: rgb(48,48,48);                  /* Couleur du texte */
-  
-  border:rgb(48,48,48) solid 1px;      /* Bordure */
-  border-radius: 4px;           /* Arrondis des bordures */
-  
-  
-}
-.menu a:hover
-{
-  text-decoration: underline;
-  
-  background-color: rgb(198,198,198);
-  color: black;
-  border:black solid 2px;      /* Bordure */
-}
-.menu a:focus
-{
+  display: block;
+  /* Transformation en block */
+  text-align: center;
+  /* Centrage du texte */
   text-decoration: none;
-  background-color: rgb(8,8,8);
-  color: rgb(255,255,255);
-  outline: 2px solid white;
+  /* Suppression du soulignement */
+
+  margin: 0.2rem;
+  /* Marges externes */
+  padding: 0.25rem;
+  /* Marges internes */
+
+
+  color: rgb(48, 48, 48);
+  /* Couleur du texte */
+
+  border: rgb(48, 48, 48) solid 1px;
+  /* Bordure */
   border-radius: 4px;
+  /* Arrondis des bordures */
+
+
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  background-color: rgb(238, 238, 238);
+  color: rgb(8, 8, 8);
+  outline: 4px solid black;
+  border-radius: 4px;
+  border: 0px !important;
+}
+
+.menu a:focus {
+  text-decoration: none;
+  background-color: rgb(238, 238, 238);
+  color: rgb(8, 8, 8);
+  outline: 4px solid black;
+  border-radius: 4px;
+  border: 0px !important;
 }
 
 .menu-dark a {
   box-sizing: border-box;
-  display:block;                /* Transformation en block */
-  text-align: center;           /* Centrage du texte */   
-  text-decoration: none;        /* Suppression du soulignement */
-  
-  margin: 0.2rem;               /* Marges externes */
-  padding: 0.25rem ;            /* Marges internes */
-  
-  
-  color: rgb(192,192,192);                  /* Couleur du texte */
-  
-  border:rgb(128,128,128) solid 0px;      /* Bordure */
-  border-radius: 4px;           /* Arrondis des bordures */
-  
-  
-}
-.menu-dark a:hover
-{
-  text-decoration: underline;
-  
-  background-color: rgb(38,38,38);
-  color: rgb(255,255,255);
-  border:rgb(255,255,255) solid 2px;      /* Bordure */
-}
-.menu-dark a:focus
-{
+  display: block;
+  /* Transformation en block */
+  text-align: center;
+  /* Centrage du texte */
   text-decoration: none;
-  background-color: rgb(8,8,8);
-  color: rgb(255,255,255);
+  /* Suppression du soulignement */
+  margin: 0.2rem;
+  /* Marges externes */
+  padding: 0.25rem;
+  /* Marges internes */
+  color: rgb(192, 192, 192);
+  /* Couleur du texte */
+  border: rgb(8, 8, 8) solid 0px;
+  /* Bordure */
+}
+
+.menu-dark a:hover {
+  text-decoration: underline;
+  background-color: rgb(38, 38, 38);
+  color: rgb(255, 255, 255);
+  outline: 2px solid white;
+  border-radius: 4px;
+}
+
+.menu-dark a:focus {
+  text-decoration: none;
+  background-color: rgb(8, 8, 8);
+  color: rgb(255, 255, 255);
   outline: 2px solid white;
   border-radius: 4px;
 }
@@ -121,113 +136,103 @@ body {
 
 
 .navbar {
- 
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-   
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
 }
+
 .navbar li {
   float: left;
-  margin:0;
+  margin: 0;
   padding: 0.5rem;
-  
-  }
+
+}
 
 
 .main_div {
-  width:100%;
+  width: 100%;
   min-height: 100vh;
-  background-color:rgb(58, 53, 53);
-  
+  background-color: rgb(58, 53, 53);
+
 }
+
 .main_div_dark {
-  width:100%;
+  width: 100%;
   min-height: 100vh;
-  background-color:rgb(198, 193, 193);
-  
+  background-color: rgb(198, 193, 193);
 }
+
 .main_layout {
-  width:100%;
+  width: 100%;
   min-height: 80vh;
-  height:100%;
+  height: 100%;
   background-color: rgb(58, 53, 53);
 }
 
 .headermain {
-  
   background-color: rgb(255, 253, 253);
   min-height: 8vh;
-  
 }
 
 .headermain-dark {
-  
   background-color: rgb(8, 8, 8);
   min-height: 8vh;
-  
 }
 
 .headerside {
-  
   background-color: rgb(58, 53, 53);
   height: 8vh;
 }
 
 .headerside-dark {
-  
-  background-color:rgb(58, 53, 53);
+  background-color: rgb(58, 53, 53);
   height: 8vh;
 }
 
 .bodymain {
-  
   background-color: rgb(255, 255, 255);
   border-width: 1;
-  min-height:92vh;
+  min-height: 90vh;
 }
+
 .bodymain-dark {
-  
   background-color: rgb(8, 8, 8);
   border-width: 1;
-  min-height:92vh;
+  min-height: 90vh;
 }
 
-
 .bodyside {
-  
   background-color: rgb(58, 53, 53);
   height: 100%;
 }
+
 .bodyside-dark {
-  
   background-color: rgb(198, 193, 193);
   height: 100%;
 }
 
-.BrailleInput
-{
+.BrailleInput {
   border-color: black;
-  color:black;
+  color: black;
   font-size: calc(2px + 3vmin);
-  max-height:70vh;
+  max-height: 70vh;
   font-family: monospace;
   background-color: white;
 }
 
-.BrailleInput-dark
-{
+.BrailleInput-dark {
   border-color: white;
-  color:white;
+  color: white;
   font-size: calc(2px + 3vmin);
-  max-height:70vh;
+  max-height: 70vh;
   font-family: monospace;
   background-color: black;
 }
 
 
-.BrailleInputTable
-{
+.BrailleInputTable {
 
   text-align: center;
   margin-left: auto;
@@ -244,7 +249,7 @@ body {
 }
 
 .ModalView {
-  color:black;
+  color: black;
   background-color: white;
   font-size: 2em;
   font-weight: bolder;
@@ -254,9 +259,10 @@ body {
   margin-top: 1em;
   min-height: 100%;
 }
+
 .ModalView-dark {
-  color:white;
-  background-color: rgb(8,8,8);
+  color: white;
+  background-color: rgb(8, 8, 8);
   font-size: 2em;
   font-weight: bolder;
   text-align: center;
@@ -269,7 +275,7 @@ body {
 .ModalBox {
   position: absolute;
   margin: 40px;
-  
+
   border: 1px solid #ccc;
   background-color: #fff;
   overflow: auto;
@@ -283,8 +289,8 @@ body {
   position: absolute;
   top: 40px;
   bottom: 40px;
-  left:40px;
-  right:40px;
+  left: 40px;
+  right: 40px;
   border: 1px solid #ccc;
   background-color: #fff;
   overflow: auto;
@@ -293,12 +299,13 @@ body {
   outline: none;
   padding: 20px;
 }
+
 .ModalBox-dark {
   position: absolute;
   top: 40px;
   bottom: 40px;
-  left:40px;
-  right:40px;
+  left: 40px;
+  right: 40px;
   border: 1px solid #ccc;
   background-color: #080808;
   overflow: auto;
@@ -315,148 +322,162 @@ body {
   margin-top: 1em;
   min-height: 100%;
 }
+
 .BigBraille {
   font-size: calc(10px + 18vmin);
 }
 
 .BrailleOutput {
-    font-size: calc(1em + 0.4vw);
-    min-height: 100%;
-    color:black;
-    background-color: rgb(253, 253, 253);
-    font-family: monospace !important;
+  font-size: calc(1em + 0.4vw);
+  min-height: 100%;
+  color: black;
+  background-color: rgb(253, 253, 253);
+  font-family: monospace !important;
 }
 
 .BrailleOutput-dark {
   font-size: calc(1em + 0.4vw);
   min-height: 100%;
-  color:white;
+  color: white;
   background-color: rgb(8, 8, 8);
   font-family: monospace !important;
 }
 
 
 .pad-button {
-  
+
   margin-left: 0.2em;
   margin-right: 0.2em;
   padding: 0.5rem !important;
   border-width: 0.1em !important;
-  border-style: hidden !important ;
+  border-style: hidden !important;
   border-radius: 4px !important;
   font-size: 1.5rem !important;
-  
+
 }
+
 .pad-button-dark {
-  color:white !important;
-  background-color: rgb(58,53,53) !important;
+  color: white !important;
+  background-color: rgb(58, 53, 53) !important;
   margin-left: 0.2em;
   margin-right: 0.2em;
   padding: 0.5rem !important;
   border-width: 0.1em !important;
-  border-style: hidden !important ;
+  border-style: hidden !important;
   border-radius: 4px !important;
   font-size: 1.5rem !important;
-  
+
 }
 
 .pad-button:focus {
-  border:black !important;
-  border-width: 0.1em !important;
-  border-style: solid !important;
-  
+  border: black !important;
+  /*border-width: 0.1em !important;
+  border-style: solid !important;*/
+  outline: 0.1em solid black !important;
+
 }
+
 .pad-button-dark:focus {
-  border:white !important;
-  border-width: 0.1em !important;
-  border-style: solid !important;
-  
+  border: white !important;
+  /*border-width: 0.1em !important;
+  border-style: solid !important;*/
+  outline: 0.1em solid white !important;
+}
+
+.pad-button:hover {
+  border: black !important;
+  /*border-width: 0.1em !important;
+  border-style: solid !important;*/
+  outline: 0.1em solid black !important;
+}
+
+.pad-button-dark:hover {
+  border: white !important;
+  /*border-width: 0.1em !important;
+  border-style: solid !important;*/
+  outline: 0.1em solid white !important;
 }
 
 .divcolor {
   border-color: burlywood;
   background-color: red;
 }
+
 .divwhite {
   border-color: rgb(175, 129, 69);
   background-color: rgb(255, 253, 253);
-  
+
 }
 
 .divred {
   border-color: burlywood;
   background-color: red;
 }
+
 .divblue {
   border-color: burlywood;
   background-color: aqua;
 }
+
 .divblack {
   border-color: burlywood;
   background-color: rgb(58, 53, 53);
-  
 }
 
 .formparam {
   text-align: start;
-  width:90%;
+  width: 90%;
   margin-left: 5%;
-  margin-right:5%;
+  margin-right: 5%;
 }
 
-.formparam h1
-{
+.formparam h1 {
   text-align: start;
   margin-left: 20%;
   margin-right: 20%;
 }
 
-.formparam p
-{
+.formparam p {
   text-align: start;
   margin-left: 20%;
   margin-right: 20%;
   font-size: 1.5em;
 }
 
-.input
-{
-  color:black !important;
-  height:100%;
-  margin:0.2em ! important;
+.input {
+  color: black !important;
+  height: 100%;
+  margin: 0.2em ! important;
 }
-.input:focus
-{
-  color:black !important;
-  height:100%;
-  
+
+.input:focus {
+  color: black !important;
+  height: 100%;
   border-color: white !important;
   border-width: 0.3em !important;
   border-style: solid !important;
-  margin:0 !important;
+  margin: 0 !important;
 }
 
-.input-dark
-{
-  height:100%;
-  color:white !important;
+.input-dark {
+  height: 100%;
+  color: white !important;
   background-color: rgb(8, 8, 8) !important;
-  margin:0.2em !important;
+  margin: 0.2em !important;
 }
-.input-dark:focus
-{
-  color:white !important;
-  height:100%;
+
+.input-dark:focus {
+  color: white !important;
+  height: 100%;
   background-color: rgb(8, 8, 8) !important;
   border-color: white !important;
   border-width: 0.3em !important;
   border-style: solid !important;
-  margin:0 !important;
+  margin: 0 !important;
 }
 
-.input:focus
-{
-  color:black !important;
+.input:focus {
+  color: black !important;
   padding: auto;
   background-color: white !important;
   border-color: black !important;
@@ -464,37 +485,37 @@ body {
   border-style: solid !important;
 }
 
-.formparam label
-{
-  font-size: 1.3em; 
+.formparam label {
+  font-size: 1.3em;
 }
 
 .selectbraille {
-   width:45%; 
+  width: 45%;
 }
 
 .general {
-  color:black !important;
+  color: black !important;
   background-color: white !important;
 }
+
 .general-dark {
-  color:white !important;
-  background-color: rgb(8,8,8) !important;
+  color: white !important;
+  background-color: rgb(8, 8, 8) !important;
 }
 
 .h1 {
-  color:black;
+  color: black;
 }
 
 .h1-dark {
-  color:white;
+  color: white;
 }
 
 
-svg {cursor: default;
+svg {
+  cursor: default;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; 
-} 
-
+  user-select: none;
+}
