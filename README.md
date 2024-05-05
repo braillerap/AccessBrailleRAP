@@ -64,7 +64,7 @@ The installer will install AccesBrailleRAP, the needed drivers to control Braill
 Environnement Install
 =====================
 
-You’ll need to have Python >= 3.6, Eel, pyinstaller, pySerial...
+You’ll need to have Python >= 3.6 and some python dependencies : pyinstaller, pySerial...
 
 
 First make a python virtual env in a power shell.

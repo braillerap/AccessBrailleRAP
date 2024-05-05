@@ -8,7 +8,6 @@
   "license": "GPL-3.0-only",
   "private": true,
   "dependencies": {
-    "electron": "^25.0.1",
     "file-saver": "^2.0.5",
     "purecss": "^3.0.0",
     "react": "^17.0.2",
@@ -27,7 +26,6 @@
     "startview": "npm-run-all build webview",
     "package": "pyinstaller AccessBrailleRAPW.spec",
     "buildview": "npm-run-all clean build package",
-    
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "clean": "rm -rf build dist"
