@@ -155,17 +155,13 @@ body {
 }
 
 .headermain {
-  
   background-color: rgb(255, 253, 253);
   min-height: 8vh;
-  
 }
 
 .headermain-dark {
-  
   background-color: rgb(8, 8, 8);
   min-height: 8vh;
-  
 }
 
 .headerside {
