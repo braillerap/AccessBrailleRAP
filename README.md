@@ -29,19 +29,23 @@ pandoc is licensed under GNU GPL V2.
 
 ![](./screenshot1.jpg)
 
+![](./screenshot-1.jpg)
+
+![](./screenshot1-1.jpg)
+
 ![](./screenshot2.jpg)
 
 ## How to install
 Download the latest installer from github [release](https://github.com/braillerap/AccessBrailleRAP/releases)
 
-The installer will install AccesBrailleRAP, the needed drivers to control BrailleRAP and Chrome browser.
+Select last stable release or lastest development version.
+
+The installer will install AccesBrailleRAP, the needed drivers to control BrailleRAP.
 
 ## Instruction for build (Windows)
 
 Environnement Install
 =====================
-
-You'll need to have Chrome  installed.
 
 You’ll need to have Python >= 3.6, Eel, pyinstaller, pySerial...
 
@@ -66,20 +70,20 @@ Install all react/js dependencies
 $ npm i
 ```
 
-Develop on React GUI
-====================
+Start the App in debug mode (developpement use)
+===============================================
 
 ```
-$ npm start
+$ npm run startview
 ```
 
-Build as GUI App
-================
+Build the App
+=============
 
 ```
-$ npm build
+$ npm run buildview
 ```
 
-check `dist/AccessBrailleRAP.exe`
+check `dist/AccessBrailleRAP/AccessBrailleRAP.exe`
 
 
