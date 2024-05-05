@@ -157,14 +157,14 @@ body {
 .headermain {
   
   background-color: rgb(255, 253, 253);
-  height: 8vh;
+  min-height: 8vh;
   
 }
 
 .headermain-dark {
   
   background-color: rgb(8, 8, 8);
-  height: 8vh;
+  min-height: 8vh;
   
 }
 
