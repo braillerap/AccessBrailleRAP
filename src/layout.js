@@ -36,7 +36,7 @@ class Layout extends Component
   render ()
   {
       
-      let direction = "ltr";
+      let direction = "ltr"; // defaut to left-to-right reading
       if (this.context.localeinfo.dir)
         direction = this.context.localeinfo.dir;
 
@@ -97,7 +97,7 @@ class Layout extends Component
               <div className={"pure-u-1-5 "  + this.context.getStyleClass('bodyside')}></div>
 
               <div className={"pure-u-3-5 "  + this.context.getStyleClass('bodymain')}>
-                <p>&nbsp;</p>
+                
                 <div aria-live={"polite"} aria-atomic={false} role={"log"} aria-relevant={"all"}>
                 <Outlet />
                 </div>
