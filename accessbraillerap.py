@@ -354,13 +354,13 @@ def set_interval(interval):
     return decorator
 
 
-@set_interval(1)
+""" @set_interval(1)
 def update_ticker():
     if len(webview.windows) > 0:
         webview.windows[0].evaluate_js(
             'window.pywebview.state.setTicker("%d")' % time()
         )
-
+ """
 
 def delete_splash():
     try:
@@ -389,7 +389,7 @@ if __name__ == "__main__":
 
     # print ("start", time())
     window = webview.create_window(
-        "AccessBrailleRAP", entry, js_api=api, maximized=True
+        "AccessBrailleRAP", entry, js_api=api, maximized=True, focus=True
     )
     # print ("created", time())
 
