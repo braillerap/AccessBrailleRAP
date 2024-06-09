@@ -33,9 +33,9 @@ class BrailleView extends React.Component {
     this.paginator = new BraillePaginator();
 
     if (this.props.options) {
-      this.paginator.setcols(this.props.options.nbcol);
-      this.paginator.setrows(this.props.options.nbline);
-      this.paginator.setspacing(this.props.options.linespacing);
+      this.paginator.setcols(Number(this.props.options.nbcol));
+      this.paginator.setrows(Number(this.props.options.nbline));
+      this.paginator.setspacing(Number(this.props.options.linespacing));
     }
 
     this.HandlePrec = this.HandlePrec.bind(this);
@@ -72,8 +72,10 @@ class BrailleView extends React.Component {
 
   HandleDownload() {
     let geom = new BrailleToGeometry();
-    geom.setPaddingY(this.Braille.getLinePadding() * ((this.props.options.linespacing * 0.5) + 1));
-    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 1, 2.5);
+    geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
+    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page),
+                    Number(this.props.options.offsetx), 
+                    Number(this.props.options.offsety));
     //console.log (typeof(ptcloud));
     let gcoder = new GeomToGCode();
     gcoder.GeomToGCode(ptcloud);
@@ -117,9 +119,11 @@ class BrailleView extends React.Component {
     // build Braille GCODE for current page
     let geom = new BrailleToGeometry();
     
-    geom.setPaddingY(this.Braille.getLinePadding() * ((this.props.options.linespacing * 0.5) + 1));
+    geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
     
-    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 1, 2.5);
+    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 
+                    Number(this.props.options.offsetx), 
+                    Number(this.props.options.offsety));
     let gcoder = new GeomToGCode();
     gcoder.GeomToGCode(ptcloud);
     let gcode = gcoder.GetGcode();

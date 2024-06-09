@@ -24,6 +24,10 @@
     "param.linespacing":"Line spacing",
     "param.theme":"Theme",
     "param.theme_aria":"Application theme",
+    "param.offsetx_aria":"Left margin in millimeters",
+    "param.offsetx":"Left margin (mm)",
+    "param.offsety_aria":"Top margin in millimeters",
+    "param.offsety":"Top margin (mm)",
 
     "layout.param_menu":"Parameters",
     "layout.param_print":"Printing",

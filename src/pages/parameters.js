@@ -41,6 +41,8 @@ class Parameters extends React.Component {
         this.handleChangeLanguage = this.handleChangeLanguage.bind(this);
         this.handleChangeLinespacing = this.handleChangeLinespacing.bind(this);
         this.handleChangeTheme = this.handleChangeTheme.bind(this);
+        this.handleChangeOffsetx = this.handleChangeOffsetx.bind(this);
+        this.handleChangeOffsety = this.handleChangeOffsety.bind(this);
         //console.log ("constructor");
     }
 
@@ -114,6 +116,7 @@ class Parameters extends React.Component {
         this.setState({options:option});  
         
     }
+    
     handleChangeNbLine(event)
     {
       //console.log (event);
@@ -127,7 +130,26 @@ class Parameters extends React.Component {
       else
         this.setState({options:option});  
     }
-
+    handleChangeOffsetx (event)
+    {
+      let option = this.props.options
+      option.offsetx = event.target.value;
+      
+      if (this.props.optioncb)
+        this.props.optioncb(option)
+      else
+        this.setState({options:option});  
+    }
+    handleChangeOffsety (event)
+    {
+      let option = this.props.options
+      option.offsety = event.target.value;
+      
+      if (this.props.optioncb)
+        this.props.optioncb(option)
+      else
+        this.setState({options:option});  
+    }
     handleChangeLanguage (event)
     {
       let option = this.props.options
@@ -326,8 +348,7 @@ class Parameters extends React.Component {
                       value={this.props.options.nbcol} 
                       onChange={this.handleChangeNbCol} 
                     />
-                </div>
-                <div className="pure-control-group">
+                
                   <label  
                     aria-label={this.props.intl.formatMessage({id:"param.rows_aria"})} 
                     htmlFor='nbline'>
@@ -365,6 +386,29 @@ class Parameters extends React.Component {
                     <option value="2">2</option>                    
                   </select>
                   
+                </div>
+                <div className="pure-control-group">
+                  <label  htmlFor='offsetx' aria-label={this.props.intl.formatMessage({id:"param.offsetx_aria"})}>
+                  <FormattedMessage id="param.offsetx" defaultMessage="Décalage horizontal"/>
+                  </label>
+                    <input type="number" 
+                      aria-label={this.props.intl.formatMessage({id:"param.offsetx_aria"})} 
+                      className={this.context.getStyleClass('input')}
+                      step="1" min="0" max="50" name="offsetx" id="offsetx"
+                      value={this.props.options.offsetx} 
+                      onChange={this.handleChangeOffsetx} 
+                    />
+                
+                  <label  htmlFor='offsety' aria-label={this.props.intl.formatMessage({id:"param.offsety_aria"})}>
+                  <FormattedMessage id="param.offsety" defaultMessage="Décalage vertical"/>
+                  </label>
+                    <input type="number" 
+                      aria-label={this.props.intl.formatMessage({id:"param.offsety_aria"})} 
+                      className={this.context.getStyleClass('input')}
+                      step="1" min="0" max="50" name="offsety" id="offsety"
+                      value={this.props.options.offsety} 
+                      onChange={this.handleChangeOffsety} 
+                    />
                 </div>
                 <div className='pure-control-group'>
                   

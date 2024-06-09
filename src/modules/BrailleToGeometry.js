@@ -101,7 +101,7 @@ class BrailleToGeometry
         
         let starty = offsety;
         let geom = [];
-
+        debugger;
         for (let l = 0; l < lines.length; l++)
         {
             let startx = offsetx;

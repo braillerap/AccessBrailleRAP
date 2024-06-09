@@ -128,8 +128,8 @@ class TextInput extends React.Component {
 
     }
     else {
-      const ncols = parseInt(this.props.options.nbcol);
-      const nlines = parseInt(this.props.options.nbline);
+      const ncols = Number(this.props.options.nbcol);
+      const nlines = Number(this.props.options.nbline);
       return (
         <div className={this.context.getStyleClass('general')}>
           <h1 aria-hidden={true}></h1>

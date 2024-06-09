@@ -24,6 +24,10 @@
     "param.linespacing":"تباعد الأسطر",
     "param.theme":"سمة",
     "param.theme_aria":"موضوع التطبيق",
+    "param.offsetx_aria":"الهامش الأيسر بالملليمتر",
+    "param.offsetx":"الهامش الأيسر (mm)",
+    "param.offsety_aria":"الهامش العلوي بالملليمتر",
+    "param.offsety":"الهامش العلوي (mm)",
 
     "layout.param_menu":"حدود",
     "layout.param_print":"الطباعة",

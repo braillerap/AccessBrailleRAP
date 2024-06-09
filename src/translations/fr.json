@@ -23,8 +23,11 @@
     "param.linespacing":"Interligne",
     "param.theme":"Thème",
     "param.theme_aria":"Thème de l'application",
-    
-    
+    "param.offsetx_aria":"Décalage de la marge gauche",
+    "param.offsetx":"Marge gauche (mm)",
+    "param.offsety_aria":"Décalage de la marge de haut de page",
+    "param.offsety":"Marge début de page (mm)",
+
     "layout.param_menu":"Paramètres",
     "layout.param_print":"Impression",
     "layout.param_input":"Saisie",

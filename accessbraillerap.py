@@ -23,7 +23,9 @@ app_options = {
     "linespacing": "0",
     "brailletbl": "70",
     "lang": "",
-    "theme": "light"
+    "theme": "light",
+    "offsetx":"1",
+    "offsety":"2.5"
 }
 
 

@@ -5,7 +5,9 @@ const AppOption = {
     linespacing:0,
     brailletbl:70,
     lang:"fr",
-    theme:"dark"
+    theme:"dark",
+    offsetx:1,
+    offsety:2.5
 }
 
 export default AppOption;
