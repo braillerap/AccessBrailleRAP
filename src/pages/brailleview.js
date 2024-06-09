@@ -73,7 +73,7 @@ class BrailleView extends React.Component {
   HandleDownload() {
     let geom = new BrailleToGeometry();
     geom.setPaddingY(this.Braille.getLinePadding() * ((this.props.options.linespacing * 0.5) + 1));
-    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 5, 5);
+    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 1, 5);
     //console.log (typeof(ptcloud));
     let gcoder = new GeomToGCode();
     gcoder.GeomToGCode(ptcloud);
@@ -119,7 +119,7 @@ class BrailleView extends React.Component {
     
     geom.setPaddingY(this.Braille.getLinePadding() * ((this.props.options.linespacing * 0.5) + 1));
     
-    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 1, 1);
+    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 1, 5);
     let gcoder = new GeomToGCode();
     gcoder.GeomToGCode(ptcloud);
     let gcode = gcoder.GetGcode();
