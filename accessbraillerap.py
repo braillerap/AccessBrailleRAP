@@ -31,7 +31,7 @@ class SerialStatus:
     Ready = 0
     Busy = 2
 
-
+COM_TIMEOUT = 5
 serial_port = None
 serial_status = SerialStatus.Ready
 filename = ""
@@ -240,7 +240,7 @@ class Api:
                                 break
                             if len(grbl_out) > 0:
                                 tbegin = time.time()
-                            if time.time() - tbegin > 5:
+                            if time.time() - tbegin > COM_TIMEOUT:
                                 raise Exception("Timeout in printer communication")
 
                     if cancel_print:
