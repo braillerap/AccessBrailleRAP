@@ -1,4 +1,4 @@
-name: build_for_debian
+name: great_build_for_debian
 
 on: 
   workflow_dispatch:
