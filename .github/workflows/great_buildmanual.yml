@@ -1,9 +1,5 @@
-# This is a basic workflow that is manually triggered
+name: build_for_debian
 
-name:build_for_debian
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
 on:
   workflow_dispatch:
    
