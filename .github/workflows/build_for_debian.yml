@@ -1,0 +1,24 @@
+name: build_for_debian
+
+on:
+    workflow_dispatch:
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.12.2]
+
+    steps:
+     - name: Build AccessBrailleRAP
+        run: |
+          docker run \
+            -u root:root \
+            -e BOARD \
+            -e BRANCH_BUILD=main\
+            -e USE_BRANCH=BrailleRAP \
+            -v $(pwd)/dist/:/home/builduser/dist \
+            sgngodin/buildaccessbraillerap:latest
