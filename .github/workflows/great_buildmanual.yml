@@ -13,6 +13,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello fuc... world"
+     - name: build with docker 
+        run: | 
+          docker run \
+            -u root:root \
+            -e BOARD \
+            -e BRANCH_BUILD=main\
+            -e USE_BRANCH=BrailleRAP \
+            -v $(pwd)/dist/:/home/builduser/dist \
+            sgngodin/buildaccessbraillerap:latest

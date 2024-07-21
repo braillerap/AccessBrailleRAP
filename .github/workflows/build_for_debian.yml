@@ -1,7 +1,7 @@
 name: build_for_debian
 
 on:
-    workflow_dispatch:
+    workflow_dispatch: 
     
 jobs:
   build:
@@ -13,8 +13,8 @@ jobs:
         node-version: [20.12.2]
 
     steps:
-     - name: build with docker
-        run: |
+     - name: build with docker 
+        run: | 
           docker run \
             -u root:root \
             -e BOARD \
