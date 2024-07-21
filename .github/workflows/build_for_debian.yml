@@ -11,6 +11,14 @@ jobs:
     
 
     steps:
+     - name: create folder
+       run: |
+        mkdir dist
+     
+     - name: check folder 
+       run: |
+         ls -lah
+  
      - name: build with docker 
        run: | 
           docker run \
