@@ -13,7 +13,7 @@ jobs:
         node-version: [20.12.2]
 
     steps:
-     - name: Build AccessBrailleRAP
+     - name: build with docker
         run: |
           docker run \
             -u root:root \
