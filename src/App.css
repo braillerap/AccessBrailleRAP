@@ -445,13 +445,13 @@ body {
 }
 
 .input {
-  color: black !important;
+  color: rgb(8, 8, 8) !important;
   height: 100%;
   margin: 0.2em ! important;
 }
 
 .input:focus {
-  color: black !important;
+  color: rgb(8, 8, 8) !important;
   height: 100%;
   border-color: white !important;
   border-width: 0.3em !important;
