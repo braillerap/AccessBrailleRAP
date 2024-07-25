@@ -3,6 +3,7 @@ import {IntlProvider} from 'react-intl';
 import French from '../translations/fr.json';
 import English from '../translations/en.json';
 import Arabic from '../translations/ar.json';
+import Ukrainian from '../translations/uk.json';
 import { locales } from '../components/locale.js';
 
 export const IntlContext = React.createContext();
@@ -70,6 +71,10 @@ const IntlWrapper = (props) => {
        {
             setMessages(Arabic);
        
+       }
+       else if (newLocale === 'uk')
+       {
+            setMessages(Ukrainian);
        }
        else
        {
