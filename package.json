@@ -1,6 +1,6 @@
 {
   "name": "access-braillerap",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "AccessBrailleRAP",
   "main": "index.js",
   "repository": "https://github.com/AccessBrailleRAP/AccessBrailleRAP",
@@ -30,22 +30,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "clean": "rm -rf build dist"
-  },
-  "scripts-deprecated": {
-    "start:js": "react-scripts start",
-    "build:js": "react-scripts build",
-    "start:eel": "python index.py --develop",
-    "build:eel": "python -m eel index.py build --onefile --noconsole --name AccessBrailleRAP --clean --icon=favicon-32x32.ico --splash=brap.png",
-    "build:webview": "pyinstaller AccessBrailleRAPW.spec",
-    "clean:build": "rm -rf build dist",
-    "start": "npm-run-all -p start:*",
-    "build": "npm-run-all clean:build build:*",
-    "buildp": "npm-run-all clean:build build:js",
-    "buildweb": "npm-run-all clean:build build:js build:webview",
-    "extract": "react-intl-cli  extract -l fr,en -d fr ",
-    "extracth": "react-intl-cli  extract -h",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.23.3",
