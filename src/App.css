@@ -491,6 +491,7 @@ body {
 
 .selectbraille {
   width: 45%;
+  font-size:1.5rem ! important;
 }
 
 .general {
