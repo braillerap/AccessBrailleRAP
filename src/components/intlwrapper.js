@@ -103,6 +103,10 @@ const IntlWrapper = (props) => {
         {
             setMessages(Arabic);
         }
+        else if (lang === 'uk')
+        {
+            setMessages(Ukrainian);
+        }
         else
         {
             setMessages(English);

@@ -379,7 +379,7 @@ class Parameters extends React.Component {
                     value={this.props.options.linespacing} 
                     onChange={this.handleChangeLinespacing}
                     name="linespacing" id="linespacing"
-                    className={this.context.getStyleClass('input')}
+                    className={this.context.getStyleClass('input') }
                   >
                     <option value="0">1</option>
                     <option value="1">1.5</option>
