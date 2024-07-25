@@ -379,7 +379,7 @@ class Parameters extends React.Component {
                     value={this.props.options.linespacing} 
                     onChange={this.handleChangeLinespacing}
                     name="linespacing" id="linespacing"
-                    className={this.context.getStyleClass('input') + ' selectbraille'}
+                    className={this.context.getStyleClass('input') + ' selectparam'}
                   >
                     <option value="0">1</option>
                     <option value="1">1.5</option>
@@ -440,7 +440,7 @@ class Parameters extends React.Component {
                   <select id="langid"
                     value={this.context.locale} 
                     onChange={this.handleChangeLanguage}
-                    className={this.context.getStyleClass('input') + ' selectbraille'}
+                    className={this.context.getStyleClass('input') + ' selectparam'}
                   >
                     {locales.map ((item, index)=> {
                       if (this.context.locale === item.lang)
@@ -462,7 +462,7 @@ class Parameters extends React.Component {
                     value={this.props.options.theme} 
                     onChange={this.handleChangeTheme}
                     name="themeselect" id="themeselect"
-                    className={this.context.getStyleClass('input')}
+                    className={this.context.getStyleClass('input') + ' selectparam'}
                   >
                     <option value="dark">White on Black</option>
                     <option value="light">Black on White</option>
