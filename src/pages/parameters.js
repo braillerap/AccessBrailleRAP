@@ -275,13 +275,13 @@ class Parameters extends React.Component {
           >
            
         
-        {this.state.brailleinfo.map ((item, index)=> {
-                 if (index === this.props.options.brailletbl)
-                   return (<option  aria-selected='true' key={index} value={index}>{item.lang + " - " + item.desc }</option>);
-                 else
-                   return (<option  aria-selected='false' key={index} value={index}>{item.lang + " - " + item.desc }</option>);
-              })
-             }
+              {this.state.brailleinfo.map ((item, index)=> {
+                      if (index === this.props.options.brailletbl)
+                        return (<option  aria-selected='true' key={index} value={index}>{item.lang + " - " + item.desc }</option>);
+                      else
+                        return (<option  aria-selected='false' key={index} value={index}>{item.lang + " - " + item.desc }</option>);
+                    })
+                  }
                    
         </select>
 
@@ -379,7 +379,7 @@ class Parameters extends React.Component {
                     value={this.props.options.linespacing} 
                     onChange={this.handleChangeLinespacing}
                     name="linespacing" id="linespacing"
-                    className={this.context.getStyleClass('input') }
+                    className={this.context.getStyleClass('input') + ' selectbraille'}
                   >
                     <option value="0">1</option>
                     <option value="1">1.5</option>
@@ -440,7 +440,7 @@ class Parameters extends React.Component {
                   <select id="langid"
                     value={this.context.locale} 
                     onChange={this.handleChangeLanguage}
-                    className={this.context.getStyleClass('input')}
+                    className={this.context.getStyleClass('input') + ' selectbraille'}
                   >
                     {locales.map ((item, index)=> {
                       if (this.context.locale === item.lang)
