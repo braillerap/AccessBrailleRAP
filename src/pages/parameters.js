@@ -318,7 +318,7 @@ class Parameters extends React.Component {
                
               <form 
                 aria-label={this.props.intl.formatMessage({id:"param.form_aria"})}  
-                className='formparam pure-form pure-form-aligned' 
+                className='formparam' 
                 aria-live="assertive" 
                 role="log" 
                 aria-relevant="all" 
@@ -334,10 +334,10 @@ class Parameters extends React.Component {
                     defaultMessage="Formulaire de paramétrage de l'application"
                   />
                 </h1>
-                <div className="pure-control-group">
+                <div >
                 {this.render_braille_lang()}
                 </div>
-                <div className="pure-control-group">
+                <div>
                   <label  htmlFor='nbcol' aria-label={this.props.intl.formatMessage({id:"param.cols_aria"})}>
                   <FormattedMessage id="param.charperline" defaultMessage="Nombre de caractères par ligne"/>
                   </label>
@@ -368,7 +368,7 @@ class Parameters extends React.Component {
                     className={this.context.getStyleClass('input')}
                   />
                 </div>
-                <div className="pure-control-group">
+                <div>
                   <label  
                     aria-label={this.props.intl.formatMessage({id:"param.linespacing_aria"})} 
                     htmlFor='linespacing'>
