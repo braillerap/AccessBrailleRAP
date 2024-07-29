@@ -1,5 +1,6 @@
 import os
 import threading
+import platform
 import webview
 import json
 import json
@@ -337,23 +338,23 @@ def get_entrypoint():
     raise Exception("No index.html found")
 
 
-def set_interval(interval):
-    def decorator(function):
-        def wrapper(*args, **kwargs):
-            stopped = threading.Event()
+# def set_interval(interval):
+#     def decorator(function):
+#         def wrapper(*args, **kwargs):
+#             stopped = threading.Event()
 
-            def loop():  # executed in another thread
-                while not stopped.wait(interval):  # until stopped
-                    function(*args, **kwargs)
+#             def loop():  # executed in another thread
+#                 while not stopped.wait(interval):  # until stopped
+#                     function(*args, **kwargs)
 
-            t = threading.Thread(target=loop)
-            t.daemon = True  # stop if the program exits
-            t.start()
-            return stopped
+#             t = threading.Thread(target=loop)
+#             t.daemon = True  # stop if the program exits
+#             t.start()
+#             return stopped
 
-        return wrapper
+#         return wrapper
 
-    return decorator
+#     return decorator
 
 
 
@@ -388,8 +389,10 @@ if __name__ == "__main__":
     )
     # print ("created", time())
     if platform.system() == "Windows":
+        print ("starting Windows GUI")
         webview.start(delete_splash, http_server=False, debug=debugihm)
     else:
+        print ("starting Linux GUI")
         webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
 
     
