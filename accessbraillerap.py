@@ -386,8 +386,8 @@ if __name__ == "__main__":
                 print ("QT_QPA_PLATFORM=", os.environ['QT_QPA_PLATFORM'])
             else:
                 print ("QT_QPA_PLATFORM=<empty>")
-            print ("setting QT_QPA_PLATFORM to wayland")
-            os.environ['QT_QPA_PLATFORM'] = "wayland"
+                print ("setting QT_QPA_PLATFORM to wayland")
+                os.environ['QT_QPA_PLATFORM'] = "wayland"
     else :
         pass
 
