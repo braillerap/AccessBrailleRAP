@@ -2,7 +2,7 @@ altgraph==0.17.4
 bottle==0.12.25
 Levenshtein==0.25.1
 packaging==24.1
-proxy_tools==0.1.0
+proxy-tools==0.1.0
 pycairo==1.26.1
 pygi==1.0.3
 PyGObject==3.48.2
@@ -15,12 +15,13 @@ PyQt5_sip==12.15.0
 PyQtWebEngine==5.15.7
 PyQtWebEngine-Qt5==5.15.14
 pyserial==3.5
+PySide2==5.13.2
 python-Levenshtein==0.25.1
 pywebview==5.1
 pywin32-ctypes==0.2.2
 QtPy==2.4.1
 rapidfuzz==3.9.4
-setuptools==71.1.0
+shiboken2==5.13.2
 tk==0.1.0
 typing_extensions==4.12.2
 zipp==3.19.2

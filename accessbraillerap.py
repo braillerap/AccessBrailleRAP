@@ -388,4 +388,4 @@ if __name__ == "__main__":
     )
     # print ("created", time())
 
-    webview.start(delete_splash, http_server=False, debug=debugihm)
+    webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
