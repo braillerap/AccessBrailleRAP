@@ -387,5 +387,9 @@ if __name__ == "__main__":
         "AccessBrailleRAP", entry, js_api=api, maximized=True, focus=True
     )
     # print ("created", time())
+    if platform.system() == "Windows":
+        webview.start(delete_splash, http_server=False, debug=debugihm)
+    else:
+        webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
 
-    webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
+    
