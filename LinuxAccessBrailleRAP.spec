@@ -29,7 +29,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='AccessBrailleRAP-debian',
+    name='AccessBrailleRAP-ubuntu',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

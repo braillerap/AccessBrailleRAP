@@ -404,7 +404,7 @@ if __name__ == "__main__":
         print ("starting Windows GUI")
         webview.start(delete_splash, http_server=False, debug=debugihm)
     else:
-        print ("starting Linux GUI")
+        print ("starting Linux GUI QT")
         webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
 
     
