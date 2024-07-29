@@ -524,3 +524,17 @@ svg {
   -ms-user-select: none;
   user-select: none;
 }
+
+.testselect {
+  background-color: aqua;
+  color:red;
+  background: yellow;
+}
+
+        select{
+          background-color: green;
+        }
+        option{
+          color: yellow;
+        }
+        

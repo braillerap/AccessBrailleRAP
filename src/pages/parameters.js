@@ -427,7 +427,7 @@ class Parameters extends React.Component {
                     </button>      
                 </div>
 
-                <div className='pure-control-group'>
+                <div>
                   <p>
                   <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application "/>
                     
@@ -440,7 +440,7 @@ class Parameters extends React.Component {
                   <select id="langid"
                     value={this.context.locale} 
                     onChange={this.handleChangeLanguage}
-                    className={this.context.getStyleClass('input') + ' selectparam'}
+                    className='testselect'
                   >
                     {locales.map ((item, index)=> {
                       if (this.context.locale === item.lang)

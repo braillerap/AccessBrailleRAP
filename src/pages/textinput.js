@@ -156,6 +156,12 @@ class TextInput extends React.Component {
             </textarea>
 
           </form>
+          
+        <select>
+          <option disabled selected>Your Choice</option>
+          <option id="1">Option1</option>
+          <option id="2">Option2</option>
+        </select>
         </div>
       );
     }
