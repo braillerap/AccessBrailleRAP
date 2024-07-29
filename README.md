@@ -40,6 +40,8 @@ AccessBrailleRAP is licensed under GNU GPL V3.
 
 - Translate text into Braille
 - Translate word document into Braille
+- Emboss Braille on BrailleRAP embosser
+
 ## Screenshot
 
 ![](./screenshot.jpg)
@@ -57,7 +59,34 @@ Download the latest installer from github [release](https://github.com/braillera
 
 Select last stable release or lastest development version.
 
-The installer will install AccesBrailleRAP, the needed drivers to control BrailleRAP.
+The installer will install AccesBrailleRAP and the needed drivers to control BrailleRAP.
+
+
+## Contributing
+
+### Translation
+If you need the software in your locale language, we will be happy to add a new translation. Translation files are hosted on codeberg community translation platform and can be updated by anyone [weblate host on codeberg](https://translate.codeberg.org/projects/accessbraillerap_translate/ihm/) for more information.
+
+### Code and features
+Feel free to open issues or pull requests ! We will be happy to review and merge your changes. BTW we have a great focus on accessibility and user friendly design.
+
+## Translations status
+
+Translation files are available [on codeberg weblate host](https://translate.codeberg.org/projects/accessbraillerap_translate/ihm/) . Some languages are partialy translated , we are looking for contributors to complete and check them.     
+
+| Locale              | Status | 
+| :------------------ | :------: |
+| Arabic              |   OK   | 
+| Dutch               |  Partial - need someone to check it   | 
+| English             |   OK   | 
+| French              |   OK   | 
+| Spanish             |  Partial - need someone to check it   | 
+| Ukrainian           |   OK   | 
+
+
+
+
+
 
 ## Instruction for build (Windows)
 
