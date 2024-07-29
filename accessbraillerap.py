@@ -1,4 +1,5 @@
 import os
+import platform
 import threading
 import webview
 import json
@@ -388,4 +389,7 @@ if __name__ == "__main__":
     )
     # print ("created", time())
 
-    webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
+    if platform.system() == "Windows":
+        webview.start(delete_splash, http_server=False, debug=debugihm)
+    else:
+        webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
