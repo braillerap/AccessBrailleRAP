@@ -393,6 +393,6 @@ if __name__ == "__main__":
         webview.start(delete_splash, http_server=False, debug=debugihm)
     else:
         print ("starting Linux GUI")
-        webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
+        webview.start(delete_splash, http_server=False, debug=debugihm)
 
     
