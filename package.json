@@ -29,11 +29,14 @@
     "packagedebian": "pyinstaller DebianAccessBrailleRAP.spec",
     "packageubuntu": "pyinstaller LinuxAccessBrailleRAP.spec",
     "buildview": "npm-run-all clean build package",
-    "builddebian": "npm-run-all clean build packagedebian",
+    "builddebian": "npm-run-all clean build packagedebian build-deb-debian",
     "buildubuntu": "npm-run-all clean build packageubuntu",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "clean": "rm -rf build dist"
+    "clean": "rm -rf build dist",
+    "build-deb-debian":"npm-run-all cpdebian dpkg-debian",
+    "cpdebian":"cp ./dist/accessbraillerap-debian ./package/debian/accessbraillerap-debian/bin/",
+    "dpkg-debian":"dpkg-deb -v --build ./package/debian/accessbraillerap-debian ./dist/accessbraillerap-debian.deb"
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.23.3",
