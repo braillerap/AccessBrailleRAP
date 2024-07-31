@@ -26,7 +26,11 @@
     "webview": "python accessbraillerap.py --debug",
     "startview": "npm-run-all build webview",
     "package": "pyinstaller AccessBrailleRAPW.spec",
+    "packagedebian": "pyinstaller DebianAccessBrailleRAP.spec",
+    "packageubuntu": "pyinstaller LinuxAccessBrailleRAP.spec",
     "buildview": "npm-run-all clean build package",
+    "builddebian": "npm-run-all clean build packagedebian",
+    "buildubuntu": "npm-run-all clean build packageubuntu",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "clean": "rm -rf build dist"
