@@ -393,28 +393,30 @@ if __name__ == "__main__":
     if platform.system() == "Windows":
         print ("starting Windows GUI")
         webview.start(delete_splash, http_server=False, debug=debugihm)
-    else:
+    elif (platform.system() == "Linux"):
         #set QT_QPA_PLATFORM on UBUNTU
         if getattr(sys, 'frozen', False):
-            if (platform.system() == "Linux"):
-                if ('QT_QPA_PLATFORM' in os.environ):
-                    print ("QT_QPA_PLATFORM=", os.environ['QT_QPA_PLATFORM'])
-                    print ("starting Linux GUI QT with configured QT_QPA_PLATFORM")
-                    webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
-                else:
-                    print ("QT_QPA_PLATFORM=<empty>")
-                    # try wayland and xcb to start QT
-                    qtplugin = ['wayland', 'xcb']
-                    for plugin in qtplugin:
-                        try:
-                            print ("setting QT_QPA_PLATFORM to :", plugin)
-                            os.environ['QT_QPA_PLATFORM'] = plugin
-                            webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)                
-                            break # exit if start succeded
-                        except:    
-                            pass
+            
+            if ('QT_QPA_PLATFORM' in os.environ):
+                print ("QT_QPA_PLATFORM=", os.environ['QT_QPA_PLATFORM'])
+                print ("starting Linux GUI QT with configured QT_QPA_PLATFORM")
+                webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
+            else:
+                print ("QT_QPA_PLATFORM=<empty>")
+                print ("try to resolve with XDG_SESSION_TYPE")
+                plugin = 'xcb'
+
+                if ('XDG_SESSION_TYPE' in os.environ):             
+                    if (os.environ['XDG_SESSION_TYPE'] == 'wayland'):
+                        plugin = 'wayland'
+                    
+                # try wayland and xcb to start QT
+                print ("setting QT_QPA_PLATFORM to :", plugin)
+                os.environ['QT_QPA_PLATFORM'] = plugin
+                webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)                
+                
         else :
-            print ("starting Linux GUI QT dev environment")
+            print ("starting  GUI QT dev environment")
             webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
 
     
