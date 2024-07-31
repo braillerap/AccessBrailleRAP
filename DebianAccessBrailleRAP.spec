@@ -4,8 +4,8 @@
 a = Analysis(
     ['accessbraillerap.py'],
     pathex=[],
-    binaries=[('build/', 'build')],
-    datas=[],
+    binaries=[],
+    datas=[('build/', 'build')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

@@ -28,6 +28,8 @@ exe = EXE(
     a.scripts,
     a.binaries,
     a.datas,
+    splash,
+    splash.binaries,
     [],
     name='AccessBrailleRAP-ubuntu',
     debug=False,
