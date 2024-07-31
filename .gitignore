@@ -53,3 +53,5 @@ nsis/_internal.zip
 nsis/ChromeSetup.exe
 
 
+package/debian/AccessBrailleRAP-debian.deb
+package/debian/AccessBrailleRAP-debian/bin/AccessBrailleRAP-debian
