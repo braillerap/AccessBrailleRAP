@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=AccessBrailleRAP
+Comment=Braille authoing software for BrailleRAP
+Exec=/bin/AccessBrailleRAP
+Terminal=false
+Icon=/usr/share/icons/accessbraillerap-icon.png
+Categories=System;TerminalEmulator;
+Keywords=braillerap
