@@ -7,6 +7,7 @@ import json
 import sys
 import serial.tools.list_ports
 import pypandoc
+from pathlib import Path
 
 import time
 
@@ -41,9 +42,28 @@ filename = ""
 root = None
 cancel_print = False
 
+def get_parameter_fname ():
+    paramfname = "acces_brap_parameters.json"
+    if platform.system() == 'Linux':
+        home = Path.home ()
+        dir = Path.joinpath(home, ".accessbraillerap/")
+        print (home, dir)
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+        fpath = Path.joinpath(dir, paramfname)
+        print (fpath)
+        return fpath
+
+    else:
+        return paramfname
+        
+    
 def load_parameters():
     try:
-        with open("parameters.json", "r", encoding="utf-8") as inf:
+
+        fpath = get_parameter_fname()
+
+        with open(fpath, "r", encoding="utf-8") as inf:
             data = json.load(inf)
             for k, v in data.items():
                 if k in app_options:
@@ -94,7 +114,8 @@ class Api:
         try:
             #print ("data", app_options)
             #print ("json", json.dumps(app_options))
-            with open("parameters.json", "w", encoding="utf-8") as of:
+            fpath = get_parameter_fname()
+            with open(fpath, "w", encoding="utf-8") as of:
                 json.dump(app_options, of)
 
         except Exception as e:
