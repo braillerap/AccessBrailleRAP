@@ -33,7 +33,7 @@ exe = EXE(
     splash,
     splash.binaries,
     [],
-    name='AccessBrailleRAP_debian',
+    name='AccessBrailleRAP-debian',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
