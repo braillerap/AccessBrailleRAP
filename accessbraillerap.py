@@ -379,17 +379,7 @@ if __name__ == "__main__":
         if sys.argv[1] == "--debug":
             debugihm = True
 
-    #set QT_QPA_PLATFORM on UBUNTU
-    if getattr(sys, 'frozen', False):
-        if (platform.system() == "Linux"):
-            if ('QT_QPA_PLATFORM' in os.environ):
-                print ("QT_QPA_PLATFORM=", os.environ['QT_QPA_PLATFORM'])
-            else:
-                print ("QT_QPA_PLATFORM=<empty>")
-                print ("setting QT_QPA_PLATFORM to wayland")
-                os.environ['QT_QPA_PLATFORM'] = "wayland"
-    else :
-        pass
+    
 
     print("start html=", entry)
     load_parameters()
@@ -404,7 +394,27 @@ if __name__ == "__main__":
         print ("starting Windows GUI")
         webview.start(delete_splash, http_server=False, debug=debugihm)
     else:
-        print ("starting Linux GUI QT")
-        webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
+        #set QT_QPA_PLATFORM on UBUNTU
+        if getattr(sys, 'frozen', False):
+            if (platform.system() == "Linux"):
+                if ('QT_QPA_PLATFORM' in os.environ):
+                    print ("QT_QPA_PLATFORM=", os.environ['QT_QPA_PLATFORM'])
+                    print ("starting Linux GUI QT with configured QT_QPA_PLATFORM")
+                    webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
+                else:
+                    print ("QT_QPA_PLATFORM=<empty>")
+                    # try wayland and xcb to start QT
+                    qtplugin = ['wayland', 'xcb']
+                    for plugin in qtplugin:
+                        try:
+                            print ("setting QT_QPA_PLATFORM to :", plugin)
+                            os.environ['QT_QPA_PLATFORM'] = plugin
+                            webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)                
+                            break # exit if start succeded
+                        except:    
+                            pass
+        else :
+            print ("starting Linux GUI QT dev environment")
+            webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
 
     
