@@ -1,0 +1,46 @@
+name: build_for_debian
+
+
+on:
+  
+    release:
+      types: [published]
+    workflow_dispatch: 
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    
+
+    steps:
+     - name: create folder
+       run: |
+        mkdir dist
+     
+     - name: check folder 
+       run: |
+         ls -lah
+  
+     - name: build with docker 
+       run: | 
+          docker run \
+            -u root:root \
+            -e BOARD \
+            -e BRANCH_BUILD=main\
+            -v $(pwd)/dist/:/home/builduser/dist \
+            sgngodin/buildaccessbraillerapdebian:latest
+
+     - name: Upload artifact
+       uses: actions/upload-artifact@v4.3.3
+       with: 
+              name: accessbraillerap_debian.*
+              path: dist/AccessBrailleRAP*
+     
+     - name: Add to release
+       uses: svenstaro/upload-release-action@v2
+       with:
+              
+              file: dist/accessbraillerap-debian.*
+              

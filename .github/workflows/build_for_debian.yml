@@ -25,12 +25,11 @@ jobs:
             -u root:root \
             -e BOARD \
             -e BRANCH_BUILD=main\
-            -e USE_BRANCH=BrailleRAP \
             -v $(pwd)/dist/:/home/builduser/dist \
-            sgngodin/buildaccessbraillerap:latest
+            sgngodin/buildaccessbraillerapdebian:latest
 
      - name: Upload artifact
        uses: actions/upload-artifact@v4.3.3
        with: 
-              name: AccessBrailleRAP_debian
+              name: accessbraillerap_debian
               path: dist/AccessBrailleRAP*
