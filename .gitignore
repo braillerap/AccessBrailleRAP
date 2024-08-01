@@ -56,3 +56,4 @@ nsis/ChromeSetup.exe
 package/debian/AccessBrailleRAP-debian.deb
 package/debian/AccessBrailleRAP-debian/bin/AccessBrailleRAP-debian
 package/debian/accessbraillerap-debian/bin/accessbraillerap-debian
+package/ubuntu/accessbraillerap-ubuntu/bin/empty
