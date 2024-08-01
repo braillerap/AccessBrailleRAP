@@ -28,12 +28,11 @@
     "package": "pyinstaller AccessBrailleRAPW.spec",
     "packagedebian": "pyinstaller DebianAccessBrailleRAP.spec",
     "packageubuntu": "pyinstaller LinuxAccessBrailleRAP.spec",
+    
     "buildview": "npm-run-all clean build package",
     "builddebian": "npm-run-all clean packagedebian build-deb-debian",
     "buildubuntu": "npm-run-all clean packageubuntu build-deb-ubuntu",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "clean": "rm -rf build dist",
+    
     "cleandebdebian":"rm ./package/debian/accessbraillerap-debian/bin/*",
     "cleandebubuntu":"rm ./package/ubuntu/accessbraillerap-ubuntu/bin/* ",
     "build-deb-debian":"npm-run-all cpdebian dpkg-debian",
@@ -41,7 +40,11 @@
     "cpdebian":"cp ./dist/accessbraillerap-debian ./package/debian/accessbraillerap-debian/bin/",
     "dpkg-debian":"dpkg-deb -v --build ./package/debian/accessbraillerap-debian ./dist/accessbraillerap-debian.deb",
     "cpubuntu":"cp ./dist/accessbraillerap-ubuntu ./package/ubuntu/accessbraillerap-ubuntu/bin/",
-    "dpkg-ubuntu":"dpkg-deb -v --build ./package/ubuntu/accessbraillerap-ubuntu ./dist/accessbraillerap-ubuntu.deb"
+    "dpkg-ubuntu":"dpkg-deb -v --build ./package/ubuntu/accessbraillerap-ubuntu ./dist/accessbraillerap-ubuntu.deb",
+
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "clean": "rm -rf build dist"
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.23.3",
