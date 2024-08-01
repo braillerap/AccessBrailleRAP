@@ -1,4 +1,4 @@
-name: build_for_debian
+name: release_build_for_debian
 
 
 on:
@@ -36,11 +36,12 @@ jobs:
        uses: actions/upload-artifact@v4.3.3
        with: 
               name: accessbraillerap_debian.*
-              path: dist/AccessBrailleRAP*
+              path: dist/accessbraillerap_debian.*
      
      - name: Add to release
        uses: svenstaro/upload-release-action@v2
        with:
-              
+              tag: ${{ github.ref }}
+              overwrite: true
               file: dist/accessbraillerap-debian.*
               
