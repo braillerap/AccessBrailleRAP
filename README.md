@@ -6,8 +6,20 @@ The project use several open source licensed software:
 - pandoc
 - pywebview
 
-## Release
-You wil find packaged installation in [release](https://github.com/braillerap/AccessBrailleRAP/releases).
+
+## Releases
+We provide pre-built binaries for Windows and Linux. See [releases](https://github.com/BrailleRAP/AccessBrailleRAP/releases) for more information.
+
+AccessBrailleRAP depends on glibc version. Unfortunately recent Debian and Ubuntu distribution are not using exactly the same. 
+If your are using Debian12 or a derivate distribution, use desktopbraillerap-debian. 
+If you are using Ubuntu24.04 or a derivate distribution, use desktopbraillerap-ubuntu
+
+[![auto_build_for_debian](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml)
+
+[![auto_build_for_ubuntu](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml)
+
+
+
 
 ## LibLouis
 AccessBrailleRAP use liblouis to translate text into Braille. You can select the Braille language (English, French...), contracted or uncontacted Braille, and 6 dots or 8 Dots Braille standard.
@@ -53,17 +65,6 @@ AccessBrailleRAP is licensed under GNU GPL V3.
 ![](./screenshot1-1.jpg)
 
 ![](./screenshot2.jpg)
-
-# Releases
-We provide pre-built binaries for Windows and Linux. See [releases](https://github.com/BrailleRAP/AccessBrailleRAP/releases) for more information.
-
-AccessBrailleRAP depends on glibc version. Unfortunately recent Debian and Ubuntu distribution are not using exactly the same. 
-If your are using Debian12 or a derivate distribution, use desktopbraillerap-debian. 
-If you are using Ubuntu24.04 or a derivate distribution, use desktopbraillerap-ubuntu
-
-[![auto_build_for_debian](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml)
-
-[![auto_build_for_ubuntu](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml)
 
 
 ## Contributing
