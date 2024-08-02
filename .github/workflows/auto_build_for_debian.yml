@@ -41,6 +41,7 @@ jobs:
        with:
              tag: ${{ github.ref }}
              overwrite: true
+             file_glob: true
              file: ./dist/accessbraillerap-debian.*
 
      - name: Upload artifact
