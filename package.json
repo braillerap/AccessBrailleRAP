@@ -36,7 +36,7 @@
     "cleandebdebian":"rm ./package/debian/accessbraillerap-debian/bin/*",
     "cleandebubuntu":"rm ./package/ubuntu/accessbraillerap-ubuntu/bin/* ",
     "build-deb-debian":"npm-run-all cpdebian dpkg-debian",
-    "build-deb-ubuntu":"npm-run-all cpdebian dpkg-debian",
+    "build-deb-ubuntu":"npm-run-all cpubuntu dpkg-ubuntu",
     "cpdebian":"cp ./dist/accessbraillerap-debian ./package/debian/accessbraillerap-debian/bin/",
     "dpkg-debian":"dpkg-deb -v --build ./package/debian/accessbraillerap-debian ./dist/accessbraillerap-debian.deb",
     "cpubuntu":"cp ./dist/accessbraillerap-ubuntu ./package/ubuntu/accessbraillerap-ubuntu/bin/",
