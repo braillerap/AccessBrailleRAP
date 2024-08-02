@@ -54,12 +54,16 @@ AccessBrailleRAP is licensed under GNU GPL V3.
 
 ![](./screenshot2.jpg)
 
-## How to install
-Download the latest installer from github [release](https://github.com/braillerap/AccessBrailleRAP/releases)
+# Releases
+We provide pre-built binaries for Windows and Linux. See [releases](https://github.com/BrailleRAP/AccessBrailleRAP/releases) for more information.
 
-Select last stable release or lastest development version.
+AccessBrailleRAP depends on glibc version. Unfortunately recent Debian and Ubuntu distribution are not using exactly the same. 
+If your are using Debian12 or a derivate distribution, use desktopbraillerap-debian. 
+If you are using Ubuntu24.04 or a derivate distribution, use desktopbraillerap-ubuntu
 
-The installer will install AccesBrailleRAP and the needed drivers to control BrailleRAP.
+[![auto_build_for_debian](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml)
+
+[![auto_build_for_ubuntu](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml)
 
 
 ## Contributing
@@ -84,52 +88,121 @@ Translation files are available [on codeberg weblate host](https://translate.cod
 | Ukrainian           |   OK   | 
 
 
+<a href="https://translate.codeberg.org/engage/accessbraillerap_translate/">
+<img src="https://translate.codeberg.org/widget/accessbraillerap_translate/ihm/multi-auto.svg" alt="État de la traduction" />
+</a>
 
 
 
+# Building on Windows
 
-## Instruction for build (Windows)
+## Prerequisites
 
-Environnement Install
-=====================
+* Python 3.6 or later
+* NodeJS 20.12 or later
 
-You’ll need to have Python >= 3.6 and some python dependencies : pyinstaller, pySerial...
-
-
-First make a python virtual env in a power shell.
-```
-$ python -m venv venv 
-```
-
-Activate the virtual env (power shell)
-```
-$ .\venv\Scripts\activate.ps1  
-```
-
-Install all python depencies with:
-```
-$ pip install -r requirement.txt 
-```
-
-Install all react/js dependencies
-```
-$ npm i
-```
-
-Start the App in debug mode (developpement use)
-===============================================
+## Create a python virtual environment
 
 ```
-$ npm run startview
+python -m venv venv
 ```
 
-Build the App
-=============
+## Activate python virtual environment
 
 ```
-$ npm run buildview
+.\venv\Scripts\activate
 ```
 
-check `dist/AccessBrailleRAP/AccessBrailleRAP.exe`
+## Install python dependencies
+
+```
+pip install -r requirements.txt
+```
+
+## Install nodejs dependencies
+
+```
+npm install
+```
+
+## Run in dev environement
+
+```
+npm run startview
+```
+
+## Build windows .exe
+
+```
+npm run buildview
+```
+check DesktopBrailleRAP.exe in dist folder
+
+
+# Building on Linux
+
+## Prerequisites
+We need several development tools to build AccessBrailleRAP, python, nodejs and gcc to build some python dependencies.
+Depending on your system, you will also need a desktop environment installed on the build machine.
+
+
+### Python / gcc / nodejs
+
+General build tools:
+
+    apt install  cmake build-essential git ninja-build autoconf gnulib
+    apt install  ca-certificates curl gnupg
+    apt install  software-properties-common
+    apt install  python3 python3-venv python3-dev
+    apt install  pkg-config 
+    apt install  gir1.2-gtk-3.0 gir1.2-webkit2-4.1
+    apt install  python3-tk 
+    apt install  xvfb
+    apt install  libcairo2 libcairo2-dev libgirepository1.0-dev
+    apt install  tcl curl
+
+Nodejs:
+
+General Nodejs
+    
+    curl -sL https://deb.nodesource.com/setup_20.x | bash -
+    apt update
+    apt install -y nodejs
+    npm i npm@latest -g
+
+Install AccessBrailleRAP nodejs dependencies
+
+    npm install
+
+Python:
+
+Create a python3 virtual environment
+
+    python3 -m venv venv
+
+Activate python3 virtual environment
+
+    source ./venv/bin/activate
+
+Install python3 AccessBrailleRAP dependencies
+
+    pip install -r requirement_linux.txt
+
+## Build AccessBrailleRAP
+
+Activate python virtual env 
+
+    source ./venv/bin/activate
+
+### Run in development environement
+
+    npm run startview
+
+### Build AccessBrailleRAP
+
+    npm run builddebian
+
+Check the ./dist folder for the AccessBrailleRAP executable
+
 
 
