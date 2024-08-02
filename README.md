@@ -78,18 +78,10 @@ Feel free to open issues or pull requests ! We will be happy to review and merge
 
 Translation files are available [on codeberg weblate host](https://translate.codeberg.org/projects/accessbraillerap_translate/ihm/) . Some languages are partialy translated , we are looking for contributors to complete and check them.     
 
-| Locale              | Status | 
-| :------------------ | :------: |
-| Arabic              |   OK   | 
-| Dutch               |  Partial - need someone to check it   | 
-| English             |   OK   | 
-| French              |   OK   | 
-| Spanish             |  Partial - need someone to check it   | 
-| Ukrainian           |   OK   | 
 
 
 <a href="https://translate.codeberg.org/engage/accessbraillerap_translate/">
-<img src="https://translate.codeberg.org/widget/accessbraillerap_translate/ihm/multi-auto.svg" alt="État de la traduction" />
+<img src="https://translate.codeberg.org/widget/accessbraillerap_translate/ihm/multi-auto.svg" alt="État de la traduction" width="75%"/>
 </a>
 
 
