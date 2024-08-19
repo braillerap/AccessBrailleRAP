@@ -1,13 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: AccessBrailleRAP
+Upstream-Name: accessbraillerap-ubuntu
 Source: https://github.com/braillerap/AccessBrailleRAP
 
 Files: *
 Copyright: BrailleRAP team <contact@braillerap.org>
-License: GPL-3
+License: GPL 3
 
 
-License: GPL-3
+License: GPL 3
  Indicator Weather is free software; you can redistribute it
  and/or modify it under the terms of the GNU General Public
  License version 3 as published by the Free Software Foundation.
