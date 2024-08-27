@@ -35,6 +35,7 @@ class SerialStatus:
     Ready = 0
     Busy = 2
 
+rpi = False
 COM_TIMEOUT = 5
 serial_port = None
 serial_status = SerialStatus.Ready
@@ -380,8 +381,21 @@ def get_entrypoint():
 
 
 def delete_splash():
+    print ("delete splash **************************************************")
+    
+    
     try:
-        pyi_splash.close()
+        if (rpi):
+            time.sleep(10)
+            print ("#################################  resize the window")
+            window.resize (512,512)
+            window.maximize()
+    except:
+        pass
+        
+    try:
+        if getattr(sys, "frozen", True):
+            pyi_splash.close()
     except:
         pass
     # print ("started", time())
@@ -404,12 +418,20 @@ if __name__ == "__main__":
 
     print("start html=", entry)
     load_parameters()
-    # print (app_options)
-
-    # print ("start", time())
-    window = webview.create_window(
-        "AccessBrailleRAP", entry, js_api=api, maximized=True, focus=True
-    )
+    
+    #start gui
+    if platform.machine() == 'aarch64':
+        rpi = True
+    
+    if rpi:   
+        window = webview.create_window(
+            "AccessBrailleRAP", entry, js_api=api, focus=True
+        )
+    else:
+        window = webview.create_window(
+            "AccessBrailleRAP", entry, js_api=api, maximized=True, focus=True
+        )
+ 
     # print ("created", time())
     if platform.system() == "Windows":
         print ("starting Windows GUI")

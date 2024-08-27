@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=AccessBrailleRAP
+Comment=Braille authoring software for BrailleRAP
+Exec=/usr/bin/accessbraillerap-rpi
+Terminal=false
+Icon=/usr/share/icons/accessbraillerap-icon.png
+Keywords=braillerap
