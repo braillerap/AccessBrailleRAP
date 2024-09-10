@@ -74,14 +74,14 @@ Section "AcessBrailleRAP (required)"
     
     ; Put file there
     File "AccessBrailleRAP.exe"
-    File "parameters.json"
+    File "acces_brap_parameters.json"
     File "_internal.zip"
     ; pandoc
     File "pandoc.exe"
   
   
    AccessControl::GrantOnFile \
-    "$INSTDIR\parameters.json" "(BU)" "GenericRead + GenericWrite"
+    "$INSTDIR\acces_brap_parameters.json" "(BU)" "GenericRead + GenericWrite"
     Pop $0 ; "error" on errors
 
   ; Write the installation path into the registry
@@ -165,6 +165,7 @@ Section "Uninstall"
   ; Remove files and uninstaller
   Delete $INSTDIR\AccessBrailleRAP.exe
   Delete $INSTDIR\parameters.json
+  Delete $INSTDIR\acces_brap_parameters.json
   Delete $INSTDIR\uninstall.exe
   Delete $INSTDIR\CDM212364_Setup.exe
   Delete $INSTDIR\CH341SER.EXE

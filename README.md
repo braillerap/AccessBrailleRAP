@@ -197,5 +197,59 @@ Activate python virtual env
 
 Check the ./dist folder for the AccessBrailleRAP executable
 
+# Building for Raspberry PI 4
+
+## Prerequisites
+The packaged  binary release has been build on a Raspberry 4 2GO with latest 64 bits Raspberry PI OS (debian bookworm)
+
+Raspberry PI OS come with python, we only need to istall nodejs and some python dependicies. We love to use virtual env on python, but the needed python packages are not available has wheel packages on arm (packages for pip cmd), so we must install the python dependencies in the global system configuration.
+
+### build tools
+    
+    sudo apt install git-extras
+
+### Python
+
+    sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-webkit2-4.1
+    sudo apt install python3-pyqt5 python3-pyqt5.qtwebengine python3-pyqt5.qtwebchannel 
+    sudo apt install libqt5webkit5-dev
+
+### Install nodejs
+    curl -sL https://deb.nodesource.com/setup_20.x | bash -
+    apt update
+    apt install -y nodejs
+    npm i npm@latest -g
+
+### Create python environnement
+
+    python3 -m venv venv --system-site-packages
+
+### install nodejs dependencies
+
+    npm i
+
+### activate virtualenv
+
+    source ./venv/bin/activate
+
+### install python dependencies in virtualenv
+
+    pip install pywebview
+    pip install pyserial
+    pip install pyinstaller
+    pip install pypandoc
+
+### Run in development environement
+
+    npm run startview
+
+### build AccessBrailleRAP
+
+    npm run buildrpi
+
+Check the dist folder for accessbraillerap-rpi executable. You can install the .deb package with :
+
+    sudo apt install accessbraillerap-rpi-x.x.x.deb
+
 
 

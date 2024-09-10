@@ -58,3 +58,12 @@ package/debian/AccessBrailleRAP-debian/bin/AccessBrailleRAP-debian
 package/debian/accessbraillerap-debian/bin/accessbraillerap-debian
 package/ubuntu/accessbraillerap-ubuntu/bin/empty
 acces_brap_parameters.json
+package/rpi/accessbraillerap-rpi/usr/bin/
+package/rpi/accessbraillerap-rpi/usr/share/doc/accessbraillerap-rpi/changelog.gz
+package/debian_builldpackage/accessbraillerap-debian_0.5.7-1_amd64.deb
+package/debian_builldpackage/accessbraillerap_debian/accessbraillerap-debian
+package/debian_builldpackage/accessbraillerap_debian/debian/accessbraillerap-debian.substvars
+package/debian_builldpackage/accessbraillerap_debian/debian/accessbraillerap-debian/usr/bin/accessbraillerap-debian
+package/debian_fpm/accessbraillerap-debian.deb
+package/debian_fpm/accessbraillerap-debian/usr/bin/accessbraillerap-debian
+

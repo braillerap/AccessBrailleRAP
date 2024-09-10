@@ -1,6 +1,6 @@
 {
   "name": "access-braillerap",
-  "version": "0.5.8",
+  "version": "0.5.10",
   "description": "AccessBrailleRAP",
   "main": "index.js",
   "repository": "https://github.com/AccessBrailleRAP/AccessBrailleRAP",
@@ -29,29 +29,37 @@
     
     "packagedebian": "pyinstaller DebianAccessBrailleRAP.spec",
     "packageubuntu": "pyinstaller LinuxAccessBrailleRAP.spec",
+    "packagerpi": "pyinstaller RpiAccessBrailleRAP.spec",
     
     "buildview": "npm-run-all clean build package",
     "builddebian": "npm-run-all clean build packagedebian build-deb-debian",
     "buildubuntu": "npm-run-all clean build packageubuntu build-deb-ubuntu",
-    
+    "buildrpi": "npm-run-all clean build packagerpi build-deb-rpi",
     
     "build-deb-debian":"npm-run-all mkdirdebian cpdebian clogdebian dpkg-debian checkdebian",
     "build-deb-ubuntu":"npm-run-all mkdirubuntu cpubuntu clogubuntu dpkg-ubuntu checkubuntu",
+    "build-deb-rpi": "npm-run-all mkdirrpi cprpi clogrpi dpkg-rpi checkrpi",
     
     "mkdirdebian":"mkdir -p ./package/debian/accessbraillerap-debian/usr/bin/",
     "mkdirubuntu":"mkdir -p ./package/ubuntu/accessbraillerap-ubuntu/usr/bin/",
+    "mkdirrpi": "mkdir -p ./package/rpi/accessbraillerap-rpi/usr/bin/",
     
     "clogubuntu":"git-changelog -x -s v0.4.2 -f `git tag | tail -n 1` | gzip > ./package/ubuntu/accessbraillerap-ubuntu/usr/share/doc/accessbraillerap-ubuntu/changelog.gz",
     "clogdebian":"git-changelog -x -s v0.4.2 -f `git tag | tail -n 1` | gzip > ./package/debian/accessbraillerap-debian/usr/share/doc/accessbraillerap-debian/changelog.gz",
+    "clogrpi": "git-changelog -x -s v0.6.0 -f `git tag | tail -n 1` | gzip > ./package/rpi/accessbraillerap-rpi/usr/share/doc/accessbraillerap-rpi/changelog.gz",
+    
     
     "checkdebian":"lintian ./dist/accessbraillerap-debian-${npm_package_version}.deb",
     "checkubuntu":"lintian ./dist/accessbraillerap-ubuntu-${npm_package_version}.deb",
+    "checkrpi": "lintian ./dist/accessbraillerap-rpi-${npm_package_version}.deb",
 
     "cpdebian":"cp ./dist/accessbraillerap-debian ./package/debian/accessbraillerap-debian/usr/bin/",
     "dpkg-debian":"dpkg-deb -v --build ./package/debian/accessbraillerap-debian ./dist/accessbraillerap-debian-${npm_package_version}.deb",
     "cpubuntu":"cp ./dist/accessbraillerap-ubuntu ./package/ubuntu/accessbraillerap-ubuntu/usr/bin/",
     "dpkg-ubuntu":"dpkg-deb -v --build ./package/ubuntu/accessbraillerap-ubuntu ./dist/accessbraillerap-ubuntu-${npm_package_version}.deb",
-
+    "cprpi": "cp ./dist/accessbraillerap-rpi ./package/rpi/accessbraillerap-rpi/usr/bin/",
+    "dpkg-rpi": "dpkg-deb -v --root-owner-group --build ./package/rpi/accessbraillerap-rpi ./dist/accessbraillerap-rpi-${npm_package_version}.deb",
+    
     
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
