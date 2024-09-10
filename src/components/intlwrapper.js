@@ -4,6 +4,7 @@ import French from '../translations/fr.json';
 import English from '../translations/en.json';
 import Arabic from '../translations/ar.json';
 import Ukrainian from '../translations/uk.json';
+import SimplifiedChineese from '../translations/zh_Hans.json';
 import { locales } from '../components/locale.js';
 
 export const IntlContext = React.createContext();
@@ -76,6 +77,10 @@ const IntlWrapper = (props) => {
        {
             setMessages(Ukrainian);
        }
+       else if(newLocale === 'zh-hans')
+       {
+            setMessages(SimplifiedChineese);
+       }
        else
        {
             setMessages(English);
@@ -106,6 +111,10 @@ const IntlWrapper = (props) => {
         else if (lang === 'uk')
         {
             setMessages(Ukrainian);
+        }
+        else if(lang === 'zh-hans')
+        {
+                setMessages(SimplifiedChineese);
         }
         else
         {
