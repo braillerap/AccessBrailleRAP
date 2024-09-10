@@ -1,15 +1,13 @@
-Package:accessbraillerap-debian
-Version:0.5.10
+Package: accessbraillerap-debian
+Version: 0.5.10
 Depends: libc6 (>=2.36-9+deb12u7), libc6 (<<2.37), zlib1g
-Section:utils
-Priority:optional
-HomePage:https://www.braillerap.org
+Section: utils
+Priority: optional
+HomePage: https://www.braillerap.org
 Package-type: binary
-Architecture:amd64
-Depends: libc6 (>=2.36-9+deb12u7), libc6 (<<2.37), zlib1g
-Package-type: binary
-Maintainer:Build with love by <contact@braillerap.org>
-Description:Braille authoring tool for BrailleRAP open source embosser
+Architecture: amd64
+Maintainer: Build with love by <contact@braillerap.org>
+Description: Braille authoring tool for BrailleRAP open source embosser
  Braille transcription software for BrailleRAP. 
  AccessBrailleRAP allow you to input text, translate the text into Braille 
  and 'print' the Braille on a BrailleRAP embosser. 
