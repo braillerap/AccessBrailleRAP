@@ -252,4 +252,12 @@ Check the dist folder for accessbraillerap-rpi executable. You can install the .
     sudo apt install accessbraillerap-rpi-x.x.x.deb
 
 
+# Building for Linux using Docker
 
+You can use Docker configuration to build DesktopBrailleRAP for a Linux distribution. 
+
+Docker configuration to build DesktopBrailleRAP for Debian or Ubuntu are available here:
+
+[Debian](https://github.com/braillerap/BuildAccessBrailleRAPDebian)
+
+[Ubuntu](https://github.com/braillerap/BuildAccessBrailleRAPLinux)
