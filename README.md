@@ -38,7 +38,7 @@ pandoc is licensed under GNU GPL V2.
 
 ## Pywebview
 
-AccessBrailleRAP use pywebview to display the react.js GUI in embedded in Python backend.
+AccessBrailleRAP use pywebview to display the react.js GUI embedded in Python backend.
 Pywebview is a cross-platform wrapper around the webview library.
 The original version of pywebview is available here [https://github.com/r0x0/pywebview](https://github.com/r0x0/pywebview)
 
