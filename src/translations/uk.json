@@ -1,5 +1,5 @@
 {
-    "app.loading": "Завантаження...",
+    "app.loading": "Завантаження…",
     "param.header": "Налаштування програми",
     "param.nocomport": "Послідовний порт відсутній",
     "param.labelport": "Послідовний COM-порт ",
@@ -58,5 +58,6 @@
     "param.offsety_aria": "Верхнє поле в міліметрах",
     "input.title2": "Форма для введення тексту",
     "input.dialog_open_file": "Відкрити файл",
-    "param.form_aria": "Форма налаштувань програми"
+    "param.form_aria": "Форма налаштувань програми",
+    "print.info_over_aria": " з "
 }
