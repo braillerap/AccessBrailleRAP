@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
 import {IntlProvider} from 'react-intl';
-import French from '../translations/fr.json';
-import English from '../translations/en.json';
 import Arabic from '../translations/ar.json';
+import Deutch from '../translations/de.json';
+import English from '../translations/en.json';
+import Spanish from '../translations/es.json';
+import French from '../translations/fr.json';
+import Dutch from '../translations/nl.json';
+import Portuguese from '../translations/pt.json';
 import Ukrainian from '../translations/uk.json';
 import SimplifiedChineese from '../translations/zh_Hans.json';
 import { locales } from '../components/locale.js';
@@ -81,6 +85,22 @@ const IntlWrapper = (props) => {
        {
             setMessages(SimplifiedChineese);
        }
+       else if (newLocale === 'de')
+       {
+            setMessages(Deutch);
+       }
+       else if (newLocale === 'es')
+       {
+            setMessages(Spanish);
+       }
+       else if (newLocale === 'nl')
+       {
+            setMessages(Dutch);
+       }
+       else if (newLocale === 'pt')
+       {
+            setMessages(Portuguese);
+       }
        else
        {
             setMessages(English);
@@ -116,11 +136,28 @@ const IntlWrapper = (props) => {
         {
                 setMessages(SimplifiedChineese);
         }
+        else if (lang === 'de')
+        {
+            setMessages(Deutch);
+        }
+        else if (lang === 'es')
+        {
+            setMessages(Spanish);
+        }
+        else if (lang === 'nl')
+        {
+            setMessages(Dutch);
+        }
+        else if (lang === 'pt') 
+        {
+            setMessages(Portuguese);
+        }
         else
         {
             setMessages(English);
             lang = 'en';
         }
+
         locales.map ((item, index)=> {
             console.log (item);
             if (lang === item.lang)
