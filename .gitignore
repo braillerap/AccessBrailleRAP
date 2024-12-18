@@ -67,3 +67,4 @@ package/debian_builldpackage/accessbraillerap_debian/debian/accessbraillerap-deb
 package/debian_fpm/accessbraillerap-debian.deb
 package/debian_fpm/accessbraillerap-debian/usr/bin/accessbraillerap-debian
 
+nsis/AccessBrailleRAP_Windows_Setup.exe
