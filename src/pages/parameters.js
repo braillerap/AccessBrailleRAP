@@ -394,7 +394,7 @@ class Parameters extends React.Component {
                     <input type="number" 
                       aria-label={this.props.intl.formatMessage({id:"param.offsetx_aria"})} 
                       className={this.context.getStyleClass('input')}
-                      step="1" min="0" max="50" name="offsetx" id="offsetx"
+                      step="0.1" min="0" max="50" name="offsetx" id="offsetx"
                       value={this.props.options.offsetx} 
                       onChange={this.handleChangeOffsetx} 
                     />
@@ -405,7 +405,7 @@ class Parameters extends React.Component {
                     <input type="number" 
                       aria-label={this.props.intl.formatMessage({id:"param.offsety_aria"})} 
                       className={this.context.getStyleClass('input')}
-                      step="1" min="0" max="50" name="offsety" id="offsety"
+                      step="0.1" min="0" max="50" name="offsety" id="offsety"
                       value={this.props.options.offsety} 
                       onChange={this.handleChangeOffsety} 
                     />
