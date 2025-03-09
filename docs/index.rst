@@ -1,4 +1,4 @@
-Bienvenue sur la documentation DesktopBrailleRAP 
+Bienvenue sur la documentation AccessBrailleRAP 
 ================================================
 
 .. image :: ./IMG/AccessBrailleRAP_card.png 
