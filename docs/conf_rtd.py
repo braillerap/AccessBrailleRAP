@@ -55,7 +55,7 @@ def get_git_branch():
 # -- Project information -----------------------------------------------------
 
 project = u'AccessBrailleRAP'
-copyright = u'GPL V3'
+copyright = u'BrailleRAP team GPL V3'
 author = u'BrailleRAP team'
 
 # The short X.Y version
