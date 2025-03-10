@@ -2,7 +2,7 @@
 
 ## Présentation
 
-**AccessBrailleRAP** est un outil de traduction en Brailel destiné a réaliser des documents embossés sur une embosseuse [**BrailleRAP**](https://www.braillerap.org). Par documents en Braille on entend des documents qui contiennent des textes mis en relief dans le standard Braille slectionné. Pour rappel [**BrailleRAP**](https://www.braillerap.org) est une embosseuse DIY (Do It Yourself) open source permettant de réaliser des documents en Braille mais également de mettre des graphiques en relief.
+**AccessBrailleRAP** est un outil de traduction en Braille destiné a réaliser des documents embossés sur une embosseuse [**BrailleRAP**](https://www.braillerap.org). Par documents en Braille on entend des documents qui contiennent des textes mis en relief dans le standard Braille sélectionné. Pour rappel [**BrailleRAP**](https://www.braillerap.org) est une embosseuse DIY (Do It Yourself) open source permettant de réaliser des documents en Braille mais également de mettre des graphiques en relief.
 
 Voici un exemple de document réalisé avec AccessBrailleRAP et une BrailleRAP:
 
