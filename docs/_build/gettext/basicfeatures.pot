@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) GPL V3
+# This file is distributed under the same license as the AccessBrailleRAP package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AccessBrailleRAP 0.7.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-10 10:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../basicfeatures.md:1
+msgid "Tour d'horizon des fonctions de DesktopBrailleRAP"
+msgstr ""
+
+#: ../../basicfeatures.md:5
+msgid "Les options du menu principal"
+msgstr ""
+
+#: ../../basicfeatures.md:7
+#: ../../basicfeatures.md:18
+msgid "Saisie"
+msgstr ""
+
+#: ../../basicfeatures.md:8
+msgid "Affiche une page permettant de manipuler le texte à transcrire en Braille"
+msgstr ""
+
+#: ../../basicfeatures.md:10
+#: ../../basicfeatures.md:32
+msgid "Impression"
+msgstr ""
+
+#: ../../basicfeatures.md:11
+msgid "Affiche les options relatives à l'embossage du doument sur une BrailleRAP"
+msgstr ""
+
+#: ../../basicfeatures.md:13
+#: ../../basicfeatures.md:44
+msgid "Paramètres"
+msgstr ""
+
+#: ../../basicfeatures.md:14
+msgid "Affiche une page relative au paramétrage de l'application"
+msgstr ""
+
+#: ../../basicfeatures.md:20
+#: ../../basicfeatures.md:34
+#: ../../basicfeatures.md:46
+msgid "Introduction"
+msgstr ""
+
+#: ../../basicfeatures.md:21
+msgid "L'action de cliquer sur l'option *Saisie* affiche une page relative à la manipulation du texte à transcrire en Braille."
+msgstr ""
+
+#: ../../basicfeatures.md:23
+msgid "![Capture d'écran de la page fichier](./IMG/forminput.jpg)"
+msgstr ""
+
+#: ../../basicfeatures.md:23
+msgid "Capture d'écran de la page fichier"
+msgstr ""
+
+#: ../../basicfeatures.md:25
+msgid "Bouton *Ouvrir*"
+msgstr ""
+
+#: ../../basicfeatures.md:26
+msgid "Bouton *Enregistrer*"
+msgstr ""
+
+#: ../../basicfeatures.md:27
+msgid "Bouton *Enregistrer sous...*"
+msgstr ""
+
+#: ../../basicfeatures.md:28
+msgid "Bouton *Importer*"
+msgstr ""
+
+#: ../../basicfeatures.md:37
+msgid "Bouton *Page Précédente*"
+msgstr ""
+
+#: ../../basicfeatures.md:39
+msgid "Bouton *Page Suivante*"
+msgstr ""
+
+#: ../../basicfeatures.md:41
+msgid "Bouton *Imprimer*"
+msgstr ""
