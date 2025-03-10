@@ -154,7 +154,7 @@ html_theme = sphinx_html_theme
 #
 # html_theme_options = {}
 html_theme_options = {
-    'logo_only': False,
+    'logo_only': True,
     'display_version': True,
 }
 # Add any paths that contain custom static files (such as style sheets) here,
