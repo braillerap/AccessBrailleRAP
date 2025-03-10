@@ -12,11 +12,12 @@ Bienvenue sur la documentation AccessBrailleRAP
    introduction
    features
    basicfeatures
+   accessibility
    sourcecode
    licence
     
 
-.. index:: introduction,features,basicfeatures,sourcecode,licence
+.. index:: introduction,features,basicfeatures,accessibility,sourcecode,licence
 
 Mise à jour: |today|
 
