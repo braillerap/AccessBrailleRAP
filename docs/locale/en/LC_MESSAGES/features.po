@@ -22,41 +22,43 @@ msgstr ""
 
 #: ../../features.md:1
 msgid "Fonctionalités"
-msgstr ""
+msgstr "Features"
 
 #: ../../features.md:3
 msgid "Les principales fonctionnalités de AccessBrailleRAP sont:"
-msgstr ""
+msgstr "AccessBrailleRAP main features:"
 
 #: ../../features.md:4
 msgid "Saisir un texte à l'aide du clavier."
-msgstr ""
+msgstr "Enter text with the keyboard."
 
 #: ../../features.md:5
 msgid "Lire un texte depuis un fichier .txt."
-msgstr ""
+msgstr "Load a text file (*.txt)."
 
 #: ../../features.md:6
 msgid ""
 "Importer le texte d'un document openoffice (en fait tout document reconnu"
 " par pandoc)."
 msgstr ""
+"Import text from an openoffice document (any document recognized by "
+"pandoc)."
 
 #: ../../features.md:7
 msgid "Enregistrer un texte au format .txt."
-msgstr ""
+msgstr "Save text as a .txt file."
 
 #: ../../features.md:8
 msgid "Traduire le texte en Braille dans le standard sélectionné."
-msgstr ""
+msgstr "Translate the text to Braille in the selected Braille standard."
 
 #: ../../features.md:9
 msgid "Déterminer la pagination du document qui peut contenir plusieurs pages."
-msgstr ""
+msgstr "Compute the pagination of the document."
 
 #: ../../features.md:10
 msgid ""
 "Embosser (imprimer) le document en Braille sur une BrailleRAP connectée "
 "en USB."
 msgstr ""
-
+"Emboss (print) the document in Braille on a USB connected BrailleRAP."

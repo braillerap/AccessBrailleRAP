@@ -22,9 +22,9 @@ msgstr ""
 
 #: ../../index.rst:2
 msgid "Bienvenue sur la documentation AccessBrailleRAP"
-msgstr ""
+msgstr "Welcome on AccessBrailleRAP user manual"
 
 #: ../../index.rst:21
 msgid "Mise à jour: |today|"
-msgstr ""
+msgstr "Update: |today|"
 

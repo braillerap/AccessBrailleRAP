@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../licence.md:1
 msgid "License d'utilisation"
-msgstr ""
+msgstr "License of use"
 
 #: ../../licence.md:3
 msgid ""
@@ -28,4 +28,8 @@ msgid ""
 "`LICENSE` du projet sur Github : "
 "[https://github.com/braillerap/AccessBrailleRAP/blob/main/LICENSE](https://github.com/braillerap/AccessBrailleRAP/blob/main/LICENSE)"
 msgstr ""
+"AccessBrailleRAP is a free software distributed under the GPL V3 license. "
+"You can find the full text of this license in the `LICENSE` file of the "
+"project on Github: "
+"[https://github.com/braillerap/AccessBrailleRAP/blob/main/LICENSE](https://github.com/braillerap/AccessBrailleRAP/blob/main/LICENSE)"
 

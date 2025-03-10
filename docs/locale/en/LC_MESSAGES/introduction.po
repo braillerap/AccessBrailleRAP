@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../introduction.md:1
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 #: ../../introduction.md:3
 msgid "Présentation"
-msgstr ""
+msgstr "Presentation"
 
 #: ../../introduction.md:5
 msgid ""
@@ -36,30 +36,40 @@ msgid ""
 "It Yourself) open source permettant de réaliser des documents en Braille "
 "mais également de mettre des graphiques en relief."
 msgstr ""
+"**AccessBrailleRAP** is a Braille translation tool designed to create "
+"embossed documents on a [**BrailleRAP**](https://www.braillerap.org) "
+"embosser. By Braille documents, we mean documents that contain text "
+"embossed with the Braille standard selected. For reference, "
+"[**BrailleRAP**](https://www.braillerap.org) is a DIY (Do It Yourself) "
+"open source embosser that allows you to create Braille documents but also "
+"to emboss graphics."
 
 #: ../../introduction.md:7
 msgid ""
 "Voici un exemple de document réalisé avec AccessBrailleRAP et une "
 "BrailleRAP:"
 msgstr ""
+"Here is an example of a document created with AccessBrailleRAP and a "
+"BrailleRAP:"
 
 #: ../../introduction.md:9
 msgid ""
 "Des exemples de documents réalisés avec DesktopBrailleRAP et une "
 "BrailleRAP"
 msgstr ""
+"Examples of documents created with DesktopBrailleRAP and a BrailleRAP"
 
 #: ../../introduction.md:12
 msgid "Une BrailleRAP XL à Gauche, Une BrailleRAP standard à droite."
-msgstr ""
+msgstr "A BrailleRAP XL on the left, a standard BrailleRAP on the right"
 
 #: ../../introduction.md:14
 msgid "Une photographie de deux BrailleRAP"
-msgstr ""
+msgstr "A photograph of two BrailleRAP"
 
 #: ../../introduction.md:17
 msgid "Financement"
-msgstr ""
+msgstr "Funding"
 
 #: ../../introduction.md:19
 msgid ""
@@ -69,6 +79,11 @@ msgid ""
 "Plus d'informations ici [NLnet project "
 "page](https://nlnet.nl/project/BrailleRAP)."
 msgstr ""
+"This project is funded through [NGI0 Entrust](https://nlnet.nl/entrust),"
+" a fund created by [NLnet](https://nlnet.nl) with the support of the "
+"[Next Generation Internet](https://ngi.eu) program of the European "
+"Commission. For more information, see "
+[NLnet project page](https://nlnet.nl/project/BrailleRAP)."
 
 #: ../../introduction.md:21
 msgid ""
@@ -80,7 +95,7 @@ msgstr ""
 
 #: ../../introduction.md:21
 msgid "Le logo du programme NGI0"
-msgstr ""
+msgstr "NGI0 program logo"
 
 #~ msgid ""
 #~ "**AccessBrailleRAP** est un outil de "

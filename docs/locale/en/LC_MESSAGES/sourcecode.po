@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../sourcecode.md:1
 msgid "Code source et mises à jour"
-msgstr ""
+msgstr "Source code and updates"
 
 #: ../../sourcecode.md:3
 msgid "Code source"
-msgstr ""
+msgstr "Source code"
 
 #: ../../sourcecode.md:4
 msgid ""
@@ -31,10 +31,13 @@ msgid ""
 " l'adresse suivante : "
 "[https://github.com/braillerap/AccessBrailleRAP](https://github.com/braillerap/AccessBrailleRAP)"
 msgstr ""
+"The entire source code of AccessBrailleRAP is available on GitHub at the"
+" following address: "
+"[https://github.com/braillerap/AccessBrailleRAP](https://github.com/braillerap/AccessBrailleRAP)"
 
 #: ../../sourcecode.md:6
 msgid "Mises à jour"
-msgstr ""
+msgstr "Updates"
 
 #: ../../sourcecode.md:7
 msgid ""
@@ -42,4 +45,7 @@ msgid ""
 "dans la catégories **releases**: "
 "[https://github.com/braillerap/AccessBrailleRAP/releases](https://github.com/braillerap/AccessBrailleRAP/releases)"
 msgstr ""
+"Also on github, you can find updates to the software in the **releases**"
+" category: "
+"[https://github.com/braillerap/AccessBrailleRAP/releases](https://github.com/braillerap/AccessBrailleRAP/releases)"
 

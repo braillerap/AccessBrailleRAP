@@ -22,80 +22,82 @@ msgstr ""
 
 #: ../../basicfeatures.md:1
 msgid "Tour d'horizon des fonctions de DesktopBrailleRAP"
-msgstr ""
+msgstr "AccessBrailleRAP functions tour"
 
 #: ../../basicfeatures.md:5
 msgid "Les options du menu principal"
-msgstr ""
+msgstr "Main menu options"
 
 #: ../../basicfeatures.md:7 ../../basicfeatures.md:18
 msgid "Saisie"
-msgstr ""
+msgstr "Text input"
 
 #: ../../basicfeatures.md:8
 msgid "Affiche une page permettant de manipuler le texte à transcrire en Braille"
-msgstr ""
+msgstr "Displays a page to manipulate the text to be transcribed in Braille"
 
 #: ../../basicfeatures.md:10 ../../basicfeatures.md:32
 msgid "Impression"
-msgstr ""
+msgstr "Print"
 
 #: ../../basicfeatures.md:11
 msgid "Affiche les options relatives à l'embossage du doument sur une BrailleRAP"
-msgstr ""
+msgstr "Displays the options related to embossing the document on a BrailleRAP"
 
 #: ../../basicfeatures.md:13 ../../basicfeatures.md:44
 msgid "Paramètres"
-msgstr ""
+msgstr "Parameters"
 
 #: ../../basicfeatures.md:14
 msgid "Affiche une page relative au paramétrage de l'application"
-msgstr ""
+msgstr "Displays a page related to the application's configuration"
 
 #: ../../basicfeatures.md:20 ../../basicfeatures.md:34
 #: ../../basicfeatures.md:46
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 #: ../../basicfeatures.md:21
 msgid ""
 "L'action de cliquer sur l'option *Saisie* affiche une page relative à la "
 "manipulation du texte à transcrire en Braille."
 msgstr ""
+"Clicking on the *Text input* option displays a page related to the "
+"manipulation of the text to be transcribed in Braille."
 
 #: ../../basicfeatures.md:23
 msgid "![Capture d'écran de la page fichier](./IMG/forminput.jpg)"
-msgstr ""
+msgstr "![Application screenshot of input page](./IMG/forminput.jpg)"
 
 #: ../../basicfeatures.md:23
 msgid "Capture d'écran de la page fichier"
-msgstr ""
+msgstr "Application screenshot of input page"
 
 #: ../../basicfeatures.md:25
 msgid "Bouton *Ouvrir*"
-msgstr ""
+msgstr "Button *Open*"
 
 #: ../../basicfeatures.md:26
 msgid "Bouton *Enregistrer*"
-msgstr ""
+msgstr "Button *Save*"
 
 #: ../../basicfeatures.md:27
 msgid "Bouton *Enregistrer sous...*"
-msgstr ""
+msgstr "Button *Save as...*"
 
 #: ../../basicfeatures.md:28
 msgid "Bouton *Importer*"
-msgstr ""
+msgstr "Button *Import*"
 
 #: ../../basicfeatures.md:37
 msgid "Bouton *Page Précédente*"
-msgstr ""
+msgstr "Button *Previous page*"
 
 #: ../../basicfeatures.md:39
 msgid "Bouton *Page Suivante*"
-msgstr ""
+msgstr "Button *Next page*"
 
 #: ../../basicfeatures.md:41
 msgid "Bouton *Imprimer*"
-msgstr ""
+msgstr "Button *Print*"
 
