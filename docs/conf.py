@@ -35,8 +35,8 @@ master_doc = 'index'
 project = u'AccessBrailleRAP'
 copyright = 'GPL V3'
 
-version = '0.7.5'
-release = '0.7.5'
+version = '0.6.1'
+release = '0.6.1'
 exclude_patterns = ['_build']
 default_role = 'obj'
 pygments_style = 'sphinx'
