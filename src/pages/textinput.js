@@ -60,6 +60,7 @@ class TextInput extends React.Component {
       //console.log (data);
 
       this.props.textcb(data.data);
+      
       this.setState({ txt: data.data });
     }
   }

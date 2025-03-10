@@ -184,6 +184,7 @@ class Api:
 
         with open(fname, "rt", encoding="utf8") as inf:
             js["data"] = inf.read()
+            
             filename = fname
 
         return json.dumps(js)

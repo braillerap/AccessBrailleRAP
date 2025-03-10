@@ -195,7 +195,7 @@ class BrailleView extends React.Component {
 
     if (this.context.localeinfo)
       reverse = this.context.localeinfo.reverse;
-
+    
     this.Braille.setSrc(this.state.src);
     this.Braille.translate(this.context.localeinfo.reverse);
 
