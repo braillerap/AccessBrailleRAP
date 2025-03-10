@@ -33,7 +33,7 @@ myst_enable_extensions = ["attrs_inline", "html_image"]
 
 master_doc = 'index'
 project = u'AccessBrailleRAP'
-copyright = 'GPL V3'
+copyright = 'GPL V3 - BrailleRAP Team'
 
 version = '0.6.1'
 release = '0.6.1'
