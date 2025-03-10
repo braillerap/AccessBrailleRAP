@@ -83,7 +83,7 @@ msgstr ""
 " a fund created by [NLnet](https://nlnet.nl) with the support of the "
 "[Next Generation Internet](https://ngi.eu) program of the European "
 "Commission. For more information, see "
-[NLnet project page](https://nlnet.nl/project/BrailleRAP)."
+"[NLnet project page](https://nlnet.nl/project/BrailleRAP)."
 
 #: ../../introduction.md:21
 msgid ""
