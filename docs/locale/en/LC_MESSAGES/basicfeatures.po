@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-10 18:22+0000\n"
+"POT-Creation-Date: 2025-03-10 19:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -21,7 +21,8 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
-msgid "Tour d'horizon des fonctions de DesktopBrailleRAP"
+#, fuzzy
+msgid "Tour d'horizon des fonctions d' AccessBrailleRAP"
 msgstr "AccessBrailleRAP functions tour"
 
 #: ../../basicfeatures.md:5
@@ -123,10 +124,10 @@ msgid ""
 msgstr ""
 "Displays a dialog box that allows you to select a file to import. The "
 "importation of files is managed by the [pandoc](https://pandoc.org/) "
-"library. The importation consists of extracting the text from the file by "
-"removing all character formatting (font size, character effects, etc...). "
-"The importation works with openoffice and libreoffice documents but "
-"other formats may be available."
+"library. The importation consists of extracting the text from the file by"
+" removing all character formatting (font size, character effects, "
+"etc...). The importation works with openoffice and libreoffice documents "
+"but other formats may be available."
 
 #: ../../basicfeatures.md:41
 msgid ""
@@ -135,11 +136,10 @@ msgid ""
 "naviguer dans les différentes pages avec les boutons *Page Précédente* et"
 " *Page Suivante* et imprimer la page active avec le bouton *Imprimer*."
 msgstr ""
-"Clicking on the *Print* option displays a page related to the embossing"
-" of the document on a BrailleRAP. On this page you can navigate through "
-"the different pages with the *Previous page* and *Next page* buttons and"
-" print the active page with the *Print* button."
-
+"Clicking on the *Print* option displays a page related to the embossing "
+"of the document on a BrailleRAP. On this page you can navigate through "
+"the different pages with the *Previous page* and *Next page* buttons and "
+"print the active page with the *Print* button."
 
 #: ../../basicfeatures.md:43
 #, fuzzy
@@ -188,7 +188,9 @@ msgstr ""
 #: ../../basicfeatures.md:61
 #, fuzzy
 msgid "![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)"
-msgstr "![Application screenshot of parameters page](./IMG/screenshot_parameters.jpg)"
+msgstr ""
+"![Application screenshot of parameters "
+"page](./IMG/screenshot_parameters.jpg)"
 
 #: ../../basicfeatures.md:61
 #, fuzzy
@@ -209,11 +211,12 @@ msgid ""
 " Vietnamien si les lecteurs du document utilisent ce standard Braille."
 msgstr ""
 "This section allows you to define the standard used for the transcription"
-" of the text in Braille. **Warning** there are sometimes several Braille"
-" standards for the same language (3 in French for example) and this "
+" of the text in Braille. **Warning** there are sometimes several Braille "
+"standards for the same language (3 in French for example) and this "
 "parameter is independent of the interface language. You can for example "
-"use AccesBrailleRAP in French and transcribe the Braille to the Vietnamese"
- "standard if the readers of the document use this Braille standard."
+"use AccesBrailleRAP in French and transcribe the Braille to the "
+"Vietnamesestandard if the readers of the document use this Braille "
+"standard."
 
 #: ../../basicfeatures.md:66
 msgid "Nombre de caractères par ligne"
@@ -221,7 +224,9 @@ msgstr "Number of characters per line"
 
 #: ../../basicfeatures.md:67
 msgid "Cette section permet de définir le nombre de caractères Braille par ligne."
-msgstr "This section allows you to define the number of Braille characters per line."
+msgstr ""
+"This section allows you to define the number of Braille characters per "
+"line."
 
 #: ../../basicfeatures.md:69
 msgid "Nombre de lignes par page"
@@ -233,10 +238,9 @@ msgid ""
 "disponible sur une page. Attention il s'agit du nombre de lignes quand on"
 " utilise l'interligne 1 (simple)."
 msgstr ""
-"This section allows you to define the number of Braille character lines"
-" available on a page. Note that this is the number of lines when using a"
-"single line spacing."
-
+"This section allows you to define the number of Braille character lines "
+"available on a page. Note that this is the number of lines when using "
+"asingle line spacing."
 
 #: ../../basicfeatures.md:72
 msgid "Interligne"
@@ -248,9 +252,9 @@ msgid ""
 "document. Il existe 3 interlignes : 1 (simple), 1.5 (un interligne et "
 "demi) et 2 (double)."
 msgstr ""
-"This value allows you to choose the line spacing used for the embossing"
-" of the document. There are 3 line spacings: 1 (single), 1.5 (one line"
-" and a half) and 2 (double)."
+"This value allows you to choose the line spacing used for the embossing "
+"of the document. There are 3 line spacings: 1 (single), 1.5 (one line and"
+" a half) and 2 (double)."
 
 #: ../../basicfeatures.md:75
 msgid "Marge gauche (mm)"
@@ -279,11 +283,10 @@ msgid ""
 "après le lancement du logiciel, vous pouvez rafraichir la liste des ports"
 " de communication disponible en utilisant le bouton *Actualiser*."
 msgstr ""
-"This value specifies the communication port used for communication with"
-" BrailleRAP. If you have connected the BrailleRAP after launching the"
-" software, you can refresh the list of available communication ports by"
-" using the *Refresh* button."
-
+"This value specifies the communication port used for communication with "
+"BrailleRAP. If you have connected the BrailleRAP after launching the "
+"software, you can refresh the list of available communication ports by "
+"using the *Refresh* button."
 
 #: ../../basicfeatures.md:84
 msgid "Langue de l'application"
@@ -303,7 +306,7 @@ msgid ""
 "vous avez la possibilité de choisir entre une interface claire sur fond "
 "sombre ou une interface sombre sur fond clair."
 msgstr ""
-"This value allows you to define the theme of the application interface,"
-" you have the option to choose between a light interface on a dark "
+"This value allows you to define the theme of the application interface, "
+"you have the option to choose between a light interface on a dark "
 "background or a dark interface on a light background."
 
