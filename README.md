@@ -66,6 +66,12 @@ AccessBrailleRAP is licensed under GNU GPL V3.
 
 ![](./screenshot2.jpg)
 
+## User Manual
+the user manual is availbale here : [https://accessbraillerap.readthedocs.io/fr/latest/](https://accessbraillerap.readthedocs.io/en/latest/)
+
+[![Documentation Status](https://readthedocs.org/projects/AccessBrailleRAP_en/badge/?version=latest&style=plastic)](https://accessbraillerap.readthedocs.io/en/latest/)
+[![Documentation Status](https://readthedocs.org/projects/AccessBrailleRAP/badge/?version=latest&style=plastic)](https://accessbraillerap.readthedocs.io/fr/latest/)
+
 
 ## Contributing
 
