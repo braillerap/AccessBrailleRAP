@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: AccessBrailleRAP 0.7.5\n"
+"Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-10 10:48+0000\n"
+"POT-Creation-Date: 2025-03-10 18:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,6 @@ msgstr ""
 msgid "Bienvenue sur la documentation AccessBrailleRAP"
 msgstr ""
 
-#: ../../index.rst:21
+#: ../../index.rst:22
 msgid "Mise à jour: |today|"
 msgstr ""

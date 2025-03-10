@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: AccessBrailleRAP 0.7.5\n"
+"Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-10 10:48+0000\n"
+"POT-Creation-Date: 2025-03-10 18:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid "Affiche une page permettant de manipuler le texte à transcrire en Braill
 msgstr ""
 
 #: ../../basicfeatures.md:10
-#: ../../basicfeatures.md:32
+#: ../../basicfeatures.md:38
 msgid "Impression"
 msgstr ""
 
@@ -43,7 +43,7 @@ msgid "Affiche les options relatives à l'embossage du doument sur une BrailleRA
 msgstr ""
 
 #: ../../basicfeatures.md:13
-#: ../../basicfeatures.md:44
+#: ../../basicfeatures.md:56
 msgid "Paramètres"
 msgstr ""
 
@@ -52,8 +52,8 @@ msgid "Affiche une page relative au paramétrage de l'application"
 msgstr ""
 
 #: ../../basicfeatures.md:20
-#: ../../basicfeatures.md:34
-#: ../../basicfeatures.md:46
+#: ../../basicfeatures.md:40
+#: ../../basicfeatures.md:58
 msgid "Introduction"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgid "L'action de cliquer sur l'option *Saisie* affiche une page relative à la
 msgstr ""
 
 #: ../../basicfeatures.md:23
-msgid "![Capture d'écran de la page fichier](./IMG/forminput.jpg)"
+msgid "![Capture d'écran de la page fichier](./IMG/screenshot_input.jpg)"
 msgstr ""
 
 #: ../../basicfeatures.md:23
@@ -74,25 +74,149 @@ msgid "Bouton *Ouvrir*"
 msgstr ""
 
 #: ../../basicfeatures.md:26
-msgid "Bouton *Enregistrer*"
-msgstr ""
-
-#: ../../basicfeatures.md:27
-msgid "Bouton *Enregistrer sous...*"
+msgid "Affiche une boîte de dialogue qui permet de sélectionner un fichier texte à ouvrir."
 msgstr ""
 
 #: ../../basicfeatures.md:28
+msgid "Bouton *Enregistrer*"
+msgstr ""
+
+#: ../../basicfeatures.md:29
+msgid "Si le document est déjà enregistré, il est simplement sauvegardé. Sinon, une boîte de dialogue s'affiche et permet de sélectionner un nom de fichier texte à enregistrer."
+msgstr ""
+
+#: ../../basicfeatures.md:31
+msgid "Bouton *Enregistrer sous...*"
+msgstr ""
+
+#: ../../basicfeatures.md:32
+msgid "Affiche une boîte de dialogue qui permet de sélectionner un nom fichier texte à enregistrer."
+msgstr ""
+
+#: ../../basicfeatures.md:34
 msgid "Bouton *Importer*"
 msgstr ""
 
-#: ../../basicfeatures.md:37
-msgid "Bouton *Page Précédente*"
-msgstr ""
-
-#: ../../basicfeatures.md:39
-msgid "Bouton *Page Suivante*"
+#: ../../basicfeatures.md:35
+msgid "Affiche une boîte de dialogue qui permet de sélectionner un fichier à importer. L'importation des fichiers est gérée par la bibliothèque [pandoc](https://pandoc.org/). L'importation consiste à extraire le texte du fichier en supprimant toute les mises en formes de caractères (taille de police, effet de caractères, etc...). L'importation fonctionne avec les documents openoffice et libreoffice mais d'autre format sont disponibles."
 msgstr ""
 
 #: ../../basicfeatures.md:41
+msgid "L'action de cliquer sur l'option *Impression* affiche une page relative à l'embossage du document sur une BrailleRAP. Sur cette page vous pouvez naviguer dans les différentes pages avec les boutons *Page Précédente* et *Page Suivante* et imprimer la page active avec le bouton *Imprimer*."
+msgstr ""
+
+#: ../../basicfeatures.md:43
+msgid "![Capture d'écran de la page Impression](./IMG/screenshot_print.jpg)"
+msgstr ""
+
+#: ../../basicfeatures.md:43
+msgid "Capture d'écran de la page Impression"
+msgstr ""
+
+#: ../../basicfeatures.md:45
+msgid "Bouton *Page Précédente*"
+msgstr ""
+
+#: ../../basicfeatures.md:46
+msgid "Affiche la page précédente du document à embosser."
+msgstr ""
+
+#: ../../basicfeatures.md:48
+msgid "Bouton *Page Suivante*"
+msgstr ""
+
+#: ../../basicfeatures.md:49
+msgid "Affiche la page suivante du document à embosser."
+msgstr ""
+
+#: ../../basicfeatures.md:51
 msgid "Bouton *Imprimer*"
+msgstr ""
+
+#: ../../basicfeatures.md:52
+msgid "Embosse (imprime) la page active sur la BrailleRAP connectée en USB."
+msgstr ""
+
+#: ../../basicfeatures.md:59
+msgid "L'action de cliquer sur l'option *Paramètres* affiche une page relative à la coniguration du logiciel (nombre de lignes, port de communication, table Braille ...)."
+msgstr ""
+
+#: ../../basicfeatures.md:61
+msgid "![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)"
+msgstr ""
+
+#: ../../basicfeatures.md:61
+msgid "Capture d'écran de la page paramètres"
+msgstr ""
+
+#: ../../basicfeatures.md:63
+msgid "Table Braille"
+msgstr ""
+
+#: ../../basicfeatures.md:64
+msgid "Cette section permet de définir le standard utilisé pour la transcription du texte en Braille. **Attention** il existe parfois plusieurs standard Braille pour la même langue (3 en Français par exemple) et ce paramêtres est indépendant de la langue de l'interface. Vous pouvez par exemple utiliser AccesBrailleRAP en Français et transcrire le Braille au standard Vietnamien si les lecteurs du document utilisent ce standard Braille."
+msgstr ""
+
+#: ../../basicfeatures.md:66
+msgid "Nombre de caractères par ligne"
+msgstr ""
+
+#: ../../basicfeatures.md:67
+msgid "Cette section permet de définir le nombre de caractères Braille par ligne."
+msgstr ""
+
+#: ../../basicfeatures.md:69
+msgid "Nombre de lignes par page"
+msgstr ""
+
+#: ../../basicfeatures.md:70
+msgid "Cette section permet de définir le nombre lignes de caractères Braille disponible sur une page. Attention il s'agit du nombre de lignes quand on utilise l'interligne 1 (simple)."
+msgstr ""
+
+#: ../../basicfeatures.md:72
+msgid "Interligne"
+msgstr ""
+
+#: ../../basicfeatures.md:73
+msgid "Cette valeur permet de choisir l'interligne utilisé pour l'embossage du document. Il existe 3 interlignes : 1 (simple), 1.5 (un interligne et demi) et 2 (double)."
+msgstr ""
+
+#: ../../basicfeatures.md:75
+msgid "Marge gauche (mm)"
+msgstr ""
+
+#: ../../basicfeatures.md:76
+msgid "Cette valeur détermine la valeur de la marge à la gauche du document."
+msgstr ""
+
+#: ../../basicfeatures.md:78
+msgid "Marge début de page (mm)"
+msgstr ""
+
+#: ../../basicfeatures.md:79
+msgid "Cette valeur détermine la valeur de la marge en haut du document."
+msgstr ""
+
+#: ../../basicfeatures.md:81
+msgid "Port de communication"
+msgstr ""
+
+#: ../../basicfeatures.md:82
+msgid "Cette valeur désigne le port de communication utilisé pour la communication avec la BrailleRAP. Si vous avez branché la BrailleRAP après le lancement du logiciel, vous pouvez rafraichir la liste des ports de communication disponible en utilisant le bouton *Actualiser*."
+msgstr ""
+
+#: ../../basicfeatures.md:84
+msgid "Langue de l'application"
+msgstr ""
+
+#: ../../basicfeatures.md:85
+msgid "Cette valeur permet de définir la langue de l'interface de l'application."
+msgstr ""
+
+#: ../../basicfeatures.md:87
+msgid "Thème"
+msgstr ""
+
+#: ../../basicfeatures.md:88
+msgid "Cette valeur permet de définir le thème de l'interface de l'application, vous avez la possibilité de choisir entre une interface claire sur fond sombre ou une interface sombre sur fond clair."
 msgstr ""

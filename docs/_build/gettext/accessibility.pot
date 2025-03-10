@@ -1,0 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) GPL V3
+# This file is distributed under the same license as the AccessBrailleRAP package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AccessBrailleRAP 0.6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-10 18:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../accessibility.md:1
+msgid "Accessibilité"
+msgstr ""
+
+#: ../../accessibility.md:3
+msgid "L'interface du logiciel AccessBrailleRAP est prévue pour fonctionner avec le lecteur d'écran [NVDA](https://www.nvaccess.org/download/). Dans la mesure ou la technologie d'affichage utilisé par AccessBrailleRAP basée sur HTML annoté avec des balises <ARIA>, le logiciel devrait être compatible avec d'autres lecteurs d'écran."
+msgstr ""
+
+#: ../../accessibility.md:5
+msgid "Navigation"
+msgstr ""
+
+#: ../../accessibility.md:6
+msgid "Vous pouvez naviguer dans le logiciel avec les touches de navigation <kbd>tab</kbd> et <kbd>shift</kbd>+<kbd>tab</kbd>. Le focus est indiqué autour de l'élément sélectionné. La sélection d'une option du menu principale avec la touche <kbd>enter</kbd> affiche la page correspondante et déplace le focus sur le premier élément de la page."
+msgstr ""
