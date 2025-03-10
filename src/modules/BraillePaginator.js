@@ -50,7 +50,7 @@ class BraillePaginator
     #flushline ()
     {
         if (this.current_page && this.current_page.length > 0)
-        this.pages.push (this.current_page);
+            this.pages.push (this.current_page);
         this.current_page = [];
     }
     #computerows ()
@@ -69,10 +69,19 @@ class BraillePaginator
         for (let lsrc = 0; lsrc < this.src.length; lsrc++)
         {
             let words = this.src[lsrc].split (String.fromCharCode(0x2800));    
-            console.log (words);
+            
             let current_line ='';
             for (let w = 0; w < words.length; w++)
             {
+                if (words[w] == '\f')
+                {
+                    
+                    this.#addline(current_line); 
+                    current_line = '';
+                    this.#flushline();
+                    continue;
+
+                }
                 if (words[w].length + current_line.length >= this.cols)
                 {
                     if (current_line.length > 0)   // create a line
