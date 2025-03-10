@@ -32,10 +32,15 @@ msgid ""
 "sur HTML annoté avec des balises <ARIA>, le logiciel devrait être "
 "compatible avec d'autres lecteurs d'écran."
 msgstr ""
+"The software interface of AccessBrailleRAP is designed to work with the "
+"NVDA screen reader [NVDA](https://www.nvaccess.org/download/). As far as "
+"the technology used by AccessBrailleRAP is based on HTML annotated with "
+"<ARIA> tags, the software should be compatible with other screen readers."
+
 
 #: ../../accessibility.md:5
 msgid "Navigation"
-msgstr ""
+msgstr "Navigation"
 
 #: ../../accessibility.md:6
 msgid ""
@@ -45,4 +50,8 @@ msgid ""
 "principale avec la touche <kbd>enter</kbd> affiche la page correspondante"
 " et déplace le focus sur le premier élément de la page."
 msgstr ""
-
+"You can navigate through the software using the navigation keys <kbd>tab</kbd> "
+"and <kbd>shift</kbd>+<kbd>tab</kbd>. The focus is indicated around the selected "
+"element. Selecting an option from the main menu with the <kbd>enter</kbd> key "
+"displays the corresponding page and moves the focus to the first element of the "
+"page."
