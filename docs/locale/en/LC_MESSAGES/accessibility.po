@@ -25,7 +25,6 @@ msgid "Accessibilité"
 msgstr ""
 
 #: ../../accessibility.md:3
-#, fuzzy
 msgid ""
 "L'interface du logiciel AccessBrailleRAP est prévue pour fonctionner avec"
 " le lecteur d'écran [NVDA](https://www.nvaccess.org/download/). Dans la "
