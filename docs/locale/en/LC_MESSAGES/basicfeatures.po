@@ -21,9 +21,8 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
-#, fuzzy
 msgid "Tour d'horizon des fonctions d' AccessBrailleRAP"
-msgstr "AccessBrailleRAP functions tour"
+msgstr "AccessBrailleRAP features tour"
 
 #: ../../basicfeatures.md:5
 msgid "Les options du menu principal"
@@ -67,7 +66,6 @@ msgstr ""
 "manipulation of the text to be transcribed in Braille."
 
 #: ../../basicfeatures.md:23
-#, fuzzy
 msgid "![Capture d'écran de la page fichier](./IMG/screenshot_input.jpg)"
 msgstr "![Application screenshot of input page](./IMG/forminput.jpg)"
 
@@ -142,12 +140,11 @@ msgstr ""
 "print the active page with the *Print* button."
 
 #: ../../basicfeatures.md:43
-#, fuzzy
 msgid "![Capture d'écran de la page Impression](./IMG/screenshot_print.jpg)"
 msgstr "![Application screenshot of print page](./IMG/screenshot_print.jpg)"
 
 #: ../../basicfeatures.md:43
-#, fuzzy
+
 msgid "Capture d'écran de la page Impression"
 msgstr "Application screenshot of print page"
 
@@ -176,7 +173,6 @@ msgid "Embosse (imprime) la page active sur la BrailleRAP connectée en USB."
 msgstr "Emboss (print) the active page on the BrailleRAP connected via USB."
 
 #: ../../basicfeatures.md:59
-#, fuzzy
 msgid ""
 "L'action de cliquer sur l'option *Paramètres* affiche une page relative à"
 " la coniguration du logiciel (nombre de lignes, port de communication, "
@@ -186,14 +182,12 @@ msgstr ""
 "manipulation of the text to be transcribed in Braille."
 
 #: ../../basicfeatures.md:61
-#, fuzzy
 msgid "![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)"
 msgstr ""
 "![Application screenshot of parameters "
 "page](./IMG/screenshot_parameters.jpg)"
 
 #: ../../basicfeatures.md:61
-#, fuzzy
 msgid "Capture d'écran de la page paramètres"
 msgstr "Application screenshot of input page"
 
