@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../accessibility.md:1
 msgid "Accessibilité"
-msgstr ""
+msgstr "Accessibility"
 
 #: ../../accessibility.md:3
 msgid ""
@@ -36,6 +36,7 @@ msgstr ""
 "NVDA screen reader [NVDA](https://www.nvaccess.org/download/). As far as "
 "the technology used by AccessBrailleRAP is based on HTML annotated with "
 "<ARIA> tags, the software should be compatible with other screen readers."
+" "
 
 #: ../../accessibility.md:5
 msgid "Navigation"
