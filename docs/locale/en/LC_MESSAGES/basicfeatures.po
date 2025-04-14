@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../../basicfeatures.md:23
 msgid "![Capture d'écran de la page fichier](./IMG/screenshot_input.jpg)"
-msgstr "![Application screenshot of input page](./IMG/forminput.jpg)"
+msgstr "![Application screenshot of input page](./IMG/screenshot_input.jpg)"
 
 #: ../../basicfeatures.md:23
 msgid "Capture d'écran de la page fichier"
