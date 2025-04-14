@@ -85,16 +85,24 @@ Feel free to open issues or pull requests ! We will be happy to review and merge
 
 ## Translations status
 
-Translation files are available [on codeberg weblate host](https://translate.codeberg.org/projects/accessbraillerap_translate/ihm/) . Some languages are partialy translated , we are looking for contributors to complete and check them.     
+### Software GUI
+GUI translation files are available [on codeberg weblate host](https://translate.codeberg.org/projects/accessbraillerap_translate/ihm/) . Some languages are partialy translated , we are looking for contributors to complete and check them.     
 
 
 
 <a href="https://translate.codeberg.org/engage/accessbraillerap_translate/">
-<img src="https://translate.codeberg.org/widget/accessbraillerap_translate/ihm/multi-auto.svg" alt="État de la traduction" width="75%"/>
+<img src="https://translate.codeberg.org/widget/accessbraillerap_translate/ihm/multi-auto.svg" alt="Software translation status" width="75%"/>
 </a>
 
-## Funding
+### User manual
+User manual translation files are available [on codeberg weblate host](https://translate.codeberg.org/projects/accessbraillerap_doc/) . Some languages are partialy translated , we are looking for contributors to complete and check them.    
 
+<a href="https://translate.codeberg.org/engage/accessbraillerap_doc/">
+<img src="https://translate.codeberg.org/widget/accessbraillerap_doc/multi-auto.svg" alt="User manual translation status" width="75%"/>
+</a>
+
+
+## Funding
 This project is funded through [NGI0 Entrust](https://nlnet.nl/entrust), a fund established by [NLnet](https://nlnet.nl) with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program. Learn more at the [NLnet project page](https://nlnet.nl/project/BrailleRAP).
 
 [<img src="https://nlnet.nl/logo/banner.png" alt="NLnet foundation logo" width="20%" />](https://nlnet.nl)
