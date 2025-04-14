@@ -1,6 +1,8 @@
 # AccessBrailleRAP
-Braille transcription software for BrailleRAP. NVDA compatible.
-The project use several open source licensed software:
+Braille transcription software for BrailleRAP. AccessBrailleRAP allow you to input some text or extract brut text from a open office document, translate the text in Braille and send it to the [BrailleRAP](https://github.com/braillerap/BrailleRap) embosser. AccessBrailleRAP is tested and compatible with NVDA screen reader.
+
+
+AccessBrailleRAP use several open source licensed software:
 - liblouisreact, a liblouis version slightly modified to run in react.js environnement.
 - liblouis 
 - pandoc
