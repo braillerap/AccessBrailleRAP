@@ -8,30 +8,41 @@ msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:24+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-05-02 22:59+0000\n"
+"Last-Translator: Dionysios Raptis <sakisgr@noreply.codeberg.org>\n"
+"Language-Team: Greek <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_sourcecode/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 #: ../../sourcecode.md:1
 msgid "Code source et mises à jour"
-msgstr ""
+msgstr "Πηγαίος κώδικας και ενημερώσεις"
 
 #: ../../sourcecode.md:3
 msgid "Code source"
-msgstr ""
+msgstr "Πηγαίος κώδικας"
 
 #: ../../sourcecode.md:4
 msgid "L'ensemble du code source de AccessBrailleRAP est disponible sur GitHub à l'adresse suivante : [https://github.com/braillerap/AccessBrailleRAP](https://github.com/braillerap/AccessBrailleRAP)"
 msgstr ""
+"Ολόκληρος ο πηγαίος κώδικας του AccessBrailleRAP είναι διαθέσιμος στο "
+"GitHub, στην ακόλουθη διεύθυνση: "
+"[https://github.com/braillerap/AccessBrailleRAP](https://github.com/"
+"braillerap/AccessBrailleRAP)"
 
 #: ../../sourcecode.md:6
 msgid "Mises à jour"
-msgstr ""
+msgstr "Ενημερώσεις"
 
 #: ../../sourcecode.md:7
 msgid "Egalement sur github, vous pouvez trouver des mises à jours du logiciel dans la catégories **releases**: [https://github.com/braillerap/AccessBrailleRAP/releases](https://github.com/braillerap/AccessBrailleRAP/releases)"
 msgstr ""
+"Επίσης στο GitHub, μπορείτε να βρείτε τις ενημερώσεις λογισμικού στην "
+"κατηγορία **releases**: "
+"[https://github.com/braillerap/AccessBrailleRAP/releases](https://github.com/"
+"braillerap/"
