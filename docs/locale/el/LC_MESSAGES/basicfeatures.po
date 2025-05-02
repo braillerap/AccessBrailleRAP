@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:24+0000\n"
-"PO-Revision-Date: 2025-05-02 22:59+0000\n"
+"PO-Revision-Date: 2025-05-03 13:48+0000\n"
 "Last-Translator: Dionysios Raptis <sakisgr@noreply.codeberg.org>\n"
 "Language-Team: Greek <https://translate.codeberg.org/projects/"
 "accessbraillerap_doc/manual_basicfeatures/el/>\n"
@@ -175,6 +175,8 @@ msgstr ""
 #: ../../basicfeatures.md:61
 msgid "![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)"
 msgstr ""
+"![Λήψη στιγμιότυπου οθόνης της σελίδας ρυθμίσεων](./IMG/"
+"screenshot_parameters.jpg)"
 
 #: ../../basicfeatures.md:61
 msgid "Capture d'écran de la page paramètres"
@@ -187,6 +189,13 @@ msgstr "Πίνακας Braille"
 #: ../../basicfeatures.md:64
 msgid "Cette section permet de définir le standard utilisé pour la transcription du texte en Braille. **Attention** il existe parfois plusieurs standard Braille pour la même langue (3 en Français par exemple) et ce paramêtres est indépendant de la langue de l'interface. Vous pouvez par exemple utiliser AccesBrailleRAP en Français et transcrire le Braille au standard Vietnamien si les lecteurs du document utilisent ce standard Braille."
 msgstr ""
+"Αυτό το τμήμα σας επιτρέπει να προσδιορίσετε το στάνταρ που θα "
+"χρησιμοποιηθεί για την μεταγραφή του κειμένου σε Braille. **Προσοχή** "
+"υπάρχουν περισσότερα του ενός στάνταρ για την ίδια γλώσσα. (3 στα Γαλλικά "
+"για παράδειγμα) και αυτή η παράγραφος είναι ανεξάρτητη από τη γλώσσα του "
+"γραφικού περιβάλλοντος. Μπορείτε για παράδειγμα να χρησιμοποιήσετε το "
+"AccessBrailleRAP στα Γαλλικά και να κάνετε μεταγραφή του Braille στο στάνταρ "
+"του Βιετνάμ, εάν οι αναγνώστες του κειμένου κάνουν χρήση αυτού του στανταρ."
 
 #: ../../basicfeatures.md:66
 msgid "Nombre de caractères par ligne"
@@ -195,6 +204,8 @@ msgstr "Αριθμός χαρακτήρων ανά γραμμή"
 #: ../../basicfeatures.md:67
 msgid "Cette section permet de définir le nombre de caractères Braille par ligne."
 msgstr ""
+"Αυτό το τμήμα σας επιτρέπει να προσδιορίσετε τον αριθμό των χαρακτήρων "
+"Braille ανά γραμμή."
 
 #: ../../basicfeatures.md:69
 msgid "Nombre de lignes par page"
@@ -214,6 +225,9 @@ msgstr "Διάστιχο"
 #: ../../basicfeatures.md:73
 msgid "Cette valeur permet de choisir l'interligne utilisé pour l'embossage du document. Il existe 3 interlignes : 1 (simple), 1.5 (un interligne et demi) et 2 (double)."
 msgstr ""
+"Αυτή η τιμή σας επιτρέπει να διαλέξετε το διάστιχο πουο χρησιμοποιείται για "
+"την ανάγλυφη εκτύπωση του εγγράφου. Υπάρχουν τρία διαθέσιμα διάστιχα: 1 "
+"(απλό), 1,5 ( ένα διάστιχο και μισό) και 2 (διπλό)."
 
 #: ../../basicfeatures.md:75
 msgid "Marge gauche (mm)"
@@ -222,6 +236,7 @@ msgstr "Περιθώριο αριστερά (mm)"
 #: ../../basicfeatures.md:76
 msgid "Cette valeur détermine la valeur de la marge à la gauche du document."
 msgstr ""
+"Αυτή η τιμή προσδιορίζει την τιμή του περιθωρίου στα αριστερά του εγγράφου."
 
 #: ../../basicfeatures.md:78
 msgid "Marge début de page (mm)"
@@ -230,6 +245,7 @@ msgstr "Περιθώριο πάνω (mm)"
 #: ../../basicfeatures.md:79
 msgid "Cette valeur détermine la valeur de la marge en haut du document."
 msgstr ""
+"Αυτή η τιμή προσδιορίζει την τιμή του περιθωρίου στο πάνω μέρος του εγγράφου."
 
 #: ../../basicfeatures.md:81
 msgid "Port de communication"
@@ -238,6 +254,10 @@ msgstr "Θύρα επικοινωνίας"
 #: ../../basicfeatures.md:82
 msgid "Cette valeur désigne le port de communication utilisé pour la communication avec la BrailleRAP. Si vous avez branché la BrailleRAP après le lancement du logiciel, vous pouvez rafraichir la liste des ports de communication disponible en utilisant le bouton *Actualiser*."
 msgstr ""
+"Αυτή η τιμή προσδιορίζει τη θύρα επικοινωνίας που χρησιμοποιείται για την "
+"επικοινωνία με τον BrailleRAP. Εάν έχετε συνδέσει τον εκτυπωτή BrailleRAP, "
+"αφού έχετε εκκινήσει το λογισμικό, μπορείτε να κάνετε ανανέωση της λίστας "
+"των διαθέσιμων θυρών επικοινωνίας κάνοντας κλικ στο κουμπί *Ανανέωση*."
 
 #: ../../basicfeatures.md:84
 msgid "Langue de l'application"
@@ -246,6 +266,8 @@ msgstr "Γλώσσα εφαρμογής"
 #: ../../basicfeatures.md:85
 msgid "Cette valeur permet de définir la langue de l'interface de l'application."
 msgstr ""
+"Αυτή η τιμή επιτρέπει τον προσδιορισμό της γλώσσας του γραφικού "
+"περιβάλλοντος της εφαρμογής."
 
 #: ../../basicfeatures.md:87
 msgid "Thème"
@@ -254,3 +276,7 @@ msgstr "Θέμα"
 #: ../../basicfeatures.md:88
 msgid "Cette valeur permet de définir le thème de l'interface de l'application, vous avez la possibilité de choisir entre une interface claire sur fond sombre ou une interface sombre sur fond clair."
 msgstr ""
+"Αυτή η τιμή επιτρέπει τον προσδιορισμό του θέματος του γραφικού "
+"περιβάλλοντος της εφαρμογής. Έχετε την επιλογή να διαλέξετε μεταξύ ενός "
+"φωτεινού περιβάλλοντος με σκούρο φόντο, ή ενός σκοτεινού περιβάλλοντος με "
+"φωτεινό φόντο."
