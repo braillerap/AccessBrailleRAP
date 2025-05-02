@@ -8,138 +8,169 @@ msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-24 13:24+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-05-02 22:22+0000\n"
+"Last-Translator: SakisGr <sakisgr@noreply.codeberg.org>\n"
+"Language-Team: Greek <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_basicfeatures/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 
 #: ../../basicfeatures.md:1
 msgid "Tour d'horizon des fonctions d' AccessBrailleRAP"
-msgstr ""
+msgstr "Περιήγηση δυνατοτήτων AccessBrailleRAP"
 
 #: ../../basicfeatures.md:5
 msgid "Les options du menu principal"
-msgstr ""
+msgstr "Οι επιλογές του κεντρικού μενού"
 
 #: ../../basicfeatures.md:7
 #: ../../basicfeatures.md:18
 msgid "Saisie"
-msgstr ""
+msgstr "Εισαγωγή κειμένου"
 
 #: ../../basicfeatures.md:8
 msgid "Affiche une page permettant de manipuler le texte à transcrire en Braille"
 msgstr ""
+"Προβολή μιας σελίδας για επεξεργασία του κειμένου προς μεταγραφή σε Braille"
 
 #: ../../basicfeatures.md:10
 #: ../../basicfeatures.md:38
 msgid "Impression"
-msgstr ""
+msgstr "Εκτύπωση"
 
 #: ../../basicfeatures.md:11
 msgid "Affiche les options relatives à l'embossage du doument sur une BrailleRAP"
 msgstr ""
+"Εμφανίζει τις επιλογές που σχετίζονται με την ανάγλυφη εκτύπωση του εγγράφου "
+"σε έναν εκτυπωτή BrailleRAP"
 
 #: ../../basicfeatures.md:13
 #: ../../basicfeatures.md:56
 msgid "Paramètres"
-msgstr ""
+msgstr "Ρυθμίσεις"
 
 #: ../../basicfeatures.md:14
 msgid "Affiche une page relative au paramétrage de l'application"
-msgstr ""
+msgstr "Εμφανίζει μια σελίδα σχετική με την διαμόρφωση της εφαρμογής"
 
 #: ../../basicfeatures.md:20
 #: ../../basicfeatures.md:40
 #: ../../basicfeatures.md:58
 msgid "Introduction"
-msgstr ""
+msgstr "Εισαγωγή"
 
 #: ../../basicfeatures.md:21
 msgid "L'action de cliquer sur l'option *Saisie* affiche une page relative à la manipulation du texte à transcrire en Braille."
 msgstr ""
+"Το κλικ στην επιλογή *Εισαγωγή κειμένου* εμφανίζει μια σελίδα που σχετίζεται "
+"με την επεξεργασία του κειμένου προς μεταγραφή Braille."
 
 #: ../../basicfeatures.md:23
 msgid "![Capture d'écran de la page fichier](./IMG/screenshot_input.jpg)"
 msgstr ""
+"![Λήψη στιγμιότυπου οθόνης της σελίδας εισαγωγής](./IMG/screenshot_input.jpg)"
 
 #: ../../basicfeatures.md:23
 msgid "Capture d'écran de la page fichier"
-msgstr ""
+msgstr "Λήψη στιγμιότυπου οθόνης της σελίδας εισαγωγής"
 
 #: ../../basicfeatures.md:25
 msgid "Bouton *Ouvrir*"
-msgstr ""
+msgstr "Κουμπί *Άνοιγμα*"
 
 #: ../../basicfeatures.md:26
 msgid "Affiche une boîte de dialogue qui permet de sélectionner un fichier texte à ouvrir."
 msgstr ""
+"Εμφανίζει ένα μενού διαλόγου για την επιλογή του επιθυμητού αρχείου κειμένου "
+"για άνοιγμα."
 
 #: ../../basicfeatures.md:28
 msgid "Bouton *Enregistrer*"
-msgstr ""
+msgstr "Κουμπί *Αποθήκευση*"
 
 #: ../../basicfeatures.md:29
 msgid "Si le document est déjà enregistré, il est simplement sauvegardé. Sinon, une boîte de dialogue s'affiche et permet de sélectionner un nom de fichier texte à enregistrer."
 msgstr ""
+"Εάν το έγγραφο έχει ήδη αποθηκευτεί με το ίδιο όνομα, απλά θα "
+"αντικατασταθεί. Εάν όχι, ένα μενού διαλόγου θα εμφανιστεί για την επιλογή "
+"ενός ονόματος αρχείου για αποθήκευση."
 
 #: ../../basicfeatures.md:31
 msgid "Bouton *Enregistrer sous...*"
-msgstr ""
+msgstr "Κουμπί *Αποθήκευση ως*"
 
 #: ../../basicfeatures.md:32
 msgid "Affiche une boîte de dialogue qui permet de sélectionner un nom fichier texte à enregistrer."
 msgstr ""
+"Εμφανίζει ένα μενού διαλόγου που επιτρέπει να διαλέξετε ένα όνομα με το "
+"οποίο θα αποθηκεύσετε το έγγραφό σας."
 
 #: ../../basicfeatures.md:34
 msgid "Bouton *Importer*"
-msgstr ""
+msgstr "Κουμπί *Εισαγωγή*"
 
 #: ../../basicfeatures.md:35
 msgid "Affiche une boîte de dialogue qui permet de sélectionner un fichier à importer. L'importation des fichiers est gérée par la bibliothèque [pandoc](https://pandoc.org/). L'importation consiste à extraire le texte du fichier en supprimant toute les mises en formes de caractères (taille de police, effet de caractères, etc...). L'importation fonctionne avec les documents openoffice et libreoffice mais d'autre format sont disponibles."
 msgstr ""
+"Εμφανίζει ένα μενού διαλόγου που σας επιτρέπει να διαλέξετε ένα αρχείο για "
+"εισαγωγή. Η εισαγωγή των αρχείων διαχειρίζεται από την βιβλιοθήκη[pandoc]"
+"(https://pandoc.org/). Η εισαγωγή γίνεται από την εξαγωγή όλων των στοιχείων "
+"μορφοποίησης του κειμένου ( μέγεθος γραμματοσειράς, εφφέ χαρακτήρων, κλπ...)"
+". Η εισαγωγή λειτουργεί με έγγραφα του openoffice και του libreoffice, αλλά "
+"ενδεχομένως άλλες μορφές αρχείων να είναι διαθέσιμες."
 
 #: ../../basicfeatures.md:41
 msgid "L'action de cliquer sur l'option *Impression* affiche une page relative à l'embossage du document sur une BrailleRAP. Sur cette page vous pouvez naviguer dans les différentes pages avec les boutons *Page Précédente* et *Page Suivante* et imprimer la page active avec le bouton *Imprimer*."
 msgstr ""
+"Κάνοντας κλικ στην επιλογή *Εκτύπωση* εμφανίζεται μια σελίδα που σχετίζεται "
+"με την ανάγλυφη εκτύπωση του εγγράφου σε έναν εκτυπωτή BrailleRAP. Σε αυτή "
+"τη σελίδα μπορείτε να πλοηγηθείτε μέσω των διαφορετικών σελίδων με το κουμπί "
+"*Προηγούμενη σελίδα* και το κουμπί *Επόμενη σελίδα* και να εκτυπώσετε την "
+"ενεργή σελίδα με το κουμπί *Εκτύπωση*."
 
 #: ../../basicfeatures.md:43
 msgid "![Capture d'écran de la page Impression](./IMG/screenshot_print.jpg)"
-msgstr ""
+msgstr "![Λήψη στιγμιότυπου της οθόνης εκτύπωσης](./IMG/screenshot_print.jpg)"
 
 #: ../../basicfeatures.md:43
 msgid "Capture d'écran de la page Impression"
-msgstr ""
+msgstr "Λήψη στιγμιότυπου της σελίδας εκτύπωσης"
 
 #: ../../basicfeatures.md:45
 msgid "Bouton *Page Précédente*"
-msgstr ""
+msgstr "Κουμπί *Προηγούμενη σελίδα*"
 
 #: ../../basicfeatures.md:46
 msgid "Affiche la page précédente du document à embosser."
-msgstr ""
+msgstr "Εμφανίζει την προηγούμενη σελίδα του εγγράφου προς εκτύπωση."
 
 #: ../../basicfeatures.md:48
 msgid "Bouton *Page Suivante*"
-msgstr ""
+msgstr "Κουμπί *Επόμενη σελίδα*"
 
 #: ../../basicfeatures.md:49
 msgid "Affiche la page suivante du document à embosser."
-msgstr ""
+msgstr "Εμφανιζει την επόμενη σελίδα του εγγράφου προς εκτύπωση."
 
 #: ../../basicfeatures.md:51
 msgid "Bouton *Imprimer*"
-msgstr ""
+msgstr "Κουμπί *Εκτύπωση*"
 
 #: ../../basicfeatures.md:52
 msgid "Embosse (imprime) la page active sur la BrailleRAP connectée en USB."
 msgstr ""
+"Ανάγλυφη εκτύπωση (εκτύπωση) της ενεργής σελίδας με τον BrailleRAP που είναι "
+"συνδεδεμένος με USB."
 
 #: ../../basicfeatures.md:59
 msgid "L'action de cliquer sur l'option *Paramètres* affiche une page relative à la coniguration du logiciel (nombre de lignes, port de communication, table Braille ...)."
 msgstr ""
+"Κάνοντας κλικ στην επιλογή *Παράμετροι* εμφανίζεται μια σελίδα που "
+"σχετίζεται με την επεξεργασία του κειμένου προς μεταγραφή σε Braille."
 
 #: ../../basicfeatures.md:61
 msgid "![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)"
