@@ -1,6 +1,7 @@
 export const locales = [
     {lang:'ar', dir:'rtl', desc:'ar - عربي ',     reverse:true},
     {lang:'de', dir:"ltr", desc:"de - Deutch",  reverse:false},
+    {lang:'el', dir:"ltr", desc:"el - Ελληνικά",  reverse:false},
     {lang:'en', dir:"ltr", desc:"en - English",  reverse:false},
     {lang:'es', dir:"ltr", desc:"es - Español",  reverse:false},
     {lang:'fr', dir:'ltr', desc:'fr - Français', reverse:false},

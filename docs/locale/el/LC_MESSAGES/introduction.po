@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) GPL V3 - BrailleRAP Team
+# This file is distributed under the same license as the AccessBrailleRAP package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AccessBrailleRAP 0.6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-24 13:24+0000\n"
+"PO-Revision-Date: 2025-05-02 22:04+0000\n"
+"Last-Translator: SakisGr <sakisgr@noreply.codeberg.org>\n"
+"Language-Team: Greek <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_introduction/el/>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2\n"
+
+#: ../../introduction.md:1
+msgid "Introduction"
+msgstr "Εισαγωγή"
+
+#: ../../introduction.md:3
+msgid "Présentation"
+msgstr "Παρουσίαση"
+
+#: ../../introduction.md:5
+msgid "**AccessBrailleRAP** est un outil de traduction en Braille destiné a réaliser des documents embossés sur une embosseuse [**BrailleRAP**](https://www.braillerap.org). Par documents en Braille on entend des documents qui contiennent des textes mis en relief dans le standard Braille sélectionné. Pour rappel [**BrailleRAP**](https://www.braillerap.org) est une embosseuse DIY (Do It Yourself) open source permettant de réaliser des documents en Braille mais également de mettre des graphiques en relief."
+msgstr ""
+"**AccessBrailleRAP** είναι ένα εργαλείο μετάφρασης Braille, σχεδιασμένο να "
+"δημιουργεί ανάγλυφα έγγραφα σε ένα [**BrailleRAP**]"
+"(https://www.braillerap.org). Όταν αναφερόμαστε σε Braille έγγραφα, εννοούμε "
+"έγγραφα τα οποία περιέχουν κείμενο το οποίο είναι ανάγλυφο σύμφωνα με το "
+"στάνταρτ Braille. Για αναφορά σχετικά με αυτό, [**BrailleRAP**]"
+"(https://www.braillerap.org) είναι ένας ετκυπωτής DIY (Do It Yourself, "
+"Φτιάξε το μόνος σου) ανοικτού υλισμικού ο οποίος σας επιτρέπει να "
+"δημιουργήσετε έγγραφα Braille αλλά και να δημιουργήσετε ανάγλυφα γραφικά."
+
+#: ../../introduction.md:7
+msgid "Voici un exemple de document réalisé avec AccessBrailleRAP et une BrailleRAP:"
+msgstr ""
+"Ορίστε ένα παράδειγμα κειμένου που έχει δημιουργηθεί μέσω του λογισμικού "
+"AccessBrailleRap και ενός εκτυπωτή BrailleRAP:"
+
+#: ../../introduction.md:9
+msgid "Des exemples de documents réalisés avec DesktopBrailleRAP et une BrailleRAP"
+msgstr ""
+"Παραδείγματα εγγράφων που έχουν δημιουργηθεί μέσω του λογισμικού "
+"DesktopBrailleRAP και ενός BrailleRAP"
+
+#: ../../introduction.md:12
+msgid "Une BrailleRAP XL à Gauche, Une BrailleRAP standard à droite."
+msgstr ""
+"Ένας εκτυπωτής BrailleRAP XL στα αριστερά, ένας στάνταρ εκτυπωτής BrailleRAP "
+"στα δεξιά."
+
+#: ../../introduction.md:14
+msgid "Une photographie de deux BrailleRAP"
+msgstr "Μια φωτογραφία δύο εκτυπωτών BrailleRAP"
+
+#: ../../introduction.md:17
+msgid "Financement"
+msgstr "Χρηματοδότηση"
+
+#: ../../introduction.md:19
+msgid "Ce projet est financé grace à [NGI0 Entrust](https://nlnet.nl/entrust), un fond créé par [NLnet](https://nlnet.nl) avec le support du programme  [Next Generation Internet](https://ngi.eu) de la Commision Européene. Plus d'informations ici [NLnet project page](https://nlnet.nl/project/BrailleRAP)."
+msgstr ""
+"Αυτό το πρότζεκτ έχει χρηματοδοτηθεί μέσω του [NGI0 Entrust](https://"
+"nlnet.nl/entrust), ένα ταμείο που δημιουργημένο από [NLnet](https://nlnet.nl)"
+", με την υποστήρικξ του προγράμματος [Next Generation Internet]"
+"(https://ngi.eu) της Ευρωπαϊκής Επιτροπής. Για περισσότερες πληροφορίες, "
+"δείτε εδώ [NLnet project page](https://nlnet.nl/project/BrailleRAP)."
+
+#: ../../introduction.md:21
+msgid "[      <img src=\"./IMG/nlnetbanner.png\" alt=\"Le logo du programme NGI0\" width=\"25%\"> ](https://nlnet.nl)  [     <img src=\"./IMG/NGI0_tag.png\" alt=\"Le logo du programme NGI0\" width=\"25%\"> ](https://nlnet.nl)"
+msgstr ""
+"[      <img src=\"./IMG/nlnetbanner.png\" alt="
+"\"Το λογότυπο του προγράμματος NGI0\" width=\"25%\"> ](https://nlnet.nl)  ["
+"     <img src=\"./IMG/NGI0_tag.png\" alt="
+"\"Το λογότυπο του προγράμματος NGI0\" width=\"25%\"> ](https://nlnet.nl)"
+
+#: ../../introduction.md:21
+msgid "Le logo du programme NGI0"
+msgstr "Το λογότυπο του προγράμματος NGI0"
