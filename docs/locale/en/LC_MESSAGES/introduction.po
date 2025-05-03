@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-03-10 11:02+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2025-04-15 08:21+0000\n"
+"Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
+"Language-Team: English <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_introduction/en/>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.2\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../introduction.md:1
@@ -61,7 +64,7 @@ msgstr ""
 
 #: ../../introduction.md:12
 msgid "Une BrailleRAP XL à Gauche, Une BrailleRAP standard à droite."
-msgstr "A BrailleRAP XL on the left, a standard BrailleRAP on the right"
+msgstr "A BrailleRAP XL on the left, a standard BrailleRAP on the right."
 
 #: ../../introduction.md:14
 msgid "Une photographie de deux BrailleRAP"
@@ -92,6 +95,9 @@ msgid ""
 "src=\"./IMG/NGI0_tag.png\" alt=\"Le logo du programme NGI0\" "
 "width=\"25%\"> ](https://nlnet.nl)"
 msgstr ""
+"[      <img src=\"./IMG/nlnetbanner.png\" alt=\"NGI0 program logo\" width="
+"\"25%\"> ](https://nlnet.nl)  [     <img src=\"./IMG/NGI0_tag.png\" alt="
+"\"NGI0 program logo\" width=\"25%\"> ](https://nlnet.nl)"
 
 #: ../../introduction.md:21
 msgid "Le logo du programme NGI0"
@@ -112,4 +118,3 @@ msgstr "NGI0 program logo"
 #~ "documents en Braille mais également de"
 #~ " mettre des graphiques en relief."
 #~ msgstr ""
-
