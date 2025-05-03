@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {IntlProvider} from 'react-intl';
+import Greek from '../translations/el.json';
 import Arabic from '../translations/ar.json';
 import Deutch from '../translations/de.json';
 import English from '../translations/en.json';
@@ -101,6 +102,10 @@ const IntlWrapper = (props) => {
        {
             setMessages(Portuguese);
        }
+       else if (newLocale === 'el')
+       {
+            setMessages(Greek);
+       }
        else
        {
             setMessages(English);
@@ -151,6 +156,10 @@ const IntlWrapper = (props) => {
         else if (lang === 'pt') 
         {
             setMessages(Portuguese);
+        }
+        else if (lang === 'el')
+        {
+            setMessages(Greek);
         }
         else
         {
