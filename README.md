@@ -73,7 +73,10 @@ the user manual is available here : [https://accessbraillerap.readthedocs.io/fr/
 
 **en** [![Documentation Status](https://readthedocs.org/projects/accessbraillerap_en/badge/?version=latest&style=plastic)](https://accessbraillerap.readthedocs.io/en/latest/)
 
+**el** [![Documentation Status](https://readthedocs.org/projects/accessbraillerap_el/badge/?version=latest&style=plastic)](https://accessbraillerap.readthedocs.io/el/latest/)
+
 **fr** [![Documentation Status](https://readthedocs.org/projects/accessbraillerap/badge/?version=latest&style=plastic)](https://accessbraillerap.readthedocs.io/fr/latest/)
+
 
 
 ## Contributing

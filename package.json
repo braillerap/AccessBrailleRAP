@@ -25,6 +25,8 @@
     "webview": "python accessbraillerap.py --debug",
     "startview": "npm-run-all build webview",
     "package": "pyinstaller AccessBrailleRAPW.spec",
+    "packageportable": "pyinstaller AccessBrailleRAPWportable.spec",
+    "buildportable": "npm-run-all clean build packageportable",
     "packagedebian": "pyinstaller DebianAccessBrailleRAP.spec",
     "packageubuntu": "pyinstaller LinuxAccessBrailleRAP.spec",
     "packagerpi": "pyinstaller RpiAccessBrailleRAP.spec",
