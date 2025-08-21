@@ -166,6 +166,10 @@ const IntlWrapper = (props) => {
         {
             setMessages(Greek);
         }
+        else if (lang === 'id')
+        {
+            setMessages(Indonesian);
+        }
         else
         {
             setMessages(English);
