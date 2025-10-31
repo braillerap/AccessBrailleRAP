@@ -8,6 +8,7 @@ import Spanish from '../translations/es.json';
 import French from '../translations/fr.json';
 import Dutch from '../translations/nl.json';
 import Portuguese from '../translations/pt.json';
+import Turkish from '../translations/tr.json'
 import Ukrainian from '../translations/uk.json';
 import SimplifiedChineese from '../translations/zh_Hans.json';
 import { locales } from '../components/locale.js';
@@ -102,6 +103,11 @@ const IntlWrapper = (props) => {
        {
             setMessages(Portuguese);
        }
+       else if (newLocale === 'tr')
+       {
+            setMessages(Turkish);
+       }
+       
        else if (newLocale === 'el')
        {
             setMessages(Greek);
@@ -156,6 +162,10 @@ const IntlWrapper = (props) => {
         else if (lang === 'pt') 
         {
             setMessages(Portuguese);
+        }
+        else if (lang === 'tr') 
+        {
+            setMessages(Turkish);
         }
         else if (lang === 'el')
         {

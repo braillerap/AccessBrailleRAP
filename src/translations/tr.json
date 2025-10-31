@@ -1,0 +1,8 @@
+{
+    "app.loading": "Yükleniyor…",
+    "param.header": "Uygulama Parametreleri",
+    "param.nocomport": "Hiçbir haberleşme portu etkin değil",
+    "param.labelport": "İletişim için kullanılan seri Port Etiketi ",
+    "param.nobrailletable": "Transkripsiyon tablosu bulunmuyor",
+    "param.brailletable": "Transkripsiyon tablosu  "
+}
