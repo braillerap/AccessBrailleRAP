@@ -6,9 +6,10 @@ export const locales = [
     {lang:'es', dir:"ltr", desc:"es - Español",  reverse:false},
     {lang:'id', dir:'ltr', desc:'id - Bahasa',   reverse:false},
     {lang:'fr', dir:'ltr', desc:'fr - Français', reverse:false},
+    {lang:'pt', dir:'ltr', desc:'pt - Portuguese', reverse:false},
     {lang:'tr', dir:'ltr', desc:'tr - Türkçe', reverse:false},
     {lang:'uk', dir:'ltr', desc:'uk - українська', reverse:false},
     {lang:'nl', dir:'ltr', desc:'nl - Dutch', reverse:false},
-    {lang:'pt', dir:'ltr', desc:'pt - Portuguese', reverse:false},
+    
     {lang:'zh-hans', dir:'ltr', desc:'zh-hans - 简体中文', reverse:false},
 ]; 
