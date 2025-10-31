@@ -6,6 +6,7 @@ import Deutch from '../translations/de.json';
 import English from '../translations/en.json';
 import Spanish from '../translations/es.json';
 import French from '../translations/fr.json';
+import Indonesian from '../translations/id.json' 
 import Dutch from '../translations/nl.json';
 import Portuguese from '../translations/pt.json';
 import Turkish from '../translations/tr.json'
@@ -112,6 +113,10 @@ const IntlWrapper = (props) => {
        {
             setMessages(Greek);
        }
+       else if (newLocale === 'id')
+       {
+            setMessages(Indonesian);
+       }
        else
        {
             setMessages(English);
@@ -170,6 +175,10 @@ const IntlWrapper = (props) => {
         else if (lang === 'el')
         {
             setMessages(Greek);
+        }
+        else if (lang === 'id')
+        {
+            setMessages(Indonesian);
         }
         else
         {

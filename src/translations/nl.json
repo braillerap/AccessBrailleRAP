@@ -52,5 +52,12 @@
     "print.info_aria": "Informatie ",
     "print.info_page_aria": "Pagina ",
     "print.info_over_aria": " van ",
-    "print.cancel_print_pending": "Bezig met annuleren"
+    "print.cancel_print_pending": "Bezig met annuleren",
+    "param.offsety_aria": "Bovenmarge in millimeters",
+    "param.offsety": "Bovenste marge (mm)",
+    "layout.param_input": "Tekstinvoer",
+    "input.title2": "Tekstinvoerformulier",
+    "input.text_aria": "Invoertekstgebied voor transcriptie",
+    "input.title": "Tekstinvoer",
+    "print.button_cmd_aria": "Commandoknoppen  : "
 }

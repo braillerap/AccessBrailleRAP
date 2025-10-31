@@ -1,6 +1,6 @@
 {
   "name": "access-braillerap",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "AccessBrailleRAP",
   "main": "index.js",
   "repository": "https://github.com/AccessBrailleRAP/AccessBrailleRAP",

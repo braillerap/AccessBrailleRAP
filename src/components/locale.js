@@ -4,6 +4,7 @@ export const locales = [
     {lang:'el', dir:"ltr", desc:"el - Ελληνικά",  reverse:false},
     {lang:'en', dir:"ltr", desc:"en - English",  reverse:false},
     {lang:'es', dir:"ltr", desc:"es - Español",  reverse:false},
+    {lang:'id', dir:'ltr', desc:'id - Bahasa',   reverse:false},
     {lang:'fr', dir:'ltr', desc:'fr - Français', reverse:false},
     {lang:'tr', dir:'ltr', desc:'tr - Türkçe', reverse:false},
     {lang:'uk', dir:'ltr', desc:'uk - українська', reverse:false},
