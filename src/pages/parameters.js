@@ -344,7 +344,7 @@ class Parameters extends React.Component {
                     <input type="number" 
                       aria-label={this.props.intl.formatMessage({id:"param.cols_aria"})} 
                       className={this.context.getStyleClass('input')}
-                      step="1" min="5" max="35" name="nbcol" id="nbcol"
+                      step="1" min="5" max="70" name="nbcol" id="nbcol"
                       value={this.props.options.nbcol} 
                       onChange={this.handleChangeNbCol} 
                     />
@@ -360,7 +360,7 @@ class Parameters extends React.Component {
                     type="number" 
                     step="1" 
                     min="5" 
-                    max="35" 
+                    max="70" 
                     name="nbline" 
                     id="nbline" 
                     value={this.props.options.nbline} 
