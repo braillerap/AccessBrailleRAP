@@ -20,7 +20,9 @@ class TextInput extends React.Component {
     this.handlesaveas = this.handlesaveas.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
-    this.altcode = "";
+    
+    this.altcode = ""; // unicode key value for alternate input with control
+    
   }
 
   async handlesave(event) {
@@ -99,11 +101,14 @@ class TextInput extends React.Component {
     {
       if (event.key >= '0' && event.key <= '9')
       {
-        this.altcode += event.key;
+        this.altcode += event.key; // build unicode key value
         event.preventDefault();
       }
+      else
+      {
+        this.altcode =""; // reset unicode value
+      }
     }
-    console.log (event);
   }
 
   handleKeyUp (event)
@@ -115,10 +120,16 @@ class TextInput extends React.Component {
       if (this.altcode.length > 0)
       {
         let val = parseInt(this.altcode);
-        this.altcode ="";
-        let char = String.fromCharCode ([0x2800 + val]);
-        console.log (val, char);
+        this.altcode =""; // forget previous unicode value
+        
+        if (val > 255)
+          val = 255;
+        if (val < 0)
+          val = 0;
+        
+        let char = String.fromCharCode ([0x2800 + val]); // get
         let ntxt = this.state.txt + char;
+        
         this.setState({ txt: ntxt });
         this.props.textcb(ntxt);
         
@@ -130,7 +141,7 @@ class TextInput extends React.Component {
   }
   handleBeforeInput (event)
   {
-    console.log (event);
+    
   }
   handleChange(event) {
     //console.log (event.target.value)
