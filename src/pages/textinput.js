@@ -18,6 +18,9 @@ class TextInput extends React.Component {
     this.handleload = this.handleload.bind(this);
     this.handlesave = this.handlesave.bind(this);
     this.handlesaveas = this.handlesaveas.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
+    this.altcode = "";
   }
 
   async handlesave(event) {
@@ -90,6 +93,45 @@ class TextInput extends React.Component {
     event.preventDefault();
   }
 
+  handleKeyDown (event)
+  {
+    if (event.ctrlKey === true)
+    {
+      if (event.key >= '0' && event.key <= '9')
+      {
+        this.altcode += event.key;
+        event.preventDefault();
+      }
+    }
+    console.log (event);
+  }
+
+  handleKeyUp (event)
+  {
+    console.log (event);
+    if (event.key === "Control")
+    {
+      console.log (this.altcode);
+      if (this.altcode.length > 0)
+      {
+        let val = parseInt(this.altcode);
+        this.altcode ="";
+        let char = String.fromCharCode ([0x2800 + val]);
+        console.log (val, char);
+        let ntxt = this.state.txt + char;
+        this.setState({ txt: ntxt });
+        this.props.textcb(ntxt);
+        
+        event.preventDefault();
+
+      }
+    }
+
+  }
+  handleBeforeInput (event)
+  {
+    console.log (event);
+  }
   handleChange(event) {
     //console.log (event.target.value)
     this.setState({ txt: event.target.value });
@@ -148,6 +190,9 @@ class TextInput extends React.Component {
             <textarea aria-label={this.props.intl.formatMessage({ id: "input.text_aria" })}
               value={this.state.txt}
               onChange={this.handleChange}
+              onBeforeInput={this.handleBeforeInput}
+              onKeyDown={this.handleKeyDown}
+              onKeyUp={this.handleKeyUp}
               rows={nlines}
               cols={ncols}
               ref={this.props.focusref}
