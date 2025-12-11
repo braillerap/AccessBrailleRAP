@@ -130,8 +130,8 @@ class TextInput extends React.Component {
         let char = String.fromCharCode ([0x2800 + val]); // get
         let ntxt = this.state.txt + char;
         
-        this.setState({ txt: ntxt });
-        this.props.textcb(ntxt);
+        //this.setState({ txt: ntxt });
+        //this.props.textcb(ntxt);
         
         event.preventDefault();
 

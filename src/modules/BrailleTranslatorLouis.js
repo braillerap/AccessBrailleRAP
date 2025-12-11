@@ -25,13 +25,10 @@ class BrailleTranslatorLouis extends BrailleTranslator{
     {
         this.louis_tbl = louis_tbl;
     }
-    getvalue ()
+    setSrc (txt)
     {
-        return (this.value);
-    }    
-    setvalue (value)
-    {
-        this.value = value;
+        //console.log (txt);
+        this.src = txt
     }
 
     getLines ()
@@ -51,6 +48,7 @@ class BrailleTranslatorLouis extends BrailleTranslator{
 
     getBrailleLines ()
     {
+        console.log (this.braille_lines);
         return (this.braille_lines);
     }
     
@@ -59,13 +57,18 @@ class BrailleTranslatorLouis extends BrailleTranslator{
 
     translate (reverse)
     {
-        
+        console.log (this.src);
         // split lines
-        this.lines = this.src.split (/(\r?\n|\f)/)
+        let lines = this.src.split (/(\r?\n|\f)/)
+        //this.lines = this.src.split (/(\r?\n)/)
+        console.log (lines);
         // remove cr / lf
-        for (let i = 0; i < this.lines.length; i++)
+        this.lines =[]
+        for (let i = 0; i < lines.length; i++)
         {
-            this.lines[i] = this.lines[i].replace (/(\r?\n)/, "");
+            //this.lines[i] = this.lines[i].replace (/(\r?\n)/, "");
+            if (lines[i] !== "\n")
+                this.lines.push (lines[i]);
         }
         
         this.braille_lines = new Array(this.lines.length);
@@ -90,8 +93,10 @@ class BrailleTranslatorLouis extends BrailleTranslator{
             if (formfeed)
                 this.braille_lines[i] = '\f'
             else
+            {
+                console.log ("t>" + line);
                 this.braille_lines[i] = this.louis.unicode_translate_string(line, this.louis_tbl);
-            
+            }
             
             if (reverse) // some language : ie ARABIC are ltr language but RTL in Braille
                 this.braille_lines[i] = this.#reverse_string (this.braille_lines[i] );
