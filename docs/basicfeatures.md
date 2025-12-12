@@ -34,6 +34,35 @@ Affiche une boîte de dialogue qui permet de sélectionner un nom fichier texte 
 ### Bouton *Importer*
 Affiche une boîte de dialogue qui permet de sélectionner un fichier à importer. L'importation des fichiers est gérée par la bibliothèque [pandoc](https://pandoc.org/). L'importation consiste à extraire le texte du fichier en supprimant toute les mises en formes de caractères (taille de police, effet de caractères, etc...). L'importation fonctionne avec les documents openoffice et libreoffice mais d'autre format sont disponibles.
 
+### Utilisation de caractères spéciaux dans la zone de saisie
+
+Lors de la saisie d'un texte, il peut être utile d'insérer des caractères Braille qui seront directement intégrés à la transcription Braille sans modification. En effet si l'alphabet Braille est défini pour la transcription de texte, il existe des standards particuliers à certains usages comme la musique, la chimie ou les mathématiques. Ces standards ne sont pour l'instant pas pris en charge par AccessBRailleRAP, il peut donc être utile de saisir directement un petite quantité de caractères Braille. 
+
+La saisie de caractère Braille utilise la saisie de caractères unicode, donc les valeurs sont comprisent entre x02800 et 0x02900. Pour entrer ces caractères dans la zone de saisie, vous pouvez utiliser la touche `CTRL`+<valeur unicode>. Par exemple pour saisir un caractère Braille avec uniquement le pont 1 (l'équivalent du 'a') :
+
+1 Appuyez sur la touche `CTRL`
+2 Entrez la valeur 01 en appuyant sur 0 puis 1
+3 Relâcher la touche `CTRL`
+
+vous devriez voir apparaitre le caractere Braille *⠁* dans la zone de saisie.
+
+Vous trouverez sur wikipedia une [table des caractères Braille unicode](https://fr.wikipedia.org/wiki/Table_des_caract%C3%A8res_Unicode/U2800). Les codes des caractères Braille sont donnés en hexadécimal, vous pouvez utiliser uniquement la partie supérieure à 0x2800. Par exemple, si on regarde dans la table, le caractère *⠵* correspond à la valeur unicode 0x2835. Pour entrer ce caractère, vous pouvez utiliser :
+
+`CTRL`+ 0x2835
+
+ou bien
+
+`CTRL`+ 0x35
+
+Vous pouvez également utiliser des valeur décimale. 0x2835 correspond à 10293. vous pouvez donc entrer le caractère *⠵* en utilisant :
+
+`CTRL`+ 10293
+
+ou bien
+
+`CTRL`+ 53
+
+Notez que pour utiliser un code hexadécimal, vous devez préfixer la valeur par 0x
 
 ## Impression
 
