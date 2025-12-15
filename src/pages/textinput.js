@@ -18,6 +18,11 @@ class TextInput extends React.Component {
     this.handleload = this.handleload.bind(this);
     this.handlesave = this.handlesave.bind(this);
     this.handlesaveas = this.handlesaveas.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
+    
+    this.altcode = ""; // unicode key value for alternate input with control
+    
   }
 
   async handlesave(event) {
@@ -90,6 +95,82 @@ class TextInput extends React.Component {
     event.preventDefault();
   }
 
+  handleKeyDown (event)
+  {
+    if (event.ctrlKey === true)
+    {
+      if (this.altcode.length > 0)
+      {
+        // check for hexa value starting with "0x"
+        if ((event.key >= '0' && event.key <= '9')  ||
+        (event.key >= 'a' && event.key <= 'f')  ||
+        (event.key >= 'A' && event.key <= 'F')  ||
+        ((event.key === 'x' || event.key === 'X') && this.altcode === '0'))
+        {
+            this.altcode += event.key; // build unicode key value
+            event.preventDefault();
+        }
+        else
+        {
+          this.altcode = ""; // reset unicode value
+        }
+      }
+      // check for decimal value
+      else if (event.key >= '0' && event.key <= '9')  
+      {
+        this.altcode += event.key; // build unicode key value
+        event.preventDefault();
+      }
+      else
+      {
+        this.altcode =""; // reset unicode value
+      }
+    }
+  }
+
+  handleKeyUp (event)
+  {
+    console.log (event);
+    console.log (event.key);
+    if (event.key === "Control")
+    {
+      console.log (this.altcode);
+      if (this.altcode.length > 0)
+      {
+        let val = 0;
+        if (this.altcode.startsWith('0x') || this.altcode.startsWith('0X') )
+          val = parseInt(this.altcode, 16); // convert hexavalue
+        else
+          val = parseInt(this.altcode); // convert decimal value
+
+        this.altcode =""; // forget previous unicode value
+        
+        let char ='';
+        if (val < 0)
+          val = 0;
+
+        if (val > 255)
+        {
+          char = String.fromCharCode ([val]); // get complete unicode value
+        }
+        else
+        {
+          char = String.fromCharCode ([0x2800 + val]); // consider value as offset in Braille table
+        }  
+        let ntxt = this.state.txt + char;
+        
+        this.setState({ txt: ntxt });
+        this.props.textcb(ntxt);
+
+        event.preventDefault();
+      }
+    }
+
+  }
+  handleBeforeInput (event)
+  {
+    
+  }
   handleChange(event) {
     //console.log (event.target.value)
     this.setState({ txt: event.target.value });
@@ -148,6 +229,9 @@ class TextInput extends React.Component {
             <textarea aria-label={this.props.intl.formatMessage({ id: "input.text_aria" })}
               value={this.state.txt}
               onChange={this.handleChange}
+              onBeforeInput={this.handleBeforeInput}
+              onKeyDown={this.handleKeyDown}
+              onKeyUp={this.handleKeyUp}
               rows={nlines}
               cols={ncols}
               ref={this.props.focusref}

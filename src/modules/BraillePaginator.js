@@ -68,6 +68,7 @@ class BraillePaginator
         
         for (let lsrc = 0; lsrc < this.src.length; lsrc++)
         {
+            console.log ("lsrc>" + this.src[lsrc].length + " " + this.src[lsrc]);
             let words = this.src[lsrc].split (String.fromCharCode(0x2800));    
             
             let current_line ='';
@@ -132,14 +133,17 @@ class BraillePaginator
                 }
                 else
                 {
-                    current_line += words[w];
-                    current_line += String.fromCharCode(0x2800);
-                    //console.log (current_line)  ;
+                    //if (words[w].length > 0)
+                    //{
+                        current_line += words[w];
+                        current_line += String.fromCharCode(0x2800);
+                        //console.log (current_line)  ;
+                    //}
                 }
             }   
             if (current_line !== '')
             {
-                //console.log ("add final:"+ current_line);
+                console.log ("add final:"+ current_line);
                 this.#addline(current_line); 
                 current_line = '';
             
