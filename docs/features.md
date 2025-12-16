@@ -1,6 +1,6 @@
 # Fonctionalités
 
-## Les principales fonctionnalités de AccessBrailleRAP sont:
+Les principales fonctionnalités de AccessBrailleRAP sont:
 - Saisir un texte à l'aide du clavier.
 - Lire un texte depuis un fichier .txt.
 - Importer le texte d'un document openoffice (en fait tout document reconnu par pandoc).
