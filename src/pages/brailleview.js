@@ -1,7 +1,7 @@
 import React from 'react';
 import BrailleTranslatorFactory from '../modules/BrailleTranslatorFactory';
 import BraillePaginator from '../modules/BraillePaginator';
-import PageDisplay from './components/PageDisplay';
+import PageDisplayTable from './components/PageDisplayTable';
 import BrailleToGeometry from '../modules/BrailleToGeometry';
 import GeomToGCode from '../modules/GeomToGCode';
 import FileSaver from 'file-saver';
@@ -268,7 +268,7 @@ class BrailleView extends React.Component {
         <p aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>
           {this.state.comevent}
         </p>
-        <PageDisplay pagenbr={this.state.page} pages={this.paginator} />
+        <PageDisplayTable pagenbr={this.state.page} pages={this.paginator} />
       </div>
 
     );

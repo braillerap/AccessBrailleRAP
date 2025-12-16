@@ -1,6 +1,7 @@
 import React from 'react';
 import { IntlContext } from '../../components/intlwrapper.js';
 import { injectIntl } from 'react-intl';
+import BrailleLine from './BrailleLine.js'
 
 const BrailleStyle = {
     
@@ -9,7 +10,7 @@ const BrailleStyle = {
     
 }
 
-class PageDisplay extends React.Component {
+class PageDisplayTable extends React.Component {
     static contextType = IntlContext;
     constructor(props) {
         super(props);
@@ -28,9 +29,19 @@ class PageDisplay extends React.Component {
         return (
         
         <div style={BrailleStyle} aria-hidden="true">
-                               
-            {page.map ((line, index)=> (<div className={this.context.getStyleClass("BrailleOutput")} key={index}>{line}</div>))}
-            
+            <table>
+
+            {
+                page.map ((line, index)=> {
+                    return (
+                        <BrailleLine line={line}/>
+                        
+
+                    );
+                
+                })
+            }
+            </table>                   
         </div>  
         
     );
@@ -38,4 +49,4 @@ class PageDisplay extends React.Component {
 
 }
 
-export default injectIntl(PageDisplay);
+export default injectIntl(PageDisplayTable);
