@@ -28,7 +28,7 @@ class PageDisplayTable extends React.Component {
         let page = this.state.braillepages.getPage (this.props.pagenbr);
         return (
         
-        <div style={BrailleStyle} aria-hidden="true">
+        <div className={this.context.getStyleClass("BrailleTable")} aria-hidden="true">
             <table className={this.context.getStyleClass("BrailleOutput")}>
 
             {

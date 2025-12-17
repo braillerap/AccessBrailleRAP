@@ -327,8 +327,18 @@ body {
   font-size: calc(10px + 18vmin);
 }
 
+.BrailleTable {
+  text-align: left;
+  overflow-x: scroll;
+}
+
+.BrailleTable-dark {
+  text-align: left;
+  overflow-x: auto;
+}
+
 .BrailleOutput {
-  font-size: calc(1em + 0.2vw);
+  font-size: calc(0.4em + 1vw);
   min-height: 100%;
   color: black;
   background-color: rgb(253, 253, 253);
@@ -337,7 +347,7 @@ body {
 }
 
 .BrailleOutput-dark {
-  font-size: calc(0.2em + 1vw);
+  font-size: calc(0.4em + 1vw);
   min-height: 100%;
   color: white;
   background-color: rgb(8, 8, 8);
