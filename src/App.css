@@ -328,19 +328,21 @@ body {
 }
 
 .BrailleOutput {
-  font-size: calc(1em + 0.4vw);
+  font-size: calc(1em + 0.2vw);
   min-height: 100%;
   color: black;
   background-color: rgb(253, 253, 253);
   font-family: monospace !important;
+  
 }
 
 .BrailleOutput-dark {
-  font-size: calc(1em + 0.4vw);
+  font-size: calc(0.2em + 1vw);
   min-height: 100%;
   color: white;
   background-color: rgb(8, 8, 8);
   font-family: monospace !important;
+  
 }
 
 

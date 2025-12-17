@@ -29,7 +29,7 @@ class PageDisplayTable extends React.Component {
         return (
         
         <div style={BrailleStyle} aria-hidden="true">
-            <table>
+            <table className={this.context.getStyleClass("BrailleOutput")}>
 
             {
                 page.map ((line, index)=> {
