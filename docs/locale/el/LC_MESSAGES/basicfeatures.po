@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-13 16:44+0000\n"
-"PO-Revision-Date: 2025-05-03 13:48+0000\n"
-"Last-Translator: Dionysios Raptis <sakisgr@noreply.codeberg.org>\n"
+"PO-Revision-Date: 2025-12-17 17:41+0000\n"
+"Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
+"Language-Team: Greek <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_basicfeatures/el/>\n"
 "Language: el\n"
-"Language-Team: Greek "
-"<https://translate.codeberg.org/projects/accessbraillerap_doc/manual_basicfeatures/el/>"
-"\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../../basicfeatures.md:37
 msgid "Utilisation de caractères spéciaux dans la zone de saisie"
-msgstr ""
+msgstr "Χρήση ειδικών χαρακτήρων στην περιοχή εισαγωγής"
 
 #: ../../basicfeatures.md:39
 msgid ""
@@ -155,6 +155,13 @@ msgid ""
 "donc être utile de saisir directement un petite quantité de caractères "
 "Braille."
 msgstr ""
+"Κατά την εισαγωγή κειμένου, μπορεί να είναι χρήσιμο να εισαγάγετε χαρακτήρες "
+"Braille που θα ενσωματωθούν απευθείας στη μεταγραφή Braille χωρίς "
+"τροποποίηση. Ενώ το αλφάβητο Braille έχει οριστεί για τη μεταγραφή κειμένου, "
+"υπάρχουν συγκεκριμένα πρότυπα για ορισμένες εφαρμογές όπως η μουσική, η "
+"χημεία ή τα μαθηματικά. Αυτά τα πρότυπα δεν υποστηρίζονται προς το παρόν από "
+"το AccessBRailleRAP, επομένως μπορεί να είναι χρήσιμο να εισαγάγετε "
+"απευθείας έναν μικρό αριθμό χαρακτήρων Braille."
 
 #: ../../basicfeatures.md:41
 msgid ""
@@ -164,18 +171,27 @@ msgid ""
 "`CTRL`+<valeur unicode>. Par exemple pour saisir un caractère Braille "
 "avec uniquement le pont 1 (l'équivalent du 'a') :"
 msgstr ""
+"Η εισαγωγή χαρακτήρων Braille χρησιμοποιεί εισαγωγή χαρακτήρων Unicode, "
+"επομένως οι τιμές είναι μεταξύ x02800 και x02900. Για να εισαγάγετε αυτούς "
+"τους χαρακτήρες στην περιοχή εισαγωγής, μπορείτε να χρησιμοποιήσετε το "
+"πλήκτρο `CTRL` + <Τιμή Unicode>. Για παράδειγμα, για να εισαγάγετε έναν "
+"χαρακτήρα Braille μόνο με σημείο 1 (το ισοδύναμο του 'a'):"
 
 #: ../../basicfeatures.md:43
 msgid ""
 "1 Appuyez sur la touche `CTRL` 2 Entrez la valeur 01 en appuyant sur 0 "
 "puis 1 3 Relâcher la touche `CTRL`"
 msgstr ""
+"1 Πατήστε το πλήκτρο `CTRL`. 2 Εισαγάγετε την τιμή 01 πατώντας 0 και στη "
+"συνέχεια 1. 3 Αφήστε το πλήκτρο `CTRL`"
 
 #: ../../basicfeatures.md:47
 msgid ""
 "vous devriez voir apparaitre le caractere Braille *⠁* dans la zone de "
 "saisie."
 msgstr ""
+"Θα πρέπει να δείτε τον χαρακτήρα Μπράιγ *⠁* να εμφανίζεται στην περιοχή "
+"εισαγωγής."
 
 #: ../../basicfeatures.md:49
 msgid ""
@@ -186,38 +202,48 @@ msgid ""
 "regarde dans la table, le caractère *⠵* correspond à la valeur unicode "
 "0x2835. Pour entrer ce caractère, vous pouvez utiliser :"
 msgstr ""
+"Μπορείτε να βρείτε έναν [πίνακα χαρακτήρων Braille Unicode](https://"
+"en.wikipedia.org/wiki/Braille_Patterns) στη Wikipedia. Οι κωδικοί χαρακτήρων "
+"Braille δίνονται σε δεκαεξαδική μορφή, χρειάζεται να χρησιμοποιήσετε μόνο το "
+"μέρος που είναι μεγαλύτερο από 0x2800. Για παράδειγμα, αν κοιτάξετε στον "
+"πίνακα, ο χαρακτήρας *⠵* αντιστοιχεί στην τιμή Unicode 0x2835. Για να "
+"εισαγάγετε αυτόν τον χαρακτήρα, μπορείτε να χρησιμοποιήσετε:"
 
 #: ../../basicfeatures.md:51
 msgid "`CTRL`+ 0x2835"
-msgstr ""
+msgstr "`CTRL`+ 0x2835"
 
 #: ../../basicfeatures.md:53 ../../basicfeatures.md:61
 msgid "ou bien"
-msgstr ""
+msgstr "ή"
 
 #: ../../basicfeatures.md:55
 msgid "`CTRL`+ 0x35"
-msgstr ""
+msgstr "`CTRL`+ 0x35"
 
 #: ../../basicfeatures.md:57
 msgid ""
 "Vous pouvez également utiliser des valeur décimale. 0x2835 correspond à "
 "10293. vous pouvez donc entrer le caractère *⠵* en utilisant :"
 msgstr ""
+"Μπορείτε επίσης να χρησιμοποιήσετε δεκαδικές τιμές. Το 0x2835 ισοδυναμεί με "
+"10293. Επομένως, μπορείτε να εισαγάγετε τον χαρακτήρα *⠵* χρησιμοποιώντας:"
 
 #: ../../basicfeatures.md:59
 msgid "`CTRL`+ 10293"
-msgstr ""
+msgstr "`CTRL`+ 10293"
 
 #: ../../basicfeatures.md:63
 msgid "`CTRL`+ 53"
-msgstr ""
+msgstr "`CTRL`+ 53"
 
 #: ../../basicfeatures.md:65
 msgid ""
 "Notez que pour utiliser un code hexadécimal, vous devez préfixer la "
 "valeur par 0x"
 msgstr ""
+"Σημειώστε ότι για να χρησιμοποιήσετε έναν δεκαεξαδικό κώδικα, πρέπει να "
+"προθέσετε την τιμή με 0x"
 
 #: ../../basicfeatures.md:70
 msgid ""
@@ -407,4 +433,3 @@ msgstr ""
 "περιβάλλοντος της εφαρμογής. Έχετε την επιλογή να διαλέξετε μεταξύ ενός "
 "φωτεινού περιβάλλοντος με σκούρο φόντο, ή ενός σκοτεινού περιβάλλοντος με"
 " φωτεινό φόντο."
-
