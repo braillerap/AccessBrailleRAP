@@ -70,9 +70,10 @@ class BrailleView extends React.Component {
       this.setState({ page: this.state.page + 1 });
   }
 
-  HandleDownload() {
+  HandleDownloadWeb() {
     let geom = new BrailleToGeometry();
     geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
+    geom.setGeometry (this.props.options.nbcol, this.props.options.nbline);
     let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page),
                     Number(this.props.options.offsetx), 
                     Number(this.props.options.offsety));
@@ -83,6 +84,20 @@ class BrailleView extends React.Component {
     //console.log (gcode);
     let blob = new Blob([gcode], { type: "text/plain;charset=utf-8" });
     FileSaver.saveAs(blob, "braille.gcode");
+  }
+  
+  HandleDownload() {
+    let geom = new BrailleToGeometry();
+    geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
+    geom.setGeometry (this.props.options.nbcol, this.props.options.nbline);
+    let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page),
+                    Number(this.props.options.offsetx), 
+                    Number(this.props.options.offsety));
+    //console.log (typeof(ptcloud));
+    let gcoder = new GeomToGCode();
+    gcoder.GeomToGCode(ptcloud);
+    
+    window.pywebview.api.save_content (gcoder.GetGcode());
   }
 
   CancelPrint() {
@@ -120,6 +135,7 @@ class BrailleView extends React.Component {
     let geom = new BrailleToGeometry();
     
     geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
+    geom.setGeometry (this.props.options.nbcol, this.props.options.nbline);
     
     let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 
                     Number(this.props.options.offsetx), 
@@ -254,6 +270,15 @@ class BrailleView extends React.Component {
             onClick={this.HandlePrint}
           >
             <FormattedMessage id="print.button_print" defaultMessage="Imprimer" />
+
+          </button>
+          <button
+            
+            
+            className={this.context.getStyleClass('pad-button') + " pure-button"}
+            onClick={this.HandleDownload}
+          >
+            Download
 
           </button>
         </div>

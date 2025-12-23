@@ -48,11 +48,11 @@ class BrailleTranslatorLouis extends BrailleTranslator{
 
     getBrailleLines ()
     {
-        console.log (this.braille_lines);
+        //console.log (this.braille_lines);
         return (this.braille_lines);
     }
     
-
+    
     
 
     translate (reverse)

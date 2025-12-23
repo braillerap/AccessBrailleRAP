@@ -68,13 +68,13 @@ class BraillePaginator
         
         for (let lsrc = 0; lsrc < this.src.length; lsrc++)
         {
-            console.log ("lsrc>" + this.src[lsrc].length + " " + this.src[lsrc]);
+            //console.log ("lsrc>" + this.src[lsrc].length + " " + this.src[lsrc]);
             let words = this.src[lsrc].split (String.fromCharCode(0x2800));    
             
             let current_line ='';
             for (let w = 0; w < words.length; w++)
             {
-                if (words[w] == '\f')
+                if (words[w] === '\f')
                 {
                     
                     this.#addline(current_line); 

@@ -7,7 +7,9 @@ const AppOption = {
     lang:"fr",
     theme:"dark",
     offsetx:1,
-    offsety:2.5
+    offsety:2.5,
+    orientation:0
+
 }
 
 export default AppOption;
