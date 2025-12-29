@@ -26,6 +26,8 @@ app_options = {
     "brailletbl": "70",
     "lang": "",
     "theme": "light",
+    "xmax":"200",
+    "orientation":"0",
     "offsetx":"1",
     "offsety":"2.5"
 }

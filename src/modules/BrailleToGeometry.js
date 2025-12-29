@@ -24,6 +24,7 @@ class BrailleToGeometry
         this.char_paddingy = 12;
         this.nb_cols = 0;
         this.nb_lines = 0;
+        this.xmax = 100;
 
         this.orientation = LANDSCAPE;
         
@@ -60,11 +61,12 @@ class BrailleToGeometry
             this.orientation = o;
     }
     
-    setGeometry (nbcols, nblines)
+    setGeometry (nbcols, nblines, xmax)
     {
         console.log ("setGeometry", nbcols, nblines)
         this.nb_cols = nbcols;
         this.nb_lines = nblines;
+        this.xmax = xmax;
     }
     SortGeom (geom)
     {
@@ -160,7 +162,7 @@ class BrailleToGeometry
             let landcoord_y = new GeomPoint (-1,0);
 
             //let land_offset = new GeomPoint(this.nb_lines * this.char_paddingx, 0)
-            let land_offset = new GeomPoint(297, 0)
+            let land_offset = new GeomPoint(this.xmax, 0)
             console.log ("land_offset", land_offset);
 
             for (let i = 0; i < geom.length; i++)

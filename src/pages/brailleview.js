@@ -73,7 +73,7 @@ class BrailleView extends React.Component {
   HandleDownloadWeb() {
     let geom = new BrailleToGeometry();
     geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
-    geom.setGeometry (this.props.options.nbcol, this.props.options.nbline);
+    geom.setGeometry (Number(this.props.options.nbcol), Number(this.props.options.nbline), Number(this.props.options.xmax));
     let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page),
                     Number(this.props.options.offsetx), 
                     Number(this.props.options.offsety));
@@ -89,7 +89,12 @@ class BrailleView extends React.Component {
   HandleDownload() {
     let geom = new BrailleToGeometry();
     geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
-    geom.setGeometry (this.props.options.nbcol, this.props.options.nbline);
+    geom.setGeometry (Number(this.props.options.nbcol), Number(this.props.options.nbline), Number(this.props.options.xmax));
+    if (this.props.orientation === "0")
+      geom.setOrientation (0); // PORTRAIT
+    else
+      geom.setOrientation (1); // LANDSCAPE
+
     let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page),
                     Number(this.props.options.offsetx), 
                     Number(this.props.options.offsety));
@@ -135,7 +140,13 @@ class BrailleView extends React.Component {
     let geom = new BrailleToGeometry();
     
     geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
-    geom.setGeometry (this.props.options.nbcol, this.props.options.nbline);
+    geom.setGeometry (Number(this.props.options.nbcol), 
+      Number(this.props.options.nbline), 
+      Number(this.props.options.xmax));
+    if (this.props.orientation === "0")
+      geom.setOrientation (0); // PORTRAIT
+    else
+      geom.setOrientation (1); // LANDSCAPE
     
     let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page), 
                     Number(this.props.options.offsetx), 
