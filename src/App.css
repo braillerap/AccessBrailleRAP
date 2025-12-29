@@ -329,7 +329,7 @@ body {
 
 .BrailleTable {
   text-align: left;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .BrailleTable-dark {
