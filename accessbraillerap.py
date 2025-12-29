@@ -308,12 +308,7 @@ class Api:
         try:
             ports = serial.tools.list_ports.comports()
             for port in ports:
-                # print (port.device)
-                # print (port.hwid)
-                # print (port.name)
-                # print (port.description)
-                # print (port.product)
-                # print (port.manufacturer)
+               
                 data.append(
                     {
                         "device": port.device,
@@ -354,32 +349,8 @@ def get_entrypoint():
     if exists("./build/index.html"):  # unfrozen development
         return "./build/index.html"
 
-    # if exists("../Resources/gui/index.html"):  # frozen py2app
-    #     return "../Resources/gui/index.html"
-
-    # if exists("./gui/index.html"):
-    #     return "./gui/index.html"
-
     raise Exception("No index.html found")
 
-
-# def set_interval(interval):
-#     def decorator(function):
-#         def wrapper(*args, **kwargs):
-#             stopped = threading.Event()
-
-#             def loop():  # executed in another thread
-#                 while not stopped.wait(interval):  # until stopped
-#                     function(*args, **kwargs)
-
-#             t = threading.Thread(target=loop)
-#             t.daemon = True  # stop if the program exits
-#             t.start()
-#             return stopped
-
-#         return wrapper
-
-#     return decorator
 
 
 
