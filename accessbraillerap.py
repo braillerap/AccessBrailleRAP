@@ -421,8 +421,8 @@ if __name__ == "__main__":
             else:
                 print ("QT_QPA_PLATFORM=<empty>")
                 print ("try to resolve with XDG_SESSION_TYPE")
-                plugin = 'xcb'
-
+                #plugin = 'xcb'
+                plugin = 'wayland'
                 if ('XDG_SESSION_TYPE' in os.environ):             
                     if (os.environ['XDG_SESSION_TYPE'] == 'wayland'):
                         plugin = 'wayland'
