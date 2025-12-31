@@ -1,6 +1,5 @@
 altgraph==0.17.4
 bottle==0.12.25
-Levenshtein==0.25.1
 packaging==24.1
 proxy-tools==0.1.0
 pycairo==1.26.1
