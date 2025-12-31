@@ -4,6 +4,7 @@ packaging==24.1
 proxy-tools==0.1.0
 pycairo==1.26.1
 pygi==1.0.3
+legacy-cgi
 PyGObject==3.48.2
 pyinstaller
 pyinstaller-hooks-contrib
