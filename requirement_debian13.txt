@@ -1,9 +1,9 @@
 altgraph==0.17.4
 bottle==0.12.25
 packaging==24.1
-proxy-tools==0.1.0
+proxy-tools
 pycairo
-pygi==1.0.3
+pygi
 legacy-cgi
 PyGObject
 pyinstaller
@@ -15,10 +15,10 @@ PyQt5_sip
 PyQtWebEngine
 PyQtWebEngine-Qt5
 pyserial==3.5
-PySide2==5.13.2
+PySide2
 pywebview==5.1
 pywin32-ctypes==0.2.2
-QtPy==2.4.1
+QtPy
 rapidfuzz==3.9.4
 shiboken2==5.13.2
 tk==0.1.0
