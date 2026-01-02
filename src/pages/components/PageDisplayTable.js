@@ -4,10 +4,7 @@ import { injectIntl } from 'react-intl';
 import BrailleLine from './BrailleLine.js'
 
 const BrailleStyle = {
-    
     textAlign: 'left'
-    
-    
 }
 
 class PageDisplayTable extends React.Component {

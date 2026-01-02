@@ -42,6 +42,7 @@ class BrailleView extends React.Component {
     this.HandleNext = this.HandleNext.bind(this);
     this.HandlePrint = this.HandlePrint.bind(this);
     this.HandleDownload = this.HandleDownload.bind(this);
+    this.HandleTextDownload = this.HandleTextDownload.bind(this);
     this.CancelPrint = this.CancelPrint.bind(this);
     
   }
@@ -105,6 +106,20 @@ class BrailleView extends React.Component {
     window.pywebview.api.save_content (gcoder.GetGcode());
   }
 
+  HandleTextDownload() {
+    let text = "";
+    let pages = this.paginator.getPages();
+    pages.map ((page)=>{
+      page.map ((line)=> {
+        console.log (line);
+        text += line;
+        text += "\r";
+      })
+      text += "\f";
+    });
+    console.log (text);
+    window.pywebview.api.save_content_unicode (text);
+  }
   CancelPrint() {
     // request to cancel the print
     this.setState(
@@ -290,6 +305,15 @@ class BrailleView extends React.Component {
             onClick={this.HandleDownload}
           >
             Download
+
+          </button>
+          <button
+            
+            
+            className={this.context.getStyleClass('pad-button') + " pure-button"}
+            onClick={this.HandleTextDownload}
+          >
+            Text download
 
           </button>
         </div>

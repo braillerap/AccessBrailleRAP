@@ -87,6 +87,13 @@ class Api:
 
         with open(filename, "w") as f:
             f.write(content)
+    def save_content_unicode(self, content):
+        filename = webview.windows[0].create_file_dialog(webview.SAVE_DIALOG)
+        if not filename:
+            return
+
+        with open(filename, "w", encoding='utf-8') as f:
+            f.write(content)
 
     def ls(self):
         return os.listdir(".")
