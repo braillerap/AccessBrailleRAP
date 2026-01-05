@@ -105,8 +105,8 @@ class BrailleToGeometry
         e = 0;
 		while (e < geom.length)
 		{
-            console.log ("e=" + e.toString() + " s=" + s.toString() + " geom.length=" + geom.length.toString());
-            console.log ("geom[s]=" + geom[s].y.toString() + " geom[e]=" + geom[e].y.toString());
+            //console.log ("e=" + e.toString() + " s=" + s.toString() + " geom.length=" + geom.length.toString());
+            //console.log ("geom[s]=" + geom[s].y.toString() + " geom[e]=" + geom[e].y.toString());
             
             while (geom[s].y === geom[e].y)
 			{
