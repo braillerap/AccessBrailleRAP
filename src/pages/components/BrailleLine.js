@@ -7,7 +7,7 @@ class BrailleLine extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            line:props.line,
+            line:props.displine,
             
         }
 
@@ -16,8 +16,9 @@ class BrailleLine extends React.Component {
     
     
     render() {
-            let charline = [...this.state.line];
-            
+            let charline = [...this.props.displine];
+            //console.log ("line:", this.props.displine);
+            //console.log ("state:", this.state.line);
             return (
                 <tr>
                     {charline.map((char) => (<td>{char}</td>))}

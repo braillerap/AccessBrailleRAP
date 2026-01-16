@@ -91,7 +91,8 @@ class BrailleView extends React.Component {
     let geom = new BrailleToGeometry();
     geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
     geom.setGeometry (Number(this.props.options.nbcol), Number(this.props.options.nbline), Number(this.props.options.xmax));
-    if (this.props.orientation === "0")
+    console.log ("orientation", this.props.options.orientation);
+    if (this.props.options.orientation === "0" || this.props.options.orientation === 0)
       geom.setOrientation (0); // PORTRAIT
     else
       geom.setOrientation (1); // LANDSCAPE
@@ -158,7 +159,8 @@ class BrailleView extends React.Component {
     geom.setGeometry (Number(this.props.options.nbcol), 
       Number(this.props.options.nbline), 
       Number(this.props.options.xmax));
-    if (this.props.orientation === "0")
+    console.log ("orientation", this.props.options.orientation);
+    if (this.props.options.orientation === "0" || this.props.options.orientation === 0)
       geom.setOrientation (0); // PORTRAIT
     else
       geom.setOrientation (1); // LANDSCAPE
