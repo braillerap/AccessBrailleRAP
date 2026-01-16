@@ -25,7 +25,8 @@ class BrailleView extends React.Component {
       showModal: false,
       comevent: "",
       printstatus: "",
-      cancelprint: false
+      cancelprint: false,
+      progress: 0
     };
     let louis = this.props.glouis();
     let f = new BrailleTranslatorFactory();
@@ -55,6 +56,8 @@ class BrailleView extends React.Component {
   componentWillUnmount() {
     if (this.timer)
       clearInterval(this.timer);
+    if (this.timerprogress)
+      clearInterval(this.timerprogress);
     if (this.props.glouis())
       this.props.glouis().lou_free();
   }
@@ -138,7 +141,13 @@ class BrailleView extends React.Component {
     let msg = this.props.intl.formatMessage({ id: "print.print_end_aria" }) + this.state.printstatus;
     this.setState({ comevent: msg });
   }
-
+  UpdateProgress ()
+  {
+    let p = window.pywebview.api.GetProgress ().then((progress) => {
+      this.setState({progress:p});
+    });
+    
+  }
   #endprint () {
       // set a timer to call setstate with a little delay
       // because form change are disabled for screen reader due to
@@ -176,17 +185,26 @@ class BrailleView extends React.Component {
     this.setState(
       { 
         showModal: true,
-        cancelprint: false
+        cancelprint: false,
+        progress:""
       }
     );
+    // start progress timer
+    //this.timerprogress = setInterval(() => {
+    //    this.UpdateProgress();
+    //}, 10000);
 
     // request backend to print gcode
     window.pywebview.api.PrintGcode(gcode, this.props.options.comport).then(status => {
       // remove modal status screen
       console.log(status);
+      
+      if (this.timerprogress)
+        clearInterval(this.timerprogress);
       this.setState({ showModal: false, printstatus: status });
       
       this.#endprint();
+     
     }
     );
   }
@@ -279,6 +297,7 @@ class BrailleView extends React.Component {
             <p>
               {this.state.cancelprint ? this.props.intl.formatMessage({ id: "print.cancel_print_pending"})  : ""}
             </p>
+            
           </div>
         </Modal>
 
