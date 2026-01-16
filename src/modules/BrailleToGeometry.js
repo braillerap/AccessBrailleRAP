@@ -164,7 +164,7 @@ class BrailleToGeometry
 
             //let land_offset = new GeomPoint(this.nb_lines * this.char_paddingx, 0)
             let land_offset = new GeomPoint(this.xmax, 0)
-            console.log ("land_offset", land_offset);
+            //console.log ("land_offset", land_offset);
 
             for (let i = 0; i < geom.length; i++)
             {
