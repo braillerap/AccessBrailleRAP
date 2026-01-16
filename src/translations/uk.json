@@ -59,5 +59,11 @@
     "input.title2": "Форма для введення тексту",
     "input.dialog_open_file": "Відкрити файл",
     "param.form_aria": "Форма налаштувань програми",
-    "print.info_over_aria": " з "
+    "print.info_over_aria": " з ",
+    "param.orientation.landscape": "Альбомна",
+    "param.orientation.portrait": "Портретна",
+    "param.orientation": "Орієнтація",
+    "param.orientation_aria": "Орієнтація сторінки",
+    "param.xmax_aria": "Максимальне зміщення праворуч на сторінці для друку в альбомному форматі",
+    "param.xmax": "Максимальне зміщення праворуч (мм)"
 }
