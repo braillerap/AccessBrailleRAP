@@ -59,6 +59,7 @@ class BrailleToGeometry
     {
         if (o === PORTRAIT || o === LANDSCAPE)
             this.orientation = o;
+        console.log ("Orientation:", this.orientation);
     }
     
     setGeometry (nbcols, nblines, xmax)
@@ -105,8 +106,8 @@ class BrailleToGeometry
         e = 0;
 		while (e < geom.length)
 		{
-            console.log ("e=" + e.toString() + " s=" + s.toString() + " geom.length=" + geom.length.toString());
-            console.log ("geom[s]=" + geom[s].y.toString() + " geom[e]=" + geom[e].y.toString());
+            //console.log ("e=" + e.toString() + " s=" + s.toString() + " geom.length=" + geom.length.toString());
+            //console.log ("geom[s]=" + geom[s].y.toString() + " geom[e]=" + geom[e].y.toString());
             
             while (geom[s].y === geom[e].y)
 			{
@@ -116,7 +117,7 @@ class BrailleToGeometry
 						break;
 				}
 			}
-            console.log ("e=" + e.toString() + " s=" + s.toString());    
+            //console.log ("e=" + e.toString() + " s=" + s.toString());    
 			{
 				for (i = s; i < e; i++)
 				{
@@ -168,23 +169,23 @@ class BrailleToGeometry
             for (let i = 0; i < geom.length; i++)
             {
                 let pt = geom[i];
-                console.log ("type", typeof(pt));
-                console.log ("pt from geom", pt, pt.x, pt.y);
+                //console.log ("type", typeof(pt));
+                //console.log ("pt from geom", pt, pt.x, pt.y);
                 let xv = landcoord_x.mul_op_scalar(pt.x);
                 let yv = landcoord_y.mul_op_scalar(pt.y);
-                console.log ("xv,yv", xv,yv);
+                //console.log ("xv,yv", xv,yv);
                 let lpt = new GeomPoint (xv.x + yv.x, xv.y + yv.y);
                 lpt.add_geom (land_offset);
                 geom[i] = lpt;
-                console.log ("Geom Point=" + lpt.x.toString() + " " + lpt.y.toString());
+                //console.log ("Geom Point=" + lpt.x.toString() + " " + lpt.y.toString());
             }
         }
         
         this.SortGeom(geom);
-        console.log (geom);
-        let sorted = this.SortGeomZigZag(geom);
-        console.log (sorted);
         //console.log (geom);
+        let sorted = this.SortGeomZigZag(geom);
+        //console.log (sorted);
+        
 
         return sorted;
     }
