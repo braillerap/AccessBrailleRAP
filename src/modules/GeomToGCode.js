@@ -61,9 +61,14 @@ class GeomToGCode
     {
         this.gcode = [];
         this.gcode += this.Home ();
-        this.gcode += this.SetSpeed (this.speed);
-		this.gcode += this.SetAccel (this.accel);
+        // got to 0,0 at low speed
+		this.gcode += this.SetSpeed (1500);
+		this.gcode += this.SetAccel (1000);
         this.gcode += this.MoveTo(0,0);
+		
+		// set standard accel
+		this.gcode += this.SetSpeed (this.speed);
+		this.gcode += this.SetAccel (this.accel);
 
         for (let p = 0; p < pts.length; p++)
         {
