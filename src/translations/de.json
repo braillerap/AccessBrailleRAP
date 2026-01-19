@@ -59,5 +59,11 @@
     "input.title": "Texteingabe",
     "input.title2": "Texteingabeformular",
     "print.button_prec_aria": "Vorherige-Seite-Knopf",
-    "param.linespacing_aria": "Zeilenabstand"
+    "param.linespacing_aria": "Zeilenabstand",
+    "param.xmax_aria": "Maximale rechte Position auf der Seite für den Querformatdruck",
+    "param.xmax": "Maximale Rechtsposition (mm)",
+    "param.orientation_aria": "Seitenausrichtung",
+    "param.orientation": "Orientierung",
+    "param.orientation.portrait": "Porträtausrichtung",
+    "param.orientation.landscape": "Querformat"
 }
