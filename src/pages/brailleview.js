@@ -252,6 +252,27 @@ class BrailleView extends React.Component {
         </button>
       );
   }
+
+  render_util_button ()
+  {
+    return (
+        <>
+          <button
+            className={this.context.getStyleClass('pad-button') + " pure-button"}
+            onClick={this.HandleDownload}
+          >
+            Download
+          </button>
+          <button
+            className={this.context.getStyleClass('pad-button') + " pure-button"}
+            onClick={this.HandleTextDownload}
+          >
+            Text download
+          </button>
+          </>
+        );
+  }
+
   render() {
     let reverse = false;
 
@@ -319,24 +340,7 @@ class BrailleView extends React.Component {
             <FormattedMessage id="print.button_print" defaultMessage="Imprimer" />
 
           </button>
-          <button
-            
-            
-            className={this.context.getStyleClass('pad-button') + " pure-button"}
-            onClick={this.HandleDownload}
-          >
-            Download
-
-          </button>
-          <button
-            
-            
-            className={this.context.getStyleClass('pad-button') + " pure-button"}
-            onClick={this.HandleTextDownload}
-          >
-            Text download
-
-          </button>
+          
         </div>
         
         <p aria-label={this.props.intl.formatMessage({ id: "print.info_aria" })}>
