@@ -59,5 +59,11 @@
     "print.info_aria": "Πληροφορίες ",
     "print.info_page_aria": "Σελίδα ",
     "print.info_over_aria": " Πάνω ",
-    "print.cancel_print_pending": "Ακύρωση σε εξέλιξη"
+    "print.cancel_print_pending": "Ακύρωση σε εξέλιξη",
+    "param.xmax_aria": "Μέγιστη δεξιά θέση στη σελίδα για οριζόντια εκτύπωση",
+    "param.xmax": "Μέγιστη δεξιά θέση (mm)",
+    "param.orientation_aria": "Προσανατολισμός σελίδας",
+    "param.orientation": "Προσανατολισμός",
+    "param.orientation.portrait": "Πορτρέτο",
+    "param.orientation.landscape": "Τοπίο"
 }

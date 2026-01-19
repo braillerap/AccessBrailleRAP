@@ -59,5 +59,11 @@
     "input.title2": "Tekstinvoerformulier",
     "input.text_aria": "Invoertekstgebied voor transcriptie",
     "input.title": "Tekstinvoer",
-    "print.button_cmd_aria": "Commandoknoppen  : "
+    "print.button_cmd_aria": "Commandoknoppen  : ",
+    "param.xmax_aria": "Maximale rechterpositie op de pagina voor afdrukken in liggend formaat",
+    "param.xmax": "Maximale rechterpositie (mm)",
+    "param.orientation_aria": "Paginaoriëntatie",
+    "param.orientation": "Oriëntatie",
+    "param.orientation.portrait": "Portret",
+    "param.orientation.landscape": "Landschap"
 }

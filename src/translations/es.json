@@ -59,5 +59,11 @@
     "print.button_cmd_aria": "Botón de comandos... ",
     "print.info_aria": "Información ",
     "print.info_page_aria": "Página ",
-    "print.info_over_aria": " de cada "
+    "print.info_over_aria": " de cada ",
+    "param.xmax_aria": "Posición máxima derecha en la página para impresión horizontal",
+    "param.xmax": "Posición máxima derecha (mm)",
+    "param.orientation_aria": "Orientación de la página",
+    "param.orientation": "Orientación",
+    "param.orientation.portrait": "Retrato",
+    "param.orientation.landscape": "Paisaje"
 }

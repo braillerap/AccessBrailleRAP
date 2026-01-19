@@ -59,5 +59,11 @@
     "print.info_page_aria": "Sayfa ",
     "print.info_over_aria": " / ",
     "print.cancel_print": "Yazdırmayı iptal et",
-    "print.cancel_print_pending": "İptal işlemi devam ediyor"
+    "print.cancel_print_pending": "İptal işlemi devam ediyor",
+    "param.xmax_aria": "Yatay baskı için sayfada en sağdaki maksimum konum",
+    "param.xmax": "Maksimum sağ konum (mm)",
+    "param.orientation_aria": "Sayfa yönü",
+    "param.orientation": "Oryantasyon",
+    "param.orientation.portrait": "Portre",
+    "param.orientation.landscape": "Manzara"
 }
