@@ -340,7 +340,7 @@ class BrailleView extends React.Component {
             <FormattedMessage id="print.button_print" defaultMessage="Imprimer" />
 
           </button>
-          
+          {this.render_util_button()}
         </div>
         
         <p aria-label={this.props.intl.formatMessage({ id: "print.info_aria" })}>
