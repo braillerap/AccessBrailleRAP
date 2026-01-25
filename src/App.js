@@ -41,11 +41,46 @@ class App extends Component {
         this.GetLouis = this.GetLouis.bind(this);
         this.LouisLoaded = this.LouisLoaded.bind (this);
         this.webviewloaded = this.webviewloaded.bind(this);
+        this.webviewloadedSec = this.webviewloadedSec.bind(this);
         this.focusReference = React.createRef();
+    }
+    
+    async webviewloadedSec ()
+    {
+      console.log ("pywebview loaded");
+      if (window.pywebview.state)
+        console.log (window.pywebview.state); 
+      {
+        console.log ("pywebviewready event");
+        
+        window.pywebview.state = {};
+        let option = await window.pywebview.api.gcode_get_parameters();
+        console.log (option);
+        let params = JSON.parse(option);
+
+        this.setState({webviewready:true});
+        console.log (navigator.language);
+        if (params.lang === "")
+        {
+            params.lang = "fr";
+            this.SetOption (params);
+        }
+        else
+          this.setState ({options:params})
+        this.context.setLanguage (params["lang"]);
+        this.context.setTheme(params["theme"]);
+        this.louis = new libLouis();
+        this.louis.load (this.LouisLoaded);
+        
+      }
+      
     }
 
     async webviewloaded ()
     {
+      console.log ("pywebview loaded");
+      if (window.pywebview.state)
+        console.log (window.pywebview.state); 
       if (!window.pywebview.state) {
         console.log ("pywebviewready event");
         
@@ -73,9 +108,35 @@ class App extends Component {
     }
     async componentDidMount ()
     {
-      window.addEventListener('pywebviewready', this.webviewloaded);
+      console.log ("componentDidMount event");
+      if (window.pywebview)  
+      {
+        console.log ("direct event call");
+        this.webviewloaded(); // direct call we are late to register event
+      }
+      else
+      {
+          console.log ("register pywebview event");  
+          window.addEventListener('pywebviewready', this.webviewloaded);
+          // startt a timer to secure loading
+          this.timerload = setInterval (()=> {
+            console.log ("check loaded");
+            if (window.pywebview)
+            {
+                clearInterval (this.timerload);
+                console.log ("webview detected on timer");
+                this.webviewloadedSec ();
+            }
+          }, 250
+          );
+      }
+      
     }
-
+    componentWillUnmount () 
+    {
+        if (this.timerload)
+            clearInterval (this.timer);
+    }
     onMenuClick ()
     {
         if (this.focusReference)
