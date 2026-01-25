@@ -169,11 +169,8 @@ class TextInput extends React.Component {
 
   handleKeyUp (event)
   {
-    
-    console.log ("up", event.key);
     if (event.key === "Control")
     {
-      console.log (this.altcode);
       if (this.altcode.length > 0)
       {
         let char = '';
@@ -202,8 +199,6 @@ class TextInput extends React.Component {
             val = parseInt(this.altcode, 16); // convert hexavalue
           else
             val = parseInt(this.altcode); // convert decimal value
-
-          console.log ('unicode', val);
           
           if (val < 0)
             val = 0;
@@ -250,7 +245,7 @@ class TextInput extends React.Component {
 
             <FormattedMessage id="input.title" defaultMessage="Saisie du texte" />
           </h1>
-
+          
           <form onSubmit={this.handleSubmit} >
             <textarea
               aria-label={this.props.intl.formatMessage({ id: "input.text_aria" })}
@@ -275,6 +270,7 @@ class TextInput extends React.Component {
       return (
         <div className={this.context.getStyleClass('general')}>
           <h1 aria-hidden={true}></h1>
+          
           <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>
           <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.savefile" })}</button>
           <button onClick={this.handlesaveas} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.saveasfile" })}</button>
