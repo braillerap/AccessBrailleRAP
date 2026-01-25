@@ -94,25 +94,64 @@ class TextInput extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
   }
+  
+  
 
   handleKeyDown (event)
   {
+    const hexachar = '0123456789abcdef';
+    const braillechar = '12345678';
+    const digitchar ='0123456789';
+
     if (event.ctrlKey === true)
     {
       if (this.altcode.length > 0)
       {
-        // check for hexa value starting with "0x"
-        if ((event.key >= '0' && event.key <= '9')  ||
-        (event.key >= 'a' && event.key <= 'f')  ||
-        (event.key >= 'A' && event.key <= 'F')  ||
-        ((event.key === 'x' || event.key === 'X') && this.altcode === '0'))
-        {
-            this.altcode += event.key; // build unicode key value
-            event.preventDefault();
+        if (this.altcode === '0')
+        {  
+          console.log ("key", event.key);
+          // check for hexa value starting with "0x"
+          if ((digitchar.indexOf(event.key) >= 0) ||
+            (event.key === 'x' || event.key === 'X') ||
+            (event.key === 'b' || event.key === 'B')
+            )
+          {
+              this.altcode += event.key; // build unicode key value
+              event.preventDefault();
+          }
+          else
+          {
+            this.altcode = ""; // reset character code value
+          }
         }
         else
         {
-          this.altcode = ""; // reset unicode value
+          if (this.altcode.startsWith('0x'))
+          {
+            if (hexachar.indexOf(event.key) >= 0)
+            {
+              this.altcode += event.key; // build unicode hex value
+              event.preventDefault();
+            }
+
+          }
+          else if (this.altcode.startsWith('0b'))
+          {
+            if (braillechar.indexOf(event.key) >= 0)
+            {
+              this.altcode += event.key; // build braille dots values
+              event.preventDefault();
+            }
+          }
+          else if (digitchar.indexOf(event.key) >= 0)
+          {
+              this.altcode += event.key; // build unicode value
+              event.preventDefault();
+          }
+          else
+          {
+            this.altcode = ""; // reset character code value
+          }
         }
       }
       // check for decimal value
@@ -123,45 +162,66 @@ class TextInput extends React.Component {
       }
       else
       {
-        this.altcode =""; // reset unicode value
+        this.altcode =""; // reset character code value
       }
     }
   }
 
   handleKeyUp (event)
   {
-    console.log (event);
-    console.log (event.key);
+    
+    console.log ("up", event.key);
     if (event.key === "Control")
     {
       console.log (this.altcode);
       if (this.altcode.length > 0)
       {
+        let char = '';
         let val = 0;
-        if (this.altcode.startsWith('0x') || this.altcode.startsWith('0X') )
-          val = parseInt(this.altcode, 16); // convert hexavalue
-        else
-          val = parseInt(this.altcode); // convert decimal value
-
-        this.altcode =""; // forget previous unicode value
-        
-        let char ='';
-        if (val < 0)
-          val = 0;
-
-        if (val > 255)
+        if (this.altcode.startsWith('0b') || this.altcode.startsWith('0B') )
         {
-          char = String.fromCharCode ([val]); // get complete unicode value
+          let brval = 0x2800;
+          
+          for (let i = 2; i < this.altcode.length; i++)
+          {
+              
+              let dot = parseInt(this.altcode[i]);
+              if (dot >0 && dot < 9)
+              {
+                let dothex = 1 << (dot - 1);
+                console.log ('hex', dothex, dot);
+                brval = brval | dothex;
+              }
+          }
+          char = String.fromCharCode ([brval]);
+          
+        } 
+        else
+        {
+          if (this.altcode.startsWith('0x') || this.altcode.startsWith('0X') )
+            val = parseInt(this.altcode, 16); // convert hexavalue
+          else
+            val = parseInt(this.altcode); // convert decimal value
+
+          console.log ('unicode', val);
+          
+          if (val < 0)
+            val = 0;
+
+          if (val > 255)
+          {
+            char = String.fromCharCode ([val]); // get complete unicode value
+          }
+          else
+          {
+            char = String.fromCharCode ([0x2800 + val]); // consider value as offset in Braille table
+          }  
+          
         }
-        else
-        {
-          char = String.fromCharCode ([0x2800 + val]); // consider value as offset in Braille table
-        }  
+        this.altcode =""; // forget previous code value
         let ntxt = this.state.txt + char;
-        
         this.setState({ txt: ntxt });
         this.props.textcb(ntxt);
-
         event.preventDefault();
       }
     }
