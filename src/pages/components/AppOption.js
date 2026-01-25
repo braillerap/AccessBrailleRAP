@@ -9,7 +9,8 @@ const AppOption = {
     offsetx:1,
     offsety:2.5,
     xmax:200,
-    orientation:0
+    orientation:0,
+    fast:0
 
 }
 

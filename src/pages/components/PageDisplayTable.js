@@ -4,10 +4,7 @@ import { injectIntl } from 'react-intl';
 import BrailleLine from './BrailleLine.js'
 
 const BrailleStyle = {
-    
     textAlign: 'left'
-    
-    
 }
 
 class PageDisplayTable extends React.Component {
@@ -26,6 +23,7 @@ class PageDisplayTable extends React.Component {
     render() {
         
         let page = this.state.braillepages.getPage (this.props.pagenbr);
+        
         return (
         
         <div className={this.context.getStyleClass("BrailleTable")} aria-hidden="true">
@@ -33,8 +31,9 @@ class PageDisplayTable extends React.Component {
 
             {
                 page.map ((line, index)=> {
+                    
                     return (
-                        <BrailleLine line={line}/>
+                        <BrailleLine displine={line}/>
                         
 
                     );

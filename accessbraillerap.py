@@ -29,7 +29,8 @@ app_options = {
     "xmax":"200",
     "orientation":"0",
     "offsetx":"1",
-    "offsety":"2.5"
+    "offsety":"2.5",
+    "fast":0
 }
 
 
@@ -44,6 +45,7 @@ serial_status = SerialStatus.Ready
 filename = ""
 root = None
 cancel_print = False
+progress = 0
 
 def get_parameter_fname ():
     paramfname = "acces_brap_parameters.json"
@@ -86,6 +88,13 @@ class Api:
             return
 
         with open(filename, "w") as f:
+            f.write(content)
+    def save_content_unicode(self, content):
+        filename = webview.windows[0].create_file_dialog(webview.SAVE_DIALOG)
+        if not filename:
+            return
+
+        with open(filename, "w", encoding='utf-8') as f:
             f.write(content)
 
     def ls(self):
@@ -225,11 +234,15 @@ class Api:
     def CancelPrint(self):
         global cancel_print
         cancel_print = True
-        print ("Printing cenceled")
+        print ("Printing canceled")
         return
-
+    
+    def GetProgress(self):
+        global progress
+        return str(progress)
+    
     def PrintGcode(self, gcode, comport):
-        global serial_status, cancel_print
+        global serial_status, cancel_print, progress
         #print("Opening Serial Port", comport)
 
         try:
@@ -249,6 +262,7 @@ class Api:
                 Printer.flushInput()  # Flush startup text in serial input
                 # print("Sending GCode")
                 gcodelines = gcode.split("\r\n")
+                current_line = 0
                 for line in gcodelines:
                     cmd_gcode = self.remove_comment(line)
                     cmd_gcode = (
@@ -277,7 +291,14 @@ class Api:
                         )  
                         Printer.readline()
                         break
-
+                
+                # update progress
+                current_line = current_line + 1
+                if len(gcodelines) > 0:
+                    progress = int((current_line * 100) / len(gcodelines))
+                else:
+                    progress = 0
+                
                 #print("End of printing")
                 Printer.close()
         except Exception as e:

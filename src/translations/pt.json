@@ -59,5 +59,11 @@
     "print.info_page_aria": "Página ",
     "print.info_over_aria": " em ",
     "print.cancel_print": "Cancelar impressão",
-    "print.cancel_print_pending": "Cancelamento em andamento"
+    "print.cancel_print_pending": "Cancelamento em andamento",
+    "param.xmax_aria": "Posição máxima à direita na página para impressão em paisagem",
+    "param.xmax": "Posição máxima à direita (mm)",
+    "param.orientation_aria": "Orientação da página",
+    "param.orientation": "Orientação",
+    "param.orientation.portrait": "Retrato",
+    "param.orientation.landscape": "Paisagem"
 }

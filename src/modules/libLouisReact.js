@@ -218,7 +218,7 @@ lou_translateString(const char *tableList, const widechar *inbuf, int *inlen,
                             [i]
                             );
             let str = module.AsciiToString (result);
-            console.log ("descption:" + str);
+            //console.log ("descption:" + str);
             
             return (str);
             });

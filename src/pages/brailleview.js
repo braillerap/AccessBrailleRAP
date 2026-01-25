@@ -9,6 +9,7 @@ import Modal from 'react-modal';
 import { IntlContext } from '../components/intlwrapper.js';
 import { injectIntl } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
+import logo2 from '../833.gif'
 
 class BrailleView extends React.Component {
 
@@ -25,7 +26,9 @@ class BrailleView extends React.Component {
       showModal: false,
       comevent: "",
       printstatus: "",
-      cancelprint: false
+      cancelprint: false,
+      progress: 0,
+      pendingbuild: false
     };
     let louis = this.props.glouis();
     let f = new BrailleTranslatorFactory();
@@ -42,20 +45,56 @@ class BrailleView extends React.Component {
     this.HandleNext = this.HandleNext.bind(this);
     this.HandlePrint = this.HandlePrint.bind(this);
     this.HandleDownload = this.HandleDownload.bind(this);
+    this.HandleTextDownload = this.HandleTextDownload.bind(this);
     this.CancelPrint = this.CancelPrint.bind(this);
+
+    
     
   }
   componentDidMount() {
     // set focus on screen creation
     if (this.props.focusref)
       this.props.focusref.current.focus();
-
+    
+    this.builddocdelay ();
   }
+
+
   componentWillUnmount() {
     if (this.timer)
       clearInterval(this.timer);
+    if (this.timerprogress)
+      clearInterval(this.timerprogress);
+    if (this.timerbuild)
+      clearInterval(this.timerbuild);
+
     if (this.props.glouis())
       this.props.glouis().lou_free();
+  }
+
+  builddoc ()
+  {
+    let reverse = false;
+
+    if (this.context.localeinfo)
+      reverse = this.context.localeinfo.reverse;
+    
+    this.Braille.setSrc(this.state.src);
+    this.Braille.translate(this.context.localeinfo.reverse);
+    this.setState({pendingbuild:false});
+  }
+  builddocdelay (callback)
+  {
+    
+    this.setState({pendingbuild:true});
+    this.timerbuild = setInterval(() => {
+      if (this.timerbuild)
+        clearTimeout(this.timerbuild);
+      this.builddoc();
+      if (callback) {
+        callback();
+      }
+    }, 125);
   }
 
   HandlePrec() {
@@ -74,12 +113,15 @@ class BrailleView extends React.Component {
     let geom = new BrailleToGeometry();
     geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
     geom.setGeometry (Number(this.props.options.nbcol), Number(this.props.options.nbline), Number(this.props.options.xmax));
+    
     let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page),
                     Number(this.props.options.offsetx), 
                     Number(this.props.options.offsety));
     //console.log (typeof(ptcloud));
     let gcoder = new GeomToGCode();
+    gcoder.setPrintSpeed (this.props.options.fast);
     gcoder.GeomToGCode(ptcloud);
+    
     let gcode = gcoder.GetGcode();
     //console.log (gcode);
     let blob = new Blob([gcode], { type: "text/plain;charset=utf-8" });
@@ -90,7 +132,9 @@ class BrailleView extends React.Component {
     let geom = new BrailleToGeometry();
     geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
     geom.setGeometry (Number(this.props.options.nbcol), Number(this.props.options.nbline), Number(this.props.options.xmax));
-    if (this.props.orientation === "0")
+    
+    
+    if (this.props.options.orientation === "0" || this.props.options.orientation === 0)
       geom.setOrientation (0); // PORTRAIT
     else
       geom.setOrientation (1); // LANDSCAPE
@@ -100,11 +144,26 @@ class BrailleView extends React.Component {
                     Number(this.props.options.offsety));
     //console.log (typeof(ptcloud));
     let gcoder = new GeomToGCode();
+    gcoder.setPrintSpeed (this.props.options.fast);
     gcoder.GeomToGCode(ptcloud);
     
     window.pywebview.api.save_content (gcoder.GetGcode());
   }
 
+  HandleTextDownload() {
+    let text = "";
+    let pages = this.paginator.getPages();
+    pages.map ((page)=>{
+      page.map ((line)=> {
+        console.log (line);
+        text += line;
+        text += "\r";
+      })
+      text += "\f";
+    });
+    console.log (text);
+    window.pywebview.api.save_content_unicode (text);
+  }
   CancelPrint() {
     // request to cancel the print
     this.setState(
@@ -122,7 +181,13 @@ class BrailleView extends React.Component {
     let msg = this.props.intl.formatMessage({ id: "print.print_end_aria" }) + this.state.printstatus;
     this.setState({ comevent: msg });
   }
-
+  UpdateProgress ()
+  {
+    let p = window.pywebview.api.GetProgress ().then((progress) => {
+      this.setState({progress:p});
+    });
+    
+  }
   #endprint () {
       // set a timer to call setstate with a little delay
       // because form change are disabled for screen reader due to
@@ -143,7 +208,9 @@ class BrailleView extends React.Component {
     geom.setGeometry (Number(this.props.options.nbcol), 
       Number(this.props.options.nbline), 
       Number(this.props.options.xmax));
-    if (this.props.orientation === "0")
+    
+    
+    if (this.props.options.orientation === "0" || this.props.options.orientation === 0)
       geom.setOrientation (0); // PORTRAIT
     else
       geom.setOrientation (1); // LANDSCAPE
@@ -152,24 +219,35 @@ class BrailleView extends React.Component {
                     Number(this.props.options.offsetx), 
                     Number(this.props.options.offsety));
     let gcoder = new GeomToGCode();
+    gcoder.setPrintSpeed (this.props.options.fast);
     gcoder.GeomToGCode(ptcloud);
+    
     let gcode = gcoder.GetGcode();
 
     // display modal status screen
     this.setState(
       { 
         showModal: true,
-        cancelprint: false
+        cancelprint: false,
+        progress:""
       }
     );
+    // start progress timer
+    //this.timerprogress = setInterval(() => {
+    //    this.UpdateProgress();
+    //}, 10000);
 
     // request backend to print gcode
     window.pywebview.api.PrintGcode(gcode, this.props.options.comport).then(status => {
       // remove modal status screen
       console.log(status);
+      
+      if (this.timerprogress)
+        clearInterval(this.timerprogress);
       this.setState({ showModal: false, printstatus: status });
       
       this.#endprint();
+     
     }
     );
   }
@@ -217,15 +295,40 @@ class BrailleView extends React.Component {
         </button>
       );
   }
+
+  render_util_button ()
+  {
+    if (process.env.REACT_APP_DEV)
+    return (
+        <>
+          <button
+            className={this.context.getStyleClass('pad-button') + " pure-button"}
+            onClick={this.HandleDownload}
+          >
+            Download
+          </button>
+          <button
+            className={this.context.getStyleClass('pad-button') + " pure-button"}
+            onClick={this.HandleTextDownload}
+          >
+            Text download
+          </button>
+          </>
+        );
+    else return (<></>);
+  }
+
   render() {
-    let reverse = false;
-
-    if (this.context.localeinfo)
-      reverse = this.context.localeinfo.reverse;
     
-    this.Braille.setSrc(this.state.src);
-    this.Braille.translate(this.context.localeinfo.reverse);
-
+    if (this.state.pendingbuild)
+    {
+      return (
+        <div className={this.context.getStyleClass('general')}>
+          <h1>{this.props.intl.formatMessage({ id: "param.wait"})}</h1>
+          <img src={logo2} alt="loading" />
+        </div>
+      );
+    }
     let linesb = this.Braille.getBrailleLines();
     this.paginator.setSrcLines(linesb);
     this.paginator.Update();
@@ -262,6 +365,7 @@ class BrailleView extends React.Component {
             <p>
               {this.state.cancelprint ? this.props.intl.formatMessage({ id: "print.cancel_print_pending"})  : ""}
             </p>
+            
           </div>
         </Modal>
 
@@ -283,15 +387,7 @@ class BrailleView extends React.Component {
             <FormattedMessage id="print.button_print" defaultMessage="Imprimer" />
 
           </button>
-          <button
-            
-            
-            className={this.context.getStyleClass('pad-button') + " pure-button"}
-            onClick={this.HandleDownload}
-          >
-            Download
-
-          </button>
+          {this.render_util_button()}
         </div>
         
         <p aria-label={this.props.intl.formatMessage({ id: "print.info_aria" })}>

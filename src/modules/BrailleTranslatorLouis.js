@@ -57,11 +57,11 @@ class BrailleTranslatorLouis extends BrailleTranslator{
 
     translate (reverse)
     {
-        console.log (this.src);
+        //console.log (this.src);
         // split lines
         let lines = this.src.split (/(\r?\n|\f)/)
         //this.lines = this.src.split (/(\r?\n)/)
-        console.log (lines);
+        //console.log (lines);
         // remove cr / lf
         this.lines =[]
         for (let i = 0; i < lines.length; i++)
@@ -94,7 +94,7 @@ class BrailleTranslatorLouis extends BrailleTranslator{
                 this.braille_lines[i] = '\f'
             else
             {
-                console.log ("t>" + line);
+                //console.log ("t>" + line);
                 this.braille_lines[i] = this.louis.unicode_translate_string(line, this.louis_tbl);
             }
             

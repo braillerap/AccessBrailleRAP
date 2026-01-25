@@ -59,5 +59,11 @@
     "print.info_page_aria": "页 ",
     "print.cancel_print": "取消打印",
     "print.info_over_aria": " / ",
-    "print.cancel_print_pending": "取消正在进行中"
+    "print.cancel_print_pending": "取消正在进行中",
+    "param.xmax_aria": "横向打印时，页面右侧最大位置",
+    "param.xmax": "右侧最大位置（毫米）",
+    "param.orientation_aria": "文档方向",
+    "param.orientation": "方向",
+    "param.orientation.portrait": "纵向",
+    "param.orientation.landscape": "横向"
 }

@@ -143,7 +143,7 @@ class BraillePaginator
             }   
             if (current_line !== '')
             {
-                console.log ("add final:"+ current_line);
+                //console.log ("add final:"+ current_line);
                 this.#addline(current_line); 
                 current_line = '';
             

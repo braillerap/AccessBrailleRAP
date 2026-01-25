@@ -59,5 +59,11 @@
     "param.comportrefreshed": "Port komunikasi diaktualisasikan",
     "layout.param_menu": "Pilihan",
     "layout.print_in_progress": "Pencetakan tertunda",
-    "input.importfile": "Impor…"
+    "input.importfile": "Impor…",
+    "param.xmax_aria": "Posisi paling kanan pada halaman untuk pencetakan lanskap",
+    "param.xmax": "Posisi kanan maksimum (mm)",
+    "param.orientation_aria": "Orientasi halaman",
+    "param.orientation": "Orientasi",
+    "param.orientation.portrait": "Potret",
+    "param.orientation.landscape": "Lanskap"
 }
