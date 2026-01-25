@@ -9,6 +9,7 @@ import Modal from 'react-modal';
 import { IntlContext } from '../components/intlwrapper.js';
 import { injectIntl } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
+import logo2 from '../833.gif'
 
 class BrailleView extends React.Component {
 
@@ -323,7 +324,8 @@ class BrailleView extends React.Component {
     {
       return (
         <div className={this.context.getStyleClass('general')}>
-          <h1>Wait</h1>
+          <h1>{this.props.intl.formatMessage({ id: "param.wait"})}</h1>
+          <img src={logo2} alt="loading" />
         </div>
       );
     }
