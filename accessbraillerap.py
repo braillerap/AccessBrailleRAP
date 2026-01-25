@@ -29,7 +29,8 @@ app_options = {
     "xmax":"200",
     "orientation":"0",
     "offsetx":"1",
-    "offsety":"2.5"
+    "offsety":"2.5",
+    "fast":0
 }
 
 
