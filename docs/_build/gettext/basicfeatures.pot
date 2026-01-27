@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-27 08:06+0000\n"
+"POT-Creation-Date: 2026-01-27 08:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -251,25 +251,49 @@ msgid "Cette valeur détermine la valeur de la marge en haut du document."
 msgstr ""
 
 #: ../../basicfeatures.md:110
-msgid "Port de communication"
+msgid "Position maximum droite (mm)"
 msgstr ""
 
 #: ../../basicfeatures.md:111
-msgid "Cette valeur désigne le port de communication utilisé pour la communication avec la BrailleRAP. Si vous avez branché la BrailleRAP après le lancement du logiciel, vous pouvez rafraichir la liste des ports de communication disponible en utilisant le bouton *Actualiser*."
+msgid "Cette valeur détermine la position maximale sur la droite de la feuille en impression paysage. Pour une feuille A4 environ 200 mm pour une feuille A3 environ 280 mm."
 msgstr ""
 
 #: ../../basicfeatures.md:113
-msgid "Langue de l'application"
+msgid "Orientation"
 msgstr ""
 
 #: ../../basicfeatures.md:114
-msgid "Cette valeur permet de définir la langue de l'interface de l'application."
+msgid "Cette valeur détermine l'orientation de l'impression."
+msgstr ""
+
+#: ../../basicfeatures.md:115
+msgid "Portrait : Les lignes seront imprimées paralellement au bord haut de la feuille."
 msgstr ""
 
 #: ../../basicfeatures.md:116
+msgid "Paysage : La lignes seront imprimées paralellement au bord droit de la feuille. La première ligne sera imprimée à la position **Position maximum droite (mm)**"
+msgstr ""
+
+#: ../../basicfeatures.md:119
+msgid "Port de communication"
+msgstr ""
+
+#: ../../basicfeatures.md:120
+msgid "Cette valeur désigne le port de communication utilisé pour la communication avec la BrailleRAP. Si vous avez branché la BrailleRAP après le lancement du logiciel, vous pouvez rafraichir la liste des ports de communication disponible en utilisant le bouton *Actualiser*."
+msgstr ""
+
+#: ../../basicfeatures.md:122
+msgid "Langue de l'application"
+msgstr ""
+
+#: ../../basicfeatures.md:123
+msgid "Cette valeur permet de définir la langue de l'interface de l'application."
+msgstr ""
+
+#: ../../basicfeatures.md:125
 msgid "Thème"
 msgstr ""
 
-#: ../../basicfeatures.md:117
+#: ../../basicfeatures.md:126
 msgid "Cette valeur permet de définir le thème de l'interface de l'application, vous avez la possibilité de choisir entre une interface claire sur fond sombre ou une interface sombre sur fond clair."
 msgstr ""

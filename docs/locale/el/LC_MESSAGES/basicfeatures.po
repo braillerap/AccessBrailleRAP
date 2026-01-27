@@ -8,17 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-13 16:44+0000\n"
+"POT-Creation-Date: 2026-01-27 08:21+0000\n"
 "PO-Revision-Date: 2025-12-17 17:41+0000\n"
 "Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
-"Language-Team: Greek <https://translate.codeberg.org/projects/"
-"accessbraillerap_doc/manual_basicfeatures/el/>\n"
 "Language: el\n"
+"Language-Team: Greek "
+"<https://translate.codeberg.org/projects/accessbraillerap_doc/manual_basicfeatures/el/>"
+"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -155,13 +155,13 @@ msgid ""
 "donc être utile de saisir directement un petite quantité de caractères "
 "Braille."
 msgstr ""
-"Κατά την εισαγωγή κειμένου, μπορεί να είναι χρήσιμο να εισαγάγετε χαρακτήρες "
-"Braille που θα ενσωματωθούν απευθείας στη μεταγραφή Braille χωρίς "
-"τροποποίηση. Ενώ το αλφάβητο Braille έχει οριστεί για τη μεταγραφή κειμένου, "
-"υπάρχουν συγκεκριμένα πρότυπα για ορισμένες εφαρμογές όπως η μουσική, η "
-"χημεία ή τα μαθηματικά. Αυτά τα πρότυπα δεν υποστηρίζονται προς το παρόν από "
-"το AccessBRailleRAP, επομένως μπορεί να είναι χρήσιμο να εισαγάγετε "
-"απευθείας έναν μικρό αριθμό χαρακτήρων Braille."
+"Κατά την εισαγωγή κειμένου, μπορεί να είναι χρήσιμο να εισαγάγετε "
+"χαρακτήρες Braille που θα ενσωματωθούν απευθείας στη μεταγραφή Braille "
+"χωρίς τροποποίηση. Ενώ το αλφάβητο Braille έχει οριστεί για τη μεταγραφή "
+"κειμένου, υπάρχουν συγκεκριμένα πρότυπα για ορισμένες εφαρμογές όπως η "
+"μουσική, η χημεία ή τα μαθηματικά. Αυτά τα πρότυπα δεν υποστηρίζονται "
+"προς το παρόν από το AccessBRailleRAP, επομένως μπορεί να είναι χρήσιμο "
+"να εισαγάγετε απευθείας έναν μικρό αριθμό χαρακτήρων Braille."
 
 #: ../../basicfeatures.md:41
 msgid ""
@@ -172,10 +172,11 @@ msgid ""
 "avec uniquement le pont 1 (l'équivalent du 'a') :"
 msgstr ""
 "Η εισαγωγή χαρακτήρων Braille χρησιμοποιεί εισαγωγή χαρακτήρων Unicode, "
-"επομένως οι τιμές είναι μεταξύ x02800 και x02900. Για να εισαγάγετε αυτούς "
-"τους χαρακτήρες στην περιοχή εισαγωγής, μπορείτε να χρησιμοποιήσετε το "
-"πλήκτρο `CTRL` + <Τιμή Unicode>. Για παράδειγμα, για να εισαγάγετε έναν "
-"χαρακτήρα Braille μόνο με σημείο 1 (το ισοδύναμο του 'a'):"
+"επομένως οι τιμές είναι μεταξύ x02800 και x02900. Για να εισαγάγετε "
+"αυτούς τους χαρακτήρες στην περιοχή εισαγωγής, μπορείτε να "
+"χρησιμοποιήσετε το πλήκτρο `CTRL` + <Τιμή Unicode>. Για παράδειγμα, για "
+"να εισαγάγετε έναν χαρακτήρα Braille μόνο με σημείο 1 (το ισοδύναμο του "
+"'a'):"
 
 #: ../../basicfeatures.md:43
 msgid ""
@@ -202,12 +203,13 @@ msgid ""
 "regarde dans la table, le caractère *⠵* correspond à la valeur unicode "
 "0x2835. Pour entrer ce caractère, vous pouvez utiliser :"
 msgstr ""
-"Μπορείτε να βρείτε έναν [πίνακα χαρακτήρων Braille Unicode](https://"
-"en.wikipedia.org/wiki/Braille_Patterns) στη Wikipedia. Οι κωδικοί χαρακτήρων "
-"Braille δίνονται σε δεκαεξαδική μορφή, χρειάζεται να χρησιμοποιήσετε μόνο το "
-"μέρος που είναι μεγαλύτερο από 0x2800. Για παράδειγμα, αν κοιτάξετε στον "
-"πίνακα, ο χαρακτήρας *⠵* αντιστοιχεί στην τιμή Unicode 0x2835. Για να "
-"εισαγάγετε αυτόν τον χαρακτήρα, μπορείτε να χρησιμοποιήσετε:"
+"Μπορείτε να βρείτε έναν [πίνακα χαρακτήρων Braille "
+"Unicode](https://en.wikipedia.org/wiki/Braille_Patterns) στη Wikipedia. "
+"Οι κωδικοί χαρακτήρων Braille δίνονται σε δεκαεξαδική μορφή, χρειάζεται "
+"να χρησιμοποιήσετε μόνο το μέρος που είναι μεγαλύτερο από 0x2800. Για "
+"παράδειγμα, αν κοιτάξετε στον πίνακα, ο χαρακτήρας *⠵* αντιστοιχεί στην "
+"τιμή Unicode 0x2835. Για να εισαγάγετε αυτόν τον χαρακτήρα, μπορείτε να "
+"χρησιμοποιήσετε:"
 
 #: ../../basicfeatures.md:51
 msgid "`CTRL`+ 0x2835"
@@ -226,8 +228,9 @@ msgid ""
 "Vous pouvez également utiliser des valeur décimale. 0x2835 correspond à "
 "10293. vous pouvez donc entrer le caractère *⠵* en utilisant :"
 msgstr ""
-"Μπορείτε επίσης να χρησιμοποιήσετε δεκαδικές τιμές. Το 0x2835 ισοδυναμεί με "
-"10293. Επομένως, μπορείτε να εισαγάγετε τον χαρακτήρα *⠵* χρησιμοποιώντας:"
+"Μπορείτε επίσης να χρησιμοποιήσετε δεκαδικές τιμές. Το 0x2835 ισοδυναμεί "
+"με 10293. Επομένως, μπορείτε να εισαγάγετε τον χαρακτήρα *⠵* "
+"χρησιμοποιώντας:"
 
 #: ../../basicfeatures.md:59
 msgid "`CTRL`+ 10293"
@@ -393,10 +396,43 @@ msgstr ""
 "εγγράφου."
 
 #: ../../basicfeatures.md:110
+msgid "Position maximum droite (mm)"
+msgstr ""
+
+#: ../../basicfeatures.md:111
+msgid ""
+"Cette valeur détermine la position maximale sur la droite de la feuille "
+"en impression paysage. Pour une feuille A4 environ 200 mm pour une "
+"feuille A3 environ 280 mm."
+msgstr ""
+
+#: ../../basicfeatures.md:113
+#, fuzzy
+msgid "Orientation"
+msgstr "Εισαγωγή"
+
+#: ../../basicfeatures.md:114
+msgid "Cette valeur détermine l'orientation de l'impression."
+msgstr ""
+
+#: ../../basicfeatures.md:115
+msgid ""
+"Portrait : Les lignes seront imprimées paralellement au bord haut de la "
+"feuille."
+msgstr ""
+
+#: ../../basicfeatures.md:116
+msgid ""
+"Paysage : La lignes seront imprimées paralellement au bord droit de la "
+"feuille. La première ligne sera imprimée à la position **Position maximum"
+" droite (mm)**"
+msgstr ""
+
+#: ../../basicfeatures.md:119
 msgid "Port de communication"
 msgstr "Θύρα επικοινωνίας"
 
-#: ../../basicfeatures.md:111
+#: ../../basicfeatures.md:120
 msgid ""
 "Cette valeur désigne le port de communication utilisé pour la "
 "communication avec la BrailleRAP. Si vous avez branché la BrailleRAP "
@@ -409,21 +445,21 @@ msgstr ""
 "ανανέωση της λίστας των διαθέσιμων θυρών επικοινωνίας κάνοντας κλικ στο "
 "κουμπί *Ανανέωση*."
 
-#: ../../basicfeatures.md:113
+#: ../../basicfeatures.md:122
 msgid "Langue de l'application"
 msgstr "Γλώσσα εφαρμογής"
 
-#: ../../basicfeatures.md:114
+#: ../../basicfeatures.md:123
 msgid "Cette valeur permet de définir la langue de l'interface de l'application."
 msgstr ""
 "Αυτή η τιμή επιτρέπει τον προσδιορισμό της γλώσσας του γραφικού "
 "περιβάλλοντος της εφαρμογής."
 
-#: ../../basicfeatures.md:116
+#: ../../basicfeatures.md:125
 msgid "Thème"
 msgstr "Θέμα"
 
-#: ../../basicfeatures.md:117
+#: ../../basicfeatures.md:126
 msgid ""
 "Cette valeur permet de définir le thème de l'interface de l'application, "
 "vous avez la possibilité de choisir entre une interface claire sur fond "
@@ -433,3 +469,4 @@ msgstr ""
 "περιβάλλοντος της εφαρμογής. Έχετε την επιλογή να διαλέξετε μεταξύ ενός "
 "φωτεινού περιβάλλοντος με σκούρο φόντο, ή ενός σκοτεινού περιβάλλοντος με"
 " φωτεινό φόντο."
+
