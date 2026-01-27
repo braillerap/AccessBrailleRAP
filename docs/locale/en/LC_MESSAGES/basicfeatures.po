@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.7.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-27 08:21+0000\n"
-"PO-Revision-Date: 2025-12-13 16:56+0000\n"
+"PO-Revision-Date: 2026-01-27 08:30+0000\n"
 "Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
+"Language-Team: English <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_basicfeatures/en/>\n"
 "Language: en\n"
-"Language-Team: English "
-"<https://translate.codeberg.org/projects/accessbraillerap_doc/manual_basicfeatures/en/>"
-"\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -370,7 +370,7 @@ msgstr "This determines the value of the top margin of the document."
 
 #: ../../basicfeatures.md:110
 msgid "Position maximum droite (mm)"
-msgstr ""
+msgstr "Maximum position on the right (mm)"
 
 #: ../../basicfeatures.md:111
 msgid ""
@@ -378,21 +378,23 @@ msgid ""
 "en impression paysage. Pour une feuille A4 environ 200 mm pour une "
 "feuille A3 environ 280 mm."
 msgstr ""
+"This value determines the maximum rightward position of the sheet in "
+"landscape printing. For an A4 sheet, approximately 200 mm. For an A3 sheet, "
+"approximately 280 mm."
 
 #: ../../basicfeatures.md:113
-#, fuzzy
 msgid "Orientation"
-msgstr "Introduction"
+msgstr "Orientation"
 
 #: ../../basicfeatures.md:114
 msgid "Cette valeur détermine l'orientation de l'impression."
-msgstr ""
+msgstr "This value set the print orientation."
 
 #: ../../basicfeatures.md:115
 msgid ""
 "Portrait : Les lignes seront imprimées paralellement au bord haut de la "
 "feuille."
-msgstr ""
+msgstr "Portrait: Lines will be printed parallel to the top edge of the sheet."
 
 #: ../../basicfeatures.md:116
 msgid ""
@@ -400,6 +402,9 @@ msgid ""
 "feuille. La première ligne sera imprimée à la position **Position maximum"
 " droite (mm)**"
 msgstr ""
+"Landscape: The lines will be printed parallel to the right edge of the "
+"sheet. The first line will be printed at the **Maximum position on the right "
+"(mm)**"
 
 #: ../../basicfeatures.md:119
 msgid "Port de communication"
@@ -438,4 +443,3 @@ msgstr ""
 "This value allows you to define the theme of the application interface, "
 "you have the option to choose between a light interface on a dark "
 "background or a dark interface on a light background."
-
