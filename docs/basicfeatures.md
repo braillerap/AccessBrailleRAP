@@ -107,6 +107,15 @@ Cette valeur détermine la valeur de la marge à la gauche du document.
 #### Marge début de page (mm)
 Cette valeur détermine la valeur de la marge en haut du document.
 
+#### Position maximum droite (mm)
+Cette valeur détermine la position maximale sur la droite de la feuille en impression paysage. Pour une feuille A4 environ 200 mm pour une feuille A3 environ 280 mm.
+
+### Orientation
+Cette valeur détermine l'orientation de l'impression. 
+- Portrait : Les lignes seront imprimées paralellement au bord haut de la feuille.
+- Paysage : La lignes seront imprimées paralellement au bord droit de la feuille. La première ligne sera imprimée à la position **Position maximum droite (mm)**
+
+
 #### Port de communication
 Cette valeur désigne le port de communication utilisé pour la communication avec la BrailleRAP. Si vous avez branché la BrailleRAP après le lancement du logiciel, vous pouvez rafraichir la liste des ports de communication disponible en utilisant le bouton *Actualiser*.
 
