@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-27 08:21+0000\n"
-"PO-Revision-Date: 2025-12-17 17:41+0000\n"
+"PO-Revision-Date: 2026-01-27 08:30+0000\n"
 "Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
+"Language-Team: Greek <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_basicfeatures/el/>\n"
 "Language: el\n"
-"Language-Team: Greek "
-"<https://translate.codeberg.org/projects/accessbraillerap_doc/manual_basicfeatures/el/>"
-"\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -397,7 +397,7 @@ msgstr ""
 
 #: ../../basicfeatures.md:110
 msgid "Position maximum droite (mm)"
-msgstr ""
+msgstr "Μέγιστη θέση στα δεξιά (mm)"
 
 #: ../../basicfeatures.md:111
 msgid ""
@@ -405,21 +405,24 @@ msgid ""
 "en impression paysage. Pour une feuille A4 environ 200 mm pour une "
 "feuille A3 environ 280 mm."
 msgstr ""
+"Αυτή η τιμή καθορίζει τη μέγιστη δεξιά θέση του φύλλου στην οριζόντια "
+"εκτύπωση. Για ένα φύλλο A4, περίπου 200 mm. Για ένα φύλλο A3, περίπου 280 mm."
 
 #: ../../basicfeatures.md:113
-#, fuzzy
 msgid "Orientation"
-msgstr "Εισαγωγή"
+msgstr "Προσανατολισμός"
 
 #: ../../basicfeatures.md:114
 msgid "Cette valeur détermine l'orientation de l'impression."
-msgstr ""
+msgstr "Αυτή η τιμή ορίζει τον προσανατολισμό εκτύπωσης."
 
 #: ../../basicfeatures.md:115
 msgid ""
 "Portrait : Les lignes seront imprimées paralellement au bord haut de la "
 "feuille."
 msgstr ""
+"Κατακόρυφος: Οι γραμμές θα εκτυπώνονται παράλληλα με την επάνω άκρη του "
+"φύλλου."
 
 #: ../../basicfeatures.md:116
 msgid ""
@@ -427,6 +430,8 @@ msgid ""
 "feuille. La première ligne sera imprimée à la position **Position maximum"
 " droite (mm)**"
 msgstr ""
+"Οριζόντια: Οι γραμμές θα εκτυπωθούν παράλληλα με τη δεξιά άκρη του φύλλου. Η "
+"πρώτη γραμμή θα εκτυπωθεί στη **Μέγιστη θέση στα δεξιά (mm)**"
 
 #: ../../basicfeatures.md:119
 msgid "Port de communication"
@@ -469,4 +474,3 @@ msgstr ""
 "περιβάλλοντος της εφαρμογής. Έχετε την επιλογή να διαλέξετε μεταξύ ενός "
 "φωτεινού περιβάλλοντος με σκούρο φόντο, ή ενός σκοτεινού περιβάλλοντος με"
 " φωτεινό φόντο."
-
