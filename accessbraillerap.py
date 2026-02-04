@@ -455,6 +455,6 @@ if __name__ == "__main__":
                 
         else :
             print ("starting  GUI QT dev environment")
-            webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
+            webview.start(delete_splash, gui="qt", http_server=True, debug=debugihm)
 
     

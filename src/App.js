@@ -47,7 +47,7 @@ class App extends Component {
     
     async webviewloadedSec ()
     {
-      console.log ("pywebview loaded");
+      console.log ("pywebview loaded timer");
       if (window.pywebview.state)
         console.log (window.pywebview.state); 
       {
@@ -78,28 +78,38 @@ class App extends Component {
 
     async webviewloaded ()
     {
-      console.log ("pywebview loaded");
+      console.log ("pywebview loaded std");
       if (window.pywebview.state)
-        console.log (window.pywebview.state); 
-      if (!window.pywebview.state) {
+        console.log ("state:", window.pywebview.state); 
+      else
+          window.pywebview.state = {};
+      
+      if (window.pywebview.state) {
         console.log ("pywebviewready event");
-        
-        window.pywebview.state = {};
+
+        // kill check timer if event received
+        if (this.timerload)
+            clearInterval (this.timerload);
+
+        // load app config
         let option = await window.pywebview.api.gcode_get_parameters();
-        console.log (option);
+        console.log ("option", option);
         let params = JSON.parse(option);
 
         this.setState({webviewready:true});
         console.log (navigator.language);
         if (params.lang === "")
         {
-            params.lang = "fr";
-            this.SetOption (params);
+            params.lang = "fr";      // set default language
+            this.SetOption (params); // set default option
         }
         else
           this.setState ({options:params})
+          
         this.context.setLanguage (params["lang"]);
         this.context.setTheme(params["theme"]);
+        
+        // load liblouis web assembly
         this.louis = new libLouis();
         this.louis.load (this.LouisLoaded);
         
@@ -127,7 +137,7 @@ class App extends Component {
                 console.log ("webview detected on timer");
                 this.webviewloadedSec ();
             }
-          }, 250
+          }, 30000
           );
       }
       
