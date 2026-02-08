@@ -409,8 +409,6 @@ if __name__ == "__main__":
         if sys.argv[1] == "--debug":
             debugihm = True
 
-    
-
     print("start html=", entry)
     load_parameters()
     
@@ -432,7 +430,7 @@ if __name__ == "__main__":
         print ("starting Windows GUI")
         webview.start(delete_splash, http_server=False, debug=debugihm)
     elif (platform.system() == "Linux"):
-        #set QT_QPA_PLATFORM on UBUNTU
+        
         if getattr(sys, 'frozen', False):
             
             if ('QT_QPA_PLATFORM' in os.environ):
@@ -440,10 +438,11 @@ if __name__ == "__main__":
                 print ("starting Linux GUI QT with configured QT_QPA_PLATFORM")
                 webview.start(delete_splash, gui="qt", http_server=False, debug=debugihm)
             else:
+                #set QT_QPA_PLATFORM 
                 print ("QT_QPA_PLATFORM=<empty>")
                 print ("try to resolve with XDG_SESSION_TYPE")
-                #plugin = 'xcb'
-                plugin = 'wayland'
+                plugin = 'xcb'
+                #plugin = 'wayland'
                 if ('XDG_SESSION_TYPE' in os.environ):             
                     if (os.environ['XDG_SESSION_TYPE'] == 'wayland'):
                         plugin = 'wayland'
@@ -455,6 +454,6 @@ if __name__ == "__main__":
                 
         else :
             print ("starting  GUI QT dev environment")
-            webview.start(delete_splash, gui="qt", http_server=True, debug=debugihm)
+            webview.start(delete_splash, gui="qt", http_server=debugihm, debug=debugihm)
 
     
