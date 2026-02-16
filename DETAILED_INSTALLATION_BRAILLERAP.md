@@ -162,6 +162,12 @@ Building AccessBrailleRAP from its source code requires a basic understanding of
     (venv) usertest@debiantest:~/AccessBrailleRAP$
     ```
 
+12. **Run AccessBrailleRAP**
+    ```bash
+    usertest@debiantest:~$accessbraillerap-debian &
+    ```
+
+    ![](./screenshots/screenshot-access-debian.png)
 ### 1.3. For Linux (Debian based systems)
 
 **Prerequisites:**
@@ -249,7 +255,7 @@ Building AccessBrailleRAP from its source code requires a basic understanding of
     (Replace `<package-name>.deb` with the actual file name, e.g., `accessbraillerap_1.0.0_amd64.deb`).
 
     *(Screenshot: Example of `dpkg` command and successful installation output)*
-    
+
     ```bash
     sudo dpkg -i ./dist/accessbraillerap-debian-0.8.1.deb 
     [sudo] password for usertest: 
@@ -263,6 +269,8 @@ Building AccessBrailleRAP from its source code requires a basic understanding of
     Processing triggers for desktop-file-utils (0.28-1) ...
     (venv) usertest@debiantest:~/AccessBrailleRAP$
     ```
+   
+
 ### 1.4. For Raspberry Pi 4 (Raspberry Pi OS - Debian Bookworm 64-bit)
 
 **Prerequisites:**
@@ -423,4 +431,3 @@ When using a BrailleRAP embosser with AccessBrailleRAP on Linux, your user accou
 
 3. **Log out and log back in:** This is necessary for the group changes to take effect.
 
-*(Screenshot: Terminal output of `sudo usermod` command)*
