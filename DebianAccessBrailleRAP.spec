@@ -12,7 +12,7 @@ a = Analysis(
     runtime_hooks=[],
     excludes=[],
     noarchive=False,
-    optimize=0,
+    optimize=0
 )
 pyz = PYZ(a.pure)
 splash = Splash(
