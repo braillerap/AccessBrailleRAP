@@ -12,19 +12,19 @@ AccessBrailleRAP use several open source licensed software:
 ## Releases
 We provide pre-built binaries for Windows and Linux. See [releases](https://github.com/BrailleRAP/AccessBrailleRAP/releases) for more information.
 
-AccessBrailleRAP depends on glibc version. Unfortunately recent Debian and Ubuntu distribution are not using exactly the same. 
+AccessBrailleRAP depends on glibc version. Unfortunately Debian12 and Ubuntu24 distribution are not using exactly the same. 
 If your are using Debian12 or a derivate distribution, use desktopbraillerap-debian. 
 If you are using Ubuntu24.04 or a derivate distribution, use desktopbraillerap-ubuntu
 
-[![auto_build_for_debian](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml)
+[![auto_build_for_debian 12](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml)
 
-[![auto_build_for_ubuntu](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml)
+[![auto_build_for_ubuntu 24](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml)
 
 
 To use the BrailleRAP embosser from Linux, the user need permission to use the serial port. This generaly mean that your user need to be in the dialout group.
 
 ## LibLouis
-AccessBrailleRAP use liblouis to translate text into Braille. You can select the Braille language (English, French...), contracted or uncontacted Braille, and 6 dots or 8 Dots Braille standard.
+AccessBrailleRAP use liblouis to translate text into Braille. You can select the Braille language (English, French...), contracted or uncontacted Braille, and 6 dots or 8 Dots Braille standards.
 The original version of liblouis is available here [https://github.com/liblouis/liblouis](https://github.com/liblouis/liblouis)
 The modified version for react.js is available here [https://github.com/crocsg/liblouis](https://github.com/crocsg/liblouis)
 The module for react.js is available here [https://github.com/crocsg/liblouisreact](https://github.com/crocsg/liblouisreact)
@@ -124,6 +124,6 @@ You can use Docker configuration to build AccessBrailleRAP for a Linux distribut
 
 Docker configuration to build AccessBrailleRAP for Debian or Ubuntu are available here:
 
-[Debian](https://github.com/braillerap/BuildAccessBrailleRAPDebian)
+[Debian 12](https://github.com/braillerap/BuildAccessBrailleRAPDebian)
 
-[Ubuntu](https://github.com/braillerap/BuildAccessBrailleRAPLinux)
+[Ubuntu 24](https://github.com/braillerap/BuildAccessBrailleRAPLinux)
