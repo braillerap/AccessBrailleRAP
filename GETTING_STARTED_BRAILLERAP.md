@@ -80,7 +80,7 @@ Once AccessBrailleRAP is successfully installed and running, you're ready to sta
    * Make any necessary adjustments you need, and the changes will automatically be applied.
      ![](/Users/jonmcgreevy/Library/Application%20Support/marktext/images/2026-01-30-02-43-27-image.png)
      6* **Connect Your BrailleRAP Embosser:**
-   - Ensure your BrailleRAP embosser is powered on and correctly connected to your computer via a USB or serial cable.
+   - Ensure your BrailleRAP embosser is powered on and correctly connected to your computer via a USB cable.
    * Load the appropriate Braille paper into your embosser.
 
 6. **Print to BrailleRAP Embosser:**
@@ -88,7 +88,7 @@ Once AccessBrailleRAP is successfully installed and running, you're ready to sta
    * Click the **'Printing'** button at the top of the page
    * Check your Braille is formatted and translated correctly
    * Click the **'Print'** button. This will send the Braille data directly to your connected BrailleRAP device.
-   * The embosser should then begin printing your Braille document.
+   * The embosser then begin printing your Braille document.
 
 ### Serial Port Permissions (Linux Specific)
 

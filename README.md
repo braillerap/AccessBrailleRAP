@@ -56,17 +56,17 @@ AccessBrailleRAP is licensed under GNU GPL V3.
 - Translate word document into Braille
 - Emboss Braille on BrailleRAP embosser
 
-## Screenshot
+## Screenshots
 
-![](./screenshot.jpg)
+![](./screenshots/screenshot.jpg)
 
-![](./screenshot1.jpg)
+![](./screenshots/screenshot1.jpg)
 
-![](./screenshot-1.jpg)
+![](./screenshots/screenshot-1.jpg)
 
-![](./screenshot1-1.jpg)
+![](./screenshots/screenshot1-1.jpg)
 
-![](./screenshot2.jpg)
+![](./screenshots/screenshot2.jpg)
 
 ## User Manual
 the user manual is available here : [https://accessbraillerap.readthedocs.io/fr/latest/](https://accessbraillerap.readthedocs.io/en/latest/)
