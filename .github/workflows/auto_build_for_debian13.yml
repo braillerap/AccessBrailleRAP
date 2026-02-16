@@ -3,8 +3,8 @@ name: auto_build_for_debian13
 
 on:
   
-    #release:
-    #  types: [published]
+    release:
+      types: [published]
     workflow_dispatch: 
     
 jobs:
@@ -36,13 +36,13 @@ jobs:
        run: |
          ls -lah ./dist/*
     
-     #- name: Add to release
-     #  uses: svenstaro/upload-release-action@v2
-     #  with:
-     #        tag: ${{ github.ref }}
-     #        overwrite: true
-     #        file_glob: true
-     #        file: ./dist/accessbraillerap-debian-*
+     - name: Add to release
+       uses: svenstaro/upload-release-action@v2
+       with:
+             tag: ${{ github.ref }}
+             overwrite: true
+             file_glob: true
+             file: ./dist/accessbraillerap-debian13-*
 
      - name: Upload artifact
        uses: actions/upload-artifact@v4.3.3
