@@ -43,6 +43,7 @@ jobs:
              overwrite: true
              file_glob: true
              file: ./dist/accessbraillerap-debian-*
+             body: "Binary release for Debian 12"
 
      - name: Upload artifact
        uses: actions/upload-artifact@v4.3.3
