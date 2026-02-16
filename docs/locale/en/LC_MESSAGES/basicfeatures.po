@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-13 16:44+0000\n"
-"PO-Revision-Date: 2025-12-13 16:56+0000\n"
+"POT-Creation-Date: 2026-01-27 08:21+0000\n"
+"PO-Revision-Date: 2026-01-27 08:30+0000\n"
 "Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
 "Language-Team: English <https://translate.codeberg.org/projects/"
 "accessbraillerap_doc/manual_basicfeatures/en/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.3\n"
+"X-Generator: Weblate 5.15.2\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -145,13 +145,13 @@ msgid ""
 "donc être utile de saisir directement un petite quantité de caractères "
 "Braille."
 msgstr ""
-"When entering text, it can be helpful to insert Braille characters that will "
-"be directly integrated into the Braille transcription without modification. "
-"While the Braille alphabet is defined for text transcription, there are "
-"specific standards for certain applications such as music, chemistry, or "
-"mathematics. These standards are not currently supported by "
-"AccessBRailleRAP, so it can be useful to directly enter a small number of "
-"Braille characters."
+"When entering text, it can be helpful to insert Braille characters that "
+"will be directly integrated into the Braille transcription without "
+"modification. While the Braille alphabet is defined for text "
+"transcription, there are specific standards for certain applications such"
+" as music, chemistry, or mathematics. These standards are not currently "
+"supported by AccessBRailleRAP, so it can be useful to directly enter a "
+"small number of Braille characters."
 
 #: ../../basicfeatures.md:41
 msgid ""
@@ -162,17 +162,17 @@ msgid ""
 "avec uniquement le pont 1 (l'équivalent du 'a') :"
 msgstr ""
 "Braille character input uses Unicode character input, so the values are "
-"between x02800 and x02900. To enter these characters in the input area, you "
-"can use the `CTRL` key + <Unicode value>. For example, to enter a Braille "
-"character with only point 1 (the equivalent of 'a'):"
+"between x02800 and x02900. To enter these characters in the input area, "
+"you can use the `CTRL` key + <Unicode value>. For example, to enter a "
+"Braille character with only point 1 (the equivalent of 'a'):"
 
 #: ../../basicfeatures.md:43
 msgid ""
 "1 Appuyez sur la touche `CTRL` 2 Entrez la valeur 01 en appuyant sur 0 "
 "puis 1 3 Relâcher la touche `CTRL`"
 msgstr ""
-"1 Press the `CTRL` key. 2 Enter the value 01 by pressing 0 then 1. 3 Release "
-"the `CTRL` key"
+"1 Press the `CTRL` key. 2 Enter the value 01 by pressing 0 then 1. 3 "
+"Release the `CTRL` key"
 
 #: ../../basicfeatures.md:47
 msgid ""
@@ -189,12 +189,12 @@ msgid ""
 "regarde dans la table, le caractère *⠵* correspond à la valeur unicode "
 "0x2835. Pour entrer ce caractère, vous pouvez utiliser :"
 msgstr ""
-"You can find a [table of Unicode Braille characters]"
-"(https://en.wikipedia.org/wiki/Braille_Patterns) on Wikipedia. Braille "
-"character codes are given in hexadecimal, you only need to use the part "
-"greater than 0x2800. For example, if you look in the table, the character *⠵*"
-" corresponds to the Unicode value 0x2835. To enter this character, you can "
-"use:"
+"You can find a [table of Unicode Braille "
+"characters](https://en.wikipedia.org/wiki/Braille_Patterns) on Wikipedia."
+" Braille character codes are given in hexadecimal, you only need to use "
+"the part greater than 0x2800. For example, if you look in the table, the "
+"character *⠵* corresponds to the Unicode value 0x2835. To enter this "
+"character, you can use:"
 
 #: ../../basicfeatures.md:51
 msgid "`CTRL`+ 0x2835"
@@ -213,8 +213,8 @@ msgid ""
 "Vous pouvez également utiliser des valeur décimale. 0x2835 correspond à "
 "10293. vous pouvez donc entrer le caractère *⠵* en utilisant :"
 msgstr ""
-"You can also use decimal values. 0x2835 is equivalent to 10293. Therefore, "
-"you can enter the character *⠵* using:"
+"You can also use decimal values. 0x2835 is equivalent to 10293. "
+"Therefore, you can enter the character *⠵* using:"
 
 #: ../../basicfeatures.md:59
 msgid "`CTRL`+ 10293"
@@ -369,10 +369,48 @@ msgid "Cette valeur détermine la valeur de la marge en haut du document."
 msgstr "This determines the value of the top margin of the document."
 
 #: ../../basicfeatures.md:110
+msgid "Position maximum droite (mm)"
+msgstr "Maximum position on the right (mm)"
+
+#: ../../basicfeatures.md:111
+msgid ""
+"Cette valeur détermine la position maximale sur la droite de la feuille "
+"en impression paysage. Pour une feuille A4 environ 200 mm pour une "
+"feuille A3 environ 280 mm."
+msgstr ""
+"This value determines the maximum rightward position of the sheet in "
+"landscape printing. For an A4 sheet, approximately 200 mm. For an A3 sheet, "
+"approximately 280 mm."
+
+#: ../../basicfeatures.md:113
+msgid "Orientation"
+msgstr "Orientation"
+
+#: ../../basicfeatures.md:114
+msgid "Cette valeur détermine l'orientation de l'impression."
+msgstr "This value set the print orientation."
+
+#: ../../basicfeatures.md:115
+msgid ""
+"Portrait : Les lignes seront imprimées paralellement au bord haut de la "
+"feuille."
+msgstr "Portrait: Lines will be printed parallel to the top edge of the sheet."
+
+#: ../../basicfeatures.md:116
+msgid ""
+"Paysage : La lignes seront imprimées paralellement au bord droit de la "
+"feuille. La première ligne sera imprimée à la position **Position maximum"
+" droite (mm)**"
+msgstr ""
+"Landscape: The lines will be printed parallel to the right edge of the "
+"sheet. The first line will be printed at the **Maximum position on the right "
+"(mm)**"
+
+#: ../../basicfeatures.md:119
 msgid "Port de communication"
 msgstr "Communication port"
 
-#: ../../basicfeatures.md:111
+#: ../../basicfeatures.md:120
 msgid ""
 "Cette valeur désigne le port de communication utilisé pour la "
 "communication avec la BrailleRAP. Si vous avez branché la BrailleRAP "
@@ -384,19 +422,19 @@ msgstr ""
 "software, you can refresh the list of available communication ports by "
 "using the *Refresh* button."
 
-#: ../../basicfeatures.md:113
+#: ../../basicfeatures.md:122
 msgid "Langue de l'application"
 msgstr "Application language"
 
-#: ../../basicfeatures.md:114
+#: ../../basicfeatures.md:123
 msgid "Cette valeur permet de définir la langue de l'interface de l'application."
 msgstr "This value allows you to define the language of the application interface."
 
-#: ../../basicfeatures.md:116
+#: ../../basicfeatures.md:125
 msgid "Thème"
 msgstr "Theme"
 
-#: ../../basicfeatures.md:117
+#: ../../basicfeatures.md:126
 msgid ""
 "Cette valeur permet de définir le thème de l'interface de l'application, "
 "vous avez la possibilité de choisir entre une interface claire sur fond "
