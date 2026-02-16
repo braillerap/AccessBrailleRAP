@@ -43,8 +43,8 @@ jobs:
              overwrite: true
              file_glob: true
              file: ./dist/accessbraillerap-ubuntu-*
-             body: "Binary release for Ubuntu 24"
              
+
      - name: Upload artifact
        uses: actions/upload-artifact@v4.3.3
        with: 
