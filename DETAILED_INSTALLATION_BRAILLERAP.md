@@ -83,6 +83,8 @@ Building AccessBrailleRAP from its source code requires a basic understanding of
    
    ```bash
    sudo apt update
+   ```
+   ```bash
    sudo apt install -y git git-extras lintian python3-venv python3-pyqt6 python3-tk libqt6webchannel6 libqt6webview6
    ```
 
@@ -144,7 +146,21 @@ Building AccessBrailleRAP from its source code requires a basic understanding of
     
     (Replace `<package-name>.deb` with the actual file name, e.g., `accessbraillerap_1.0.0_amd64.deb`).
 
-*(Screenshot: Example of `dpkg` command and successful installation output)*
+    *(Screenshot: Example of `dpkg` command and successful installation output)*
+
+    ```bash
+    sudo dpkg -i ./dist/accessbraillerap-debian-0.8.1.deb 
+    [sudo] password for usertest: 
+    Selecting previously unselected package accessbraillerap-debian.
+    (Reading database ... 182615 files and directories currently installed.)
+    Preparing to unpack .../accessbraillerap-debian-0.8.1.deb ...
+    Unpacking accessbraillerap-debian (0.8.1) ...
+    Setting up accessbraillerap-debian (0.8.1) ...
+    Processing triggers for mailcap (3.74) ...
+    Processing triggers for gnome-menus (3.36.0-3) ...
+    Processing triggers for desktop-file-utils (0.28-1) ...
+    (venv) usertest@debiantest:~/AccessBrailleRAP$
+    ```
 
 ### 1.3. For Linux (Debian based systems)
 
@@ -219,20 +235,34 @@ Building AccessBrailleRAP from its source code requires a basic understanding of
     ```
     On Ubuntu based
     ```bash
-    npm run buildlinux
+    npm run buildubuntu
     ```
     The compiled `.deb` package will be found in the `dist` folder.
 
+   
 11. **Install the Debian Package:**
     
     ```bash
     sudo dpkg -i <package-name>.deb
     ```
-    
+   
     (Replace `<package-name>.deb` with the actual file name, e.g., `accessbraillerap_1.0.0_amd64.deb`).
 
-*(Screenshot: Example of `dpkg` command and successful installation output)*
-
+    *(Screenshot: Example of `dpkg` command and successful installation output)*
+    
+    ```bash
+    sudo dpkg -i ./dist/accessbraillerap-debian-0.8.1.deb 
+    [sudo] password for usertest: 
+    Selecting previously unselected package accessbraillerap-debian.
+    (Reading database ... 182615 files and directories currently installed.)
+    Preparing to unpack .../accessbraillerap-debian-0.8.1.deb ...
+    Unpacking accessbraillerap-debian (0.8.1) ...
+    Setting up accessbraillerap-debian (0.8.1) ...
+    Processing triggers for mailcap (3.74) ...
+    Processing triggers for gnome-menus (3.36.0-3) ...
+    Processing triggers for desktop-file-utils (0.28-1) ...
+    (venv) usertest@debiantest:~/AccessBrailleRAP$
+    ```
 ### 1.4. For Raspberry Pi 4 (Raspberry Pi OS - Debian Bookworm 64-bit)
 
 **Prerequisites:**
