@@ -13,9 +13,11 @@ AccessBrailleRAP use several open source licensed software:
 We provide pre-built binaries for Windows and Linux. See [releases](https://github.com/BrailleRAP/AccessBrailleRAP/releases) for more information.
 
 AccessBrailleRAP depends on glibc version. Unfortunately Debian12 and Ubuntu24 distribution are not using exactly the same. 
-If your are using Debian13 or a derivate distribution, use accessbraillerap-debian13. 
-If your are using Debian12 or a derivate distribution, use accessbraillerap-debian. 
-If you are using Ubuntu24.04 or a derivate distribution, use accessbraillerap-ubuntu
+
+  - If your are using Debian13 or a derivate distribution, use accessbraillerap-debian13.
+  - If your are using Debian12 or a derivate distribution, use accessbraillerap-debian. 
+  - If you are using Ubuntu24.04 or a derivate distribution, use accessbraillerap-ubuntu.
+  
 
 [![auto_build_for_debian 13](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian13.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian13.yml)
 
