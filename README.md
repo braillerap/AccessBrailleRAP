@@ -26,7 +26,7 @@ AccessBrailleRAP depends on glibc version. Unfortunately Debian12 and Ubuntu24 d
 [![auto_build_for_ubuntu 24](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml)
 
 
-To use the BrailleRAP embosser from Linux, the user need permission to use the serial port. This generaly mean that your user need to be in the dialout group.
+To use the BrailleRAP embosser from Linux, the user need permission to use the serial port. This generaly mean that your user need to be in the **dialout** group.
 
 ## LibLouis
 AccessBrailleRAP use liblouis to translate text into Braille. You can select the Braille language (English, French...), contracted or uncontacted Braille, and 6 dots or 8 Dots Braille standards.
