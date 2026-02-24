@@ -131,4 +131,6 @@ Docker configuration to build AccessBrailleRAP for Debian or Ubuntu are availabl
 
 [Debian 12](https://github.com/braillerap/BuildAccessBrailleRAPDebian)
 
+[Debian 13](https://github.com/braillerap/BuildAccessBrailleRAPDebian13)
+
 [Ubuntu 24](https://github.com/braillerap/BuildAccessBrailleRAPLinux)
