@@ -51,22 +51,16 @@ class BrailleTranslatorLouis extends BrailleTranslator{
         //console.log (this.braille_lines);
         return (this.braille_lines);
     }
-    
-    
-    
 
     translate (reverse)
     {
-        //console.log (this.src);
         // split lines
         let lines = this.src.split (/(\r?\n|\f)/)
-        //this.lines = this.src.split (/(\r?\n)/)
-        //console.log (lines);
+
         // remove cr / lf
         this.lines =[]
         for (let i = 0; i < lines.length; i++)
         {
-            //this.lines[i] = this.lines[i].replace (/(\r?\n)/, "");
             if (lines[i] !== "\n")
                 this.lines.push (lines[i]);
         }
@@ -85,7 +79,6 @@ class BrailleTranslatorLouis extends BrailleTranslator{
                 
                 if (line[i] == "\f")
                 {
-                    //console.log ("formfeed");
                     formfeed = true;
                     formfeed_pos = i;
                 }
@@ -94,17 +87,13 @@ class BrailleTranslatorLouis extends BrailleTranslator{
                 this.braille_lines[i] = '\f'
             else
             {
-                //console.log ("t>" + line);
+
                 this.braille_lines[i] = this.louis.unicode_translate_string(line, this.louis_tbl);
             }
             
             if (reverse) // some language : ie ARABIC are ltr language but RTL in Braille
                 this.braille_lines[i] = this.#reverse_string (this.braille_lines[i] );
-            
         }
-
-        //console.log (this.braille_lines);
-
     }
     #reverse_string (str)
     {
