@@ -6,7 +6,7 @@ If you are looking for the quickest way to get started, please refer to the "Ins
 ## Features
 
   - Translate text into Braille.
-  - Translate word document into Braille with 200 Braille standards.
+  - Translate text document into Braille with 200 Braille standards.
   - Emboss Braille on BrailleRAP embosser.
   - Multi languages GUI.
 
@@ -21,9 +21,7 @@ If you are looking for the quickest way to get started, please refer to the "Ins
   
 
   [![auto_build_for_debian 13](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian13.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian13.yml)
-
   [![auto_build_for_debian 12](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_debian.yml)
-
   [![auto_build_for_ubuntu 24](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml/badge.svg?event=release)](https://github.com/braillerap/AccessBrailleRAP/actions/workflows/auto_build_for_ubuntu.yml)
 
 
@@ -62,14 +60,14 @@ GUI translation files are available [on codeberg weblate host](https://translate
 
 
 <a href="https://translate.codeberg.org/engage/accessbraillerap_translate/">
-<img src="https://translate.codeberg.org/widget/accessbraillerap_translate/ihm/multi-auto.svg" alt="Software translation status" width="50%"/>
+<img src="https://translate.codeberg.org/widget/accessbraillerap_translate/ihm/multi-auto.svg" alt="Software translation status" width="40%"/>
 </a>
 
 ### User manual
 User manual translation files are available [on codeberg weblate host](https://translate.codeberg.org/projects/accessbraillerap_doc/) . Some languages are partially translated , we are looking for contributors to complete and check them.    
 
 <a href="https://translate.codeberg.org/engage/accessbraillerap_doc/">
-<img src="https://translate.codeberg.org/widget/accessbraillerap_doc/multi-auto.svg" alt="User manual translation status" width="50%"/>
+<img src="https://translate.codeberg.org/widget/accessbraillerap_doc/multi-auto.svg" alt="User manual translation status" width="40%"/>
 </a>
 
 
@@ -81,13 +79,13 @@ This project is funded through [NGI0 Entrust](https://nlnet.nl/entrust), a fund 
 
 ## License
 
-AccessBrailleRAP is licensed under GNU GPL V3.
+  AccessBrailleRAP is licensed under GNU GPL V3.
 
-AccessBrailleRAP use several open source licensed software:
-- liblouisreact, a liblouis version slightly modified to run in react.js environnement.
-- liblouis 
-- pandoc
-- pywebview
+  AccessBrailleRAP use several open source licensed software:
+  - liblouisreact, a liblouis version slightly modified to run in react.js environnement.
+  - liblouis 
+  - pandoc
+  - pywebview
 
   ### LibLouis
   AccessBrailleRAP use **liblouis** to translate text into Braille. You can select the Braille language (English, French...), contracted or uncontacted Braille, and 6 dots or 8 Dots Braille standards.
@@ -114,17 +112,18 @@ AccessBrailleRAP use several open source licensed software:
 
 ## Building from source for Windows, Linux or Raspberry
 
-Thanks to [Thatwriterjon](https://github.com/Thatwriterjon) we have a [comprehensive building manual](DETAILED_INSTALLATION_BRAILLERAP.md) for various systems. 
+
+  Thanks to [Thatwriterjon](https://github.com/Thatwriterjon) we have a [comprehensive building manual](DETAILED_INSTALLATION_BRAILLERAP.md) for various systems. 
 
 
 ## Building from source for Linux using Docker
 
-You can use Docker configuration to build AccessBrailleRAP for a Linux distribution. 
+  You can use Docker configuration to build AccessBrailleRAP for a Linux distribution. 
 
-Docker configuration to build AccessBrailleRAP for Debian or Ubuntu are available here:
+  Docker configuration to build AccessBrailleRAP for Debian or Ubuntu are available here:
 
-[Debian 12](https://github.com/braillerap/BuildAccessBrailleRAPDebian)
+  [Debian 12](https://github.com/braillerap/BuildAccessBrailleRAPDebian)
 
-[Debian 13](https://github.com/braillerap/BuildAccessBrailleRAPDebian13)
+  [Debian 13](https://github.com/braillerap/BuildAccessBrailleRAPDebian13)
 
-[Ubuntu 24](https://github.com/braillerap/BuildAccessBrailleRAPLinux)
+  [Ubuntu 24](https://github.com/braillerap/BuildAccessBrailleRAPLinux)
