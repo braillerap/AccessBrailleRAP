@@ -108,7 +108,7 @@ AccessBrailleRAP use several open source licensed software:
 
   AccessBrailleRAP use pywebview to display the react.js GUI embedded in Python backend.
   Pywebview is a cross-platform wrapper around the webview library.
-  The original version of pywebview is available here [https://github.com/r0x0/pywebview](https://github.com/r0x0/pywebview)
+  The original version of pywebview is available here [https://github.com/r0x0r/pywebview](https://github.com/r0x0r/pywebview)
 
   pywebview is licensed under MIT.
 
