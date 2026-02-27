@@ -81,7 +81,7 @@ Lors de la saisie d'un texte, il peut être utile d'insérer des caractères Bra
   
   `CTRL`+ 0b + 12 pour obtenir **⠃**
   
-  vous pouvez également saisir sur Braille 8 points. !!! Attention il faut que ce soit cohérent avec le reste du document.
+  vous pouvez également saisir du Braille 8 points. !!! Attention il faut que ce soit cohérent avec le reste du document la hauteur des cellules Braille est définie par le standard Braille indiqué dans les paramètres.
   
   `CTRL`+ 0b + 12347 pour obtenir **⡏**
   
