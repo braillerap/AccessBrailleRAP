@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.7.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-27 20:20+0000\n"
-"PO-Revision-Date: 2026-01-27 08:30+0000\n"
+"PO-Revision-Date: 2026-02-27 20:37+0000\n"
 "Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
+"Language-Team: English <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_basicfeatures/en/>\n"
 "Language: en\n"
-"Language-Team: English "
-"<https://translate.codeberg.org/projects/accessbraillerap_doc/manual_basicfeatures/en/>"
-"\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -135,7 +135,6 @@ msgid "Utilisation de caractères spéciaux dans la zone de saisie"
 msgstr "Using special characters in the input area"
 
 #: ../../basicfeatures.md:39
-#, fuzzy
 msgid ""
 "Lors de la saisie d'un texte, il peut être utile d'insérer des caractères"
 " Braille qui seront directement intégrés à la transcription Braille sans "
@@ -147,20 +146,20 @@ msgid ""
 "Braille. Vous pouvez utiliser la saisie **unicode** ou bien la saisie "
 "directe de point Braille."
 msgstr ""
-"When entering text, it can be helpful to insert Braille characters that "
-"will be directly integrated into the Braille transcription without "
-"modification. While the Braille alphabet is defined for text "
-"transcription, there are specific standards for certain applications such"
-" as music, chemistry, or mathematics. These standards are not currently "
-"supported by AccessBRailleRAP, so it can be useful to directly enter a "
-"small number of Braille characters."
+"When entering text, it can be helpful to insert Braille characters that will "
+"be directly integrated into the Braille transcription without modification. "
+"While the Braille alphabet is defined for text transcription, there are "
+"specific standards for certain applications such as music, chemistry, or "
+"mathematics. These standards are not currently supported by "
+"AccessBrailleRAP, so it can be useful to directly enter a small number of "
+"Braille characters. You can use **UNICODE** input or direct Braille dots "
+"number."
 
 #: ../../basicfeatures.md:41
 msgid "Saisie UNICODE:"
-msgstr ""
+msgstr "UNICODE input:"
 
 #: ../../basicfeatures.md:42
-#, fuzzy
 msgid ""
 "La saisie de caractère Braille utilise la saisie de caractères unicode, "
 "dont les valeurs sont comprisent entre x02800 et 0x02900. Pour entrer ces"
@@ -169,18 +168,17 @@ msgid ""
 "avec uniquement le pont 1 (l'équivalent du 'a') :"
 msgstr ""
 "Braille character input uses Unicode character input, so the values are "
-"between x02800 and x02900. To enter these characters in the input area, "
-"you can use the `CTRL` key + <Unicode value>. For example, to enter a "
-"Braille character with only point 1 (the equivalent of 'a'):"
+"between x02800 and x02900. To enter these characters in the input area, you "
+"can use the `CTRL` key + <Unicode value>. For example, to enter a Braille "
+"character with only point 1 (the equivalent of 'a'):"
 
 #: ../../basicfeatures.md:46
-#, fuzzy
 msgid ""
 "1 Appuyez sur la touche `CTRL`   2 Entrez la valeur 01 en appuyant sur 0 "
 "puis 1   3 Relâcher la touche `CTRL`"
 msgstr ""
-"1 Press the `CTRL` key. 2 Enter the value 01 by pressing 0 then 1. 3 "
-"Release the `CTRL` key"
+"1 Press the `CTRL` key. 2 Enter the value 01 by pressing 0 then 1. 3 Release "
+"the `CTRL` key"
 
 #: ../../basicfeatures.md:50
 msgid ""
@@ -240,7 +238,7 @@ msgstr "Note that to use a hexadecimal code, you must prefix the value with 0x"
 
 #: ../../basicfeatures.md:70
 msgid "Saisie directe des points Braille"
-msgstr ""
+msgstr "Direct input of Braille dots number"
 
 #: ../../basicfeatures.md:71
 msgid ""
@@ -250,6 +248,10 @@ msgid ""
 "Braille présent sur le caractère. Pour utiliser la saisie directe, vous "
 "devez utiliser le préfixe **'0b'**."
 msgstr ""
+"Direct Braille dot entry follows the same principle as Unicode input, but "
+"instead of entering the Unicode value corresponding to the desired "
+"character, you can enter the Braille dot numbers present on the character. "
+"To use direct entry, you must use the prefix **'0b'**."
 
 #: ../../basicfeatures.md:73
 msgid ""
@@ -259,22 +261,26 @@ msgid ""
 "puis les points souhaitez 234 et enfin vous allez relacher la touche "
 "`CTRL`."
 msgstr ""
+"For example, if you want to type an **s**, the Braille character is **⠎**, "
+"which is dots 2-3-4. To obtain this character, you will press the `CTRL` "
+"key, then without releasing it, enter the prefix 0b, then the desired dots "
+"234, and finally release the `CTRL` key."
 
 #: ../../basicfeatures.md:76
 msgid "donc:"
-msgstr ""
+msgstr "SO:"
 
 #: ../../basicfeatures.md:78
 msgid "`CTRL`+ 0b + 234 pour obtenir **⠎**"
-msgstr ""
+msgstr "`CTRL`+ 0b + 234 to add **⠎**"
 
 #: ../../basicfeatures.md:80
 msgid "`CTRL`+ 0b + 1234 pour obtenir **⠏**"
-msgstr ""
+msgstr "`CTRL`+ 0b + 1234 to add **⠏**"
 
 #: ../../basicfeatures.md:82
 msgid "`CTRL`+ 0b + 12 pour obtenir **⠃**"
-msgstr ""
+msgstr "`CTRL`+ 0b + 12 to add **⠃**"
 
 #: ../../basicfeatures.md:84
 msgid ""
@@ -282,10 +288,13 @@ msgid ""
 "que ce soit cohérent avec le reste du document la hauteur des cellules "
 "Braille est définie par le standard Braille indiqué dans les paramètres."
 msgstr ""
+"You can also enter 8-point Braille. !!! Note that it must be consistent with "
+"the rest of the document; the height of the Braille cells is defined by the "
+"Braille standard specified in the settings."
 
 #: ../../basicfeatures.md:86
 msgid "`CTRL`+ 0b + 12347 pour obtenir **⡏**"
-msgstr ""
+msgstr "`CTRL`+ 0b + 12347 to add **⡏**"
 
 #: ../../basicfeatures.md:92
 msgid ""
@@ -468,7 +477,6 @@ msgid "Port de communication"
 msgstr "Communication port"
 
 #: ../../basicfeatures.md:142
-#, fuzzy
 msgid ""
 "Cette valeur désigne le port de communication utilisé pour la "
 "communication avec la BrailleRAP. Si vous avez branché la BrailleRAP "
@@ -477,8 +485,8 @@ msgid ""
 msgstr ""
 "This value specifies the communication port used for communication with "
 "BrailleRAP. If you have connected the BrailleRAP after launching the "
-"software, you can refresh the list of available communication ports by "
-"using the *Refresh* button."
+"software, you can refresh the list of available communication ports by using "
+"the **Refresh** button."
 
 #: ../../basicfeatures.md:144
 msgid "Langue de l'application"
@@ -501,4 +509,3 @@ msgstr ""
 "This value allows you to define the theme of the application interface, "
 "you have the option to choose between a light interface on a dark "
 "background or a dark interface on a light background."
-
