@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-27 20:20+0000\n"
-"PO-Revision-Date: 2026-01-27 08:30+0000\n"
+"PO-Revision-Date: 2026-02-28 11:00+0000\n"
 "Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
+"Language-Team: Greek <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_basicfeatures/el/>\n"
 "Language: el\n"
-"Language-Team: Greek "
-"<https://translate.codeberg.org/projects/accessbraillerap_doc/manual_basicfeatures/el/>"
-"\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -145,7 +145,6 @@ msgid "Utilisation de caractères spéciaux dans la zone de saisie"
 msgstr "Χρήση ειδικών χαρακτήρων στην περιοχή εισαγωγής"
 
 #: ../../basicfeatures.md:39
-#, fuzzy
 msgid ""
 "Lors de la saisie d'un texte, il peut être utile d'insérer des caractères"
 " Braille qui seront directement intégrés à la transcription Braille sans "
@@ -157,20 +156,20 @@ msgid ""
 "Braille. Vous pouvez utiliser la saisie **unicode** ou bien la saisie "
 "directe de point Braille."
 msgstr ""
-"Κατά την εισαγωγή κειμένου, μπορεί να είναι χρήσιμο να εισαγάγετε "
-"χαρακτήρες Braille που θα ενσωματωθούν απευθείας στη μεταγραφή Braille "
-"χωρίς τροποποίηση. Ενώ το αλφάβητο Braille έχει οριστεί για τη μεταγραφή "
-"κειμένου, υπάρχουν συγκεκριμένα πρότυπα για ορισμένες εφαρμογές όπως η "
-"μουσική, η χημεία ή τα μαθηματικά. Αυτά τα πρότυπα δεν υποστηρίζονται "
-"προς το παρόν από το AccessBRailleRAP, επομένως μπορεί να είναι χρήσιμο "
-"να εισαγάγετε απευθείας έναν μικρό αριθμό χαρακτήρων Braille."
+"Κατά την εισαγωγή κειμένου, μπορεί να είναι χρήσιμο να εισαγάγετε χαρακτήρες "
+"Braille που θα ενσωματωθούν απευθείας στη μεταγραφή Braille χωρίς "
+"τροποποίηση. Ενώ το αλφάβητο Braille έχει οριστεί για τη μεταγραφή κειμένου, "
+"υπάρχουν συγκεκριμένα πρότυπα για ορισμένες εφαρμογές όπως η μουσική, η "
+"χημεία ή τα μαθηματικά. Αυτά τα πρότυπα δεν υποστηρίζονται προς το παρόν από "
+"το AccessBRailleRAP, επομένως μπορεί να είναι χρήσιμο να εισαγάγετε "
+"απευθείας έναν μικρό αριθμό χαρακτήρων Braille. Μπορείτε να χρησιμοποιήσετε "
+"**UNICODE** ή άμεση εισαγωγή κουκκίδων Braille."
 
 #: ../../basicfeatures.md:41
 msgid "Saisie UNICODE:"
-msgstr ""
+msgstr "Καταχώρηση UNICODE:"
 
 #: ../../basicfeatures.md:42
-#, fuzzy
 msgid ""
 "La saisie de caractère Braille utilise la saisie de caractères unicode, "
 "dont les valeurs sont comprisent entre x02800 et 0x02900. Pour entrer ces"
@@ -179,14 +178,12 @@ msgid ""
 "avec uniquement le pont 1 (l'équivalent du 'a') :"
 msgstr ""
 "Η εισαγωγή χαρακτήρων Braille χρησιμοποιεί εισαγωγή χαρακτήρων Unicode, "
-"επομένως οι τιμές είναι μεταξύ x02800 και x02900. Για να εισαγάγετε "
-"αυτούς τους χαρακτήρες στην περιοχή εισαγωγής, μπορείτε να "
-"χρησιμοποιήσετε το πλήκτρο `CTRL` + <Τιμή Unicode>. Για παράδειγμα, για "
-"να εισαγάγετε έναν χαρακτήρα Braille μόνο με σημείο 1 (το ισοδύναμο του "
-"'a'):"
+"επομένως οι τιμές είναι μεταξύ x02800 και x02900. Για να εισαγάγετε αυτούς "
+"τους χαρακτήρες στην περιοχή εισαγωγής, μπορείτε να χρησιμοποιήσετε το "
+"πλήκτρο `CTRL` + <Τιμή Unicode>. Για παράδειγμα, για να εισαγάγετε έναν "
+"χαρακτήρα Braille μόνο με σημείο 1 (το ισοδύναμο του 'a'):"
 
 #: ../../basicfeatures.md:46
-#, fuzzy
 msgid ""
 "1 Appuyez sur la touche `CTRL`   2 Entrez la valeur 01 en appuyant sur 0 "
 "puis 1   3 Relâcher la touche `CTRL`"
@@ -258,7 +255,7 @@ msgstr ""
 
 #: ../../basicfeatures.md:70
 msgid "Saisie directe des points Braille"
-msgstr ""
+msgstr "Άμεση εισαγωγή σημείου Braille"
 
 #: ../../basicfeatures.md:71
 msgid ""
@@ -268,6 +265,11 @@ msgid ""
 "Braille présent sur le caractère. Pour utiliser la saisie directe, vous "
 "devez utiliser le préfixe **'0b'**."
 msgstr ""
+"Η άμεση εισαγωγή κουκκίδων Braille ακολουθεί την ίδια αρχή με την εισαγωγή "
+"Unicode, αλλά αντί να εισαγάγετε την τιμή Unicode που αντιστοιχεί στον "
+"επιθυμητό χαρακτήρα, μπορείτε να εισαγάγετε τους αριθμούς κουκκίδων Braille "
+"που υπάρχουν στον χαρακτήρα. Για να χρησιμοποιήσετε την άμεση εισαγωγή, "
+"πρέπει να χρησιμοποιήσετε το πρόθεμα **'0b'**."
 
 #: ../../basicfeatures.md:73
 msgid ""
@@ -277,22 +279,27 @@ msgid ""
 "puis les points souhaitez 234 et enfin vous allez relacher la touche "
 "`CTRL`."
 msgstr ""
+"Για παράδειγμα, αν θέλετε να πληκτρολογήσετε ένα **s**, ο χαρακτήρας Braille "
+"είναι **⠎**, που είναι οι τελείες 2-3-4. Για να λάβετε αυτόν τον χαρακτήρα, "
+"θα πατήσετε το πλήκτρο `CTRL`, στη συνέχεια, χωρίς να το αφήσετε, θα "
+"εισαγάγετε το πρόθεμα 0b, έπειτα τις επιθυμητές τελείες 234 και τέλος θα "
+"αφήσετε το πλήκτρο `CTRL`."
 
 #: ../../basicfeatures.md:76
 msgid "donc:"
-msgstr ""
+msgstr "ΕΤΣΙ:"
 
 #: ../../basicfeatures.md:78
 msgid "`CTRL`+ 0b + 234 pour obtenir **⠎**"
-msgstr ""
+msgstr "`CTRL`+ 0b + 234 για να λάβετε **⠎**"
 
 #: ../../basicfeatures.md:80
 msgid "`CTRL`+ 0b + 1234 pour obtenir **⠏**"
-msgstr ""
+msgstr "`CTRL`+ 0b + 1234 για να λάβετε **⠏**"
 
 #: ../../basicfeatures.md:82
 msgid "`CTRL`+ 0b + 12 pour obtenir **⠃**"
-msgstr ""
+msgstr "`CTRL`+ 0b + 12 για να λάβετε **⠃**"
 
 #: ../../basicfeatures.md:84
 msgid ""
@@ -300,10 +307,13 @@ msgid ""
 "que ce soit cohérent avec le reste du document la hauteur des cellules "
 "Braille est définie par le standard Braille indiqué dans les paramètres."
 msgstr ""
+"Μπορείτε επίσης να εισαγάγετε γραφή Braille 8 σημείων. !!! Σημειώστε ότι "
+"πρέπει να είναι συμβατή με το υπόλοιπο έγγραφο. Το ύψος των κελιών Braille "
+"ορίζεται από το πρότυπο Braille που καθορίζεται στις ρυθμίσεις."
 
 #: ../../basicfeatures.md:86
 msgid "`CTRL`+ 0b + 12347 pour obtenir **⡏**"
-msgstr ""
+msgstr "`CTRL`+ 0b + 12347 για να λάβετε **⡏**"
 
 #: ../../basicfeatures.md:92
 msgid ""
@@ -496,18 +506,16 @@ msgid "Port de communication"
 msgstr "Θύρα επικοινωνίας"
 
 #: ../../basicfeatures.md:142
-#, fuzzy
 msgid ""
 "Cette valeur désigne le port de communication utilisé pour la "
 "communication avec la BrailleRAP. Si vous avez branché la BrailleRAP "
 "après le lancement du logiciel, vous pouvez rafraichir la liste des ports"
 " de communication disponible en utilisant le bouton **Actualiser**."
 msgstr ""
-"Αυτή η τιμή προσδιορίζει τη θύρα επικοινωνίας που χρησιμοποιείται για την"
-" επικοινωνία με τον BrailleRAP. Εάν έχετε συνδέσει τον εκτυπωτή "
-"BrailleRAP, αφού έχετε εκκινήσει το λογισμικό, μπορείτε να κάνετε "
-"ανανέωση της λίστας των διαθέσιμων θυρών επικοινωνίας κάνοντας κλικ στο "
-"κουμπί *Ανανέωση*."
+"Αυτή η τιμή προσδιορίζει τη θύρα επικοινωνίας που χρησιμοποιείται για την "
+"επικοινωνία με τον BrailleRAP. Εάν έχετε συνδέσει τον εκτυπωτή BrailleRAP, "
+"αφού έχετε εκκινήσει το λογισμικό, μπορείτε να κάνετε ανανέωση της λίστας "
+"των διαθέσιμων θυρών επικοινωνίας κάνοντας κλικ στο κουμπί *Ανανέωση*."
 
 #: ../../basicfeatures.md:144
 msgid "Langue de l'application"
@@ -533,4 +541,3 @@ msgstr ""
 "περιβάλλοντος της εφαρμογής. Έχετε την επιλογή να διαλέξετε μεταξύ ενός "
 "φωτεινού περιβάλλοντος με σκούρο φόντο, ή ενός σκοτεινού περιβάλλοντος με"
 " φωτεινό φόντο."
-
