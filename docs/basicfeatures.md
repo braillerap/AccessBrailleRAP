@@ -36,33 +36,55 @@ Affiche une boîte de dialogue qui permet de sélectionner un fichier à importe
 
 ### Utilisation de caractères spéciaux dans la zone de saisie
 
-Lors de la saisie d'un texte, il peut être utile d'insérer des caractères Braille qui seront directement intégrés à la transcription Braille sans modification. En effet si l'alphabet Braille est défini pour la transcription de texte, il existe des standards particuliers à certains usages comme la musique, la chimie ou les mathématiques. Ces standards ne sont pour l'instant pas pris en charge par AccessBRailleRAP, il peut donc être utile de saisir directement un petite quantité de caractères Braille. 
+Lors de la saisie d'un texte, il peut être utile d'insérer des caractères Braille qui seront directement intégrés à la transcription Braille sans modification. En effet si l'alphabet Braille est défini pour la transcription de texte, il existe des standards particuliers à certains usages comme la musique, la chimie ou les mathématiques. Ces standards ne sont pour l'instant pas pris en charge par AccessBRailleRAP, il peut donc être utile de saisir directement une petite quantité de caractères Braille. Vous pouvez utiliser la saisie **unicode** ou bien la saisie directe de point Braille.
 
-La saisie de caractère Braille utilise la saisie de caractères unicode, donc les valeurs sont comprisent entre x02800 et 0x02900. Pour entrer ces caractères dans la zone de saisie, vous pouvez utiliser la touche `CTRL`+<valeur unicode>. Par exemple pour saisir un caractère Braille avec uniquement le pont 1 (l'équivalent du 'a') :
+#### Saisie UNICODE:
+  La saisie de caractère Braille utilise la saisie de caractères unicode, dont les valeurs sont comprisent entre x02800 et 0x02900. Pour entrer ces caractères dans la zone de saisie, vous pouvez utiliser la touche `CTRL`+<valeur unicode>. Par exemple pour saisir un caractère Braille avec uniquement le pont 1 (l'équivalent du 'a') :
 
-1 Appuyez sur la touche `CTRL`
-2 Entrez la valeur 01 en appuyant sur 0 puis 1
-3 Relâcher la touche `CTRL`
 
-vous devriez voir apparaitre le caractere Braille *⠁* dans la zone de saisie.
 
-Vous trouverez sur wikipedia une [table des caractères Braille unicode](https://fr.wikipedia.org/wiki/Table_des_caract%C3%A8res_Unicode/U2800). Les codes des caractères Braille sont donnés en hexadécimal, vous pouvez utiliser uniquement la partie supérieure à 0x2800. Par exemple, si on regarde dans la table, le caractère *⠵* correspond à la valeur unicode 0x2835. Pour entrer ce caractère, vous pouvez utiliser :
+  1 Appuyez sur la touche `CTRL`
+  2 Entrez la valeur 01 en appuyant sur 0 puis 1
+  3 Relâcher la touche `CTRL`
 
-`CTRL`+ 0x2835
+  vous devriez voir apparaitre le caractere Braille *⠁* dans la zone de saisie.
 
-ou bien
+  Vous trouverez sur wikipedia une [table des caractères Braille unicode](https://fr.wikipedia.org/wiki/Table_des_caract%C3%A8res_Unicode/U2800). Les codes des caractères Braille sont donnés en hexadécimal, vous pouvez utiliser uniquement la partie supérieure à 0x2800. Par exemple, si on regarde dans la table, le caractère *⠵* correspond à la valeur unicode 0x2835. Pour entrer ce caractère, vous pouvez utiliser :
 
-`CTRL`+ 0x35
+  `CTRL`+ 0x2835
 
-Vous pouvez également utiliser des valeur décimale. 0x2835 correspond à 10293. vous pouvez donc entrer le caractère *⠵* en utilisant :
+  ou bien
 
-`CTRL`+ 10293
+  `CTRL`+ 0x35
 
-ou bien
+  Vous pouvez également utiliser des valeur décimale. 0x2835 correspond à 10293. vous pouvez donc entrer le caractère *⠵* en utilisant :
 
-`CTRL`+ 53
+  `CTRL`+ 10293
 
-Notez que pour utiliser un code hexadécimal, vous devez préfixer la valeur par 0x
+  ou bien
+
+  `CTRL`+ 53
+
+  Notez que pour utiliser un code hexadécimal, vous devez préfixer la valeur par 0x
+
+  #### Saisie directe des points Braille
+  La saisie directe des points Braille reprend le principe de la saisie UNICODE, mais au lieu de rentrer la valeur UNICODE correspondante au caractère souhaité, vous allez pouvoir entrer les numéro des points Braille présent sur le caractère. Pour utiliser la saisie directe, vous devez utiliser le préfixe **'0b'**.
+
+  Par exemple si vous voulez saisir un **s**, le caractère Braille est **⠎** soit les points 2-3-4.
+  Pour obtenir ce caractère, vous allez appuyer sur la touche `CTRL` puis sans la relacher entrer le préfixe 0b puis les points souhaitez 234 et enfin vous allez relacher la touche `CTRL`.
+  
+  donc:
+
+  `CTRL`+ 0b + 234 pour obtenir **⠎**
+  
+  `CTRL`+ 0b + 1234 pour obtenir **⠏**
+  
+  `CTRL`+ 0b + 12 pour obtenir **⠃**
+  
+  vous pouvez également saisir du Braille 8 points. !!! Attention il faut que ce soit cohérent avec le reste du document la hauteur des cellules Braille est définie par le standard Braille indiqué dans les paramètres.
+  
+  `CTRL`+ 0b + 12347 pour obtenir **⡏**
+  
 
 ## Impression
 
@@ -117,7 +139,7 @@ Cette valeur détermine l'orientation de l'impression.
 
 
 #### Port de communication
-Cette valeur désigne le port de communication utilisé pour la communication avec la BrailleRAP. Si vous avez branché la BrailleRAP après le lancement du logiciel, vous pouvez rafraichir la liste des ports de communication disponible en utilisant le bouton *Actualiser*.
+Cette valeur désigne le port de communication utilisé pour la communication avec la BrailleRAP. Si vous avez branché la BrailleRAP après le lancement du logiciel, vous pouvez rafraichir la liste des ports de communication disponible en utilisant le bouton **Actualiser**.
 
 #### Langue de l'application
 Cette valeur permet de définir la langue de l'interface de l'application.
