@@ -1,8 +1,6 @@
+!include "LogicLib.nsh"
+
 !include "MUI2.nsh"
-
-
-
-
 
 ; AccessBrailleRAP.nsi
 ;
@@ -46,12 +44,21 @@ InstallDirRegKey HKLM "Software\AccessBrailleRAP" "Install_Dir"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\win.bmp" ; optional
 ;!define MUI_ABORTWARNING
+!define UNINSTKEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
+!define MULTIUSER_INSTALLMODE_DEFAULT_REGISTRY_KEY "${UNINSTKEY}"
+!define MULTIUSER_INSTALLMODE_DEFAULT_REGISTRY_VALUENAME "CurrentUser"
+!define MULTIUSER_INSTALLMODE_INSTDIR "$(^Name)"
+!define MULTIUSER_INSTALLMODE_COMMANDLINE
+!define MULTIUSER_EXECUTIONLEVEL Admin
+!define MULTIUSER_MUI
 
+!include "MultiUser.nsh"
 
 ; Pages
 !insertmacro MUI_PAGE_WELCOME
 ;!insertmacro MUI_PAGE_LICENSE "${NSISDIR}\Docs\Modern UI\License.txt"
 ;!insertmacro MUI_PAGE_LICENSE "${NSISDIR}\Docs\Modern UI\License.txt"
+!insertmacro MULTIUSER_PAGE_INSTALLMODE
 !insertmacro MUI_PAGE_COMPONENTS
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
@@ -61,6 +68,14 @@ InstallDirRegKey HKLM "Software\AccessBrailleRAP" "Install_Dir"
 
 !insertmacro MUI_LANGUAGE "English"
 !addplugindir ".\"
+
+Function .onInit
+  !insertmacro MULTIUSER_INIT
+FunctionEnd
+
+Function un.onInit
+  !insertmacro MULTIUSER_UNINIT
+FunctionEnd
 
 ;--------------------------------
 
@@ -74,7 +89,9 @@ Section "AccessBrailleRAP (required)"
     
     ; Put file there
     File "AccessBrailleRAP.exe"
+    SetOverwrite off
     File "acces_brap_parameters.json"
+    SetOverwrite on
     File "_internal.zip"
     ; pandoc
     File "pandoc.exe"
