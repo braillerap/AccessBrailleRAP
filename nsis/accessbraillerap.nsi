@@ -65,7 +65,7 @@ InstallDirRegKey HKLM "Software\AccessBrailleRAP" "Install_Dir"
 ;--------------------------------
 
 ; The stuff to install
-Section "AcessBrailleRAP (required)"
+Section "AccessBrailleRAP (required)"
   InitPluginsDir
   SectionIn RO
   
