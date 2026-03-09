@@ -8,7 +8,7 @@ import Parameters from "./pages/parameters";
 import './App.css';
 
 import AppOption from "./pages/components/AppOption";
-import libLouis from "./modules/libLouisReact";
+import libLouis from "./modules/WrapLibLouisReact.js";
 import { FormattedMessage } from "react-intl";
 import { IntlContext } from './components/intlwrapper.js';
 
