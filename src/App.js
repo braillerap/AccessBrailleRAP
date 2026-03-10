@@ -19,8 +19,7 @@ class App extends Component {
     constructor(props)
     {
         super(props);
-        //eel.set_host("ws://localhost:8888");
-        //eel.hello();
+        
         this.state= (
             {
                 logstr : '',
@@ -31,6 +30,8 @@ class App extends Component {
                 webviewready:false
             }
         );
+
+        // attach methods to instance
         this.LogCallBack = this.LogCallBack.bind(this);
         this.SetText = this.SetText.bind(this);
         this.SetNbLine = this.SetNbLine.bind(this);
@@ -42,6 +43,8 @@ class App extends Component {
         this.LouisLoaded = this.LouisLoaded.bind (this);
         this.webviewloaded = this.webviewloaded.bind(this);
         this.webviewloadedSec = this.webviewloadedSec.bind(this);
+        
+        // create reference for focus setting
         this.focusReference = React.createRef();
     }
     
@@ -128,7 +131,7 @@ class App extends Component {
       {
           console.log ("register pywebview event");  
           window.addEventListener('pywebviewready', this.webviewloaded);
-          // startt a timer to secure loading
+          // start a timer to secure loading
           this.timerload = setInterval (()=> {
             console.log ("check loaded");
             if (window.pywebview)
@@ -187,7 +190,10 @@ class App extends Component {
     }
     LouisLoaded (success)
     {
+      // set louis loglevel to LOG_OFF
       this.louis.lou_setLogLevel(60000);
+
+      // signal liblouis is loaded and ok
       this.setState({louisloaded:success});
     }
     GetLouis()
