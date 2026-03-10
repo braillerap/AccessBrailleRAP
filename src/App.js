@@ -187,6 +187,7 @@ class App extends Component {
     }
     LouisLoaded (success)
     {
+      this.louis.lou_setLogLevel(60000);
       this.setState({louisloaded:success});
     }
     GetLouis()
