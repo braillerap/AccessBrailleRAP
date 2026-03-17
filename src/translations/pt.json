@@ -65,5 +65,6 @@
     "param.orientation_aria": "Orientação da página",
     "param.orientation": "Orientação",
     "param.orientation.portrait": "Retrato",
-    "param.orientation.landscape": "Paisagem"
+    "param.orientation.landscape": "Paisagem",
+    "param.checkliblouis": "Braille transkripsiyon tablosu tutarlı değil, lütfen parametreleri kontrol edin ve bir Braille tablosu seçin."
 }

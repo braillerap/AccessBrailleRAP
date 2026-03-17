@@ -65,5 +65,6 @@
     "param.orientation_aria": "Paginaoriëntatie",
     "param.orientation": "Oriëntatie",
     "param.orientation.portrait": "Portret",
-    "param.orientation.landscape": "Landschap"
+    "param.orientation.landscape": "Landschap",
+    "param.checkliblouis": "De tabel voor braille-transcriptie is niet consistent. Controleer de parameters en selecteer een braille-tabel."
 }

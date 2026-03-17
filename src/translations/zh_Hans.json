@@ -65,5 +65,6 @@
     "param.orientation_aria": "文档方向",
     "param.orientation": "方向",
     "param.orientation.portrait": "纵向",
-    "param.orientation.landscape": "横向"
+    "param.orientation.landscape": "横向",
+    "param.checkliblouis": "盲文转录表不一致，请检查参数并选择盲文表"
 }

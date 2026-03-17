@@ -65,5 +65,6 @@
     "param.orientation_aria": "Seitenausrichtung",
     "param.orientation": "Orientierung",
     "param.orientation.portrait": "Porträtausrichtung",
-    "param.orientation.landscape": "Querformat"
+    "param.orientation.landscape": "Querformat",
+    "param.checkliblouis": "Die Braille-Transkriptionstabelle ist nicht einheitlich. Bitte überprüfen Sie die Parameter und wählen Sie eine Braille-Tabelle aus."
 }

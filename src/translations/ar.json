@@ -65,5 +65,6 @@
     "param.orientation_aria": "اتجاه الصفحة",
     "param.orientation": "توجيه",
     "param.orientation.portrait": "لَوحَة",
-    "param.orientation.landscape": "منظر جمالي"
+    "param.orientation.landscape": "منظر جمالي",
+    "param.checkliblouis": "جدول نسخ برايل غير متناسق، يرجى التحقق من المعلمات واختيار جدول برايل"
 }

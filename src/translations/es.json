@@ -65,5 +65,6 @@
     "param.orientation_aria": "Orientación de la página",
     "param.orientation": "Orientación",
     "param.orientation.portrait": "Retrato",
-    "param.orientation.landscape": "Paisaje"
+    "param.orientation.landscape": "Paisaje",
+    "param.checkliblouis": "La tabla de transcripción Braille no es consistente, verifique los parámetros y seleccione una tabla Braille."
 }

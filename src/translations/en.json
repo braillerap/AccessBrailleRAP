@@ -66,5 +66,5 @@
     "param.orientation": "Orientation",
     "param.orientation.portrait": "Portrait",
     "param.orientation.landscape": "Landscape",
-    "param.checkliblouis" : "Braille transcription table is not consistent, please check parameters and select a Braille table"
+    "param.checkliblouis": "Braille transcription table is not consistent, please check parameters and select a Braille table"
 }
