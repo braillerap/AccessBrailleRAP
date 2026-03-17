@@ -48,6 +48,17 @@ class Parameters extends React.Component {
     //console.log ("constructor");
   }
 
+  componentWillUnmount() {
+    let option = this.props.options
+
+    if (this.props.glouis())
+      // save filename to check liblouis config at start
+      option.louisfilecheck = this.props.glouis().get_table_fname(option.brailletbl);
+
+    if (this.props.optioncb)
+      // signal option change
+      this.props.optioncb(option);
+  }
   async componentDidMount() {
     // get serial port list
     let list = await window.pywebview.api.gcode_get_serial();
@@ -60,8 +71,8 @@ class Parameters extends React.Component {
       let brtable = [];
       let louis = this.props.glouis();
       let nbr = this.props.glouis().get_table_nbr();
-      let version = louis.f_lou_version ();
-      this.setState({louisversion:version});
+      let version = louis.f_lou_version();
+      this.setState({ louisversion: version });
       for (let i = 0; i < nbr; i++) {
         let description = louis.get_table_description(i);
         let flags = louis.get_table_flags(i);
@@ -76,11 +87,11 @@ class Parameters extends React.Component {
         brtable.push(
           br
         );
-        
+
       }
       this.setState({ brailleinfo: brtable })
     }
-    
+
     if (this.props.focusref)
       this.props.focusref.current.focus();
   }
@@ -167,7 +178,7 @@ class Parameters extends React.Component {
   }
   handleChangeBraille(event) {
     let option = this.props.options
-  
+
     option.brailletbl = event.target.value;
     if (this.props.glouis())
       // save filename to check liblouis config at start
@@ -318,212 +329,212 @@ class Parameters extends React.Component {
     let tat = this.props.intl.formatMessage({ id: "param.langtitle" });
     //const tat ="toto";
     return (
-            
-              <div 
-                aria-live="polite" 
-                role="log" 
-                aria-relevant="all" 
-                aria-atomic={true}
-                className={this.context.getStyleClass('general')}>
-               
-              <form 
-                aria-label={this.props.intl.formatMessage({id:"param.form_aria"})}  
-                className='formparam pure-form pure-form-aligned' 
-                aria-live="assertive" 
-                role="log" 
-                aria-relevant="all" 
-                aria-atomic={true}
-                onSubmit={this.handleSubmit}
-                >
-                
-                <fieldset>
-                
-                <h1>
-                  <FormattedMessage
-                    id = "param.header"
-                    defaultMessage="Formulaire de paramétrage de l'application"
-                  />
-                </h1>
-                <div className="pure-control-group">
-                {this.render_braille_lang()}
-                </div>
-                <div className="pure-control-group">
-                  <label  htmlFor='nbcol' aria-label={this.props.intl.formatMessage({id:"param.cols_aria"})}>
-                  <FormattedMessage id="param.charperline" defaultMessage="Nombre de caractères par ligne"/>
-                  </label>
-                    <input type="number" 
-                      aria-label={this.props.intl.formatMessage({id:"param.cols_aria"})} 
-                      className={this.context.getStyleClass('input')}
-                      step="1" min="5" max="70" name="nbcol" id="nbcol"
-                      value={this.props.options.nbcol} 
-                      onChange={this.handleChangeNbCol} 
-                    />
-                
-                  <label  
-                    aria-label={this.props.intl.formatMessage({id:"param.rows_aria"})} 
-                    htmlFor='nbline'>
-                    <FormattedMessage id="param.lineperpage" defaultMessage="Nombre de lignes par page"/>
-                    
-                  </label> 
-                  <input  
-                    aria-label={this.props.intl.formatMessage({id:"param.rows_aria"})}
-                    type="number" 
-                    step="1" 
-                    min="5" 
-                    max="70" 
-                    name="nbline" 
-                    id="nbline" 
-                    value={this.props.options.nbline} 
-                    onChange={this.handleChangeNbLine} 
-                    className={this.context.getStyleClass('input')}
-                  />
-                </div>
-                <div className="pure-control-group">
-                  <label  
-                    aria-label={this.props.intl.formatMessage({id:"param.linespacing_aria"})} 
-                    htmlFor='linespacing'>
-                    <FormattedMessage id="param.linespacing" defaultMessage="Interligne"/>
-                    
-                  </label> 
-                  <select 
-                    value={this.props.options.linespacing} 
-                    onChange={this.handleChangeLinespacing}
-                    name="linespacing" id="linespacing"
-                    className={this.context.getStyleClass('input') + ' selectparam'}
-                  >
-                    <option value="0">1</option>
-                    <option value="1">1.5</option>
-                    <option value="2">2</option>                    
-                  </select>
-                  
-                </div>
-                <div className="pure-control-group">
-                  <label  htmlFor='offsetx' aria-label={this.props.intl.formatMessage({id:"param.offsetx_aria"})}>
-                  <FormattedMessage id="param.offsetx" defaultMessage="Décalage horizontal"/>
-                  </label>
-                    <input type="number" 
-                      aria-label={this.props.intl.formatMessage({id:"param.offsetx_aria"})} 
-                      className={this.context.getStyleClass('input')}
-                      step="0.1" min="0" max="50" name="offsetx" id="offsetx"
-                      value={this.props.options.offsetx} 
-                      onChange={this.handleChangeOffsetx} 
-                    />
 
-                  <label  htmlFor='offsety' aria-label={this.props.intl.formatMessage({id:"param.offsety_aria"})}>
-                  <FormattedMessage id="param.offsety" defaultMessage="Décalage vertical"/>
-                  </label>
-                    <input type="number" 
-                      aria-label={this.props.intl.formatMessage({id:"param.offsety_aria"})} 
-                      className={this.context.getStyleClass('input')}
-                      step="0.1" min="0" max="50" name="offsety" id="offsety"
-                      value={this.props.options.offsety} 
-                      onChange={this.handleChangeOffsety} 
-                    />
-                </div>
+      <div
+        aria-live="polite"
+        role="log"
+        aria-relevant="all"
+        aria-atomic={true}
+        className={this.context.getStyleClass('general')}>
 
-                 <div className="pure-control-group">
-                  <label  htmlFor='xmax' aria-label={this.props.intl.formatMessage({id:"param.xmax_aria"})}>
-                  <FormattedMessage id="param.xmax" defaultMessage="Max x position"/>
-                  </label>
-                    <input type="number" 
-                      aria-label={this.props.intl.formatMessage({id:"param.xmax_aria"})} 
-                      className={this.context.getStyleClass('input')}
-                      step="0.1" min="100" max="300" name="xmax" id="xmax"
-                      value={this.props.options.xmax} 
-                      onChange={this.handleChangeXmax} 
-                    />
-                
+        <form
+          aria-label={this.props.intl.formatMessage({ id: "param.form_aria" })}
+          className='formparam pure-form pure-form-aligned'
+          aria-live="assertive"
+          role="log"
+          aria-relevant="all"
+          aria-atomic={true}
+          onSubmit={this.handleSubmit}
+        >
 
-                 <label  
-                    aria-label={this.props.intl.formatMessage({id:"param.orientation_aria"})} 
-                      htmlFor='orientselect'>
-                    <FormattedMessage id="param.orientation" defaultMessage="Orientation"/>
-                    
-                  </label> 
-                <select 
-                    value={this.props.options.orientation} 
-                    onChange={this.handleChangeOrientation}
-                    name="orientselect" id="orientselect"
-                    className={this.context.getStyleClass('input') + ' selectparam'}
-                  >
-                    
-                    <option value="0">{this.props.intl.formatMessage({id:"param.orientation.portrait"})}</option>
-                    <option value="1">{this.props.intl.formatMessage({id:"param.orientation.landscape"})}</option>
-                  </select>
-                </div>
-                
-                <div className='pure-control-group'>
-                  
-                    {this.render_comport()}
-                    <label  htmlFor='refreshbutton' aria-label="hidden">
-                    </label>
-                    <button  
-                      aria-label={this.props.intl.formatMessage({id:"param.button_refresh_com_aria"})} 
-                      className={this.context.getStyleClass('pad-button') + " pure-button "}
-                      onClick={this.handleRefreshPort}
-                      name="refreshbutton"
-                      id="refreshbutton"
-                      >
-                        <FormattedMessage id="param.buttonrefresh" defaultMessage="Actualiser"/>
-                        
-                    </button>      
-                </div>
+          <fieldset>
 
-                <div className='pure-control-group'>
-                  <p>
-                  <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application "/>
-                    
-                    <b>{this.context.locale}</b></p>
-                  <label  htmlFor='langid' aria-label={this.props.intl.formatMessage({id:"param.language_aria"})} >
-                  <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application "/>
-                  </label>
-                  
+            <h1>
+              <FormattedMessage
+                id="param.header"
+                defaultMessage="Formulaire de paramétrage de l'application"
+              />
+            </h1>
+            <div className="pure-control-group">
+              {this.render_braille_lang()}
+            </div>
+            <div className="pure-control-group">
+              <label htmlFor='nbcol' aria-label={this.props.intl.formatMessage({ id: "param.cols_aria" })}>
+                <FormattedMessage id="param.charperline" defaultMessage="Nombre de caractères par ligne" />
+              </label>
+              <input type="number"
+                aria-label={this.props.intl.formatMessage({ id: "param.cols_aria" })}
+                className={this.context.getStyleClass('input')}
+                step="1" min="5" max="70" name="nbcol" id="nbcol"
+                value={this.props.options.nbcol}
+                onChange={this.handleChangeNbCol}
+              />
 
-                  <select id="langid"
-                    value={this.context.locale} 
-                    onChange={this.handleChangeLanguage}
-                    className={this.context.getStyleClass('input') + ' selectparam'}
-                  >
-                    {locales.map ((item, index)=> {
-                      if (this.context.locale === item.lang)
-                        return (<option  aria-selected={true} key={item.lang} value={item.lang}>{item.desc}</option>);
-                      else
-                        return (<option  aria-selected={false} key={item.lang} value={item.lang}>{item.desc}</option>);
-                      })
-                    }
-                    
-                    
-                  </select>
-                  <label  
-                    aria-label={this.props.intl.formatMessage({id:"param.theme_aria"})} 
-                    htmlFor='themeselect'>
-                    <FormattedMessage id="param.theme" defaultMessage="Thème"/>
-                    
-                  </label> 
-                  <select 
-                    value={this.props.options.theme} 
-                    onChange={this.handleChangeTheme}
-                    name="themeselect" id="themeselect"
-                    className={this.context.getStyleClass('input') + ' selectparam'}
-                  >
-                    <option value="dark">White on Black</option>
-                    <option value="light">Black on White</option>
-                  </select>
+              <label
+                aria-label={this.props.intl.formatMessage({ id: "param.rows_aria" })}
+                htmlFor='nbline'>
+                <FormattedMessage id="param.lineperpage" defaultMessage="Nombre de lignes par page" />
+
+              </label>
+              <input
+                aria-label={this.props.intl.formatMessage({ id: "param.rows_aria" })}
+                type="number"
+                step="1"
+                min="5"
+                max="70"
+                name="nbline"
+                id="nbline"
+                value={this.props.options.nbline}
+                onChange={this.handleChangeNbLine}
+                className={this.context.getStyleClass('input')}
+              />
+            </div>
+            <div className="pure-control-group">
+              <label
+                aria-label={this.props.intl.formatMessage({ id: "param.linespacing_aria" })}
+                htmlFor='linespacing'>
+                <FormattedMessage id="param.linespacing" defaultMessage="Interligne" />
+
+              </label>
+              <select
+                value={this.props.options.linespacing}
+                onChange={this.handleChangeLinespacing}
+                name="linespacing" id="linespacing"
+                className={this.context.getStyleClass('input') + ' selectparam'}
+              >
+                <option value="0">1</option>
+                <option value="1">1.5</option>
+                <option value="2">2</option>
+              </select>
+
+            </div>
+            <div className="pure-control-group">
+              <label htmlFor='offsetx' aria-label={this.props.intl.formatMessage({ id: "param.offsetx_aria" })}>
+                <FormattedMessage id="param.offsetx" defaultMessage="Décalage horizontal" />
+              </label>
+              <input type="number"
+                aria-label={this.props.intl.formatMessage({ id: "param.offsetx_aria" })}
+                className={this.context.getStyleClass('input')}
+                step="0.1" min="0" max="50" name="offsetx" id="offsetx"
+                value={this.props.options.offsetx}
+                onChange={this.handleChangeOffsetx}
+              />
+
+              <label htmlFor='offsety' aria-label={this.props.intl.formatMessage({ id: "param.offsety_aria" })}>
+                <FormattedMessage id="param.offsety" defaultMessage="Décalage vertical" />
+              </label>
+              <input type="number"
+                aria-label={this.props.intl.formatMessage({ id: "param.offsety_aria" })}
+                className={this.context.getStyleClass('input')}
+                step="0.1" min="0" max="50" name="offsety" id="offsety"
+                value={this.props.options.offsety}
+                onChange={this.handleChangeOffsety}
+              />
+            </div>
+
+            <div className="pure-control-group">
+              <label htmlFor='xmax' aria-label={this.props.intl.formatMessage({ id: "param.xmax_aria" })}>
+                <FormattedMessage id="param.xmax" defaultMessage="Max x position" />
+              </label>
+              <input type="number"
+                aria-label={this.props.intl.formatMessage({ id: "param.xmax_aria" })}
+                className={this.context.getStyleClass('input')}
+                step="0.1" min="100" max="300" name="xmax" id="xmax"
+                value={this.props.options.xmax}
+                onChange={this.handleChangeXmax}
+              />
 
 
+              <label
+                aria-label={this.props.intl.formatMessage({ id: "param.orientation_aria" })}
+                htmlFor='orientselect'>
+                <FormattedMessage id="param.orientation" defaultMessage="Orientation" />
 
-                </div>
-                </fieldset> 
-             
-                
-              </form>
-              <h2>{this.state.comevent}</h2>
-              
-              </div >
+              </label>
+              <select
+                value={this.props.options.orientation}
+                onChange={this.handleChangeOrientation}
+                name="orientselect" id="orientselect"
+                className={this.context.getStyleClass('input') + ' selectparam'}
+              >
+
+                <option value="0">{this.props.intl.formatMessage({ id: "param.orientation.portrait" })}</option>
+                <option value="1">{this.props.intl.formatMessage({ id: "param.orientation.landscape" })}</option>
+              </select>
+            </div>
+
+            <div className='pure-control-group'>
+
+              {this.render_comport()}
+              <label htmlFor='refreshbutton' aria-label="hidden">
+              </label>
+              <button
+                aria-label={this.props.intl.formatMessage({ id: "param.button_refresh_com_aria" })}
+                className={this.context.getStyleClass('pad-button') + " pure-button "}
+                onClick={this.handleRefreshPort}
+                name="refreshbutton"
+                id="refreshbutton"
+              >
+                <FormattedMessage id="param.buttonrefresh" defaultMessage="Actualiser" />
+
+              </button>
+            </div>
+
+            <div className='pure-control-group'>
+              <p>
+                <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application " />
+
+                <b>{this.context.locale}</b></p>
+              <label htmlFor='langid' aria-label={this.props.intl.formatMessage({ id: "param.language_aria" })} >
+                <FormattedMessage id="param.langtitle" defaultMessage="Langue de l'application " />
+              </label>
 
 
-          
-        );
+              <select id="langid"
+                value={this.context.locale}
+                onChange={this.handleChangeLanguage}
+                className={this.context.getStyleClass('input') + ' selectparam'}
+              >
+                {locales.map((item, index) => {
+                  if (this.context.locale === item.lang)
+                    return (<option aria-selected={true} key={item.lang} value={item.lang}>{item.desc}</option>);
+                  else
+                    return (<option aria-selected={false} key={item.lang} value={item.lang}>{item.desc}</option>);
+                })
+                }
+
+
+              </select>
+              <label
+                aria-label={this.props.intl.formatMessage({ id: "param.theme_aria" })}
+                htmlFor='themeselect'>
+                <FormattedMessage id="param.theme" defaultMessage="Thème" />
+
+              </label>
+              <select
+                value={this.props.options.theme}
+                onChange={this.handleChangeTheme}
+                name="themeselect" id="themeselect"
+                className={this.context.getStyleClass('input') + ' selectparam'}
+              >
+                <option value="dark">White on Black</option>
+                <option value="light">Black on White</option>
+              </select>
+
+
+
+            </div>
+          </fieldset>
+
+
+        </form>
+        <h2>{this.state.comevent}</h2>
+
+      </div >
+
+
+
+    );
   }
 }
 
