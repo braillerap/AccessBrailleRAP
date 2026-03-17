@@ -23,14 +23,15 @@ app_options = {
     "nbcol": "31",
     "nbline": "24",
     "linespacing": "0",
-    "brailletbl": "70",
+    "brailletbl": "81",
     "lang": "",
     "theme": "light",
     "xmax":"200",
     "orientation":"0",
     "offsetx":"1",
     "offsety":"2.5",
-    "fast":0
+    "fast":0,
+    "louisfilecheck":""
 }
 
 
@@ -111,7 +112,7 @@ class Api:
         return js
 
     def gcode_set_parameters(self, opt):
-        # print ("parameters", opt, type(opt))
+        print ("parameters", opt, type(opt))
         try:
             for k, v in opt.items():
                 if k in app_options:

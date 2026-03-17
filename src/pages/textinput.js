@@ -2,15 +2,18 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { injectIntl } from 'react-intl';
 import { IntlContext } from '../components/intlwrapper.js';
+import { Link } from "react-router-dom";
 
 class TextInput extends React.Component {
   static contextType = IntlContext;
+
 
   constructor(props) {
     super(props);
 
     this.state = {
-      txt: this.props.src
+      txt: this.props.src,
+      goparam: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -20,9 +23,10 @@ class TextInput extends React.Component {
     this.handlesaveas = this.handlesaveas.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
-    
+    this.handleClickParam = this.handleClickParam.bind(this);
+
     this.altcode = ""; // unicode key value for alternate input with control
-    
+
   }
 
   async handlesave(event) {
@@ -65,7 +69,7 @@ class TextInput extends React.Component {
       //console.log (data);
 
       this.props.textcb(data.data);
-      
+
       this.setState({ txt: data.data });
     }
   }
@@ -94,126 +98,102 @@ class TextInput extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
   }
-  
-  
 
-  handleKeyDown (event)
-  {
+
+
+  handleKeyDown(event) {
     const hexachar = '0123456789abcdef';
     const braillechar = '12345678';
-    const digitchar ='0123456789';
+    const digitchar = '0123456789';
 
-    if (event.ctrlKey === true)
-    {
-      if (this.altcode.length > 0)
-      {
-        if (this.altcode === '0')
-        {  
-          console.log ("key", event.key);
+    if (event.ctrlKey === true) {
+      if (this.altcode.length > 0) {
+        if (this.altcode === '0') {
+          console.log("key", event.key);
           // check for hexa value starting with "0x"
           if ((digitchar.indexOf(event.key) >= 0) ||
             (event.key === 'x' || event.key === 'X') ||
             (event.key === 'b' || event.key === 'B')
-            )
-          {
-              this.altcode += event.key; // build unicode key value
-              event.preventDefault();
+          ) {
+            this.altcode += event.key; // build unicode key value
+            event.preventDefault();
           }
-          else
-          {
+          else {
             this.altcode = ""; // reset character code value
           }
         }
-        else
-        {
-          if (this.altcode.startsWith('0x'))
-          {
-            if (hexachar.indexOf(event.key) >= 0)
-            {
+        else {
+          if (this.altcode.startsWith('0x')) {
+            if (hexachar.indexOf(event.key) >= 0) {
               this.altcode += event.key; // build unicode hex value
               event.preventDefault();
             }
 
           }
-          else if (this.altcode.startsWith('0b'))
-          {
-            if (braillechar.indexOf(event.key) >= 0)
-            {
+          else if (this.altcode.startsWith('0b')) {
+            if (braillechar.indexOf(event.key) >= 0) {
               this.altcode += event.key; // build braille dots values
               event.preventDefault();
             }
           }
-          else if (digitchar.indexOf(event.key) >= 0)
-          {
-              this.altcode += event.key; // build unicode value
-              event.preventDefault();
+          else if (digitchar.indexOf(event.key) >= 0) {
+            this.altcode += event.key; // build unicode value
+            event.preventDefault();
           }
-          else
-          {
+          else {
             this.altcode = ""; // reset character code value
           }
         }
       }
       // check for decimal value
-      else if (event.key >= '0' && event.key <= '9')  
-      {
+      else if (event.key >= '0' && event.key <= '9') {
         this.altcode += event.key; // build unicode key value
         event.preventDefault();
       }
-      else
-      {
-        this.altcode =""; // reset character code value
+      else {
+        this.altcode = ""; // reset character code value
       }
     }
   }
 
-  handleKeyUp (event)
-  {
-    if (event.key === "Control")
-    {
-      if (this.altcode.length > 0)
-      {
+  handleKeyUp(event) {
+    if (event.key === "Control") {
+      if (this.altcode.length > 0) {
         let char = '';
         let val = 0;
-        if (this.altcode.startsWith('0b') || this.altcode.startsWith('0B') )
-        {
+        if (this.altcode.startsWith('0b') || this.altcode.startsWith('0B')) {
           let brval = 0x2800;
-          
-          for (let i = 2; i < this.altcode.length; i++)
-          {
-              
-              let dot = parseInt(this.altcode[i]);
-              if (dot >0 && dot < 9)
-              {
-                let dothex = 1 << (dot - 1);
-                console.log ('hex', dothex, dot);
-                brval = brval | dothex;
-              }
+
+          for (let i = 2; i < this.altcode.length; i++) {
+
+            let dot = parseInt(this.altcode[i]);
+            if (dot > 0 && dot < 9) {
+              let dothex = 1 << (dot - 1);
+              console.log('hex', dothex, dot);
+              brval = brval | dothex;
+            }
           }
-          char = String.fromCharCode ([brval]);
-          
-        } 
-        else
-        {
-          if (this.altcode.startsWith('0x') || this.altcode.startsWith('0X') )
+          char = String.fromCharCode([brval]);
+
+        }
+        else {
+          if (this.altcode.startsWith('0x') || this.altcode.startsWith('0X'))
             val = parseInt(this.altcode, 16); // convert hexavalue
           else
             val = parseInt(this.altcode); // convert decimal value
-          
+
           if (val < 0)
             val = 0;
 
-          if (val > 255)
-          {
-            char = String.fromCharCode ([val]); // get complete unicode value
+          if (val > 255) {
+            char = String.fromCharCode([val]); // get complete unicode value
           }
-          else
-          {
-            char = String.fromCharCode ([0x2800 + val]); // consider value as offset in Braille table
-          }  
-          
+          else {
+            char = String.fromCharCode([0x2800 + val]); // consider value as offset in Braille table
+          }
+
         }
-        this.altcode =""; // forget previous code value
+        this.altcode = ""; // forget previous code value
         let ntxt = this.state.txt + char;
         this.setState({ txt: ntxt });
         this.props.textcb(ntxt);
@@ -222,9 +202,8 @@ class TextInput extends React.Component {
     }
 
   }
-  handleBeforeInput (event)
-  {
-    
+  handleBeforeInput(event) {
+
   }
   handleChange(event) {
     //console.log (event.target.value)
@@ -232,11 +211,63 @@ class TextInput extends React.Component {
     this.props.textcb(event.target.value);
   }
   componentDidMount() {
+    // set focus on relevant control
     if (this.props.focusref)
       this.props.focusref.current.focus();
+
+    // check liblouis options
+    
+    if (this.props.glouis) {
+      let louis = this.props.glouis();
+
+      let nbr = this.props.glouis().get_table_nbr();
+      let version = louis.f_lou_version();
+      let fname = louis.get_table_fname(this.props.options.brailletbl);
+
+      if (this.props.options.louisfilecheck !== fname) {
+        // liblouis file change => need to go to parameters
+        this.setState({ goparam: true });
+      }
+    }
+
   }
+
+  handleClickParam() {
+    if (this.props.focuscb)
+      this.props.focuscb();
+  }
+
   render() {
+
     //console.log (this.props.options);
+    if (this.state.goparam) {
+      return (
+        <div>
+
+          <h1 aria-label='Formulaire de saisie du texte'>
+
+          </h1>
+          <ul className={this.context.getStyleClass('menu')}>
+            <li >
+              <Link to="/parametre" 
+                onClick={this.handleClickParam}
+                ref={this.props.focusref}
+              >
+                <FormattedMessage id="param.checkliblouis" defaultMessage="Braille transcription table is not consistent, please check parameters" />
+              </Link>
+               <Link to="/parametre" 
+                onClick={this.handleClickParam}
+                
+              >
+                <FormattedMessage id="layout.param_menu" defaultMessage="Paramètres"/>
+              </Link>
+            </li>
+          </ul>
+
+        </div>
+      );
+    }
+
     if (!this.props.options) {
       return (
         <div aria-label='Formulaire de saisie du texte'>
@@ -245,7 +276,7 @@ class TextInput extends React.Component {
 
             <FormattedMessage id="input.title" defaultMessage="Saisie du texte" />
           </h1>
-          
+
           <form onSubmit={this.handleSubmit} >
             <textarea
               aria-label={this.props.intl.formatMessage({ id: "input.text_aria" })}
@@ -270,7 +301,7 @@ class TextInput extends React.Component {
       return (
         <div className={this.context.getStyleClass('general')}>
           <h1 aria-hidden={true}></h1>
-          
+
           <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>
           <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.savefile" })}</button>
           <button onClick={this.handlesaveas} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.saveasfile" })}</button>

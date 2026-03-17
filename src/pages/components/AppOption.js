@@ -3,14 +3,15 @@ const AppOption = {
     nbline:24,
     nbcol:31,
     linespacing:0,
-    brailletbl:70,
+    brailletbl:81,
     lang:"fr",
     theme:"dark",
     offsetx:1,
     offsety:2.5,
     xmax:200,
     orientation:0,
-    fast:0
+    fast:0,
+    louisfilecheck:""
 
 }
 

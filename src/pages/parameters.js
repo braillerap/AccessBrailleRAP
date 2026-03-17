@@ -27,8 +27,8 @@ class Parameters extends React.Component {
       linespacing: 0,
       options: this.props.options,
       comevent: "",
-      louis: this.props.louis,
-      brailleinfo: []
+      brailleinfo: [],
+      louisversion: ""
     }
 
     this.handleChangeNbCol = this.handleChangeNbCol.bind(this);
@@ -49,15 +49,19 @@ class Parameters extends React.Component {
   }
 
   async componentDidMount() {
+    // get serial port list
     let list = await window.pywebview.api.gcode_get_serial();
     console.log(list)
     let portinfo = JSON.parse(list);
     this.setState({ data: portinfo })
 
+    // init lilbouis data files list
     if (this.props.glouis()) {
       let brtable = [];
       let louis = this.props.glouis();
       let nbr = this.props.glouis().get_table_nbr();
+      let version = louis.f_lou_version ();
+      this.setState({louisversion:version});
       for (let i = 0; i < nbr; i++) {
         let description = louis.get_table_description(i);
         let flags = louis.get_table_flags(i);
@@ -72,13 +76,11 @@ class Parameters extends React.Component {
         brtable.push(
           br
         );
-        //console.log (this.props.glouis().get_table_fname(i));
+        
       }
       this.setState({ brailleinfo: brtable })
     }
-    //else
-    //  console.log ("louis dead");
-
+    
     if (this.props.focusref)
       this.props.focusref.current.focus();
   }
@@ -165,8 +167,11 @@ class Parameters extends React.Component {
   }
   handleChangeBraille(event) {
     let option = this.props.options
+  
     option.brailletbl = event.target.value;
-
+    if (this.props.glouis())
+      // save filename to check liblouis config at start
+      option.louisfilecheck = this.props.glouis().get_table_fname(option.brailletbl);
     if (this.props.optioncb)
       this.props.optioncb(option);
     else

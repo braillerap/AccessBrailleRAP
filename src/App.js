@@ -174,9 +174,10 @@ class App extends Component {
     }
     SetOption (opt)
     {
-      console.log ("theme received " + opt.theme.toString());
-      console.log ("option received " + opt.toString());
+      //console.log ("theme received " + opt.theme.toString());
+      //console.log ("option received " + opt.toString());
       this.setState ({option:opt});
+      //console.log (opt);
       window.pywebview.api.gcode_set_parameters (opt);
     }
     SetStatus (status)
@@ -219,13 +220,16 @@ class App extends Component {
         <BrowserRouter>
             <Routes >
               <Route path="/" element={<Layout focuscb={this.onMenuClick} status={this.state.serialstatus}/>}>
-                <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options} focusref={this.focusReference}/> } />
+                <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} 
+                    options={this.state.options} focusref={this.focusReference} glouis={this.GetLouis}/> } />
                 <Route path="/impression" element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} glouis={this.GetLouis}
                     options={this.state.options} focusref={this.focusReference} statuscb={this.SetStatus}/>} />
                 <Route path="/parametre" element={<Parameters logger={this.LogCallBack} src={this.state.srctxt} glouis={this.GetLouis}
-                   options={this.state.options} nblinecb={this.SetNbLine} nbcolcb={this.SetNbCol} comportcb={this.SetComPort} optioncb={this.SetOption} focusref={this.focusReference}/> } />
+                    options={this.state.options}   
+                    optioncb={this.SetOption} focusref={this.focusReference}/> } />
 
-                <Route path="*" element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} options={this.state.options} focusref={this.focusReference}/>} />
+                <Route path="*" element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText} 
+                    options={this.state.options} focusref={this.focusReference} glouis={this.GetLouis}/>} />
               </Route>
             </Routes>
           </BrowserRouter>

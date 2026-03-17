@@ -31,6 +31,7 @@
     "param.orientation":"Orientation",
     "param.orientation.portrait":"Portrait",
     "param.orientation.landscape":"Paysage",
+    "param.checkliblouis" : "Les paramètres de transcription Braille sont incohérents, vérifier dans les paramètres et sélectionnez une table Braille",
     "layout.param_menu": "Paramètres",
     "layout.param_print": "Impression",
     "layout.param_input": "Saisie",
