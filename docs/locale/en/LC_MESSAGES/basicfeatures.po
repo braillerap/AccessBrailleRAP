@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.7.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-27 20:20+0000\n"
-"PO-Revision-Date: 2026-02-27 20:37+0000\n"
+"PO-Revision-Date: 2026-04-17 07:57+0000\n"
 "Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
 "Language-Team: English <https://translate.codeberg.org/projects/"
 "accessbraillerap_doc/manual_basicfeatures/en/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 5.17\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -268,7 +268,7 @@ msgstr ""
 
 #: ../../basicfeatures.md:76
 msgid "donc:"
-msgstr "SO:"
+msgstr "so:"
 
 #: ../../basicfeatures.md:78
 msgid "`CTRL`+ 0b + 234 pour obtenir **⠎**"
