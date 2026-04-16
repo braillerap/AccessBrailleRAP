@@ -202,9 +202,7 @@ class TextInput extends React.Component {
     }
 
   }
-  handleBeforeInput(event) {
-
-  }
+  
   handleChange(event) {
     //console.log (event.target.value)
     this.setState({ txt: event.target.value });
@@ -316,7 +314,7 @@ class TextInput extends React.Component {
             <textarea aria-label={this.props.intl.formatMessage({ id: "input.text_aria" })}
               value={this.state.txt}
               onChange={this.handleChange}
-              onBeforeInput={this.handleBeforeInput}
+              
               onKeyDown={this.handleKeyDown}
               onKeyUp={this.handleKeyUp}
               rows={nlines}
