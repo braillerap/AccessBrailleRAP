@@ -354,45 +354,17 @@ Building AccessBrailleRAP from its source code requires a basic understanding of
 
 *(Screenshot: Example of the `dist` folder content after building for Raspberry Pi)*
 
-## 2. Using Docker (For Linux)
+## Building from source for Linux using Docker
 
-For Linux users who prefer containerized environments, AccessBrailleRAP provides Docker configurations to simplify deployment and ensure a consistent environment.
+  You can use Docker configuration to build AccessBrailleRAP for a Linux distribution. 
 
-**Step-by-Step Instructions:**
+  Docker configuration to build AccessBrailleRAP for Debian or Ubuntu are available here:
 
-1. **Ensure Docker is installed and running** on your Linux system. Refer to the official Docker documentation for installation instructions if needed.
+  [Debian 12](https://github.com/braillerap/BuildAccessBrailleRAPDebian)
 
-2. **Clone the AccessBrailleRAP Repository:**
-   
-   ```bash
-   git clone https://github.com/braillerap/AccessBrailleRAP.git
-   ```
+  [Debian 13](https://github.com/braillerap/BuildAccessBrailleRAPDebian13)
 
-3. **Navigate into the Project Directory:**
-   
-   ```bash
-   cd AccessBrailleRAP
-   ```
-
-4. **Locate the Dockerfile** (e.g., `Dockerfile.debian` or `Dockerfile.ubuntu`) within the repository.
-
-5. **Build the Docker Image:**
-   
-   ```bash
-   docker build -f Dockerfile.debian -t accessbraillerap:latest .
-   ```
-   
-   (Replace `Dockerfile.debian` with the appropriate Dockerfile for your system if needed).
-
-6. **Run the Docker Container:**
-   
-   ```bash
-   docker run -it --rm -p 8000:8000 accessbraillerap:latest
-   ```
-   
-   This command runs the container, maps port 8000 (if the application uses it) and removes the container when it exits. You may need to adjust port mappings or add other Docker run options depending on your specific use case.
-
-*(Screenshot: Example of Docker build and run commands in the terminal)*
+  [Ubuntu 24](https://github.com/braillerap/BuildAccessBrailleRAPLinux)
 
 ## 3. Running from Source (Development Mode)
 
