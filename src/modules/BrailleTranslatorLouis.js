@@ -9,8 +9,12 @@ class BrailleTranslatorLouis extends BrailleTranslator{
     constructor ()
     {
         super();
+
         this.louis = null;
         this.louis_tbl=0;
+        this.braille_lines = null;
+        this.txt_lines = null;
+        this.src = null;
     }
    
     setUnknownCharInBrailleCallback (func)
@@ -66,12 +70,11 @@ class BrailleTranslatorLouis extends BrailleTranslator{
         }
         
         this.braille_lines = new Array(this.lines.length);
-        
+        this.txt_lines = new Array(this.lines.length);
         
         for (let i = 0; i < this.lines.length; i++)
         {
             let formfeed = false;
-            let formfeed_pos = [];
             let line = this.lines[i];
             
             for (let i = 0; i < line.length; i++)
@@ -79,14 +82,16 @@ class BrailleTranslatorLouis extends BrailleTranslator{
                 if (line[i] == "\f")
                 {
                     formfeed = true;
-                    formfeed_pos = i;
                 }
             }
-            if (formfeed)
+            if (formfeed) { // the line contain ff only
                 this.braille_lines[i] = '\f';
+                this.txt_lines[i] = '\f';
+            }
             else
             {
                 this.braille_lines[i] = this.louis.unicode_translate_string(line, this.louis_tbl);
+                this.txt_lines[i] = line;
             }
             
             if (reverse) // some language : ie ARABIC are ltr language but RTL in Braille

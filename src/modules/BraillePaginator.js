@@ -9,8 +9,13 @@ class BraillePaginator
         this.spacing = 0;
         this.pages = [];
         this.pagenbr = 0;
-        this.src = [];
+        this.braille = [];
+        this.txt_black = [];    // original text
+        this.pages = [];
+        this.current_page = [];
+        this.back_translate = []; // Braille back translated
         this.page_numbering = false;
+        this.BrailleTranslator = null;
     }
 
     setcols (cols)
@@ -35,9 +40,13 @@ class BraillePaginator
         this.spacing = spacing;
         this.Update ();
     }
-    setSrcLines (lines)
+    setBrailleLines (lines)
     {
-        this.src = lines;
+        this.braille = lines;
+    }
+    setTxtBlackLines (lines)
+    {
+        this.txt_black = lines;
     }
     setPageNumbering (numbering)
     {
@@ -47,19 +56,21 @@ class BraillePaginator
     {
         return this.page_numbering;
     }
-    #addline (line)
+    #addline (line, line_black)
     {
         this.current_page.push (line);
+        this.current_page_black.push (line_black);
         if (this.current_page.length >= this.computedrows)
         {
-            this.pages.push (this.current_page);
+            this.#addpage (this.current_page);
+            
             this.current_page = [];
         }
     }
     #flushline ()
     {
         if (this.current_page && this.current_page.length > 0)
-            this.pages.push (this.current_page);
+            this.#addpage (this.current_page);
         this.current_page = [];
     }
     #addpage (page)
@@ -83,19 +94,20 @@ class BraillePaginator
     }
     Update ()
     {
-        if (! this.src)
+        if (! this.braille)
             return;
 
         this.pages = [];
         this.current_page = [];
         this.#computerows();
         
-        for (let lsrc = 0; lsrc < this.src.length; lsrc++)
+        for (let lsrc = 0; lsrc < this.braille.length; lsrc++)
         {
-            //console.log ("lsrc>" + this.src[lsrc].length + " " + this.src[lsrc]);
-            let words = this.src[lsrc].split (String.fromCharCode(0x2800));    
-            
+            let words = this.braille[lsrc].split (String.fromCharCode(0x2800));    
+            let words_black = this.txt_black[lsrc].split (' ');    
             let current_line ='';
+            let current_line_black ='';
+            
             for (let w = 0; w < words.length; w++)
             {
                 if (words[w] === '\f')
