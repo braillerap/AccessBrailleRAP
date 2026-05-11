@@ -10,6 +10,7 @@ class BraillePaginator
         this.pages = [];
         this.pagenbr = 0;
         this.src = [];
+        this.page_numbering = false;
     }
 
     setcols (cols)
@@ -38,6 +39,14 @@ class BraillePaginator
     {
         this.src = lines;
     }
+    setPageNumbering (numbering)
+    {
+        this.page_numbering = numbering;
+    }
+    getPageNumbering ()
+    {
+        return this.page_numbering;
+    }
     #addline (line)
     {
         this.current_page.push (line);
@@ -53,9 +62,24 @@ class BraillePaginator
             this.pages.push (this.current_page);
         this.current_page = [];
     }
+    #addpage (page)
+    {
+        if (this.page_numbering)
+        {
+            // add page number according to option
+        }
+        // add the page to pages collection
+        this.pages.push (page);
+    }
     #computerows ()
     {
         this.computedrows = Math.floor (this.rows / ((this.spacing * 0.5) + 1));
+        
+        // if page numbering is enabled, reserve a row for page number
+        if (this.page_numbering) 
+        {
+            this.computedrows = this.computedrows - 1;
+        }
     }
     Update ()
     {

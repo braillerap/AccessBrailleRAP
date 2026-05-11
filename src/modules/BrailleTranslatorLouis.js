@@ -76,7 +76,6 @@ class BrailleTranslatorLouis extends BrailleTranslator{
             
             for (let i = 0; i < line.length; i++)
             {
-                
                 if (line[i] == "\f")
                 {
                     formfeed = true;
@@ -84,10 +83,9 @@ class BrailleTranslatorLouis extends BrailleTranslator{
                 }
             }
             if (formfeed)
-                this.braille_lines[i] = '\f'
+                this.braille_lines[i] = '\f';
             else
             {
-
                 this.braille_lines[i] = this.louis.unicode_translate_string(line, this.louis_tbl);
             }
             
