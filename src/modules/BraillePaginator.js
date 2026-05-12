@@ -66,6 +66,7 @@ class BraillePaginator
     
     #addline (line, line_black)
     {
+        
         this.current_page.push (line);
         this.current_page_black.push (line_black);
         if (this.current_page.length >= this.computedrows)
@@ -148,6 +149,13 @@ class BraillePaginator
                         {
                             current_line = words[w];    
                             current_line += String.fromCharCode(0x2800); 
+                            
+                            if (words[w].length > words_black[w].length)
+                            {
+                                console.log ("av padding ", words_black[w].length, words_black[w]);
+                                words_black[w] = words_black[w].padStart(words[w].length, ' ');
+                                console.log ("after padding ", words_black[w].length, words_black[w]);
+                            }
                             current_line_black = words_black[w];
                             current_line_black += ' ';
 
@@ -195,6 +203,12 @@ class BraillePaginator
                 {
                     current_line += words[w];
                     current_line += String.fromCharCode(0x2800);
+                    if (words[w].length > words_black[w].length)
+                    {
+                        console.log ("av padding ", words_black[w].length, words_black[w]);
+                        words_black[w] = words_black[w].padStart(words[w].length, ' ');
+                        console.log ("after padding ", words_black[w].length, words_black[w]);
+                    }
                     current_line_black += words_black[w];
                     current_line_black += " ";
 

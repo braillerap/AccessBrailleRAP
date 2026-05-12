@@ -330,48 +330,62 @@ body {
 .BrailleTable {
   text-align: left;
   overflow-x: auto;
+  
 }
 
 .BrailleTable-dark {
   text-align: left;
   overflow-x: auto;
+  
 }
 
 .BrailleOutput {
   font-size: calc(0.4em + 1vw);
-  min-height: 100%;
   color: black;
   background-color: rgb(253, 253, 253);
   font-family: monospace !important;
-  
+  vertical-align: baseline;
+  height: calc(0.4em + 1vw);
+  user-select: all;
 }
 .BrailleSrcOutput {
-  font-size: calc(0.4em + 0.6vw);
-  min-height: 100%;
-  color: rgb(127, 8, 8);
+  font-size: calc(0.2em + 0.6vw);
+  color: rgb(32, 32, 32);
   background-color: rgb(253, 253, 253);
   font-family: monospace !important;
-  
+  vertical-align: top;
+  height: calc(1.5em + 1vw);
+  user-select: all;
 }
 
 .BrailleOutput-dark {
   font-size: calc(0.4em + 1vw);
-  min-height: 100%;
+  
   color: white;
   background-color: rgb(8, 8, 8);
   font-family: monospace !important;
-  
+  vertical-align: baseline;
+  margin-top: 0;
+  margin-bottom: 0.1em;
+  height: calc(0.4em + 1vw);
+  user-select: all;
 }
 
 .BrailleSrcOutput-dark {
-  font-size: calc(0.4em + 0.6vw);
-  min-height: 100%;
-  color: rgb(127, 8, 8);
+  font-size: calc(0.2em + 0.6vw);
+  
+  color: rgb(178, 178, 178);
   background-color: rgb(8, 8, 8);
   font-family: monospace !important;
-  
+  vertical-align: top;
+  height: calc(1.5em + 1vw);
+  user-select: all;
 }
 
+.tdbraille {
+  
+  
+}
 .pad-button {
 
   margin-left: 0.2em;

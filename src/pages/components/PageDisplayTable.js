@@ -16,9 +16,13 @@ class PageDisplayTable extends React.Component {
             braillepages:props.pages
         }
 
+        this.copyfunction = this.copyfunction.bind(this);
         
     }
     
+    copyfunction (event) {
+        console.log ("copy ", event);
+    }
     
     render() {
         
@@ -27,9 +31,9 @@ class PageDisplayTable extends React.Component {
         console.log (page_black);
         return (
         
-        <div className={this.context.getStyleClass("BrailleTable")} aria-hidden="true">
-            <table className={this.context.getStyleClass("BrailleOutput")}>
-
+        <div className={this.context.getStyleClass("BrailleTable")} >
+            <table >
+            <tbody onCopy={this.copyfunction}>
             {
                 page.map ((line, index)=> {
                     let lineb = page_black[index];
@@ -45,6 +49,7 @@ class PageDisplayTable extends React.Component {
                 
                 })
             }
+            </tbody>
             </table>                   
         </div>  
         

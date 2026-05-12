@@ -21,7 +21,7 @@ class BrailleLine extends React.Component {
             //console.log ("state:", this.state.line);
             return (
                 <tr className={this.props.class}>
-                    {charline.map((char) => (<td>{char}</td>))}
+                    {charline.map((char) => (<td className='tdbraille'>{char}</td>))}
                 </tr>
             );
             
