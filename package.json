@@ -24,6 +24,7 @@
     "builddev": "cross-env GENERATE_SOURCEMAP=true react-scripts build",
     "webview": "python accessbraillerap.py --debug",
     "startview": "cross-env REACT_APP_DEV=true npm-run-all build webview",
+    "debugview": "cross-env REACT_APP_DEV=true npm-run-all builddev webview",
     "package": "pyinstaller AccessBrailleRAPW.spec",
     "packageportable": "pyinstaller AccessBrailleRAPWportable.spec",
     "buildportable": "npm-run-all clean build packageportable",
