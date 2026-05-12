@@ -36,6 +36,7 @@ const _themedb = {
         
         "menu":"menu-dark",
         "BrailleOutput":"BrailleOutput-dark",
+        "BrailleSrcOutput":"BrailleSrcOutput-dark",
         "ModalView":"ModalView-dark",
         "ModalBox":"ModalBox-dark",
         "BrailleTable":"BrailleTable-dark"
@@ -54,6 +55,8 @@ const _themedb = {
         
         "menu":"menu",
         "BrailleOutput":"BrailleOutput",
+        "BrailleSrcOutput":"BrailleSrcOutput",
+
         "ModalView":"ModalView",
         "ModalBox":"ModalBox",
         "BrailleTable":"BrailleTable"

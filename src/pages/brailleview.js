@@ -81,6 +81,11 @@ class BrailleView extends React.Component {
     
     this.Braille.setSrc(this.state.src);
     this.Braille.translate(this.context.localeinfo.reverse);
+    let linesb = this.Braille.getBrailleLines();
+    this.paginator.setBrailleLines(linesb);
+    this.paginator.setTxtBlackLines(this.Braille.getTextLines());
+    this.paginator.Update();
+    
     this.setState({pendingbuild:false});
   }
   builddocdelay (callback)
@@ -112,7 +117,8 @@ class BrailleView extends React.Component {
   HandleDownloadWeb() {
     let geom = new BrailleToGeometry();
     geom.setPaddingY(this.Braille.getLinePadding() * ((Number(this.props.options.linespacing) * 0.5) + 1));
-    geom.setGeometry (Number(this.props.options.nbcol), Number(this.props.options.nbline), Number(this.props.options.xmax));
+    geom.setGeometry (Number(this.props.options.nbcol), 
+      Number(this.props.options.nbline), Number(this.props.options.xmax));
     
     let ptcloud = geom.BraillePageToGeom(this.paginator.getPage(this.state.page),
                     Number(this.props.options.offsetx), 
@@ -329,9 +335,7 @@ class BrailleView extends React.Component {
         </div>
       );
     }
-    let linesb = this.Braille.getBrailleLines();
-    this.paginator.setSrcLines(linesb);
-    this.paginator.Update();
+    
     //console.log ("brailleview " + this.state.page.toString());
     return (
 

@@ -56,6 +56,11 @@ class BrailleTranslatorLouis extends BrailleTranslator{
         return (this.braille_lines);
     }
 
+    getTextLines ()
+    {
+        return (this.txt_lines);
+    }
+    
     translate (reverse)
     {
         // split lines

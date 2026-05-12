@@ -7,15 +7,22 @@ class BraillePaginator
         this.rows = 21;
         this.computedrows = 21;
         this.spacing = 0;
-        this.pages = [];
-        this.pagenbr = 0;
-        this.braille = [];
+        
+        
+        this.braille = [];      // braille translation
         this.txt_black = [];    // original text
-        this.pages = [];
-        this.current_page = [];
         this.back_translate = []; // Braille back translated
+
+        this.pages = [];        // paginated braille
+        this.pages_black = [];
+        this.pagenbr = 0;       // page count
+
+        this.current_page = []; // current page
+        this.current_page_black = []; // current page original text
+
+        
         this.page_numbering = false;
-        this.BrailleTranslator = null;
+        this.BrailleTranslator = null;  // reference to translator / back translator
     }
 
     setcols (cols)
@@ -56,24 +63,27 @@ class BraillePaginator
     {
         return this.page_numbering;
     }
+    
     #addline (line, line_black)
     {
         this.current_page.push (line);
         this.current_page_black.push (line_black);
         if (this.current_page.length >= this.computedrows)
         {
-            this.#addpage (this.current_page);
+            this.#addpage (this.current_page, this.current_page_black);
             
             this.current_page = [];
+            this.current_page_black = [];
         }
     }
     #flushline ()
     {
         if (this.current_page && this.current_page.length > 0)
-            this.#addpage (this.current_page);
+            this.#addpage (this.current_page, this.current_page_black);
         this.current_page = [];
+        this.current_page_black = [];
     }
-    #addpage (page)
+    #addpage (page, page_black)
     {
         if (this.page_numbering)
         {
@@ -81,6 +91,7 @@ class BraillePaginator
         }
         // add the page to pages collection
         this.pages.push (page);
+        this.pages_black.push (page_black);
     }
     #computerows ()
     {
@@ -96,24 +107,31 @@ class BraillePaginator
     {
         if (! this.braille)
             return;
+        console.log (this.braille);
+        console.log (this.txt_black);
 
         this.pages = [];
+        this.pages_black = [];
         this.current_page = [];
+        this.current_page_black = [];
         this.#computerows();
         
         for (let lsrc = 0; lsrc < this.braille.length; lsrc++)
         {
             let words = this.braille[lsrc].split (String.fromCharCode(0x2800));    
-            let words_black = this.txt_black[lsrc].split (' ');    
+            let words_black = this.txt_black[lsrc].split (" ");    
             let current_line ='';
             let current_line_black ='';
             
+            console.log ("compare words braille=", words.length, " black=", words_black.length);
+            console.log ("compare words braille=", words);
+            console.log ("compare words braille=", words_black);
             for (let w = 0; w < words.length; w++)
             {
                 if (words[w] === '\f')
                 {
                     
-                    this.#addline(current_line); 
+                    this.#addline(current_line, current_line_black); 
                     current_line = '';
                     this.#flushline();
                     continue;
@@ -124,12 +142,15 @@ class BraillePaginator
                     if (current_line.length > 0)   // create a line
                     {
                         //console.log ("add :"+ current_line);
-                        this.#addline (current_line);
+                        this.#addline (current_line, current_line_black);
                         
                         if (words[w].length < this.cols)
                         {
                             current_line = words[w];    
-                            current_line += String.fromCharCode(0x2800);  
+                            current_line += String.fromCharCode(0x2800); 
+                            current_line_black = words_black[w];
+                            current_line_black += ' ';
+
                             //console.log (">" + current_line)  ;               
                         }
                         else // we need to cut a long word
@@ -142,8 +163,8 @@ class BraillePaginator
                                 cut = Math.min (start + this.cols, words[w].length - l)
                                 
                                 current_line = words[w].substring (l, l + cut);
-                                
-                                this.#addline (current_line);
+                                current_line_black = words_black[w].substring (l, l + cut);
+                                this.#addline (current_line, current_line_black);
                                 start = 0;
                             }
                             current_line = "";
@@ -159,29 +180,32 @@ class BraillePaginator
                             cut = Math.min (start + this.cols, words[w].length - l)
                             //console.log ("-" +  l.toString() + "-" + cut.toString());
                             current_line = words[w].substring (l, l + cut);
+                            current_line_black = words_black[w].substring (l, l + cut);
+
                             //console.log ("+" +  l.toString() + "+" + current_line);
-                            this.#addline (current_line);
+                            this.#addline (current_line, current_line_black);
                             start = 0;
                         }
                         current_line = "";
+                        current_line_black = "";
                     }
                     
                 }
                 else
                 {
-                    //if (words[w].length > 0)
-                    //{
-                        current_line += words[w];
-                        current_line += String.fromCharCode(0x2800);
-                        //console.log (current_line)  ;
-                    //}
+                    current_line += words[w];
+                    current_line += String.fromCharCode(0x2800);
+                    current_line_black += words_black[w];
+                    current_line_black += " ";
+
                 }
             }   
             if (current_line !== '')
             {
                 //console.log ("add final:"+ current_line);
-                this.#addline(current_line); 
+                this.#addline(current_line, current_line_black); 
                 current_line = '';
+                current_line_black = '';
             
             }
         }
@@ -201,6 +225,13 @@ class BraillePaginator
     {
         if (n < this.pages.length)
             return (this.pages[n])
+        else
+            return [];    
+    }
+    getPageBlack (n)
+    {
+        if (n < this.pages_black.length)
+            return (this.pages_black[n])
         else
             return [];    
     }

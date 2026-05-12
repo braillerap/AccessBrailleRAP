@@ -345,6 +345,14 @@ body {
   font-family: monospace !important;
   
 }
+.BrailleSrcOutput {
+  font-size: calc(0.4em + 0.6vw);
+  min-height: 100%;
+  color: rgb(127, 8, 8);
+  background-color: rgb(253, 253, 253);
+  font-family: monospace !important;
+  
+}
 
 .BrailleOutput-dark {
   font-size: calc(0.4em + 1vw);
@@ -355,6 +363,14 @@ body {
   
 }
 
+.BrailleSrcOutput-dark {
+  font-size: calc(0.4em + 0.6vw);
+  min-height: 100%;
+  color: rgb(127, 8, 8);
+  background-color: rgb(8, 8, 8);
+  font-family: monospace !important;
+  
+}
 
 .pad-button {
 

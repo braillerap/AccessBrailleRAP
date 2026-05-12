@@ -23,7 +23,8 @@ class PageDisplayTable extends React.Component {
     render() {
         
         let page = this.state.braillepages.getPage (this.props.pagenbr);
-        
+        let page_black = this.state.braillepages.getPageBlack (this.props.pagenbr);
+        console.log (page_black);
         return (
         
         <div className={this.context.getStyleClass("BrailleTable")} aria-hidden="true">
@@ -31,10 +32,14 @@ class PageDisplayTable extends React.Component {
 
             {
                 page.map ((line, index)=> {
-                    
+                    let lineb = page_black[index];
                     return (
-                        <BrailleLine displine={line}/>
+                        <>
                         
+                        <BrailleLine displine={line} class={this.context.getStyleClass("BrailleOutput")}/>
+                        <BrailleLine displine={lineb} class={this.context.getStyleClass("BrailleSrcOutput")}/>
+                        
+                        </>
 
                     );
                 
