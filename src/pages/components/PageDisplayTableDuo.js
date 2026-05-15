@@ -3,18 +3,18 @@ import { IntlContext } from '../../components/intlwrapper.js';
 import { injectIntl } from 'react-intl';
 import BrailleLine from './BrailleLine.js'
 
-
 const BrailleStyle = {
     textAlign: 'left'
 }
 
-class PageDisplayTable extends React.Component {
+class PageDisplayTableDuo extends React.Component {
     static contextType = IntlContext;
     constructor(props) {
         super(props);
         this.state = {
             pagenbr:props.pagenbr,
-            braillepages:props.pages
+            braillepage:props.page,
+            blackpage:props.pageblack
         }
 
         this.copyfunction = this.copyfunction.bind(this);
@@ -27,17 +27,17 @@ class PageDisplayTable extends React.Component {
     
     render() {
         
-        let page = this.state.braillepages.getPage (this.props.pagenbr);
-        let page_black = this.state.braillepages.getPageBlack (this.props.pagenbr);
-        console.log (page_black);
+        //let page = this.state.braillepages.getPage (this.props.pagenbr);
+        //let page_black = this.state.braillepages.getPageBlack (this.props.pagenbr);
+        //console.log (page_black);
         return (
         
         <div className={this.context.getStyleClass("BrailleTable")} >
             <table >
-            <tbody onCopy={this.copyfunction}>
+            <tbody >
             {
-                page.map ((line, index)=> {
-                    let lineb = page_black[index];
+                this.state.braillepage.map ((line, index)=> {
+                    let lineb = index < this.state.blackpage.length ? this.state.blackpage[index] : "";
                     return (
                         <>
                         
@@ -59,4 +59,4 @@ class PageDisplayTable extends React.Component {
 
 }
 
-export default injectIntl(PageDisplayTable);
+export default injectIntl(PageDisplayTableDuo);

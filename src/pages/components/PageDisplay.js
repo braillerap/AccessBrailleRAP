@@ -27,7 +27,7 @@ class PageDisplay extends React.Component {
         let page = this.state.braillepages.getPage (this.props.pagenbr);
         return (
         
-        <div style={BrailleStyle} aria-hidden="true">
+        <div style={BrailleStyle}>
                                
             {page.map ((line, index)=> (<div className={this.context.getStyleClass("BrailleOutput")} key={index}>{line}</div>))}
             

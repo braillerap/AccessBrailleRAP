@@ -2,6 +2,7 @@ import React from 'react';
 import BrailleTranslatorFactory from '../modules/BrailleTranslatorFactory';
 import BraillePaginator from '../modules/BraillePaginator';
 import PageDisplayTable from './components/PageDisplayTable';
+import PageDisplayTableDuo from './components/PageDisplayTable';
 import BrailleToGeometry from '../modules/BrailleToGeometry';
 import GeomToGCode from '../modules/GeomToGCode';
 import FileSaver from 'file-saver';
