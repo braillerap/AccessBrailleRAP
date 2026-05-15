@@ -106,27 +106,40 @@ class BraillePaginator
     }
     Update ()
     {
-        if (! this.braille)
+        if (! this.braille || ! this.txt_black)
             return;
+
         console.log (this.braille);
         console.log (this.txt_black);
 
+        // init some vars
         this.pages = [];
         this.pages_black = [];
         this.current_page = [];
         this.current_page_black = [];
+        
         this.#computerows();
         
+        // process each Braille line in the document
         for (let lsrc = 0; lsrc < this.braille.length; lsrc++)
         {
+            // split Braille line in words
             let words = this.braille[lsrc].split (String.fromCharCode(0x2800));    
+            
+            // split text in black in words
             let words_black = this.txt_black[lsrc].split (/\s/);    
+
+
             let current_line ='';
             let current_line_black ='';
             
             console.log ("compare words braille=", words.length, " black=", words_black.length);
             console.log ("compare words braille=", words);
             console.log ("compare words braille=", words_black);
+
+            while (words_black.length < words.length)
+                words_black.push ('🚫')
+
             for (let w = 0; w < words.length; w++)
             {
                 if (words[w] === '\f')
@@ -153,7 +166,7 @@ class BraillePaginator
                             if (words[w].length > words_black[w].length)
                             {
                                 
-                                words_black[w] = words_black[w].padStart(words[w].length, ' ');
+                                words_black[w] = words_black[w].padStart(words[w].length, '🚫');
                                 
                             }
                             current_line_black = words_black[w];
@@ -207,7 +220,7 @@ class BraillePaginator
                     if (words[w].length > words_black[w].length)
                     {
                         console.log ("av padding ", words_black[w].length, words_black[w], words[w]);
-                        words_black[w] = words_black[w].padStart(words[w].length, ' ');
+                        words_black[w] = words_black[w].padStart(words[w].length, '🚫');
                         console.log ("after padding ", words_black[w].length, words_black[w]);
                     }
                     current_line_black += words_black[w];
