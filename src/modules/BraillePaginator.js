@@ -120,7 +120,7 @@ class BraillePaginator
         for (let lsrc = 0; lsrc < this.braille.length; lsrc++)
         {
             let words = this.braille[lsrc].split (String.fromCharCode(0x2800));    
-            let words_black = this.txt_black[lsrc].split (" ");    
+            let words_black = this.txt_black[lsrc].split (/\s/);    
             let current_line ='';
             let current_line_black ='';
             
@@ -149,12 +149,12 @@ class BraillePaginator
                         {
                             current_line = words[w];    
                             current_line += String.fromCharCode(0x2800); 
-                            
+                            console.log ("words_black[w]=", words_black[w], words[w]);
                             if (words[w].length > words_black[w].length)
                             {
-                                console.log ("av padding ", words_black[w].length, words_black[w]);
+                                
                                 words_black[w] = words_black[w].padStart(words[w].length, ' ');
-                                console.log ("after padding ", words_black[w].length, words_black[w]);
+                                
                             }
                             current_line_black = words_black[w];
                             current_line_black += ' ';
@@ -176,6 +176,7 @@ class BraillePaginator
                                 start = 0;
                             }
                             current_line = "";
+                            current_line_black = "";
                         }
                     }        
                     else // we need to cut a long word
@@ -205,7 +206,7 @@ class BraillePaginator
                     current_line += String.fromCharCode(0x2800);
                     if (words[w].length > words_black[w].length)
                     {
-                        console.log ("av padding ", words_black[w].length, words_black[w]);
+                        console.log ("av padding ", words_black[w].length, words_black[w], words[w]);
                         words_black[w] = words_black[w].padStart(words[w].length, ' ');
                         console.log ("after padding ", words_black[w].length, words_black[w]);
                     }
