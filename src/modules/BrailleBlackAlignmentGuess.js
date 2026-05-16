@@ -1,7 +1,9 @@
 /**
- * \file            BrailleInBlackGeniuneTextStrategy.js
- * \brief           Implement a strategy to build translation of an array of Braille words in black text, using the original text translated in Braille
+ * \file            BrailleBlackAlignmentGuess.js
+ * \brief           Define a strategy to compute alignment for the same word in Braille and in black text, trying to guess best position by back translating Braille word
  */
+
+import BrailleBlackAlignmentStrategy from "./BrailleBlackAlignmentStrategy";
 
 /*
  * GNU GENERAL PUBLIC LICENSE
@@ -36,30 +38,28 @@
  * 
  * SPDX-License-Identifier: GPL-3.0 
  */
-import BrailleInBlackTextStrategy from "./BrailleInBlackTextStrategy";
+import BrailleBlackAlignmentStrategy from "./BrailleBlackAlignmentStrategy";
 
-
-class BrailleInBlackGeniuneTextStrategy extends BrailleInBlackTextStrategy
+class BrailleBlackAlignmentGuess extends BrailleBlackAlignmentStrategy 
 {
-    constructor ()
+    constructor (BrailleTranslator)
     {
-        super();
+        super (BrailleTranslator);
     }
 
-    getWords (braille_words_array, original_text_line)
+    getAligned(BrailleWord, TextWord)
     {
-        let words = [];
+        let word = this.BrailleTranslator.back_translate_single_string (BrailleWord);
         
-        // split geniune text in black in words
-        words = original_text_line.split (/\s/);    
-
-        // fill some words if something go wrong
-         while (words.length < braille_words_array.length)
-                words.push ('🚫')
-
-         return words;
-
+        if (word.length < BrailleWord.length)
+        {
+            word.padEnd (BrailleWord.length, ' ');
+        }
+        
+        
+        return word;
     }
+
 }
 
-export default BrailleInBlackGeniuneTextStrategy;
+export default BrailleBlackAlignmentStrategy;

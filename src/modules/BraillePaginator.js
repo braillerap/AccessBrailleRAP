@@ -23,6 +23,8 @@ class BraillePaginator
         
         this.page_numbering = false;
         this.BrailleTranslator = null;  // reference to translator / back translator
+        this.BrailleInBlackTextStrategy = null;
+
     }
 
     setcols (cols)
@@ -59,11 +61,17 @@ class BraillePaginator
     {
         this.page_numbering = numbering;
     }
+
     getPageNumbering ()
     {
         return this.page_numbering;
     }
     
+    setBrailleInBlackTextStrategy (strategy)
+    {
+        this.BrailleInBlackTextStrategy = strategy;
+    }
+
     #addline (line, line_black)
     {
         
@@ -127,8 +135,8 @@ class BraillePaginator
             let words = this.braille[lsrc].split (String.fromCharCode(0x2800));    
             
             // split text in black in words
-            let words_black = this.txt_black[lsrc].split (/\s/);    
-
+            //let words_black = this.txt_black[lsrc].split (/\s/);    
+            let words_black = this.BrailleInBlackTextStrategy.getWords (words, this.txt_black[lsrc]);
 
             let current_line ='';
             let current_line_black ='';
@@ -166,7 +174,7 @@ class BraillePaginator
                             if (words[w].length > words_black[w].length)
                             {
                                 
-                                words_black[w] = words_black[w].padStart(words[w].length, '🚫');
+                                words_black[w] = words_black[w].padStart(words[w].length, ' ');
                                 
                             }
                             current_line_black = words_black[w];
@@ -220,7 +228,7 @@ class BraillePaginator
                     if (words[w].length > words_black[w].length)
                     {
                         console.log ("av padding ", words_black[w].length, words_black[w], words[w]);
-                        words_black[w] = words_black[w].padStart(words[w].length, '🚫');
+                        words_black[w] = words_black[w].padStart(words[w].length, ' ');
                         console.log ("after padding ", words_black[w].length, words_black[w]);
                     }
                     current_line_black += words_black[w];

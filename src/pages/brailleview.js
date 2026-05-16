@@ -11,7 +11,7 @@ import { IntlContext } from '../components/intlwrapper.js';
 import { injectIntl } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
 import logo2 from '../833.gif'
-
+import BrailleInBlackGeniuneTextStrategy from '../modules/BrailleInBlackgeniuneTextStrategy.js';
 class BrailleView extends React.Component {
 
   static contextType = IntlContext;
@@ -85,6 +85,7 @@ class BrailleView extends React.Component {
     let linesb = this.Braille.getBrailleLines();
     this.paginator.setBrailleLines(linesb);
     this.paginator.setTxtBlackLines(this.Braille.getTextLines());
+    this.paginator.setBrailleInBlackTextStrategy (new BrailleInBlackGeniuneTextStrategy ());
     this.paginator.Update();
     
     this.setState({pendingbuild:false});
