@@ -55,7 +55,7 @@ class BrailleInBlackGeniuneTextStrategy extends BrailleInBlackTextStrategy
 
         // fill some words if something go wrong
          while (words.length < braille_words_array.length)
-                words.push ('🚫')
+                words.push ('!')
 
          return words;
 

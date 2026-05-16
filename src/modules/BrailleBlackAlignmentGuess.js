@@ -49,7 +49,14 @@ class BrailleBlackAlignmentGuess extends BrailleBlackAlignmentStrategy
 
     getAligned(BrailleWord, TextWord)
     {
-        let word = this.BrailleTranslator.back_translate_single_string (BrailleWord);
+        let braille = this.BrailleTranslator.translate_single_string (TextWord);
+        let word = TextWord;
+
+        let p = BrailleWord.IndexOf (braille);
+        if (p > 0)
+        {
+            word = TextWord.padStart (TextWord.length + p, '-');
+        }
         
         if (word.length < BrailleWord.length)
         {

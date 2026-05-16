@@ -12,6 +12,8 @@ import { injectIntl } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
 import logo2 from '../833.gif'
 import BrailleInBlackGeniuneTextStrategy from '../modules/BrailleInBlackgeniuneTextStrategy.js';
+
+import BrailleBlackAlignmentFactory from '../modules/BrailleBlackAlignmentFactory.js'
 class BrailleView extends React.Component {
 
   static contextType = IntlContext;
@@ -36,6 +38,7 @@ class BrailleView extends React.Component {
     this.Braille = f.getTranslator("LOUIS", louis, this.props.options.brailletbl);
     this.paginator = new BraillePaginator();
 
+    
     if (this.props.options) {
       this.paginator.setcols(Number(this.props.options.nbcol));
       this.paginator.setrows(Number(this.props.options.nbline));
@@ -82,10 +85,16 @@ class BrailleView extends React.Component {
     
     this.Braille.setSrc(this.state.src);
     this.Braille.translate(this.context.localeinfo.reverse);
+
+    let BrailleInBlackStrategy = new BrailleInBlackGeniuneTextStrategy ();
+    let MyBrailleBlackAlignmentFactory = new BrailleBlackAlignmentFactory (this.Braille);
+    let BrailleBlackAlignStrategy = MyBrailleBlackAlignmentFactory.create ('right');
+
     let linesb = this.Braille.getBrailleLines();
     this.paginator.setBrailleLines(linesb);
     this.paginator.setTxtBlackLines(this.Braille.getTextLines());
-    this.paginator.setBrailleInBlackTextStrategy (new BrailleInBlackGeniuneTextStrategy ());
+    this.paginator.setBrailleInBlackTextStrategy (BrailleInBlackStrategy);
+    this.paginator.setBrailleBlackAlignmentStrategy (BrailleBlackAlignStrategy);
     this.paginator.Update();
     
     this.setState({pendingbuild:false});

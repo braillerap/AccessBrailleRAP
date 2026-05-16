@@ -16,7 +16,11 @@ class BrailleBlackAlignmentFactory
             return new BrailleBlackAlignmentRight (this.BrailleTranslator);
             break;
         case "guess":
-            return new BrailleBlackAlig
+            return new BrailleBlackAlignmentGuess (this.BrailleTranslator);
+            break;
+        default:
+            return null;
         }
     }
 }
+export default BrailleBlackAlignmentFactory;

@@ -22,9 +22,9 @@ class BraillePaginator
 
         
         this.page_numbering = false;
-        this.BrailleTranslator = null;  // reference to translator / back translator
+        
         this.BrailleInBlackTextStrategy = null;
-
+        this.BrailleBlackAlignmentStrategy = null;
     }
 
     setcols (cols)
@@ -70,6 +70,11 @@ class BraillePaginator
     setBrailleInBlackTextStrategy (strategy)
     {
         this.BrailleInBlackTextStrategy = strategy;
+    }
+
+    setBrailleBlackAlignmentStrategy (strategy)
+    {
+        this.BrailleBlackAlignmentStrategy = strategy;
     }
 
     #addline (line, line_black)

@@ -1,11 +1,7 @@
 /**
- * \file            BrailleTranslatorLouis.js
+ * \file            BrailleBlackAlignmentRight.js
  * \brief           Define a strategy to compute alignment for the same word in Braille and in black text
  */
-
-import textinput from "../pages/textinput";
-import BrailleBlackAlignmentStrategy from "./BrailleBlackAlignmentStrategy";
-
 /*
  * GNU GENERAL PUBLIC LICENSE
  *
@@ -68,4 +64,4 @@ class BrailleBlackAlignmentRight extends BrailleBlackAlignmentStrategy
 
 }
 
-export default BrailleBlackAlignmentStrategy;
+export default BrailleBlackAlignmentRight;
