@@ -88,7 +88,7 @@ class BrailleView extends React.Component {
 
     let BrailleInBlackStrategy = new BrailleInBlackGeniuneTextStrategy ();
     let MyBrailleBlackAlignmentFactory = new BrailleBlackAlignmentFactory (this.Braille);
-    let BrailleBlackAlignStrategy = MyBrailleBlackAlignmentFactory.create ('right');
+    let BrailleBlackAlignStrategy = MyBrailleBlackAlignmentFactory.create ('guess');
 
     let linesb = this.Braille.getBrailleLines();
     this.paginator.setBrailleLines(linesb);

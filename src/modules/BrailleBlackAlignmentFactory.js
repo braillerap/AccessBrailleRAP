@@ -1,5 +1,5 @@
 import BrailleBlackAlignmentRight from "./BrailleBlackAlignmentRight"
-
+import BrailleBlackAlignmentGuess from "./BrailleBlackAlignmentGuess"
 class BrailleBlackAlignmentFactory
 {
     constructor (BrailleTranslator)

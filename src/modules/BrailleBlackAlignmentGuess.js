@@ -2,9 +2,6 @@
  * \file            BrailleBlackAlignmentGuess.js
  * \brief           Define a strategy to compute alignment for the same word in Braille and in black text, trying to guess best position by back translating Braille word
  */
-
-import BrailleBlackAlignmentStrategy from "./BrailleBlackAlignmentStrategy";
-
 /*
  * GNU GENERAL PUBLIC LICENSE
  *
@@ -46,27 +43,48 @@ class BrailleBlackAlignmentGuess extends BrailleBlackAlignmentStrategy
     {
         super (BrailleTranslator);
     }
+    
+    isCharNumber(c) {
+            return typeof c === 'string' && c.length === 1 && c >= '0' && c <= '9';
+    }
 
     getAligned(BrailleWord, TextWord)
     {
-        let braille = this.BrailleTranslator.translate_single_string (TextWord);
+        let braille = this.BrailleTranslator.translate_single_string (TextWord.toLowerCase ());
         let word = TextWord;
 
-        let p = BrailleWord.IndexOf (braille);
-        if (p > 0)
+        if (this.isCharNumber(TextWord.charAt(0)))
         {
-            word = TextWord.padStart (TextWord.length + p, '-');
+            // the word start by a number => align right
+            word = TextWord.padStart (BrailleWord.length, " ");
         }
-        
+        else {
+            if (TextWord.length > 1)
+            {
+                // we have a word, try to guess the start position of the word
+                let p = BrailleWord.indexOf (braille.charAt(0), 0);
+                console.log ("guess log position", BrailleWord, ",", braille, p);
+                if (p > 0)
+                {
+                    word = TextWord.padStart (TextWord.length + p, ' ');
+                }
+            }
+            else if (TextWord.length === 1)
+            {
+                // this must be a symbol or an uppercase start letter => right align is enough
+                word = TextWord.padStart (BrailleWord.length, " ");
+            }
+        }
         if (word.length < BrailleWord.length)
         {
-            word.padEnd (BrailleWord.length, ' ');
+            // pad the end of the word if previous processing is not enough
+            word = word.padEnd (BrailleWord.length, ' ');
         }
-        
+        console.log ("guess strategy result:", BrailleWord, word);
         
         return word;
     }
 
 }
 
-export default BrailleBlackAlignmentStrategy;
+export default BrailleBlackAlignmentGuess;
