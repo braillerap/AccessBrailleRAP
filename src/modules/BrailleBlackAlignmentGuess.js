@@ -63,7 +63,7 @@ class BrailleBlackAlignmentGuess extends BrailleBlackAlignmentStrategy
             {
                 // we have a word, try to guess the start position of the word
                 let p = BrailleWord.indexOf (braille.charAt(0), 0);
-                console.log ("guess log position", BrailleWord, ",", braille, p);
+                //console.log ("guess log position", BrailleWord, ",", braille, p);
                 if (p > 0)
                 {
                     word = TextWord.padStart (TextWord.length + p, ' ');
@@ -80,7 +80,7 @@ class BrailleBlackAlignmentGuess extends BrailleBlackAlignmentStrategy
             // pad the end of the word if previous processing is not enough
             word = word.padEnd (BrailleWord.length, ' ');
         }
-        console.log ("guess strategy result:", BrailleWord, word);
+        //console.log ("guess strategy result:", BrailleWord, word);
         
         return word;
     }
