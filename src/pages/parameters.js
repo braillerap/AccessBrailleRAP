@@ -44,6 +44,7 @@ class Parameters extends React.Component {
     this.handleChangeOffsety = this.handleChangeOffsety.bind(this);
     this.handleChangeXmax = this.handleChangeXmax.bind(this);
     this.handleChangeOrientation = this.handleChangeOrientation.bind(this);
+    this.handleChangeBackTranslation = this.handleChangeBackTranslation.bind(this);
 
     //console.log ("constructor");
   }
@@ -229,6 +230,16 @@ class Parameters extends React.Component {
       this.setState({ options: option });
 
 
+  }
+  handleChangeBackTranslation(event)
+  {
+    let option = this.props.options;
+    option.backtranslation = event.target.value;
+
+    if (this.props.optioncb)
+      this.props.optioncb(option);
+    else
+      this.setState({ options: option });
   }
 
   render_comport() {
@@ -462,7 +473,25 @@ class Parameters extends React.Component {
                 <option value="1">{this.props.intl.formatMessage({ id: "param.orientation.landscape" })}</option>
               </select>
             </div>
+            <div className='pure-control-group'>
+            <label
+                aria-label={"Back translation"}
+                htmlFor='backtranslation'>
+                Back Translation
 
+              </label>
+              <select
+                value={this.props.options.backtranslation}
+                onChange={this.handleChangeBackTranslation}
+                name="backtranslation" id="backtranslation"
+                className={this.context.getStyleClass('input') + ' selectparam'}
+              >
+
+                <option value="geniune">{'original text'}</option>
+                <option value="back">{'back translation'}</option>
+              </select>
+
+            </div>
             <div className='pure-control-group'>
 
               {this.render_comport()}

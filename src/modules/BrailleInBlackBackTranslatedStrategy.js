@@ -36,3 +36,46 @@
  * 
  * SPDX-License-Identifier: GPL-3.0 
  */
+import BrailleInBlackTextStrategy from "./BrailleInBlackTextStrategy";
+
+
+class BrailleInBlackBackTranslatedStrategy extends BrailleInBlackTextStrategy
+{
+    constructor ()
+    {
+        super();
+        this.BrailleTranslator = null;
+    }
+
+    setBrailleTranslator (BrailleTranslator)
+    {
+        this.BrailleTranslator = BrailleTranslator;
+    }
+
+    /*!
+     *\brief Build an array of word in black associated with the array of Braille words
+     *
+     *\param braille_words_array An array of Braille word to translate in black word.
+     *\param original_text_line  The text string source for braille_words_array.
+     * 
+     *\return The array of words black (ie standard text).
+     */
+    getWords (braille_words_array, original_text_line)
+    {
+        let words = [];
+        
+        braille_words_array.map ( (brailleword) => {
+            let trans = this.BrailleTranslator.back_translate_single_string (brailleword);
+            words.push (trans);
+        });
+
+        // fill some words if something go wrong
+        while (words.length < braille_words_array.length)
+                words.push ('!')
+
+         return words;
+
+    }
+}
+
+export default BrailleInBlackBackTranslatedStrategy;

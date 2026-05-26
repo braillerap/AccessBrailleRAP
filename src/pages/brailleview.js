@@ -12,6 +12,7 @@ import { injectIntl } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
 import logo2 from '../833.gif'
 import BrailleInBlackGeniuneTextStrategy from '../modules/BrailleInBlackgeniuneTextStrategy.js';
+import BrailleInBlackTextStrategyFactory from '../modules/BrailleInBlackTextStrategyFactory.js'
 
 import BrailleBlackAlignmentFactory from '../modules/BrailleBlackAlignmentFactory.js'
 class BrailleView extends React.Component {
@@ -86,10 +87,14 @@ class BrailleView extends React.Component {
     this.Braille.setSrc(this.state.src);
     this.Braille.translate(this.context.localeinfo.reverse);
 
-    let BrailleInBlackStrategy = new BrailleInBlackGeniuneTextStrategy ();
+    let BrailleInBlackStrategyFactory = new BrailleInBlackTextStrategyFactory(this.Braille);
+    
     let MyBrailleBlackAlignmentFactory = new BrailleBlackAlignmentFactory (this.Braille);
     let BrailleBlackAlignStrategy = MyBrailleBlackAlignmentFactory.create ('guess');
 
+    
+    let BrailleInBlackStrategy = BrailleInBlackStrategyFactory.create (this.props.options.backtranslation);
+    
     let linesb = this.Braille.getBrailleLines();
     this.paginator.setBrailleLines(linesb);
     this.paginator.setTxtBlackLines(this.Braille.getTextLines());

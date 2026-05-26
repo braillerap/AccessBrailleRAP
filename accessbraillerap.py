@@ -31,7 +31,8 @@ app_options = {
     "offsetx":"1",
     "offsety":"2.5",
     "fast":0,
-    "louisfilecheck":""
+    "louisfilecheck":"",
+    "backtranslation":"back"
 }
 
 

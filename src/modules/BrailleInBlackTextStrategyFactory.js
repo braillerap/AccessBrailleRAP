@@ -1,8 +1,7 @@
 /**
- * \file            BrailleInBlackGeniuneTextStrategy.js
- * \brief           Implement a strategy to build translation of an array of Braille words in black text, using the original text translated in Braille
+ * \file            BrailleInBlackTextStrategyFactory.js
+ * \brief           Implement a factory to abstract BrailleInBlackTextStrategy build.
  */
-
 /*
  * GNU GENERAL PUBLIC LICENSE
  *
@@ -36,39 +35,32 @@
  * 
  * SPDX-License-Identifier: GPL-3.0 
  */
-import BrailleInBlackTextStrategy from "./BrailleInBlackTextStrategy";
+import BrailleInBlackBackTranslatedStrategy from "./BrailleInBlackBackTranslatedStrategy";
+import BrailleInBlackGeniuneTextStrategy from "./BrailleInBlackgeniuneTextStrategy";
 
-
-class BrailleInBlackGeniuneTextStrategy extends BrailleInBlackTextStrategy
+class BrailleInBlackTextStrategyFactory
 {
-    constructor ()
+    constructor (BrailleTranslator)
     {
-        super();
+        this.BrailleTranslator = BrailleTranslator;
     }
 
-    
-   /*!
-     *\brief Build an array of word in black associated with the array of Braille words
-     *
-     *\param braille_words_array An array of Braille word to translate in black word.
-     *\param original_text_line  The text string source for braille_words_array.
-     * 
-     *\return The array of words black (ie standard text).
-     */
-    getWords (braille_words_array, original_text_line)
+    create (type)
     {
-        let words = [];
-        
-        // split geniune text in black in words
-        words = original_text_line.split (/\s/);    
-
-        // fill some words if something go wrong
-         while (words.length < braille_words_array.length)
-                words.push ('!')
-
-         return words;
-
+        let obj = null;
+        switch (type)
+        {
+        case "geniune":
+            return new BrailleInBlackGeniuneTextStrategy ();
+            break;
+        case "back":
+            let obj =  new BrailleInBlackBackTranslatedStrategy ();
+            obj.setBrailleTranslator (this.BrailleTranslator);
+            return obj;
+            break;
+        default:
+            return null;
+        }
     }
 }
-
-export default BrailleInBlackGeniuneTextStrategy;
+export default BrailleInBlackTextStrategyFactory;

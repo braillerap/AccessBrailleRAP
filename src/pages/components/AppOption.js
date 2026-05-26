@@ -11,7 +11,8 @@ const AppOption = {
     xmax:200,
     orientation:0,
     fast:0,
-    louisfilecheck:""
+    louisfilecheck:"",
+    backtranslation:"back"
 
 }
 
