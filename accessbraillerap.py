@@ -32,7 +32,8 @@ app_options = {
     "offsety":"2.5",
     "fast":0,
     "louisfilecheck":"",
-    "backtranslation":"back"
+    "backtranslation":"back",
+    "brailleblackalign":"guess"
 }
 
 

@@ -90,7 +90,7 @@ class BrailleView extends React.Component {
     let BrailleInBlackStrategyFactory = new BrailleInBlackTextStrategyFactory(this.Braille);
     
     let MyBrailleBlackAlignmentFactory = new BrailleBlackAlignmentFactory (this.Braille);
-    let BrailleBlackAlignStrategy = MyBrailleBlackAlignmentFactory.create ('guess');
+    let BrailleBlackAlignStrategy = MyBrailleBlackAlignmentFactory.create (this.props.options.brailleblackalign);
 
     
     let BrailleInBlackStrategy = BrailleInBlackStrategyFactory.create (this.props.options.backtranslation);

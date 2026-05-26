@@ -45,6 +45,7 @@ class Parameters extends React.Component {
     this.handleChangeXmax = this.handleChangeXmax.bind(this);
     this.handleChangeOrientation = this.handleChangeOrientation.bind(this);
     this.handleChangeBackTranslation = this.handleChangeBackTranslation.bind(this);
+    this.handleChangeBrailleAlign = this.handleChangeBrailleAlign.bind(this);
 
     //console.log ("constructor");
   }
@@ -212,12 +213,12 @@ class Parameters extends React.Component {
   handleChangeTheme(event) {
     let option = this.props.options;
     option.theme = event.target.value;
-    console.log("option in param " + option.toString());
+    
     if (this.props.optioncb)
       this.props.optioncb(option);
     else
       this.setState({ options: option });
-    console.log(event.target.value);
+    
     this.context.setTheme(event.target.value);
   }
   handleChangeOrientation(event) {
@@ -228,13 +229,22 @@ class Parameters extends React.Component {
       this.props.optioncb(option);
     else
       this.setState({ options: option });
-
-
   }
   handleChangeBackTranslation(event)
   {
     let option = this.props.options;
     option.backtranslation = event.target.value;
+
+    if (this.props.optioncb)
+      this.props.optioncb(option);
+    else
+      this.setState({ options: option });
+  }
+
+  handleChangeBrailleAlign (event)
+  {
+    let option = this.props.options;
+    option.brailleblackalign = event.target.value;
 
     if (this.props.optioncb)
       this.props.optioncb(option);
@@ -490,7 +500,22 @@ class Parameters extends React.Component {
                 <option value="geniune">{'original text'}</option>
                 <option value="back">{'back translation'}</option>
               </select>
+              <label
+                aria-label={"Back translation"}
+                htmlFor='backtranslation'>
+                Back Translation
 
+              </label>
+              <select
+                value={this.props.options.brailleblackalign}
+                onChange={this.handleChangeBrailleAlign}
+                name="braillealign" id="braillealign"
+                className={this.context.getStyleClass('input') + ' selectparam'}
+              >
+
+                <option value="right">{'right'}</option>
+                <option value="guess">{'bestfit'}</option>
+              </select>
             </div>
             <div className='pure-control-group'>
 

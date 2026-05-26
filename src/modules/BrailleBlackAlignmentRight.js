@@ -58,6 +58,10 @@ class BrailleBlackAlignmentRight extends BrailleBlackAlignmentStrategy
         {
            word=  TextWord.padStart(BrailleWord.length, ' ');
         }
+        else
+        {
+            word = TextWord
+        }
         
         return word;
     }
