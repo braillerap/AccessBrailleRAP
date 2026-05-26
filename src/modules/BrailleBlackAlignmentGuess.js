@@ -43,11 +43,25 @@ class BrailleBlackAlignmentGuess extends BrailleBlackAlignmentStrategy
     {
         super (BrailleTranslator);
     }
-    
+    /*!
+     *\brief test if a string represent a digit
+     *
+     *\param c The string object to test
+     * 
+     *\return true if the string is a digit, otherwise false.
+     */
     isCharNumber(c) {
             return typeof c === 'string' && c.length === 1 && c >= '0' && c <= '9';
     }
 
+    /*!
+     *\brief Build a string of text aligned with the Braille string
+     *
+     *\param BrailleWord a string containing a word in unicode Braille char.
+     *\param TextWord   a string containing the translation in black of he Braille word.
+     * 
+     *\return A string containing the black text, aligned with the Braille word by adding space before or after.
+     */
     getAligned(BrailleWord, TextWord)
     {
         let braille = this.BrailleTranslator.translate_single_string (TextWord.toLowerCase ());

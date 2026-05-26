@@ -44,7 +44,14 @@ class BrailleBlackAlignmentFactory
     {
         this.BrailleTranslator = BrailleTranslator;
     }
-
+    /*!
+     *\brief Build an Braille/ Black text alignment strategy object
+     *
+     *\param type The strategy object type to build ["right", "guess"].
+     *\param original_text_line  The text string source for braille_words_array.
+     * 
+     *\return An object implementing the requested strategy.
+     */
     create (type)
     {
         let obj = null;

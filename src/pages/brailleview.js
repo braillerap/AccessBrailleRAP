@@ -420,7 +420,8 @@ class BrailleView extends React.Component {
         <p aria-live="polite" role="log" aria-relevant="all" aria-atomic={true}>
           {this.state.comevent}
         </p>
-        <PageDisplayTable pagenbr={this.state.page} pages={this.paginator} />
+        
+        <PageDisplayTable pagenbr={this.state.page} pages={this.paginator} render={this.props.options.braillerender}/>
       </div>
 
     );

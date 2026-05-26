@@ -46,6 +46,7 @@ class Parameters extends React.Component {
     this.handleChangeOrientation = this.handleChangeOrientation.bind(this);
     this.handleChangeBackTranslation = this.handleChangeBackTranslation.bind(this);
     this.handleChangeBrailleAlign = this.handleChangeBrailleAlign.bind(this);
+    this.handleChangeBrailleRender = this.handleChangeBrailleRender.bind(this);
 
     //console.log ("constructor");
   }
@@ -245,6 +246,17 @@ class Parameters extends React.Component {
   {
     let option = this.props.options;
     option.brailleblackalign = event.target.value;
+
+    if (this.props.optioncb)
+      this.props.optioncb(option);
+    else
+      this.setState({ options: option });
+  }
+
+  handleChangeBrailleRender (event)
+  {
+    let option = this.props.options;
+    option.braillerender = event.target.value;
 
     if (this.props.optioncb)
       this.props.optioncb(option);
@@ -503,7 +515,7 @@ class Parameters extends React.Component {
               <label
                 aria-label={"Back translation"}
                 htmlFor='backtranslation'>
-                Back Translation
+                Braille/Text alignment
 
               </label>
               <select
@@ -517,6 +529,27 @@ class Parameters extends React.Component {
                 <option value="guess">{'bestfit'}</option>
               </select>
             </div>
+            <div className='pure-control-group'>
+
+            </div>
+            <label
+                aria-label={"Braille render"}
+                htmlFor='braillerender'>
+                Braille/Text alignment
+
+              </label>
+              <select
+                value={this.props.options.braillerender}
+                onChange={this.handleChangeBrailleRender}
+                name="braillerender" id="braillerender"
+                className={this.context.getStyleClass('input') + ' selectparam'}
+              >
+
+                <option value="braille">{'Braille only'}</option>
+                <option value="black">{'Braille with text in black'}</option>
+              </select>            
+
+
             <div className='pure-control-group'>
 
               {this.render_comport()}

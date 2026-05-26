@@ -14,7 +14,8 @@ class PageDisplayTable extends React.Component {
         super(props);
         this.state = {
             pagenbr:props.pagenbr,
-            braillepages:props.pages
+            braillepages:props.pages,
+            render:props.render
         }
 
         this.copyfunction = this.copyfunction.bind(this);
@@ -29,7 +30,36 @@ class PageDisplayTable extends React.Component {
         
         let page = this.state.braillepages.getPage (this.props.pagenbr);
         let page_black = this.state.braillepages.getPageBlack (this.props.pagenbr);
-        console.log (page_black);
+        //console.log (page_black);
+
+        if (this.state.render === "braille")
+        {
+            return (
+        
+                <div className={this.context.getStyleClass("BrailleTable")} >
+                    <table >
+                    <tbody onCopy={this.copyfunction}>
+                    {
+                        page.map ((line, index)=> {
+                            let lineb = page_black[index];
+                            return (
+                                <>
+                                
+                                <BrailleLine displine={line} class={this.context.getStyleClass("BrailleOutput")}/>
+                                
+                                
+                                </>
+
+                            );
+                        
+                        })
+                    }
+                    </tbody>
+                    </table>                   
+                </div>  
+                
+            );
+        }
         return (
         
         <div className={this.context.getStyleClass("BrailleTable")} >

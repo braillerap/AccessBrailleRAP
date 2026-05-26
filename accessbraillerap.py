@@ -33,7 +33,8 @@ app_options = {
     "fast":0,
     "louisfilecheck":"",
     "backtranslation":"back",
-    "brailleblackalign":"guess"
+    "brailleblackalign":"guess",
+    "braillerender":"black"
 }
 
 
