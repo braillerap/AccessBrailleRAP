@@ -531,7 +531,7 @@ class Parameters extends React.Component {
             </div>
             <div className='pure-control-group'>
 
-            </div>
+            
             <label
                 aria-label={this.props.intl.formatMessage({ id: "param.braille_display_aria" })}
                 htmlFor='braillerender'>
@@ -544,12 +544,11 @@ class Parameters extends React.Component {
                 name="braillerender" id="braillerender"
                 className={this.context.getStyleClass('input') + ' selectparam'}
               >
-
                 <option value="braille">{this.props.intl.formatMessage({ id: "param.braille_display_braille" })}</option>
                 <option value="black">{this.props.intl.formatMessage({ id: "param.braille_display_text" })}</option>
               </select>            
 
-
+            </div>
             <div className='pure-control-group'>
 
               {this.render_comport()}
