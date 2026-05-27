@@ -497,9 +497,9 @@ class Parameters extends React.Component {
             </div>
             <div className='pure-control-group'>
             <label
-                aria-label={"Back translation"}
+                aria-label={this.props.intl.formatMessage({ id: "param.backtranslation_aria" })}
                 htmlFor='backtranslation'>
-                Back Translation
+                {this.props.intl.formatMessage({ id: "param.backtranslation" })}
 
               </label>
               <select
@@ -509,13 +509,13 @@ class Parameters extends React.Component {
                 className={this.context.getStyleClass('input') + ' selectparam'}
               >
 
-                <option value="geniune">{'original text'}</option>
-                <option value="back">{'back translation'}</option>
+                <option value="geniune">{this.props.intl.formatMessage({ id: "param.backtranslation_geniune" })}</option>
+                <option value="back">{this.props.intl.formatMessage({ id: "param.backtranslation_back" })}</option>
               </select>
               <label
-                aria-label={"Back translation"}
+                aria-label={this.props.intl.formatMessage({ id: "param.braille_text_align_aria" })}
                 htmlFor='backtranslation'>
-                Braille/Text alignment
+                {this.props.intl.formatMessage({ id: "param.braille_text_align" })}
 
               </label>
               <select
@@ -525,17 +525,17 @@ class Parameters extends React.Component {
                 className={this.context.getStyleClass('input') + ' selectparam'}
               >
 
-                <option value="right">{'right'}</option>
-                <option value="guess">{'bestfit'}</option>
+                <option value="right">{this.props.intl.formatMessage({ id: "param.braille_text_align_right" })}</option>
+                <option value="guess">{this.props.intl.formatMessage({ id: "param.braille_text_align_bestfit" })}</option>
               </select>
             </div>
             <div className='pure-control-group'>
 
             </div>
             <label
-                aria-label={"Braille render"}
+                aria-label={this.props.intl.formatMessage({ id: "param.braille_display_aria" })}
                 htmlFor='braillerender'>
-                Braille/Text alignment
+                {this.props.intl.formatMessage({ id: "param.braille_display" })}
 
               </label>
               <select
@@ -545,8 +545,8 @@ class Parameters extends React.Component {
                 className={this.context.getStyleClass('input') + ' selectparam'}
               >
 
-                <option value="braille">{'Braille only'}</option>
-                <option value="black">{'Braille with text in black'}</option>
+                <option value="braille">{this.props.intl.formatMessage({ id: "param.braille_display_braille" })}</option>
+                <option value="black">{this.props.intl.formatMessage({ id: "param.braille_display_text" })}</option>
               </select>            
 
 

@@ -40,14 +40,10 @@ class PageDisplayTable extends React.Component {
                     <table >
                     <tbody onCopy={this.copyfunction}>
                     {
-                        page.map ((line, index)=> {
-                            let lineb = page_black[index];
+                        page.map ((line)=> {
                             return (
                                 <>
-                                
                                 <BrailleLine displine={line} class={this.context.getStyleClass("BrailleOutput")}/>
-                                
-                                
                                 </>
 
                             );
