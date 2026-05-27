@@ -31,8 +31,7 @@
     "param.orientation":"Orientation",
     "param.orientation.portrait":"Portrait",
     "param.orientation.landscape":"Paysage",
-    "param.checkliblouis" : "Les paramètres de transcription Braille sont incohérents, vérifier dans les paramètres et sélectionnez une table Braille",
-    
+    "param.checkliblouis" : "Les paramètres de transcription Braille sont incohérents, vérifier dans les paramètres et sélectionnez une table Braille", 
     "param.backtranslation_aria" : "Sélection de la transcription Braille inverse",
     "param.backtranslation" : "Transcription Braille inversée",
     "param.backtranslation_geniune" : "Depuis le texte original",
@@ -45,7 +44,6 @@
     "param.braille_display" : "Affichage Braille",
     "param.braille_display_braille" : "Braille seulement",
     "param.braille_display_text" : "Braille et Texte",
-
     "layout.param_menu": "Paramètres",
     "layout.param_print": "Impression",
     "layout.param_input": "Saisie",
