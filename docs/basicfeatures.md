@@ -13,6 +13,7 @@ Affiche les options relatives à l'embossage du doument sur une BrailleRAP
 ### Paramètres
 Affiche une page relative au paramétrage de l'application
 
+![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)
 
 
 ## Saisie
