@@ -111,8 +111,17 @@ class BraillePaginator
             let pageline = pagenbr.padStart (this.cols, ' ');
             let pagebraille = this.BrailleTranslator.translate_single_string (pageline);
             
+            // add empty line if page shorter
+            while (page.length < this.computedrows)
+            {
+                page.push (' ');
+                page_black.push (String.fromCharCode(0x2800));
+            }
+
+
             if (this.page_numbering === 1)
             {
+                
                 page.unshift(pagebraille);
                 page_black.unshift (pageline)
             }
