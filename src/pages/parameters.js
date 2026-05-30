@@ -47,6 +47,7 @@ class Parameters extends React.Component {
     this.handleChangeBackTranslation = this.handleChangeBackTranslation.bind(this);
     this.handleChangeBrailleAlign = this.handleChangeBrailleAlign.bind(this);
     this.handleChangeBrailleRender = this.handleChangeBrailleRender.bind(this);
+    this.handleChangeNumbering = this.handleChangeNumbering.bind(this);
 
     //console.log ("constructor");
   }
@@ -244,6 +245,17 @@ class Parameters extends React.Component {
   handleChangeBrailleAlign(event) {
     let option = this.props.options;
     option.brailleblackalign = event.target.value;
+
+    if (this.props.optioncb)
+      this.props.optioncb(option);
+    else
+      this.setState({ options: option });
+  }
+
+  handleChangeNumbering(event)
+  {
+    let option = this.props.options;
+    option.pagenumbering = event.target.value;
 
     if (this.props.optioncb)
       this.props.optioncb(option);
@@ -451,6 +463,31 @@ class Parameters extends React.Component {
 
 
               </div>
+
+              <div className='pure-u-1-1'>
+
+                <label
+                  className='pure-u-6-24'
+                  aria-label={this.props.intl.formatMessage({ id: "param.pagenumber_aria" })}
+                  htmlFor='pagenumber'>
+                  <FormattedMessage id="param.pagenumber" defaultMessage="Page number" />
+
+                </label>
+                <select
+                  value={this.props.options.pagenumbering}
+                  onChange={this.handleChangeNumbering}
+                  name="pagenumber" id="pagenumber"
+                  className={this.context.getStyleClass('input') + ' selectparam pure-u-4-24 '}
+                >
+                  <option value="0">{this.props.intl.formatMessage({ id: "param.numbering_no" })}</option>
+                  <option value="1">{this.props.intl.formatMessage({ id: "param.numbering_top" })}</option>
+                  <option value="2">{this.props.intl.formatMessage({ id: "param.numbering_bottom" })}</option>
+                </select>
+
+
+              </div>
+              
+
               <div className='pure-u-1-2'>
 
                 <label

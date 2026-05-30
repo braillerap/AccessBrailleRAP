@@ -34,7 +34,8 @@ app_options = {
     "louisfilecheck":"",
     "backtranslation":"back",
     "brailleblackalign":"guess",
-    "braillerender":"black"
+    "braillerender":"black",
+    "pagenumbering":"0"
 }
 
 

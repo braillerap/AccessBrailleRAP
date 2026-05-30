@@ -44,8 +44,9 @@ class BrailleView extends React.Component {
       this.paginator.setcols(Number(this.props.options.nbcol));
       this.paginator.setrows(Number(this.props.options.nbline));
       this.paginator.setspacing(Number(this.props.options.linespacing));
+      this.paginator.setPageNumbering(Number(this.props.options.pagenumbering));
     }
-    this.paginator.setPageNumbering(1);
+    
 
     this.HandlePrec = this.HandlePrec.bind(this);
     this.HandleNext = this.HandleNext.bind(this);

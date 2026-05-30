@@ -44,6 +44,12 @@
     "param.braille_display" : "Affichage Braille",
     "param.braille_display_braille" : "Braille seulement",
     "param.braille_display_text" : "Braille et Texte",
+    "param.numbering_no" : "Aucune",
+    "param.numbering_top" : "En haut de page",
+    "param.numbering_bottom" : "En bas de page",
+    "param.pagenumber_aria" : "Sélection de la numérotation des pages",
+    "param.pagenumber" : "Numérotation des pages",
+
     "layout.param_menu": "Paramètres",
     "layout.param_print": "Impression",
     "layout.param_input": "Saisie",
