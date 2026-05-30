@@ -517,6 +517,26 @@ class Parameters extends React.Component {
                 </select>
               </div>
 
+              <div className='pure-u-1-1'>
+                <label
+                  className='pure-u-6-24'
+                  aria-label={this.props.intl.formatMessage({ id: "param.braille_display_aria" })}
+                  htmlFor='braillerender'>
+                  {this.props.intl.formatMessage({ id: "param.braille_display" })}
+
+                </label>
+                <select
+                  value={this.props.options.braillerender}
+                  onChange={this.handleChangeBrailleRender}
+                  name="braillerender" id="braillerender"
+                  className={this.context.getStyleClass('input') + ' selectparam pure-u-5-24'}
+                >
+                  <option value="braille">{this.props.intl.formatMessage({ id: "param.braille_display_braille" })}</option>
+                  <option value="black">{this.props.intl.formatMessage({ id: "param.braille_display_text" })}</option>
+                </select>
+
+              </div>
+              
               <div className='pure-u-1-2'>
                 <label
                   className='pure-u-12-24'
@@ -555,27 +575,8 @@ class Parameters extends React.Component {
                   <option value="guess">{this.props.intl.formatMessage({ id: "param.braille_text_align_bestfit" })}</option>
                 </select>
               </div>
-              <div className='pure-u-1-1'>
 
-
-                <label
-                  className='pure-u-6-24'
-                  aria-label={this.props.intl.formatMessage({ id: "param.braille_display_aria" })}
-                  htmlFor='braillerender'>
-                  {this.props.intl.formatMessage({ id: "param.braille_display" })}
-
-                </label>
-                <select
-                  value={this.props.options.braillerender}
-                  onChange={this.handleChangeBrailleRender}
-                  name="braillerender" id="braillerender"
-                  className={this.context.getStyleClass('input') + ' selectparam pure-u-5-24'}
-                >
-                  <option value="braille">{this.props.intl.formatMessage({ id: "param.braille_display_braille" })}</option>
-                  <option value="black">{this.props.intl.formatMessage({ id: "param.braille_display_text" })}</option>
-                </select>
-
-              </div>
+              
               <div className='pure-u-1-1'>
 
                 {this.render_comport()}
