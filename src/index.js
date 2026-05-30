@@ -8,6 +8,7 @@ import { IntlProvider } from 'react-intl';
 import  IntlWrapper  from './components/intlwrapper'
 require('purecss')
 
+
 ReactDOM.render(
     <React.StrictMode>
     <IntlWrapper  locale="" defaultLocale="fr">
