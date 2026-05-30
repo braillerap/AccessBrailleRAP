@@ -133,23 +133,23 @@ Cette valeur détermine la valeur de la marge en haut du document.
 #### Position maximum droite (mm)
 Cette valeur détermine la position maximale sur la droite de la feuille en impression paysage. Pour une feuille A4 environ 200 mm pour une feuille A3 environ 280 mm.
 
-### Orientation
+#### Orientation
 Cette valeur détermine l'orientation de l'impression. 
 - Portrait : Les lignes seront imprimées paralellement au bord haut de la feuille.
 - Paysage : La lignes seront imprimées paralellement au bord droit de la feuille. La première ligne sera imprimée à la position **Position maximum droite (mm)**
 
-### Affichage Braille
+#### Affichage Braille
 Cette option permet de sélectionner le type d'affichage Braille dans la page consacrée à l'impression.
 - Braille et Texte : Le texte en Braille est affiché, avec le texte en noir juste en dessous.
 - Braille seulement : Seul le texte en Braille est affiché.
 Cette option ne change pas l'impression, la BrailleRAP embossera uniquement le texte en Braille. Le double affichage Braille / texte en noir vous permet, si vous êtes voyant, d'améliorer la mise en page du Braille sans réinterpréter le Braille.
 
-### Transcription Braille inversée
+#### Transcription Braille inversée
 Cette option détermine la manière dont sera produit le texte en noir affiché en association avec le texte en Braille. 
 - Transcription inverse : Liblouis sera utilisé pour produire le texte en noir.
 - Texte original : Dans certaine langue, la transcription inverse de Liblouis fonctionne mal. Cette option permet d'utiliser le texte original avant transcription en Braille. 
 
-### Alignement Braille / texte en noir
+#### Alignement Braille / texte en noir
 Cette option vous permet de choisr la méthode souhaitée pour aligner le texte en noir par rapport au Braille. En effet la transcription Braille ajoute dans certain cas des caractères pour marquer des situations spécifiques (Majuscule, symbole tout en majuscules ...)
 - A droite : Aligne chaque mot du texte en noir sur la fin du texte en Braille. C'est suffisant pour des prefixes simples comme la majuscule en Braille Français '⠨'. Par contre, cela peut devenir difficile à lire dans certain cas, notamment quand les sequences d'échapement sont situées au milieu d'un mot. Par exemple BrailleRAP se transcrit en français par ⠨⠃⠗⠁⠊⠇⠇⠑⠨⠨⠗⠁⠏, l'alignement à droite va aligner correctement le 'RAP' de la fin, par contre le début du mot sera décalé a  cause du double symbole de majuscule '⠨⠨'.
 - Meilleure option : Cette option utilise la transcription Braille du mot en minuscule pour ajuster au mieux le mot en Braille et le mot en noir. Cette option est utilise avec certain standard Braille qui ajoute des suffixes à la fin des mots.
