@@ -107,7 +107,7 @@ Embosse (imprime) la page active sur la BrailleRAP connectée en USB.
 ## Paramètres
 
 ### Introduction
-L'action de cliquer sur l'option *Paramètres* affiche une page relative à la coniguration du logiciel (nombre de lignes, port de communication, table Braille ...).
+L'action de cliquer sur l'option *Paramètres* affiche une page relative à la configuration du logiciel (nombre de lignes, port de communication, table Braille ...).
 
 ![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)
 
