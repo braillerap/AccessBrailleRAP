@@ -66,5 +66,22 @@
     "param.orientation": "Oryantasyon",
     "param.orientation.portrait": "Portre",
     "param.orientation.landscape": "Manzara",
-    "param.checkliblouis": "Braille transkripsiyon tablosu tutarlı değil, lütfen parametreleri kontrol edin ve bir Braille tablosu seçin."
+    "param.checkliblouis": "Braille transkripsiyon tablosu tutarlı değil, lütfen parametreleri kontrol edin ve bir Braille tablosu seçin.",
+    "param.backtranslation_aria": "Braille geri çeviri seçimi",
+    "param.backtranslation": "Braille geri çevirisi",
+    "param.backtranslation_geniune": "Orijinal metinden",
+    "param.backtranslation_back": "Geri çeviri",
+    "param.braille_text_align_aria": "Braille / Metin hizalama seçimi",
+    "param.braille_text_align": "Braille / Metin hizalaması",
+    "param.braille_text_align_right": "Sağa",
+    "param.braille_text_align_bestfit": "En uygun",
+    "param.braille_display_aria": "Braille görüntüleme seçeneği",
+    "param.braille_display": "Braille ekranı",
+    "param.braille_display_braille": "Yalnızca Braille",
+    "param.braille_display_text": "Braille ve Metin",
+    "param.numbering_no": "Sayfa numarası yok",
+    "param.numbering_top": "Sayfanın üst kısmında",
+    "param.numbering_bottom": "Sayfanın alt kısmında",
+    "param.pagenumber_aria": "Sayfa numaralandırma seçeneği",
+    "param.pagenumber": "Sayfa numarası"
 }

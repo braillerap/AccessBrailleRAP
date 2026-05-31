@@ -66,5 +66,22 @@
     "param.orientation": "方向",
     "param.orientation.portrait": "纵向",
     "param.orientation.landscape": "横向",
-    "param.checkliblouis": "盲文转录表不一致，请检查参数并选择盲文表"
+    "param.checkliblouis": "盲文转录表不一致，请检查参数并选择盲文表",
+    "param.backtranslation_aria": "盲文回译选择",
+    "param.backtranslation": "盲文回译",
+    "param.backtranslation_geniune": "从原始文本",
+    "param.backtranslation_back": "回译",
+    "param.braille_text_align_aria": "盲文/文本对齐选择",
+    "param.braille_text_align": "盲文/文本对齐",
+    "param.braille_text_align_right": "右对齐",
+    "param.braille_text_align_bestfit": "最佳适配",
+    "param.braille_display_aria": "盲文显示选项",
+    "param.braille_display": "盲文显示",
+    "param.braille_display_braille": "仅盲文",
+    "param.braille_display_text": "盲文和文本",
+    "param.numbering_no": "无页码",
+    "param.numbering_top": "在页面顶部",
+    "param.numbering_bottom": "在页面底部",
+    "param.pagenumber_aria": "选择页码",
+    "param.pagenumber": "页码"
 }

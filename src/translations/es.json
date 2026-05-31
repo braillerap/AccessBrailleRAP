@@ -66,5 +66,22 @@
     "param.orientation": "Orientación",
     "param.orientation.portrait": "Retrato",
     "param.orientation.landscape": "Paisaje",
-    "param.checkliblouis": "La tabla de transcripción Braille no es consistente, verifique los parámetros y seleccione una tabla Braille."
+    "param.checkliblouis": "La tabla de transcripción Braille no es consistente, verifique los parámetros y seleccione una tabla Braille.",
+    "param.backtranslation_aria": "Elegir la transcripción Braille inversa",
+    "param.backtranslation": "Transcripción inversa en braille",
+    "param.backtranslation_geniune": "Del texto original",
+    "param.backtranslation_back": "Transcripción inversa",
+    "param.braille_text_align_aria": "Seleccione la alineación entre braille y texto",
+    "param.braille_text_align": "Alineación de braille y texto en negro",
+    "param.braille_text_align_right": "A la derecha",
+    "param.braille_text_align_bestfit": "La mejor opción",
+    "param.braille_display_aria": "Ajustes de visualización en braille",
+    "param.braille_display": "Pantalla en braille",
+    "param.braille_display_braille": "Solo braille",
+    "param.braille_display_text": "Braille y texto",
+    "param.numbering_no": "Sin número de página",
+    "param.numbering_top": "En la parte superior de la página",
+    "param.numbering_bottom": "En la parte inferior de la página",
+    "param.pagenumber_aria": "Opción para numeración de páginas",
+    "param.pagenumber": "Número de página"
 }
