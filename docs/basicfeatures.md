@@ -40,13 +40,14 @@ Affiche une boîte de dialogue qui permet de sélectionner un fichier à importe
 Lors de la saisie d'un texte, il peut être utile d'insérer des caractères Braille qui seront directement intégrés à la transcription Braille sans modification. En effet si l'alphabet Braille est défini pour la transcription de texte, il existe des standards particuliers à certains usages comme la musique, la chimie ou les mathématiques. Ces standards ne sont pour l'instant pas pris en charge par AccessBRailleRAP, il peut donc être utile de saisir directement une petite quantité de caractères Braille. Vous pouvez utiliser la saisie **unicode** ou bien la saisie directe de point Braille.
 
 #### Saisie UNICODE:
-  La saisie de caractère Braille utilise la saisie de caractères unicode, dont les valeurs sont comprisent entre x02800 et 0x02900. Pour entrer ces caractères dans la zone de saisie, vous pouvez utiliser la touche `CTRL`+<valeur unicode>. Par exemple pour saisir un caractère Braille avec uniquement le pont 1 (l'équivalent du 'a') :
+  La saisie de caractère Braille utilise la saisie de caractères unicode, dont les valeurs sont comprisent entre x02800 et 0x02900. Pour entrer ces caractères dans la zone de saisie, vous pouvez utiliser la touche `CTRL`+<valeur unicode>. Par exemple pour saisir un caractère Braille avec uniquement le point 1 (l'équivalent du 'a') :
 
 
 
-  1 Appuyez sur la touche `CTRL`
-  2 Entrez la valeur 01 en appuyant sur 0 puis 1
-  3 Relâcher la touche `CTRL`
+  - Appuyez sur la touche `CTRL`
+  - Entrez la valeur 0x en appuyant sur 0 puis x
+  - Entrez la valeur UNICODE du caractère Braille, c'est a dire 1.
+  - Relâcher la touche `CTRL`
 
   vous devriez voir apparaitre le caractere Braille *⠁* dans la zone de saisie.
 
