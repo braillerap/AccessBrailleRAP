@@ -1,23 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) GPL V3 - BrailleRAP Team
-# This file is distributed under the same license as the AccessBrailleRAP package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the AccessBrailleRAP
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-24 13:24+0000\n"
+"POT-Creation-Date: 2026-06-01 12:57+0000\n"
 "PO-Revision-Date: 2025-05-03 13:48+0000\n"
 "Last-Translator: Dionysios Raptis <sakisgr@noreply.codeberg.org>\n"
-"Language-Team: Greek <https://translate.codeberg.org/projects/"
-"accessbraillerap_doc/manual_features/el/>\n"
 "Language: el\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Greek "
+"<https://translate.codeberg.org/projects/accessbraillerap_doc/manual_features/el/>"
+"\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../features.md:1
 msgid "Fonctionalités"
@@ -36,7 +38,9 @@ msgid "Lire un texte depuis un fichier .txt."
 msgstr "Φορτώστε ένα αρχείο .txt."
 
 #: ../../features.md:6
-msgid "Importer le texte d'un document openoffice (en fait tout document reconnu par pandoc)."
+msgid ""
+"Importer le texte d'un document openoffice (en fait tout document reconnu"
+" par pandoc)."
 msgstr ""
 "Εισάγετε το κείμενο από ένα αρχείο openoffice (οποιοδήποτε κείμενο "
 "αναγνωρίζεται από το pandoc)."
@@ -47,8 +51,7 @@ msgstr "Αποθηκεύστε ένα έγγραφο σε μορφή .txt."
 
 #: ../../features.md:8
 msgid "Traduire le texte en Braille dans le standard sélectionné."
-msgstr ""
-"Μεταγράψτε το κείμενο σε Braille σύμφωνα με το επιλεγμένο στάνταρ Braille."
+msgstr "Μεταγράψτε το κείμενο σε Braille σύμφωνα με το επιλεγμένο στάνταρ Braille."
 
 #: ../../features.md:9
 msgid "Déterminer la pagination du document qui peut contenir plusieurs pages."
@@ -57,7 +60,14 @@ msgstr ""
 "περισσότερες σελίδες."
 
 #: ../../features.md:10
-msgid "Embosser (imprimer) le document en Braille sur une BrailleRAP connectée en USB."
+msgid "Afficher la transcription Braille associée avec le texte en noir."
+msgstr ""
+
+#: ../../features.md:11
+msgid ""
+"Embosser (imprimer) le document en Braille sur une BrailleRAP connectée "
+"en USB."
 msgstr ""
 "Εκτυπώστε σε ανάγλυφο Braille (εκτύπωση) το έγγραφο με έναν εκτυπωτή "
 "BrailleRAP, συνδεδεμένο με USB."
+
