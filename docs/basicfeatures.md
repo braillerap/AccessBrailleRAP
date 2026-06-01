@@ -108,7 +108,7 @@ Embosse (imprime) la page active sur la BrailleRAP connectée en USB.
 ## Paramètres
 
 ### Introduction
-L'action de cliquer sur l'option *Paramètres* affiche une page relative à la configuration du logiciel (nombre de lignes, port de communication, table Braille ...).
+  L'action de cliquer sur l'option *Paramètres* affiche une page relative à la configuration du logiciel (nombre de lignes, port de communication, table Braille ...).
 
 ![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)
 
@@ -122,16 +122,16 @@ L'action de cliquer sur l'option *Paramètres* affiche une page relative à la c
   Cette section permet de définir le nombre lignes de caractères Braille disponible sur une page. Attention il s'agit du nombre de lignes quand on utilise l'interligne 1 (simple).
 
 ### Interligne
-Cette valeur permet de choisir l'interligne utilisé pour l'embossage du document. Il existe 3 interlignes : 
-- **1** (interligne simple)
-- **1.5** (un interligne et demi)
-- **2** (interligne double).
+  Cette valeur permet de choisir l'interligne utilisé pour l'embossage du document. Il existe 3 interlignes : 
+  - **1** (interligne simple)
+  - **1.5** (un interligne et demi)
+  - **2** (interligne double).
 
 ### Numérotation des pages
-Cette option permet de choisir le style de numérotation des pages.
-- **Aucune**. Les pages ne seront pas numérotées, on conserve une ligne supplémentaire pour le texte.
-- **En haut de page**. Le numéro de page apparaitra en haut à droite de la page.
-- **En bas de page**. Le numéro de page apparaitra en bas à doite de la page.
+  Cette option permet de choisir le style de numérotation des pages.
+  - **Aucune**. Les pages ne seront pas numérotées, on conserve une ligne supplémentaire pour le texte.
+  - **En haut de page**. Le numéro de page apparaitra en haut à droite de la page.
+  - **En bas de page**. Le numéro de page apparaitra en bas à doite de la page.
 
 ### Marge gauche (mm)
   Cette valeur détermine la valeur de la marge à la gauche du document.
@@ -143,25 +143,25 @@ Cette option permet de choisir le style de numérotation des pages.
   Cette valeur détermine la position maximale sur la droite de la feuille en impression paysage. Pour une feuille A4 environ 200 mm, pour une feuille A3 environ 280 mm. Veuillez noter que la BrailleRAP ne detecte pas l'orientation de la feuille, elle tiendra uniquement compte des informations transmisent par AccessBrailleRAP. La fonction paysage est donc destinée à embosser un texte en paysage sur une feuille insérée en mode portrait !
 
 ### Orientation
-Cette valeur détermine l'orientation de l'impression. 
-- **Portrait** : Les lignes seront imprimées paralellement au bord haut de la feuille.
-- **Paysage** : La lignes seront imprimées paralellement au bord droit de la feuille. La première ligne sera imprimée à la position **Position maximum droite (mm)**
+  Cette valeur détermine l'orientation de l'impression. 
+  - **Portrait** : Les lignes seront imprimées paralellement au bord haut de la feuille.
+  - **Paysage** : La lignes seront imprimées paralellement au bord droit de la feuille. La première ligne sera imprimée à la position **Position maximum droite (mm)**
 
 ### Affichage Braille
-Cette option permet de sélectionner le type d'affichage Braille dans la page consacrée à l'impression.
-- **Braille et Texte** : Le texte en Braille est affiché, avec le texte en noir juste en dessous.
-- **Braille seulement** : Seul le texte en Braille est affiché.
-Cette option ne change pas l'impression, la BrailleRAP embossera uniquement le texte en Braille. Le double affichage Braille / texte en noir vous permet, si vous êtes voyant, d'améliorer la mise en page du Braille sans réinterpréter le Braille.
+  Cette option permet de sélectionner le type d'affichage Braille dans la page consacrée à l'impression.
+  - **Braille et Texte** : Le texte en Braille est affiché, avec le texte en noir juste en dessous.
+  - **Braille seulement** : Seul le texte en Braille est affiché.
+  Cette option ne change pas l'impression, la BrailleRAP embossera uniquement le texte en Braille. Le double affichage Braille / texte en noir vous permet, si vous êtes voyant, d'améliorer la mise en page du Braille sans réinterpréter le Braille.
 
 ### Transcription Braille inversée
-Cette option détermine la manière dont sera produit le texte en noir affiché en association avec le texte en Braille. 
-- **Transcription inverse** : Liblouis sera utilisé pour produire le texte en noir.
-- **Texte original** : Dans certaine langue, la transcription inverse de Liblouis fonctionne mal. Cette option permet d'utiliser le texte original avant transcription en Braille. 
+  Cette option détermine la manière dont sera produit le texte en noir affiché en association avec le texte en Braille. 
+  - **Transcription inverse** : Liblouis sera utilisé pour produire le texte en noir.
+  - **Texte original** : Dans certaine langue, la transcription inverse de Liblouis fonctionne mal. Cette option permet d'utiliser le texte original avant transcription en Braille. 
 
 ### Alignement Braille / texte en noir
-Cette option vous permet de choisr la méthode souhaitée pour aligner le texte en noir par rapport au Braille. En effet la transcription Braille ajoute dans certain cas des caractères pour marquer des situations spécifiques (Majuscule, symbole tout en majuscules ...)
-- **A droite** : Aligne chaque mot du texte en noir sur la fin du texte en Braille. C'est suffisant pour des prefixes simples comme la majuscule en Braille Français '⠨'. Par contre, cela peut devenir difficile à lire dans certain cas, notamment quand les sequences d'échapement sont situées au milieu d'un mot. Par exemple BrailleRAP se transcrit en français par ⠨⠃⠗⠁⠊⠇⠇⠑⠨⠨⠗⠁⠏, l'alignement à droite va aligner correctement le 'RAP' de la fin, par contre le début du mot sera décalé a  cause du double symbole de majuscule '⠨⠨'.
-- **Meilleure option** : Cette option utilise la transcription Braille du mot en minuscule pour ajuster au mieux le mot en Braille et le mot en noir. Cette option est utilisé avec certain standard Braille qui ajoute des suffixes à la fin des mots.
+  Cette option vous permet de choisr la méthode souhaitée pour aligner le texte en noir par rapport au Braille. En effet la transcription Braille ajoute dans certain cas des caractères pour marquer des situations spécifiques (Majuscule, symbole tout en majuscules ...)
+  - **A droite** : Aligne chaque mot du texte en noir sur la fin du texte en Braille. C'est suffisant pour des prefixes simples comme la majuscule en Braille Français '⠨'. Par contre, cela peut devenir difficile à lire dans certain cas, notamment quand les sequences d'échapement sont situées au milieu d'un mot. Par exemple BrailleRAP se transcrit en français par ⠨⠃⠗⠁⠊⠇⠇⠑⠨⠨⠗⠁⠏, l'alignement à droite va aligner correctement le 'RAP' de la fin, par contre le début du mot sera décalé a  cause du double symbole de majuscule '⠨⠨'.
+  - **Meilleure option** : Cette option utilise la transcription Braille du mot en minuscule pour ajuster au mieux le mot en Braille et le mot en noir. Cette option est utilisé avec certain standard Braille qui ajoute des suffixes à la fin des mots.
 
 
 ### Port de communication
