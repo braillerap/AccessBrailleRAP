@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-10 10:40+0000\n"
+"POT-Creation-Date: 2026-06-01 12:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -57,8 +57,12 @@ msgid "Déterminer la pagination du document qui peut contenir plusieurs pages."
 msgstr "Compute the pagination of the document."
 
 #: ../../features.md:10
+msgid "Afficher la transcription Braille associée avec le texte en noir."
+msgstr ""
+
+#: ../../features.md:11
 msgid ""
 "Embosser (imprimer) le document en Braille sur une BrailleRAP connectée "
 "en USB."
-msgstr ""
-"Emboss (print) the document in Braille on a USB connected BrailleRAP."
+msgstr "Emboss (print) the document in Braille on a USB connected BrailleRAP."
+
