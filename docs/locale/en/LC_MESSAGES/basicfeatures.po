@@ -8,21 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-
 "POT-Creation-Date: 2026-06-01 12:57+0000\n"
-"PO-Revision-Date: 2026-02-27 20:37+0000\n"
-
+"PO-Revision-Date: 2026-06-01 14:48+0000\n"
 "Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
+"Language-Team: English <https://translate.codeberg.org/projects/"
+"accessbraillerap_doc/manual_basicfeatures/en/>\n"
 "Language: en\n"
-"Language-Team: English "
-"<https://translate.codeberg.org/projects/accessbraillerap_doc/manual_basicfeatures/en/>"
-"\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17\n"
+"X-Generator: Weblate 2026.5\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -355,14 +351,14 @@ msgid "Embosse (imprime) la page active sur la BrailleRAP connectée en USB."
 msgstr "Emboss (print) the active page on the BrailleRAP connected via USB."
 
 #: ../../basicfeatures.md:111
-#, fuzzy
 msgid ""
 "L'action de cliquer sur l'option *Paramètres* affiche une page relative à"
 " la configuration du logiciel (nombre de lignes, port de communication, "
 "table Braille ...)."
 msgstr ""
-"Clicking on the *Text input* option displays a page related to the "
-"manipulation of the text to be transcribed in Braille."
+"Clicking on the *Parameters* option displays a page related to the software "
+"setup and configuration (page format, communication port, Braille standard …)"
+"."
 
 #: ../../basicfeatures.md:115
 msgid "Table Braille"
@@ -414,55 +410,56 @@ msgid "Interligne"
 msgstr "Line spacing"
 
 #: ../../basicfeatures.md:125
-#, fuzzy
 msgid ""
 "Cette valeur permet de choisir l'interligne utilisé pour l'embossage du "
 "document. Il existe 3 interlignes :"
 msgstr ""
-"This value allows you to choose the line spacing used for the embossing "
-"of the document. There are 3 line spacings: 1 (single), 1.5 (one line and"
-" a half) and 2 (double)."
+"This value allows you to choose the line spacing used for the embossing of "
+"the document. There are 3 line spacings:"
 
 #: ../../basicfeatures.md:126
 msgid "**1** (interligne simple)"
-msgstr ""
+msgstr "**1** (simple line spacing)"
 
 #: ../../basicfeatures.md:127
 msgid "**1.5** (un interligne et demi)"
-msgstr ""
+msgstr "**1.5** (one and a half line spacing)"
 
 #: ../../basicfeatures.md:128
 msgid "**2** (interligne double)."
-msgstr ""
+msgstr "**2** (double line spacing)."
 
 #: ../../basicfeatures.md:130
 msgid "Numérotation des pages"
-msgstr ""
+msgstr "Page numbering"
 
 #: ../../basicfeatures.md:131
-#, fuzzy
 msgid "Cette option permet de choisir le style de numérotation des pages."
-msgstr ""
-"This section allows you to define the number of Braille characters per "
-"line."
+msgstr "This section allows you to define page numbering style."
 
 #: ../../basicfeatures.md:132
 msgid ""
 "**Aucune**. Les pages ne seront pas numérotées, on conserve une ligne "
 "supplémentaire pour le texte."
 msgstr ""
+"**No page number**. The pages will not be numbered. An extra line will be "
+"saved for the text."
 
 #: ../../basicfeatures.md:133
 msgid ""
 "**En haut de page**. Le numéro de page apparaitra en haut à droite de la "
 "page."
 msgstr ""
+"**On page top**. The page number will appear in the top right corner of the "
+"page."
 
 #: ../../basicfeatures.md:134
 msgid ""
 "**En bas de page**. Le numéro de page apparaitra en bas à doite de la "
 "page."
 msgstr ""
+"**On page bottom**. The page number will appear in the bottom right corner "
+"of the page."
 
 #: ../../basicfeatures.md:136
 msgid "Marge gauche (mm)"
@@ -494,6 +491,12 @@ msgid ""
 "donc destinée à embosser un texte en paysage sur une feuille insérée en "
 "mode portrait !"
 msgstr ""
+"This value determines the maximum rightward position of the sheet in "
+"landscape printing. For an A4 sheet, approximately 200 mm. For an A3 sheet, "
+"approximately 280 mm. Please note that the BrailleRAP does not detect the "
+"sheet's orientation, it only considers the information transmitted by "
+"AccessBrailleRAP software. The landscape function is therefore intended for "
+"embossing text in landscape orientation on a sheet inserted in portrait mode!"
 
 #: ../../basicfeatures.md:145
 msgid "Orientation"
@@ -504,39 +507,41 @@ msgid "Cette valeur détermine l'orientation de l'impression."
 msgstr "This value set the print orientation."
 
 #: ../../basicfeatures.md:147
-#, fuzzy
 msgid ""
 "**Portrait** : Les lignes seront imprimées paralellement au bord haut de "
 "la feuille."
-msgstr "Portrait: Lines will be printed parallel to the top edge of the sheet."
+msgstr ""
+"**Portrait**: Lines will be printed parallel to the top edge of the sheet."
 
 #: ../../basicfeatures.md:148
-#, fuzzy
 msgid ""
 "**Paysage** : La lignes seront imprimées paralellement au bord droit de "
 "la feuille. La première ligne sera imprimée à la position **Position "
 "maximum droite (mm)**"
 msgstr ""
-"Landscape: The lines will be printed parallel to the right edge of the "
-"sheet. The first line will be printed at the **Maximum position on the "
-"right (mm)**"
+"**Landscape**: The lines will be printed parallel to the right edge of the "
+"sheet. The first line will be printed at the **Maximum position on the right "
+"(mm)**"
 
 #: ../../basicfeatures.md:150
-#, fuzzy
 msgid "Affichage Braille"
-msgstr "Braille table"
+msgstr "Braille display"
 
 #: ../../basicfeatures.md:151
 msgid ""
 "Cette option permet de sélectionner le type d'affichage Braille dans la "
 "page consacrée à l'impression."
 msgstr ""
+"This option allows you to select the Braille display type on the printing "
+"page."
 
 #: ../../basicfeatures.md:152
 msgid ""
 "**Braille et Texte** : Le texte en Braille est affiché, avec le texte en "
 "noir juste en dessous."
 msgstr ""
+"**Braille and Text** : The Braille text is displayed, with the black text "
+"just below it."
 
 #: ../../basicfeatures.md:153
 msgid ""
@@ -546,22 +551,29 @@ msgid ""
 "permet, si vous êtes voyant, d'améliorer la mise en page du Braille sans "
 "réinterpréter le Braille."
 msgstr ""
+"**Braille only** : Only the Braille text is displayed. This option does not "
+"change the printing. The BrailleRAP will only emboss the Braille text. The "
+"dual Braille/black text display allows you, if you are sighted, to improve "
+"the Braille layout without reinterpreting the Braille."
 
 #: ../../basicfeatures.md:156
 msgid "Transcription Braille inversée"
-msgstr ""
+msgstr "Braille back translation"
 
 #: ../../basicfeatures.md:157
 msgid ""
 "Cette option détermine la manière dont sera produit le texte en noir "
 "affiché en association avec le texte en Braille."
 msgstr ""
+"This option determines how the displayed black text will be produced in "
+"association with the Braille text."
 
 #: ../../basicfeatures.md:158
 msgid ""
 "**Transcription inverse** : Liblouis sera utilisé pour produire le texte "
 "en noir."
 msgstr ""
+"**Back translation** : Liblouis back translation will be used for black text."
 
 #: ../../basicfeatures.md:159
 msgid ""
@@ -569,10 +581,13 @@ msgid ""
 "Liblouis fonctionne mal. Cette option permet d'utiliser le texte original"
 " avant transcription en Braille."
 msgstr ""
+"**From original text** : In some languages, the reverse transcription of "
+"Liblouis does not work well. This option allows you to use the original text "
+"before it is translated into Braille."
 
 #: ../../basicfeatures.md:161
 msgid "Alignement Braille / texte en noir"
-msgstr ""
+msgstr "Braille / Text alignment"
 
 #: ../../basicfeatures.md:162
 msgid ""
@@ -581,6 +596,9 @@ msgid ""
 "ajoute dans certain cas des caractères pour marquer des situations "
 "spécifiques (Majuscule, symbole tout en majuscules ...)"
 msgstr ""
+"This option allows you to choose the preferred method for aligning the black "
+"text with the Braille. Braille transcription sometimes adds characters to "
+"indicate specific situations (capital letters, symbols in all capitals, etc.)"
 
 #: ../../basicfeatures.md:163
 msgid ""
@@ -593,6 +611,13 @@ msgid ""
 "la fin, par contre le début du mot sera décalé a  cause du double symbole"
 " de majuscule '⠨⠨'."
 msgstr ""
+"**Right** : Aligns each word of the black text with the end of the Braille "
+"text. This is sufficient for simple prefixes like the capital letter '⠨' in "
+"French Braille. However, it can become difficult to read in certain cases, "
+"especially when escape sequences are located in the middle of a word. For "
+"example, BrailleRAP is transcribed into French as ⠨⠃⠗⠁⠊⠇⠇⠑⠨⠨⠗⠁⠏. Right "
+"alignment will correctly align the 'RAP' at the end, but the beginning of "
+"the word will be shifted because of the double capital letter symbol '⠨⠨'."
 
 #: ../../basicfeatures.md:164
 msgid ""
@@ -601,6 +626,9 @@ msgid ""
 "noir. Cette option est utilisé avec certain standard Braille qui ajoute "
 "des suffixes à la fin des mots."
 msgstr ""
+"**Best fit** : This option uses the Braille transcription of the lowercase "
+"word to best align the Braille and black text words. This option is the best "
+"with Braille standards that add suffixes to the ends of words."
 
 #: ../../basicfeatures.md:167
 msgid "Port de communication"
@@ -652,4 +680,3 @@ msgstr ""
 #~ "landscape printing. For an A4 sheet, "
 #~ "approximately 200 mm. For an A3 "
 #~ "sheet, approximately 280 mm."
-
