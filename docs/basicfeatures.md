@@ -90,7 +90,7 @@ Lors de la saisie d'un texte, il peut être utile d'insérer des caractères Bra
 ## Impression
 
 ### Introduction
-L'action de cliquer sur l'option *Impression* affiche une page relative à l'embossage du document sur une BrailleRAP. Sur cette page vous pouvez naviguer dans les différentes pages avec les boutons *Page Précédente* et *Page Suivante* et imprimer la page active avec le bouton *Imprimer*.
+L'action de cliquer sur l'option *Impression* affiche une page relative à l'embossage du document sur une BrailleRAP. Sur cette page vous pouvez naviguer dans les différentes pages avec les boutons *Page Précédente* et *Page Suivante* et imprimer la page active avec le bouton *Imprimer*. En fonction de l'option sélectionnée dans les paramètres, seul le texte en Braille est affiché, ou bien le texte en Braille est associé au texte en noir.
 
 ![Capture d'écran de la page Impression](./IMG/screenshot_print.jpg)
 
