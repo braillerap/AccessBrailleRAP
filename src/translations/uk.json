@@ -66,5 +66,22 @@
     "param.orientation_aria": "Орієнтація сторінки",
     "param.xmax_aria": "Максимальне зміщення праворуч на сторінці для друку в альбомному форматі",
     "param.xmax": "Максимальне зміщення праворуч (мм)",
-    "param.checkliblouis": "Таблиця транскрипції шрифтом Брайля не відповідає вимогам. Перевірте налаштування і виберіть таблицю Брайля"
+    "param.checkliblouis": "Таблиця транскрипції шрифтом Брайля не відповідає вимогам. Перевірте налаштування і виберіть таблицю Брайля",
+    "param.backtranslation_aria": "Вибір зворотної транскрипції шрифтом Брайля",
+    "param.backtranslation": "Зворотна транскрипція Брайля",
+    "param.backtranslation_geniune": "З оригінального тексту",
+    "param.backtranslation_back": "Зворотна транскрипція",
+    "param.braille_text_align_right": "Праворуч",
+    "param.braille_text_align_bestfit": "Оптимальний варіант",
+    "param.braille_display_aria": "Налаштування брайлівського дисплея",
+    "param.braille_display": "Брайлівський дисплей",
+    "param.braille_display_braille": "Тільки шрифт Брайля",
+    "param.braille_display_text": "Шрифт Брайля і текст",
+    "param.braille_text_align_aria": "Вибір вирівнювання між шрифтом Брайля і текстом",
+    "param.braille_text_align": "Вирівнювання шрифту Брайля та чорного тексту",
+    "param.pagenumber": "Нумерація сторінок",
+    "param.numbering_no": "Без нумерації",
+    "param.numbering_bottom": "Унизу сторінки",
+    "param.numbering_top": "Угорі сторінки",
+    "param.pagenumber_aria": "Налаштування нумерації сторінок"
 }

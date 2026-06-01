@@ -80,5 +80,11 @@
     "param.orientation": "Orientation",
     "param.orientation.portrait": "Portrait",
     "param.orientation.landscape": "Landscape",
-    "param.checkliblouis": "Braille transcription table is not consistent, please check parameters and select a Braille table"
+    "param.checkliblouis": "Braille transcription table is not consistent, please check parameters and select a Braille table",
+    "param.numbering_no" : "No page number",
+    "param.numbering_top" : "On page top",
+    "param.numbering_bottom" : "On page bottom",
+    "param.pagenumber_aria" : "Option for page numbering",
+    "param.pagenumber" : "Page number"
+
 }

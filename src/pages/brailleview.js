@@ -37,14 +37,16 @@ class BrailleView extends React.Component {
     let louis = this.props.glouis();
     let f = new BrailleTranslatorFactory();
     this.Braille = f.getTranslator("LOUIS", louis, this.props.options.brailletbl);
-    this.paginator = new BraillePaginator();
+    this.paginator = new BraillePaginator(this.Braille);
 
     
     if (this.props.options) {
       this.paginator.setcols(Number(this.props.options.nbcol));
       this.paginator.setrows(Number(this.props.options.nbline));
       this.paginator.setspacing(Number(this.props.options.linespacing));
+      this.paginator.setPageNumbering(Number(this.props.options.pagenumbering));
     }
+    
 
     this.HandlePrec = this.HandlePrec.bind(this);
     this.HandleNext = this.HandleNext.bind(this);
@@ -85,17 +87,18 @@ class BrailleView extends React.Component {
       reverse = this.context.localeinfo.reverse;
     
     this.Braille.setSrc(this.state.src);
-    this.Braille.translate(this.context.localeinfo.reverse);
+    this.Braille.setReverse (reverse);
+    this.Braille.translate();
 
     let BrailleInBlackStrategyFactory = new BrailleInBlackTextStrategyFactory(this.Braille);
     
     let MyBrailleBlackAlignmentFactory = new BrailleBlackAlignmentFactory (this.Braille);
     let BrailleBlackAlignStrategy = MyBrailleBlackAlignmentFactory.create (this.props.options.brailleblackalign);
 
-    
     let BrailleInBlackStrategy = BrailleInBlackStrategyFactory.create (this.props.options.backtranslation);
     
     let linesb = this.Braille.getBrailleLines();
+
     this.paginator.setBrailleLines(linesb);
     this.paginator.setTxtBlackLines(this.Braille.getTextLines());
     this.paginator.setBrailleInBlackTextStrategy (BrailleInBlackStrategy);

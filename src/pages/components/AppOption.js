@@ -14,8 +14,8 @@ const AppOption = {
     louisfilecheck:"",
     backtranslation:"back",
     brailleblackalign:"guess",
-    braillerender:"black"
-
+    braillerender:"black",
+    pagenumbering:"0"
 }
 
 export default AppOption;

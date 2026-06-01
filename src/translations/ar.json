@@ -66,5 +66,22 @@
     "param.orientation": "توجيه",
     "param.orientation.portrait": "لَوحَة",
     "param.orientation.landscape": "منظر جمالي",
-    "param.checkliblouis": "جدول نسخ برايل غير متناسق، يرجى التحقق من المعلمات واختيار جدول برايل"
+    "param.checkliblouis": "جدول نسخ برايل غير متناسق، يرجى التحقق من المعلمات واختيار جدول برايل",
+    "param.backtranslation_aria": "اختيار النسخة العكسية من برايل",
+    "param.backtranslation": "النسخ العكسي بطريقة برايل",
+    "param.backtranslation_geniune": "من النص الأصلي",
+    "param.backtranslation_back": "النسخ العكسي",
+    "param.braille_text_align_aria": "تحديد المحاذاة بين برايل والنص",
+    "param.braille_text_align": "محاذاة نص برايل/أسود",
+    "param.braille_text_align_right": "يمين",
+    "param.braille_text_align_bestfit": "الخيار الأفضل",
+    "param.braille_display_aria": "خيار العرض بطريقة برايل",
+    "param.braille_display": "عرض برايل",
+    "param.braille_display_braille": "طريقة برايل فقط",
+    "param.braille_display_text": "طريقة برايل والنص",
+    "param.numbering_no": "لا يوجد رقم الصفحة",
+    "param.numbering_top": "في أعلى الصفحة",
+    "param.numbering_bottom": "في أسفل الصفحة",
+    "param.pagenumber_aria": "خيار ترقيم الصفحات",
+    "param.pagenumber": "رقم الصفحة"
 }

@@ -22,8 +22,39 @@ class PageDisplayTable extends React.Component {
         
     }
     
-    copyfunction (event) {
-        console.log ("copy ", event);
+    async copyfunction (event) {
+        
+
+        let page = this.state.braillepages.getPage (this.props.pagenbr);
+        let page_black = this.state.braillepages.getPageBlack (this.props.pagenbr);
+
+        let toclip = '';
+        if (this.state.render === "braille")
+        {
+            page.map ((line) => {
+                toclip = toclip + line;
+                toclip = toclip + '\n';
+            });
+        }
+        else
+        {
+             page.map ((line, index)=> {
+                let lineb = page_black[index];
+                toclip = toclip + line;
+                toclip = toclip + '\n';
+                toclip = toclip + lineb;
+                toclip = toclip + '\n';    
+             });
+        }
+
+        const type = "text/plain";
+        const clipboardItemData = {
+            [type]: toclip,
+        };
+        const clipboardItem = new ClipboardItem(clipboardItemData);
+        await navigator.clipboard.write([clipboardItem]);
+
+        event.preventDefault();
     }
     
     render() {

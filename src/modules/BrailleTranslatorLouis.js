@@ -50,6 +50,7 @@ class BrailleTranslatorLouis extends BrailleTranslator{
         this.braille_lines = null;
         this.txt_lines = null;
         this.src = null;
+        this.reverse = false;
     }
    
     setUnknownCharInBrailleCallback (func)
@@ -68,6 +69,17 @@ class BrailleTranslatorLouis extends BrailleTranslator{
     {
         //console.log (txt);
         this.src = txt
+    }
+
+    /*!
+     *\brief some language : ie ARABIC are ltr language but RTL in Braille 
+     *
+     *\param reverse Set the reverse property for language with specific ltr / rtl need
+     * 
+     */
+    setReverse (reverse)
+    {
+        this.reverse = reverse;
     }
 
     getLines ()
@@ -95,7 +107,7 @@ class BrailleTranslatorLouis extends BrailleTranslator{
         return (this.txt_lines);
     }
 
-    translate (reverse)
+    translate ()
     {
         // split lines
         let lines = this.src.split (/(\r?\n|\f)/)
@@ -133,7 +145,7 @@ class BrailleTranslatorLouis extends BrailleTranslator{
                 this.txt_lines[i] = line;
             }
             
-            if (reverse) // some language : ie ARABIC are ltr language but RTL in Braille
+            if (this.reverse) // some language : ie ARABIC are ltr language but RTL in Braille
                 this.braille_lines[i] = this.#reverse_string (this.braille_lines[i] );
         }
     }

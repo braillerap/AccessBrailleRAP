@@ -1,7 +1,7 @@
 
 class BraillePaginator 
 {
-    constructor()
+    constructor(BrailleTranslator)
     {
         this.cols = 28;
         this.rows = 21;
@@ -21,10 +21,11 @@ class BraillePaginator
         this.current_page_black = []; // current page original text
 
         
-        this.page_numbering = false;
+        this.page_numbering = 0;
         
         this.BrailleInBlackTextStrategy = null;
         this.BrailleBlackAlignmentStrategy = null;
+        this.BrailleTranslator = BrailleTranslator;
     }
 
     setcols (cols)
@@ -99,9 +100,36 @@ class BraillePaginator
     }
     #addpage (page, page_black)
     {
+        // add page number according to option
         if (this.page_numbering)
         {
-            // add page number according to option
+            // compute page number
+            let npage = this.pages.length + 1;
+
+            let pagenbr = '- ' + npage.toString () + '  ';
+
+            let pageline = pagenbr.padStart (this.cols, ' ');
+            let pagebraille = this.BrailleTranslator.translate_single_string (pageline);
+            
+            // add empty line if page shorter
+            while (page.length < this.computedrows)
+            {
+                page.push (' ');
+                page_black.push (String.fromCharCode(0x2800));
+            }
+
+
+            if (this.page_numbering === 1)
+            {
+                
+                page.unshift(pagebraille);
+                page_black.unshift (pageline)
+            }
+            else
+            {
+                page_black.push (pageline);
+                page.push (pagebraille);
+            }
         }
         // add the page to pages collection
         this.pages.push (page);
