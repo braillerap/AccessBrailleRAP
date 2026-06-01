@@ -131,7 +131,7 @@ Cette valeur détermine la valeur de la marge à la gauche du document.
 Cette valeur détermine la valeur de la marge en haut du document.
 
 #### Position maximum droite (mm)
-Cette valeur détermine la position maximale sur la droite de la feuille en impression paysage. Pour une feuille A4 environ 200 mm pour une feuille A3 environ 280 mm.
+Cette valeur détermine la position maximale sur la droite de la feuille en impression paysage. Pour une feuille A4 environ 200 mm, pour une feuille A3 environ 280 mm. Veuillez noter que la BrailleRAP ne detecte pas l'orientation de la feuille, elle tiendra uniquement compte des informations transmisent par AccessBrailleRAP. La fonction paysage est donc destinée à embosser un texte en paysage sur une feuille insérée en mode portrait !
 
 #### Orientation
 Cette valeur détermine l'orientation de l'impression. 
@@ -152,7 +152,7 @@ Cette option détermine la manière dont sera produit le texte en noir affiché 
 #### Alignement Braille / texte en noir
 Cette option vous permet de choisr la méthode souhaitée pour aligner le texte en noir par rapport au Braille. En effet la transcription Braille ajoute dans certain cas des caractères pour marquer des situations spécifiques (Majuscule, symbole tout en majuscules ...)
 - A droite : Aligne chaque mot du texte en noir sur la fin du texte en Braille. C'est suffisant pour des prefixes simples comme la majuscule en Braille Français '⠨'. Par contre, cela peut devenir difficile à lire dans certain cas, notamment quand les sequences d'échapement sont situées au milieu d'un mot. Par exemple BrailleRAP se transcrit en français par ⠨⠃⠗⠁⠊⠇⠇⠑⠨⠨⠗⠁⠏, l'alignement à droite va aligner correctement le 'RAP' de la fin, par contre le début du mot sera décalé a  cause du double symbole de majuscule '⠨⠨'.
-- Meilleure option : Cette option utilise la transcription Braille du mot en minuscule pour ajuster au mieux le mot en Braille et le mot en noir. Cette option est utilise avec certain standard Braille qui ajoute des suffixes à la fin des mots.
+- Meilleure option : Cette option utilise la transcription Braille du mot en minuscule pour ajuster au mieux le mot en Braille et le mot en noir. Cette option est utilisé avec certain standard Braille qui ajoute des suffixes à la fin des mots.
 
 
 #### Port de communication
