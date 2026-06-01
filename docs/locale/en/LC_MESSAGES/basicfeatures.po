@@ -8,17 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessBrailleRAP 0.7.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-27 20:20+0000\n"
+"POT-Creation-Date: 2026-06-01 12:57+0000\n"
 "PO-Revision-Date: 2026-02-27 20:37+0000\n"
 "Last-Translator: crocsg <crocsg@noreply.codeberg.org>\n"
-"Language-Team: English <https://translate.codeberg.org/projects/"
-"accessbraillerap_doc/manual_basicfeatures/en/>\n"
 "Language: en\n"
+"Language-Team: English "
+"<https://translate.codeberg.org/projects/accessbraillerap_doc/manual_basicfeatures/en/>"
+"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.2\n"
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../basicfeatures.md:1
@@ -29,7 +29,7 @@ msgstr "AccessBrailleRAP features tour"
 msgid "Les options du menu principal"
 msgstr "Main menu options"
 
-#: ../../basicfeatures.md:7 ../../basicfeatures.md:18
+#: ../../basicfeatures.md:7 ../../basicfeatures.md:19
 msgid "Saisie"
 msgstr "Text input"
 
@@ -37,7 +37,7 @@ msgstr "Text input"
 msgid "Affiche une page permettant de manipuler le texte à transcrire en Braille"
 msgstr "Displays a page to manipulate the text to be transcribed in Braille"
 
-#: ../../basicfeatures.md:10 ../../basicfeatures.md:89
+#: ../../basicfeatures.md:10 ../../basicfeatures.md:90
 msgid "Impression"
 msgstr "Print"
 
@@ -45,7 +45,7 @@ msgstr "Print"
 msgid "Affiche les options relatives à l'embossage du doument sur une BrailleRAP"
 msgstr "Displays the options related to embossing the document on a BrailleRAP"
 
-#: ../../basicfeatures.md:13 ../../basicfeatures.md:107
+#: ../../basicfeatures.md:13 ../../basicfeatures.md:108
 msgid "Paramètres"
 msgstr "Parameters"
 
@@ -53,12 +53,22 @@ msgstr "Parameters"
 msgid "Affiche une page relative au paramétrage de l'application"
 msgstr "Displays a page related to the application's configuration"
 
-#: ../../basicfeatures.md:20 ../../basicfeatures.md:91
-#: ../../basicfeatures.md:109
+#: ../../basicfeatures.md:16 ../../basicfeatures.md:113
+msgid "![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)"
+msgstr ""
+"![Application screenshot of parameters "
+"page](./IMG/screenshot_parameters.jpg)"
+
+#: ../../basicfeatures.md:16 ../../basicfeatures.md:113
+msgid "Capture d'écran de la page paramètres"
+msgstr "Application screenshot of input page"
+
+#: ../../basicfeatures.md:21 ../../basicfeatures.md:92
+#: ../../basicfeatures.md:110
 msgid "Introduction"
 msgstr "Introduction"
 
-#: ../../basicfeatures.md:21
+#: ../../basicfeatures.md:22
 msgid ""
 "L'action de cliquer sur l'option *Saisie* affiche une page relative à la "
 "manipulation du texte à transcrire en Braille."
@@ -66,29 +76,29 @@ msgstr ""
 "Clicking on the *Text input* option displays a page related to the "
 "manipulation of the text to be transcribed in Braille."
 
-#: ../../basicfeatures.md:23
+#: ../../basicfeatures.md:24
 msgid "![Capture d'écran de la page fichier](./IMG/screenshot_input.jpg)"
 msgstr "![Application screenshot of input page](./IMG/screenshot_input.jpg)"
 
-#: ../../basicfeatures.md:23
+#: ../../basicfeatures.md:24
 msgid "Capture d'écran de la page fichier"
 msgstr "Application screenshot of input page"
 
-#: ../../basicfeatures.md:25
+#: ../../basicfeatures.md:26
 msgid "Bouton *Ouvrir*"
 msgstr "Button *Open*"
 
-#: ../../basicfeatures.md:26
+#: ../../basicfeatures.md:27
 msgid ""
 "Affiche une boîte de dialogue qui permet de sélectionner un fichier texte"
 " à ouvrir."
 msgstr "Display a file dialog box to select the desired text file."
 
-#: ../../basicfeatures.md:28
+#: ../../basicfeatures.md:29
 msgid "Bouton *Enregistrer*"
 msgstr "Button *Save*"
 
-#: ../../basicfeatures.md:29
+#: ../../basicfeatures.md:30
 msgid ""
 "Si le document est déjà enregistré, il est simplement sauvegardé. Sinon, "
 "une boîte de dialogue s'affiche et permet de sélectionner un nom de "
@@ -97,11 +107,11 @@ msgstr ""
 "If document was already saved under a filename it is saved again. "
 "Otherwise a file dialog box is displayed to select a filename."
 
-#: ../../basicfeatures.md:31
+#: ../../basicfeatures.md:32
 msgid "Bouton *Enregistrer sous...*"
 msgstr "Button *Save as...*"
 
-#: ../../basicfeatures.md:32
+#: ../../basicfeatures.md:33
 msgid ""
 "Affiche une boîte de dialogue qui permet de sélectionner un nom fichier "
 "texte à enregistrer."
@@ -109,11 +119,11 @@ msgstr ""
 "Displays a dialog box that allows you to select a file name to save as a "
 "text file."
 
-#: ../../basicfeatures.md:34
+#: ../../basicfeatures.md:35
 msgid "Bouton *Importer*"
 msgstr "Button *Import*"
 
-#: ../../basicfeatures.md:35
+#: ../../basicfeatures.md:36
 msgid ""
 "Affiche une boîte de dialogue qui permet de sélectionner un fichier à "
 "importer. L'importation des fichiers est gérée par la bibliothèque "
@@ -130,11 +140,11 @@ msgstr ""
 "etc...). The importation works with openoffice and libreoffice documents "
 "but other formats may be available."
 
-#: ../../basicfeatures.md:37
+#: ../../basicfeatures.md:38
 msgid "Utilisation de caractères spéciaux dans la zone de saisie"
 msgstr "Using special characters in the input area"
 
-#: ../../basicfeatures.md:39
+#: ../../basicfeatures.md:40
 msgid ""
 "Lors de la saisie d'un texte, il peut être utile d'insérer des caractères"
 " Braille qui seront directement intégrés à la transcription Braille sans "
@@ -146,20 +156,20 @@ msgid ""
 "Braille. Vous pouvez utiliser la saisie **unicode** ou bien la saisie "
 "directe de point Braille."
 msgstr ""
-"When entering text, it can be helpful to insert Braille characters that will "
-"be directly integrated into the Braille transcription without modification. "
-"While the Braille alphabet is defined for text transcription, there are "
-"specific standards for certain applications such as music, chemistry, or "
-"mathematics. These standards are not currently supported by "
-"AccessBrailleRAP, so it can be useful to directly enter a small number of "
-"Braille characters. You can use **UNICODE** input or direct Braille dots "
-"number."
+"When entering text, it can be helpful to insert Braille characters that "
+"will be directly integrated into the Braille transcription without "
+"modification. While the Braille alphabet is defined for text "
+"transcription, there are specific standards for certain applications such"
+" as music, chemistry, or mathematics. These standards are not currently "
+"supported by AccessBrailleRAP, so it can be useful to directly enter a "
+"small number of Braille characters. You can use **UNICODE** input or "
+"direct Braille dots number."
 
-#: ../../basicfeatures.md:41
+#: ../../basicfeatures.md:42
 msgid "Saisie UNICODE:"
 msgstr "UNICODE input:"
 
-#: ../../basicfeatures.md:42
+#: ../../basicfeatures.md:43
 msgid ""
 "La saisie de caractère Braille utilise la saisie de caractères unicode, "
 "dont les valeurs sont comprisent entre x02800 et 0x02900. Pour entrer ces"
@@ -168,25 +178,25 @@ msgid ""
 "avec uniquement le pont 1 (l'équivalent du 'a') :"
 msgstr ""
 "Braille character input uses Unicode character input, so the values are "
-"between x02800 and x02900. To enter these characters in the input area, you "
-"can use the `CTRL` key + <Unicode value>. For example, to enter a Braille "
-"character with only point 1 (the equivalent of 'a'):"
+"between x02800 and x02900. To enter these characters in the input area, "
+"you can use the `CTRL` key + <Unicode value>. For example, to enter a "
+"Braille character with only point 1 (the equivalent of 'a'):"
 
-#: ../../basicfeatures.md:46
+#: ../../basicfeatures.md:47
 msgid ""
 "1 Appuyez sur la touche `CTRL`   2 Entrez la valeur 01 en appuyant sur 0 "
 "puis 1   3 Relâcher la touche `CTRL`"
 msgstr ""
-"1 Press the `CTRL` key. 2 Enter the value 01 by pressing 0 then 1. 3 Release "
-"the `CTRL` key"
+"1 Press the `CTRL` key. 2 Enter the value 01 by pressing 0 then 1. 3 "
+"Release the `CTRL` key"
 
-#: ../../basicfeatures.md:50
+#: ../../basicfeatures.md:51
 msgid ""
 "vous devriez voir apparaitre le caractere Braille *⠁* dans la zone de "
 "saisie."
 msgstr "You should see the Braille character *⠁* appear in the input area."
 
-#: ../../basicfeatures.md:52
+#: ../../basicfeatures.md:53
 msgid ""
 "Vous trouverez sur wikipedia une [table des caractères Braille "
 "unicode](https://fr.wikipedia.org/wiki/Table_des_caract%C3%A8res_Unicode/U2800)."
@@ -202,19 +212,19 @@ msgstr ""
 "character *⠵* corresponds to the Unicode value 0x2835. To enter this "
 "character, you can use:"
 
-#: ../../basicfeatures.md:54
+#: ../../basicfeatures.md:55
 msgid "`CTRL`+ 0x2835"
 msgstr "`CTRL`+ 0x2835"
 
-#: ../../basicfeatures.md:56 ../../basicfeatures.md:64
+#: ../../basicfeatures.md:57 ../../basicfeatures.md:65
 msgid "ou bien"
 msgstr "or"
 
-#: ../../basicfeatures.md:58
+#: ../../basicfeatures.md:59
 msgid "`CTRL`+ 0x35"
 msgstr "`CTRL`+ 0x35"
 
-#: ../../basicfeatures.md:60
+#: ../../basicfeatures.md:61
 msgid ""
 "Vous pouvez également utiliser des valeur décimale. 0x2835 correspond à "
 "10293. vous pouvez donc entrer le caractère *⠵* en utilisant :"
@@ -222,25 +232,25 @@ msgstr ""
 "You can also use decimal values. 0x2835 is equivalent to 10293. "
 "Therefore, you can enter the character *⠵* using:"
 
-#: ../../basicfeatures.md:62
+#: ../../basicfeatures.md:63
 msgid "`CTRL`+ 10293"
 msgstr "`CTRL`+ 10293"
 
-#: ../../basicfeatures.md:66
+#: ../../basicfeatures.md:67
 msgid "`CTRL`+ 53"
 msgstr "`CTRL`+ 53"
 
-#: ../../basicfeatures.md:68
+#: ../../basicfeatures.md:69
 msgid ""
 "Notez que pour utiliser un code hexadécimal, vous devez préfixer la "
 "valeur par 0x"
 msgstr "Note that to use a hexadecimal code, you must prefix the value with 0x"
 
-#: ../../basicfeatures.md:70
+#: ../../basicfeatures.md:71
 msgid "Saisie directe des points Braille"
 msgstr "Direct input of Braille dots number"
 
-#: ../../basicfeatures.md:71
+#: ../../basicfeatures.md:72
 msgid ""
 "La saisie directe des points Braille reprend le principe de la saisie "
 "UNICODE, mais au lieu de rentrer la valeur UNICODE correspondante au "
@@ -248,12 +258,12 @@ msgid ""
 "Braille présent sur le caractère. Pour utiliser la saisie directe, vous "
 "devez utiliser le préfixe **'0b'**."
 msgstr ""
-"Direct Braille dot entry follows the same principle as Unicode input, but "
-"instead of entering the Unicode value corresponding to the desired "
-"character, you can enter the Braille dot numbers present on the character. "
-"To use direct entry, you must use the prefix **'0b'**."
+"Direct Braille dot entry follows the same principle as Unicode input, but"
+" instead of entering the Unicode value corresponding to the desired "
+"character, you can enter the Braille dot numbers present on the "
+"character. To use direct entry, you must use the prefix **'0b'**."
 
-#: ../../basicfeatures.md:73
+#: ../../basicfeatures.md:74
 msgid ""
 "Par exemple si vous voulez saisir un **s**, le caractère Braille est "
 "**⠎** soit les points 2-3-4.   Pour obtenir ce caractère, vous allez "
@@ -261,42 +271,42 @@ msgid ""
 "puis les points souhaitez 234 et enfin vous allez relacher la touche "
 "`CTRL`."
 msgstr ""
-"For example, if you want to type an **s**, the Braille character is **⠎**, "
-"which is dots 2-3-4. To obtain this character, you will press the `CTRL` "
-"key, then without releasing it, enter the prefix 0b, then the desired dots "
-"234, and finally release the `CTRL` key."
+"For example, if you want to type an **s**, the Braille character is "
+"**⠎**, which is dots 2-3-4. To obtain this character, you will press the "
+"`CTRL` key, then without releasing it, enter the prefix 0b, then the "
+"desired dots 234, and finally release the `CTRL` key."
 
-#: ../../basicfeatures.md:76
+#: ../../basicfeatures.md:77
 msgid "donc:"
 msgstr "SO:"
 
-#: ../../basicfeatures.md:78
+#: ../../basicfeatures.md:79
 msgid "`CTRL`+ 0b + 234 pour obtenir **⠎**"
 msgstr "`CTRL`+ 0b + 234 to add **⠎**"
 
-#: ../../basicfeatures.md:80
+#: ../../basicfeatures.md:81
 msgid "`CTRL`+ 0b + 1234 pour obtenir **⠏**"
 msgstr "`CTRL`+ 0b + 1234 to add **⠏**"
 
-#: ../../basicfeatures.md:82
+#: ../../basicfeatures.md:83
 msgid "`CTRL`+ 0b + 12 pour obtenir **⠃**"
 msgstr "`CTRL`+ 0b + 12 to add **⠃**"
 
-#: ../../basicfeatures.md:84
+#: ../../basicfeatures.md:85
 msgid ""
 "vous pouvez également saisir du Braille 8 points. !!! Attention il faut "
 "que ce soit cohérent avec le reste du document la hauteur des cellules "
 "Braille est définie par le standard Braille indiqué dans les paramètres."
 msgstr ""
-"You can also enter 8-point Braille. !!! Note that it must be consistent with "
-"the rest of the document; the height of the Braille cells is defined by the "
-"Braille standard specified in the settings."
+"You can also enter 8-point Braille. !!! Note that it must be consistent "
+"with the rest of the document; the height of the Braille cells is defined"
+" by the Braille standard specified in the settings."
 
-#: ../../basicfeatures.md:86
+#: ../../basicfeatures.md:87
 msgid "`CTRL`+ 0b + 12347 pour obtenir **⡏**"
 msgstr "`CTRL`+ 0b + 12347 to add **⡏**"
 
-#: ../../basicfeatures.md:92
+#: ../../basicfeatures.md:93
 msgid ""
 "L'action de cliquer sur l'option *Impression* affiche une page relative à"
 " l'embossage du document sur une BrailleRAP. Sur cette page vous pouvez "
@@ -308,62 +318,53 @@ msgstr ""
 "the different pages with the *Previous page* and *Next page* buttons and "
 "print the active page with the *Print* button."
 
-#: ../../basicfeatures.md:94
+#: ../../basicfeatures.md:95
 msgid "![Capture d'écran de la page Impression](./IMG/screenshot_print.jpg)"
 msgstr "![Application screenshot of print page](./IMG/screenshot_print.jpg)"
 
-#: ../../basicfeatures.md:94
+#: ../../basicfeatures.md:95
 msgid "Capture d'écran de la page Impression"
 msgstr "Application screenshot of print page"
 
-#: ../../basicfeatures.md:96
+#: ../../basicfeatures.md:97
 msgid "Bouton *Page Précédente*"
 msgstr "Button *Previous page*"
 
-#: ../../basicfeatures.md:97
+#: ../../basicfeatures.md:98
 msgid "Affiche la page précédente du document à embosser."
 msgstr "Displays the previous page of the document to emboss."
 
-#: ../../basicfeatures.md:99
+#: ../../basicfeatures.md:100
 msgid "Bouton *Page Suivante*"
 msgstr "Button *Next page*"
 
-#: ../../basicfeatures.md:100
+#: ../../basicfeatures.md:101
 msgid "Affiche la page suivante du document à embosser."
 msgstr "Displays the next page of the document to emboss."
 
-#: ../../basicfeatures.md:102
+#: ../../basicfeatures.md:103
 msgid "Bouton *Imprimer*"
 msgstr "Button *Print*"
 
-#: ../../basicfeatures.md:103
+#: ../../basicfeatures.md:104
 msgid "Embosse (imprime) la page active sur la BrailleRAP connectée en USB."
 msgstr "Emboss (print) the active page on the BrailleRAP connected via USB."
 
-#: ../../basicfeatures.md:110
+#: ../../basicfeatures.md:111
+#, fuzzy
 msgid ""
 "L'action de cliquer sur l'option *Paramètres* affiche une page relative à"
-" la coniguration du logiciel (nombre de lignes, port de communication, "
+" la configuration du logiciel (nombre de lignes, port de communication, "
 "table Braille ...)."
 msgstr ""
 "Clicking on the *Text input* option displays a page related to the "
 "manipulation of the text to be transcribed in Braille."
 
-#: ../../basicfeatures.md:112
-msgid "![Capture d'écran de la page paramètres](./IMG/screenshot_parameters.jpg)"
-msgstr ""
-"![Application screenshot of parameters "
-"page](./IMG/screenshot_parameters.jpg)"
-
-#: ../../basicfeatures.md:112
-msgid "Capture d'écran de la page paramètres"
-msgstr "Application screenshot of input page"
-
-#: ../../basicfeatures.md:114
+#: ../../basicfeatures.md:115
 msgid "Table Braille"
 msgstr "Braille table"
 
-#: ../../basicfeatures.md:115
+#: ../../basicfeatures.md:116
 msgid ""
 "Cette section permet de définir le standard utilisé pour la transcription"
 " du texte en Braille. **Attention** il existe parfois plusieurs standard "
@@ -380,21 +381,21 @@ msgstr ""
 "Vietnamesestandard if the readers of the document use this Braille "
 "standard."
 
-#: ../../basicfeatures.md:117
+#: ../../basicfeatures.md:118
 msgid "Nombre de caractères par ligne"
 msgstr "Number of characters per line"
 
-#: ../../basicfeatures.md:118
+#: ../../basicfeatures.md:119
 msgid "Cette section permet de définir le nombre de caractères Braille par ligne."
 msgstr ""
 "This section allows you to define the number of Braille characters per "
 "line."
 
-#: ../../basicfeatures.md:120
+#: ../../basicfeatures.md:121
 msgid "Nombre de lignes par page"
 msgstr "Number of lines per page"
 
-#: ../../basicfeatures.md:121
+#: ../../basicfeatures.md:122
 msgid ""
 "Cette section permet de définir le nombre lignes de caractères Braille "
 "disponible sur une page. Attention il s'agit du nombre de lignes quand on"
@@ -404,79 +405,204 @@ msgstr ""
 "available on a page. Note that this is the number of lines when using "
 "asingle line spacing."
 
-#: ../../basicfeatures.md:123
+#: ../../basicfeatures.md:124
 msgid "Interligne"
 msgstr "Line spacing"
 
-#: ../../basicfeatures.md:124
+#: ../../basicfeatures.md:125
+#, fuzzy
 msgid ""
 "Cette valeur permet de choisir l'interligne utilisé pour l'embossage du "
-"document. Il existe 3 interlignes : 1 (simple), 1.5 (un interligne et "
-"demi) et 2 (double)."
+"document. Il existe 3 interlignes :"
 msgstr ""
 "This value allows you to choose the line spacing used for the embossing "
 "of the document. There are 3 line spacings: 1 (single), 1.5 (one line and"
 " a half) and 2 (double)."
 
 #: ../../basicfeatures.md:126
-msgid "Marge gauche (mm)"
-msgstr "Left margin (mm)"
+msgid "**1** (interligne simple)"
+msgstr ""
 
 #: ../../basicfeatures.md:127
-msgid "Cette valeur détermine la valeur de la marge à la gauche du document."
-msgstr "This determines the value of the left margin of the document."
+msgid "**1.5** (un interligne et demi)"
+msgstr ""
 
-#: ../../basicfeatures.md:129
-msgid "Marge début de page (mm)"
-msgstr "Top margin (mm)"
+#: ../../basicfeatures.md:128
+msgid "**2** (interligne double)."
+msgstr ""
 
 #: ../../basicfeatures.md:130
-msgid "Cette valeur détermine la valeur de la marge en haut du document."
-msgstr "This determines the value of the top margin of the document."
+msgid "Numérotation des pages"
+msgstr ""
+
+#: ../../basicfeatures.md:131
+#, fuzzy
+msgid "Cette option permet de choisir le style de numérotation des pages."
+msgstr ""
+"This section allows you to define the number of Braille characters per "
+"line."
 
 #: ../../basicfeatures.md:132
-msgid "Position maximum droite (mm)"
-msgstr "Maximum position on the right (mm)"
+msgid ""
+"**Aucune**. Les pages ne seront pas numérotées, on conserve une ligne "
+"supplémentaire pour le texte."
+msgstr ""
 
 #: ../../basicfeatures.md:133
 msgid ""
-"Cette valeur détermine la position maximale sur la droite de la feuille "
-"en impression paysage. Pour une feuille A4 environ 200 mm pour une "
-"feuille A3 environ 280 mm."
+"**En haut de page**. Le numéro de page apparaitra en haut à droite de la "
+"page."
 msgstr ""
-"This value determines the maximum rightward position of the sheet in "
-"landscape printing. For an A4 sheet, approximately 200 mm. For an A3 "
-"sheet, approximately 280 mm."
 
-#: ../../basicfeatures.md:135
+#: ../../basicfeatures.md:134
+msgid ""
+"**En bas de page**. Le numéro de page apparaitra en bas à doite de la "
+"page."
+msgstr ""
+
+#: ../../basicfeatures.md:136
+msgid "Marge gauche (mm)"
+msgstr "Left margin (mm)"
+
+#: ../../basicfeatures.md:137
+msgid "Cette valeur détermine la valeur de la marge à la gauche du document."
+msgstr "This determines the value of the left margin of the document."
+
+#: ../../basicfeatures.md:139
+msgid "Marge début de page (mm)"
+msgstr "Top margin (mm)"
+
+#: ../../basicfeatures.md:140
+msgid "Cette valeur détermine la valeur de la marge en haut du document."
+msgstr "This determines the value of the top margin of the document."
+
+#: ../../basicfeatures.md:142
+msgid "Position maximum droite (mm)"
+msgstr "Maximum position on the right (mm)"
+
+#: ../../basicfeatures.md:143
+msgid ""
+"Cette valeur détermine la position maximale sur la droite de la feuille "
+"en impression paysage. Pour une feuille A4 environ 200 mm, pour une "
+"feuille A3 environ 280 mm. Veuillez noter que la BrailleRAP ne detecte "
+"pas l'orientation de la feuille, elle tiendra uniquement compte des "
+"informations transmisent par AccessBrailleRAP. La fonction paysage est "
+"donc destinée à embosser un texte en paysage sur une feuille insérée en "
+"mode portrait !"
+msgstr ""
+
+#: ../../basicfeatures.md:145
 msgid "Orientation"
 msgstr "Orientation"
 
-#: ../../basicfeatures.md:136
+#: ../../basicfeatures.md:146
 msgid "Cette valeur détermine l'orientation de l'impression."
 msgstr "This value set the print orientation."
 
-#: ../../basicfeatures.md:137
+#: ../../basicfeatures.md:147
+#, fuzzy
 msgid ""
-"Portrait : Les lignes seront imprimées paralellement au bord haut de la "
-"feuille."
+"**Portrait** : Les lignes seront imprimées paralellement au bord haut de "
+"la feuille."
 msgstr "Portrait: Lines will be printed parallel to the top edge of the sheet."
 
-#: ../../basicfeatures.md:138
+#: ../../basicfeatures.md:148
+#, fuzzy
 msgid ""
-"Paysage : La lignes seront imprimées paralellement au bord droit de la "
-"feuille. La première ligne sera imprimée à la position **Position maximum"
-" droite (mm)**"
+"**Paysage** : La lignes seront imprimées paralellement au bord droit de "
+"la feuille. La première ligne sera imprimée à la position **Position "
+"maximum droite (mm)**"
 msgstr ""
 "Landscape: The lines will be printed parallel to the right edge of the "
 "sheet. The first line will be printed at the **Maximum position on the "
 "right (mm)**"
 
-#: ../../basicfeatures.md:141
+#: ../../basicfeatures.md:150
+#, fuzzy
+msgid "Affichage Braille"
+msgstr "Braille table"
+
+#: ../../basicfeatures.md:151
+msgid ""
+"Cette option permet de sélectionner le type d'affichage Braille dans la "
+"page consacrée à l'impression."
+msgstr ""
+
+#: ../../basicfeatures.md:152
+msgid ""
+"**Braille et Texte** : Le texte en Braille est affiché, avec le texte en "
+"noir juste en dessous."
+msgstr ""
+
+#: ../../basicfeatures.md:153
+msgid ""
+"**Braille seulement** : Seul le texte en Braille est affiché. Cette "
+"option ne change pas l'impression, la BrailleRAP embossera uniquement le "
+"texte en Braille. Le double affichage Braille / texte en noir vous "
+"permet, si vous êtes voyant, d'améliorer la mise en page du Braille sans "
+"réinterpréter le Braille."
+msgstr ""
+
+#: ../../basicfeatures.md:156
+msgid "Transcription Braille inversée"
+msgstr ""
+
+#: ../../basicfeatures.md:157
+msgid ""
+"Cette option détermine la manière dont sera produit le texte en noir "
+"affiché en association avec le texte en Braille."
+msgstr ""
+
+#: ../../basicfeatures.md:158
+msgid ""
+"**Transcription inverse** : Liblouis sera utilisé pour produire le texte "
+"en noir."
+msgstr ""
+
+#: ../../basicfeatures.md:159
+msgid ""
+"**Texte original** : Dans certaine langue, la transcription inverse de "
+"Liblouis fonctionne mal. Cette option permet d'utiliser le texte original"
+" avant transcription en Braille."
+msgstr ""
+
+#: ../../basicfeatures.md:161
+msgid "Alignement Braille / texte en noir"
+msgstr ""
+
+#: ../../basicfeatures.md:162
+msgid ""
+"Cette option vous permet de choisr la méthode souhaitée pour aligner le "
+"texte en noir par rapport au Braille. En effet la transcription Braille "
+"ajoute dans certain cas des caractères pour marquer des situations "
+"spécifiques (Majuscule, symbole tout en majuscules ...)"
+msgstr ""
+
+#: ../../basicfeatures.md:163
+msgid ""
+"**A droite** : Aligne chaque mot du texte en noir sur la fin du texte en "
+"Braille. C'est suffisant pour des prefixes simples comme la majuscule en "
+"Braille Français '⠨'. Par contre, cela peut devenir difficile à lire dans"
+" certain cas, notamment quand les sequences d'échapement sont situées au "
+"milieu d'un mot. Par exemple BrailleRAP se transcrit en français par "
+"⠨⠃⠗⠁⠊⠇⠇⠑⠨⠨⠗⠁⠏, l'alignement à droite va aligner correctement le 'RAP' de "
+"la fin, par contre le début du mot sera décalé a  cause du double symbole"
+" de majuscule '⠨⠨'."
+msgstr ""
+
+#: ../../basicfeatures.md:164
+msgid ""
+"**Meilleure option** : Cette option utilise la transcription Braille du "
+"mot en minuscule pour ajuster au mieux le mot en Braille et le mot en "
+"noir. Cette option est utilisé avec certain standard Braille qui ajoute "
+"des suffixes à la fin des mots."
+msgstr ""
+
+#: ../../basicfeatures.md:167
 msgid "Port de communication"
 msgstr "Communication port"
 
-#: ../../basicfeatures.md:142
+#: ../../basicfeatures.md:168
 msgid ""
 "Cette valeur désigne le port de communication utilisé pour la "
 "communication avec la BrailleRAP. Si vous avez branché la BrailleRAP "
@@ -485,22 +611,22 @@ msgid ""
 msgstr ""
 "This value specifies the communication port used for communication with "
 "BrailleRAP. If you have connected the BrailleRAP after launching the "
-"software, you can refresh the list of available communication ports by using "
-"the **Refresh** button."
+"software, you can refresh the list of available communication ports by "
+"using the **Refresh** button."
 
-#: ../../basicfeatures.md:144
+#: ../../basicfeatures.md:170
 msgid "Langue de l'application"
 msgstr "Application language"
 
-#: ../../basicfeatures.md:145
+#: ../../basicfeatures.md:171
 msgid "Cette valeur permet de définir la langue de l'interface de l'application."
 msgstr "This value allows you to define the language of the application interface."
 
-#: ../../basicfeatures.md:147
+#: ../../basicfeatures.md:173
 msgid "Thème"
 msgstr "Theme"
 
-#: ../../basicfeatures.md:148
+#: ../../basicfeatures.md:174
 msgid ""
 "Cette valeur permet de définir le thème de l'interface de l'application, "
 "vous avez la possibilité de choisir entre une interface claire sur fond "
@@ -509,3 +635,17 @@ msgstr ""
 "This value allows you to define the theme of the application interface, "
 "you have the option to choose between a light interface on a dark "
 "background or a dark interface on a light background."
+
+#~ msgid ""
+#~ "Cette valeur détermine la position "
+#~ "maximale sur la droite de la "
+#~ "feuille en impression paysage. Pour une"
+#~ " feuille A4 environ 200 mm pour "
+#~ "une feuille A3 environ 280 mm."
+#~ msgstr ""
+#~ "This value determines the maximum "
+#~ "rightward position of the sheet in "
+#~ "landscape printing. For an A4 sheet, "
+#~ "approximately 200 mm. For an A3 "
+#~ "sheet, approximately 280 mm."
+
