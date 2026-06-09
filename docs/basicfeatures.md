@@ -174,12 +174,12 @@ Embosse (imprime) la page active sur la BrailleRAP connectée en USB.
 
 ```{figure} ./IMG/braillealign_right.png
 :alt: Un extrait d'une ligne affichée avec l'option Braille et Texte, le Braille et le texte sont alignés à droite
-*Alignement à droite, on constate que la fin du mot (RAP) est bien aligné sur le Braille. Par contre l'utilisation de la séquence '⠠⠠' pour représenter les majuscules, entraine un décalage du début du mot.
+*Alignement à droite, on constate que la fin du mot (RAP) est bien aligné sur le Braille. Par contre l'utilisation de la séquence '⠠⠠' pour représenter les majuscules, entraine un décalage du début du mot.*
 
 ```
 ```{figure} ./IMG/braillealign_bestfit.png
 :alt: Un extrait d'une ligne affichée avec l'option Braille et Texte, le Braille et le texte sont alignés au mieux
-*Meilleure option, Malgré l'utilisation de la séquence '⠠⠠' pour représenter les majuscules, on constate que le début du mot est bien aligné lettre à lettre.
+*Meilleure option, Malgré l'utilisation de la séquence '⠠⠠' pour représenter les majuscules, on constate que le début du mot est bien aligné lettre à lettre.*
 
 ```
 
