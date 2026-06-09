@@ -154,16 +154,11 @@ Embosse (imprime) la page active sur la BrailleRAP connectée en USB.
   - **Braille seulement** : Seul le texte en Braille est affiché.
   Cette option ne change pas l'impression, la BrailleRAP embossera uniquement le Braille. Le double affichage Braille / texte en noir vous permet, si vous êtes voyant, d'améliorer la mise en page du Braille sans réinterpréter le Braille. 
 
- 
-  *Un extrait d'une ligne affichée avec l'option Braille et Texte*
-
-  ![Un extrait d'une ligne affichée avec l'option Braille et Texte](./IMG/brailleandtextdisplay.png)
   
 ```{figure} ./IMG/brailleandtextdisplay.png
-:scale: 50 %
+:scale: 100 %
 :alt: Un extrait d'une ligne affichée avec l'option Braille et Texte
 *Un extrait d'une ligne affichée avec l'option Braille et Texte*
-
 
 ```
 
