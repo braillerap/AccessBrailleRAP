@@ -83,7 +83,7 @@ Lors de la saisie d'un texte, il peut être utile d'insérer des caractères Bra
   
   `CTRL`+ 0b + 12 pour obtenir **⠃**
   
-  vous pouvez également saisir du Braille 8 points. !!! Attention il faut que ce soit cohérent avec le reste du document la hauteur des cellules Braille est définie par le standard Braille indiqué dans les paramètres.
+  vous pouvez également saisir du Braille 8 points. !!! Attention il faut que ce soit cohérent avec le reste du document, la hauteur des cellules Braille est définie par le standard Braille sélectionné dans les paramètres.
   
   `CTRL`+ 0b + 12347 pour obtenir **⡏**
   
@@ -173,11 +173,13 @@ Embosse (imprime) la page active sur la BrailleRAP connectée en USB.
   - **Meilleure option** : Cette option utilise la transcription Braille du mot en minuscule pour ajuster au mieux le début du mot en Braille et le mot en noir pour faciliter la lecture conjoite du texte et du Braille. Cette option est utilisé avec certain standard Braille qui ajoute des suffixes à la fin des mots.
 
 ```{figure} ./IMG/braillealign_right.png
+:scale: 100 %
 :alt: Un extrait d'une ligne affichée avec l'option Braille et Texte, le Braille et le texte sont alignés à droite
 *Alignement à droite, on constate que la fin du mot (RAP) est bien aligné sur le Braille. Par contre l'utilisation de la séquence '⠠⠠' pour représenter les majuscules, entraine un décalage du début du mot.*
 
 ```
 ```{figure} ./IMG/braillealign_bestfit.png
+:scale: 100 %
 :alt: Un extrait d'une ligne affichée avec l'option Braille et Texte, le Braille et le texte sont alignés au mieux
 *Meilleure option, Malgré l'utilisation de la séquence '⠠⠠' pour représenter les majuscules, on constate que le début du mot est bien aligné lettre à lettre.*
 
@@ -192,3 +194,16 @@ Embosse (imprime) la page active sur la BrailleRAP connectée en USB.
 ### Thème
   Cette valeur permet de définir le thème de l'interface de l'application, vous avez la possibilité de choisir entre une interface claire sur fond sombre ou une interface sombre sur fond clair.
 
+```{figure} ./IMG/theme_bonw.png
+:scale: 100 %
+:alt: Un apercu du theme sombre sur fond clair
+*Un apercu du thème sombre sur fond clair*
+
+```
+
+```{figure} ./IMG/theme_bonw.png
+:scale: 100 %
+:alt: Un apercu du theme clair sur fond sombre
+*Un apercu du thème clair sur fond sombre*
+
+```
