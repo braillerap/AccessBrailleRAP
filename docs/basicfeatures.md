@@ -201,7 +201,7 @@ Embosse (imprime) la page active sur la BrailleRAP connectée en USB.
 
 ```
 
-```{figure} ./IMG/theme_bonw.png
+```{figure} ./IMG/theme_wonb.png
 :scale: 100 %
 :alt: Un apercu du theme clair sur fond sombre
 *Un apercu du thème clair sur fond sombre*
