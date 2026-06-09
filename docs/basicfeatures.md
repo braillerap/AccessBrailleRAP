@@ -172,7 +172,16 @@ Embosse (imprime) la page active sur la BrailleRAP connectée en USB.
   - **A droite** : Aligne chaque mot du texte en noir sur la fin du texte en Braille. C'est suffisant pour des prefixes simples comme la majuscule en Braille Français '⠨'. Par contre, cela peut devenir difficile à lire dans certain cas, notamment quand les sequences d'échapement sont situées au milieu d'un mot. Par exemple BrailleRAP se transcrit en français par ⠨⠃⠗⠁⠊⠇⠇⠑⠨⠨⠗⠁⠏, l'alignement à droite va aligner correctement le 'RAP' de la fin, par contre le début du mot sera décalé a  cause du double symbole de majuscule '⠨⠨'. 
   - **Meilleure option** : Cette option utilise la transcription Braille du mot en minuscule pour ajuster au mieux le début du mot en Braille et le mot en noir pour faciliter la lecture conjoite du texte et du Braille. Cette option est utilisé avec certain standard Braille qui ajoute des suffixes à la fin des mots.
 
+```{figure} ./IMG/braillealign_right.png
+:alt: Un extrait d'une ligne affichée avec l'option Braille et Texte, le Braille et le texte sont alignés à droite
+*Alignement à droite, on constate que la fin du mot (RAP) est bien aligné sur le Braille. Par contre l'utilisation de la séquence '⠇⠇' pour représenter les majuscules, entraine un décalage du début du mot.
 
+```
+```{figure} ./IMG/braillealign_bestfit.png
+:alt: Un extrait d'une ligne affichée avec l'option Braille et Texte, le Braille et le texte sont alignés au mieux
+*Meilleure option, Malgré l'utilisation de la séquence '⠇⠇' pour représenter les majuscules, on constate que le début du mot est bien aligné lettre à lettre.
+
+```
 
 ### Port de communication
   Cette valeur désigne le port de communication utilisé pour la communication avec la BrailleRAP. Si vous avez branché la BrailleRAP après le lancement du logiciel, vous pouvez rafraichir la liste des ports de communication disponible en utilisant le bouton **Actualiser**.
