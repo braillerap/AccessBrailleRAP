@@ -27,7 +27,7 @@ class App extends Component {
                 options : AppOption,
                 serialstatus:0,
                 louisloaded:false,
-                webviewready:false
+                backendready:false
             }
         );
 
@@ -61,7 +61,7 @@ class App extends Component {
         console.log (option);
         let params = JSON.parse(option);
 
-        this.setState({webviewready:true});
+        this.setState({backendready:true});
         console.log (navigator.language);
         if (params.lang === "")
         {
@@ -81,25 +81,29 @@ class App extends Component {
 
     async webviewloaded ()
     {
-      console.log ("pywebview loaded std");
-      if (window.pywebview.state)
-        console.log ("state:", window.pywebview.state); 
-      else
-          window.pywebview.state = {};
-      
-      if (window.pywebview.state) {
-        console.log ("pywebviewready event");
+      let backend = this.context.GetBackend ();
+      // backend is now ready to work
+      backend.setbackendready(true);
+    
+      // define the backend service name
+      backend.setService (process.env.REACT_APP_NAME);
+
+      {
+        console.log ("pywebviewready loaded");
 
         // kill check timer if event received
         if (this.timerload)
             clearInterval (this.timerload);
 
         // load app config
-        let option = await window.pywebview.api.gcode_get_parameters();
+        let option = await backend.gcode_get_parameters();
         console.log ("option", option);
         let params = JSON.parse(option);
 
-        this.setState({webviewready:true});
+        // set local state
+        // TODO: backend state should be global in context to avoid state duplication
+        this.setState({backendready:true});
+
         console.log (navigator.language);
         if (params.lang === "")
         {
@@ -121,14 +125,19 @@ class App extends Component {
     }
     async componentDidMount ()
     {
+      
       console.log ("componentDidMount event");
-      if (window.pywebview)  
+      
+
+      if (window.pywebview && process.env.REACT_APP_PYWEBVIEW)  
       {
         console.log ("direct event call");
         this.webviewloaded(); // direct call we are late to register event
       }
       else
       {
+          if (! process.env.REACT_APP_LOCALWEB)
+            window.addEventListener('pywebviewready', this.webviewloaded);
           console.log ("register pywebview event");  
           window.addEventListener('pywebviewready', this.webviewloaded);
           // start a timer to secure loading
@@ -189,6 +198,11 @@ class App extends Component {
       this.setState ({logstr : this.state.logstr + str + '\r\n'});
 
     }
+
+    //
+    // brief: LibLouis initialisation status callback
+    //
+    //
     LouisLoaded (success)
     {
       // set louis loglevel to LOG_OFF
@@ -203,7 +217,7 @@ class App extends Component {
     }
     render ()
     {
-      if (! this.state.webviewready)
+      if (! this.state.backendready)
         return (
         <h1>
           <FormattedMessage id="app.loading" defaultMessage="Waiting webview..."/>
@@ -212,7 +226,7 @@ class App extends Component {
       if (! this.state.louisloaded)
         return (
         <h1>
-          <FormattedMessage id="app.loading" defaultMessage="Chargement..."/>
+          <FormattedMessage id="app.loading" defaultMessage="Loading..."/>
         </h1>);
 
       return (

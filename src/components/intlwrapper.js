@@ -13,6 +13,7 @@ import Turkish from '../translations/tr.json'
 import Ukrainian from '../translations/uk.json';
 import SimplifiedChineese from '../translations/zh_Hans.json';
 import { locales } from '../components/locale.js';
+import Backend from './backend.js';
 
 export const IntlContext = React.createContext();
 
@@ -20,6 +21,7 @@ const _local = "fr"; //navigator.language;
 let _lang = French;
 let _localinfo = locales[1];
 let _theme = "dark";
+let backend = Backend ();
 
 const _themedb = {
     "dark":{
@@ -197,14 +199,19 @@ const IntlWrapper = (props) => {
         })
    }
 
+   function getBackend ()
+   {
+        return backend;
+   }
+
    
    return (
 
-       <IntlContext.Provider value = {{locale, localeinfo, theme, setTheme, selectLanguage, setLanguage, getStyleClass}}>
+       <IntlContext.Provider value = {{locale, localeinfo, theme, setTheme, selectLanguage, setLanguage, getStyleClass, getBackend}}>
            <IntlProvider messages={messages} locale={locale} localeinfo={localeinfo}>
                {props.children}
            </IntlProvider>
        </IntlContext.Provider>
-   );
+   )
 }
 export default IntlWrapper;
