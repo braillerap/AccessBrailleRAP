@@ -127,11 +127,9 @@ const IntlWrapper = (props) => {
 
    function getStyleClass (styleclass)
    {
-        //if (_themedb[theme].has (styleclass))
         return (_themedb[theme][styleclass]);
-        console.log ("Error: unknown styleclass " + styleclass);
-        return styleclass;
    }
+   
    function setLanguage (lang)
    {
         setLocale(lang);
