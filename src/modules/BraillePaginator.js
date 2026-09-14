@@ -1,4 +1,40 @@
+/**
+ * \file            BraillePaginator.js
+ * \brief           Implement BraillePaginator class to build Braille page from text.
 
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge,
+ * publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS LICENSED UNDER
+ *                  GNU GENERAL PUBLIC LICENSE
+ *                   Version 3, 29 June 2007
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * This file is part of AccessBrailleRAP software.
+ *
+ * SPDX-FileCopyrightText: 2025-2026 Stephane GODIN <stephane@braillerap.org>
+ * 
+ * SPDX-License-Identifier: GPL-3.0 
+ */
 class BraillePaginator 
 {
     constructor(BrailleTranslator)
@@ -27,57 +63,101 @@ class BraillePaginator
         this.BrailleBlackAlignmentStrategy = null;
         this.BrailleTranslator = BrailleTranslator;
     }
-
+    /*!
+     *\brief Set the number of columns (number of Braille char on a page line).
+     *
+     */ 
     setcols (cols)
     {
         this.cols = cols;
         this.Update ()
     }
 
+    /*!
+     *\brief Get the number of columns (number of Braille char on a page line).
+     *
+     */ 
     getcols ()
     {
         return (this.cols);
     }
 
+    /*!
+     *\brief Set the number of lines (number of Braille lines on a page).
+     *
+     */ 
     setrows (rows)
     {
         this.rows = rows;
         this.Update ();
     }
 
+    /*!
+     *\brief Set the distance between 2 Braille lines.
+     *
+     */
     setspacing (spacing)
     {
         this.spacing = spacing;
         this.Update ();
     }
+
+    /*!
+     *\brief Set the Braille text as an array of lines.
+     *
+     */
     setBrailleLines (lines)
     {
         this.braille = lines;
     }
+    /*!
+     *\brief Set original text as an array of strings.
+     *
+     */
     setTxtBlackLines (lines)
     {
         this.txt_black = lines;
     }
+
+    /*!
+     *\brief Set the page numbering option.
+     *
+     */
     setPageNumbering (numbering)
     {
         this.page_numbering = numbering;
     }
 
+    /*!
+     *\brief Return the page numbering option.
+     *
+     */
     getPageNumbering ()
     {
         return this.page_numbering;
     }
     
+    /*!
+     *\brief Set the strategy to translate Braille in standard text.
+     *
+     */
     setBrailleInBlackTextStrategy (strategy)
     {
         this.BrailleInBlackTextStrategy = strategy;
     }
 
+    /*!
+     *\brief Set the strategy to align Braille text with standard text
+     *
+     */
     setBrailleBlackAlignmentStrategy (strategy)
     {
         this.BrailleBlackAlignmentStrategy = strategy;
     }
-
+    /*!
+     *\brief Add a Braille line to the current page.
+     *
+     */
     #addline (line, line_black)
     {
         
@@ -91,6 +171,11 @@ class BraillePaginator
             this.current_page_black = [];
         }
     }
+
+    /*!
+     *\brief Build a page with current Braille on page.
+     *
+     */
     #flushline ()
     {
         if (this.current_page && this.current_page.length > 0)
@@ -98,6 +183,10 @@ class BraillePaginator
         this.current_page = [];
         this.current_page_black = [];
     }
+    /*!
+     *\brief Add a page of Braille text to current document.
+     *
+     */
     #addpage (page, page_black)
     {
         // add page number according to option
@@ -135,6 +224,11 @@ class BraillePaginator
         this.pages.push (page);
         this.pages_black.push (page_black);
     }
+
+    /*!
+     *\brief Compute the number of Braille line on page according to spacing option.
+     *
+     */
     #computerows ()
     {
         this.computedrows = Math.floor (this.rows / ((this.spacing * 0.5) + 1));
@@ -145,6 +239,11 @@ class BraillePaginator
             this.computedrows = this.computedrows - 1;
         }
     }
+
+    /*!
+     *\brief Update the array of pages.
+     *
+     */
     Update ()
     {
         if (! this.braille || ! this.txt_black)
@@ -288,6 +387,10 @@ class BraillePaginator
         this.#flushline();
     }
 
+    /*!
+     *\brief Return the page count.
+     *
+     */
     getPageNumber ()
     {
         if (this.pages)
@@ -295,7 +398,10 @@ class BraillePaginator
         else
             return (0);    
     }
-
+    /*!
+     *\brief Return a page as an array of string containing Braille.
+     *
+     */
     getPage (n)
     {
         if (n < this.pages.length)
@@ -303,6 +409,11 @@ class BraillePaginator
         else
             return [];    
     }
+
+    /*!
+     *\brief Return a page as an array of string containing standard text.
+     *
+     */
     getPageBlack (n)
     {
         if (n < this.pages_black.length)
@@ -310,6 +421,11 @@ class BraillePaginator
         else
             return [];    
     }
+
+    /*!
+     *\brief Return current document as an array of pages
+     *
+     */
     getPages ()
     {
         return (this.pages);

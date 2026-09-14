@@ -1,3 +1,41 @@
+/**
+ * \file            textinput.js
+ * \brief           Handle text input form
+ */
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge,
+ * publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS LICENSED UNDER
+ *                  GNU GENERAL PUBLIC LICENSE
+ *                   Version 3, 29 June 2007
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * This file is part of AccessBrailleRAP software.
+ *
+ * SPDX-FileCopyrightText: 2025-2026 Stephane GODIN <stephane@braillerap.org>
+ * 
+ * SPDX-License-Identifier: GPL-3.0 
+ */
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { injectIntl } from 'react-intl';
@@ -29,6 +67,10 @@ class TextInput extends React.Component {
 
   }
 
+  /*!
+     *\brief Event callback for save action. Save the current text in current file.
+     *
+     */ 
   async handlesave(event) {
     event.preventDefault();
 
@@ -43,6 +85,10 @@ class TextInput extends React.Component {
     let ret = await window.pywebview.api.save_file(this.state.txt, dialogtitle, filter);
 
   }
+  /*!
+     *\brief Event callback for save as action. Open a dialog box to select a file, save the current text in selected file.
+     *
+     */ 
   async handlesaveas(event) {
     event.preventDefault();
     let dialogtitle = this.props.intl.formatMessage({ id: "input.dialog_saveas_file" })
@@ -54,6 +100,10 @@ class TextInput extends React.Component {
     let ret = await window.pywebview.api.saveas_file(this.state.txt, dialogtitle, filter);
 
   }
+  /*!
+     *\brief Event callback for load action. Open a dialog box to select a file, then load the file in memory.
+     *
+     */ 
   async handleload(event) {
     event.preventDefault();
 
@@ -73,6 +123,10 @@ class TextInput extends React.Component {
       this.setState({ txt: data.data });
     }
   }
+  /*!
+     *\brief Event callback import action. Open a dialog box to select a file, then process the file with pandoc.
+     *
+     */ 
   async handleimport(event) {
     event.preventDefault();
     let dialogtitle = this.props.intl.formatMessage({ id: "input.dialog_import_file" })
@@ -94,13 +148,19 @@ class TextInput extends React.Component {
         alert(data.error);
     }
   }
-
+    /*!
+     *\brief Event callback for keyboard event 'Submit'. Discard event to avoid default processing of the html event
+     *
+     */ 
   handleSubmit(event) {
     event.preventDefault();
   }
 
 
-
+    /*!
+     *\brief Event callback for keyboard event 'Key Down'. Process the key for special Braille input
+     *
+     */ 
   handleKeyDown(event) {
     const hexachar = '0123456789abcdef';
     const braillechar = '12345678';
@@ -155,7 +215,10 @@ class TextInput extends React.Component {
       }
     }
   }
-
+   /*!
+     *\brief Event callback for keyboard event 'Key Up'. Process the key for special Braille input
+     *
+     */ 
   handleKeyUp(event) {
     if (event.key === "Control") {
       if (this.altcode.length > 0) {
