@@ -60,7 +60,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "clean": "rm -rf build dist",
-    "buildportal":"cross-env GENERATE_SOURCEMAP=true cross-env REACT_APP_LOCALWEB=true REACT_APP_PYWEBVIEW=false cross-env PUBLIC_URL=/accessbrap npm-run-all build"
+    "buildportal": "cross-env GENERATE_SOURCEMAP=true cross-env REACT_APP_LOCALWEB=true REACT_APP_PYWEBVIEW=false cross-env PUBLIC_URL=/accessbrap npm-run-all build"
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.23.3",
