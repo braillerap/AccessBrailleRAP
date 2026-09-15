@@ -65,7 +65,7 @@ class Parameters extends React.Component {
   }
   async componentDidMount() {
     // get serial port list
-    let list = GetBackend ().gcode_get_serial();
+    let list = await this.context.GetBackend ().gcode_get_serial();
     console.log(list)
     let portinfo = JSON.parse(list);
     this.setState({ data: portinfo })
@@ -104,16 +104,18 @@ class Parameters extends React.Component {
     event.preventDefault();
   }
 
-  handleRefreshPort() {
+  async handleRefreshPort() {
     let msg = this.props.intl.formatMessage({ id: "param.wait" });
     this.setState({ comevent: msg })
-    GetBackend ().gcode_get_serial().then(list => {
+    let list = await this.context.GetBackend ().gcode_get_serial(); 
+    if (list)
+    {
       let portinfo = JSON.parse(list);
       let success = this.props.intl.formatMessage({ id: "param.comportrefreshed" });
       this.setState({ data: portinfo, comevent: success })
-
     }
-    );
+    
+    
   }
 
   handleChangeNbCol(event) {

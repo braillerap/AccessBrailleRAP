@@ -73,7 +73,7 @@ class BackendWebLocal {
         return await window.pywebview.api.get_parameters();
     }
 
-    async gcode_set_parameters (appparam) {
+    async set_parameters (appparam) {
         let param = {"service":this.service, "options":appparam};
         const request = new Request("/local/gcode_set_parameters", {
             method: "POST",
@@ -236,8 +236,8 @@ class BackendPyWebview {
         return ret;
     }
 
-    async gcode_set_parameters(options) {
-        await window.pywebview.api.gcode_set_parameters(options);
+    async set_parameters(options) {
+        await window.pywebview.api.set_parameters(options);
     }
 
     AsyncPrintGcode(gcode, comport) {
@@ -352,11 +352,11 @@ class Backend {
         return [];
     }
 
-    async gcode_set_parameters(options) {
+    async set_parameters(options) {
         console.log ("backend set parameters ", options);
         if (this.backend) {
             console.log ("calling instantiate backend to set parameters ", options)
-            await this.backend.gcode_set_parameters(options);
+            await this.backend.set_parameters(options);
         }
     }
     AsyncPrintGcode(gcode, comport) {
