@@ -1,6 +1,6 @@
 {
   "name": "access-braillerap",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "AccessBrailleRAP",
   "main": "index.js",
   "repository": "https://github.com/AccessBrailleRAP/AccessBrailleRAP",
@@ -59,7 +59,8 @@
     "dpkg-rpi": "dpkg-deb -v --root-owner-group --build ./package/rpi/accessbraillerap-rpi ./dist/accessbraillerap-rpi-${npm_package_version}.deb",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "clean": "rm -rf build dist"
+    "clean": "rm -rf build dist",
+    "buildportal":"cross-env GENERATE_SOURCEMAP=true cross-env REACT_APP_LOCALWEB=true REACT_APP_PYWEBVIEW=false cross-env PUBLIC_URL=/accessbrap npm-run-all build"
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.23.3",

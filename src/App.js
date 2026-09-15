@@ -223,12 +223,12 @@ class App extends Component {
 
       <BrowserRouter>
         <Routes >
-          <Route path="/" element={<Layout focuscb={this.onMenuClick} status={this.state.serialstatus} />}>
+          <Route path={process.env.PUBLIC_URL}  element={<Layout focuscb={this.onMenuClick} status={this.state.serialstatus} />}>
             <Route index element={<TextInput logger={this.LogCallBack} src={this.state.srctxt} textcb={this.SetText}
               options={this.state.options} focusref={this.focusReference} glouis={this.GetLouis} />} />
-            <Route path="/impression" element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} glouis={this.GetLouis}
+            <Route path={process.env.PUBLIC_URL + "/impression"} element={<BrailleView logger={this.LogCallBack} src={this.state.srctxt} glouis={this.GetLouis}
               options={this.state.options} focusref={this.focusReference} statuscb={this.SetStatus} />} />
-            <Route path="/parametre" element={<Parameters logger={this.LogCallBack} src={this.state.srctxt} glouis={this.GetLouis}
+            <Route path={process.env.PUBLIC_URL + "/parametre"} element={<Parameters logger={this.LogCallBack} src={this.state.srctxt} glouis={this.GetLouis}
               options={this.state.options}
               optioncb={this.SetOption} focusref={this.focusReference} />} />
 
