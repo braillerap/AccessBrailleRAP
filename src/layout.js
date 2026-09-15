@@ -56,7 +56,7 @@ class Layout extends Component
                 <nav>
                     <ul className={this.context.getStyleClass('menu')}>
                     <li >
-                        <Link to="/" 
+                        <Link to={process.env.PUBLIC_URL} 
                           onClick={this.onClickMenu}
                           >
                           <FormattedMessage id="layout.param_input" defaultMessage="Saisie"/>  
@@ -67,7 +67,7 @@ class Layout extends Component
                       <li >
                         
                         <Link 
-                          to="/impression" 
+                          to={process.env.PUBLIC_URL + "/impression"} 
                           onClick={this.onClickMenu}
                           
                           >
@@ -76,7 +76,7 @@ class Layout extends Component
                         </Link>
                       </li>
                       <li>  
-                        <Link to="/parametre" onClick={this.onClickMenu}>
+                        <Link to={process.env.PUBLIC_URL +"/parametre"} onClick={this.onClickMenu}>
                           
                           <FormattedMessage id="layout.param_menu" defaultMessage="Paramètres"/>
                         </Link>
