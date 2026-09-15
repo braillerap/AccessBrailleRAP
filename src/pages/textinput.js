@@ -65,6 +65,7 @@ class TextInput extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
     this.handleClickParam = this.handleClickParam.bind(this);
+    this.handleFileChange = this.handleFileChange.bind (this);
 
     this.altcode = ""; // unicode key value for alternate input with control
 
@@ -319,7 +320,7 @@ class TextInput extends React.Component {
   }
   handleFileChange(e) {
     fileinput = new FileReader();
-    fileinput.onload = handleFileRead;
+    fileinput.onload = this.handleFileRead;
     fileinput.readAsText(e.target.files[0]);
   }
 
@@ -388,7 +389,7 @@ class TextInput extends React.Component {
         <div className={this.context.getStyleClass('general')}>
           <h1 aria-hidden={true}></h1>
 
-          {pywebview_env === false && <input type="file" onChange={handleFileChange} className='btn btn-blue' />}
+          {pywebview_env === false && <input type="file" onChange={this.handleFileChange} className='btn btn-blue' />}
           {! pywebview_env && <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>}
           {! pywebview_env && <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.savefile" })}</button>}
           <button onClick={this.handlesaveas} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.saveasfile" })}</button>
