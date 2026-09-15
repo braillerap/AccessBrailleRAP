@@ -178,11 +178,10 @@ class App extends Component {
     this.setState({ comport: comport });
   }
   SetOption(opt) {
-    //console.log ("theme received " + opt.theme.toString());
-    //console.log ("option received " + opt.toString());
+    
     this.setState({ option: opt });
-    //console.log (opt);
-    GetBackend().set_parameters(opt);
+    
+    this.context.GetBackend().set_parameters(opt);
   }
   SetStatus(status) {
     this.setState({ serialstatus: status })
