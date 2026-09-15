@@ -138,7 +138,7 @@ class Api:
         except Exception as e:
             print(e)
 
-    def saveas_file(self, data, dialogtitle, filterstring):
+    def saveas_file(self, data, dialogtitle, filterstring, filter=["(*.txt)", "(*.*)"]):
         global filename
 
         fname = window.create_file_dialog(
@@ -154,7 +154,7 @@ class Api:
         with open(filename, "w", encoding="utf8") as inf:
             inf.writelines(data)
 
-    def save_file(self, data, dialogtitle, filterstring):
+    def save_file(self, data, dialogtitle, filterstring, filter=["(*.txt)", "(*.*)"]):
         global filename
         if filename == "":
             fname = window.create_file_dialog(
@@ -170,7 +170,7 @@ class Api:
             # print (data)
             inf.writelines(data)
 
-    def load_file(self, dialogtitle, filterstring):
+    def load_file(self, dialogtitle, filterstring, filter=["(*.txt)", "(*.*)"]):
         global filename
         js = {"data": "", "error": ""}
 

@@ -134,6 +134,12 @@ class BackendWebLocal {
             return false;
     }
 
+    async import_pandoc(dialogtitle, filter)
+    {
+        // TODO: build import pandoc distant backend
+        alert ("must be implemented");
+        return "";
+    }
 
     async quit ()
     {
@@ -239,6 +245,11 @@ class BackendPyWebview {
     }
     CancelPrint() {
         window.pywebview.api.CancelPrint();
+    }
+
+    async import_pandoc(dialogtitle, filter)
+    {
+        return await window.pywebview.api.import_pandoc(dialogtitle, filter)
     }
 };
 
@@ -379,6 +390,12 @@ class Backend {
     async get_runtime_options() {
         if (this.backendready)
             return await this.backend.get_runtime_options();
+    }
+
+    async import_pandoc(dialogtitle, filter)
+    {
+        if (this.backendready)
+            return await this.backend.import_pandoc(dialogtitle, filter);
     }
 }
 

@@ -65,7 +65,7 @@ class Parameters extends React.Component {
   }
   async componentDidMount() {
     // get serial port list
-    let list = await window.pywebview.api.gcode_get_serial();
+    let list = GetBackend ().gcode_get_serial();
     console.log(list)
     let portinfo = JSON.parse(list);
     this.setState({ data: portinfo })
@@ -107,7 +107,7 @@ class Parameters extends React.Component {
   handleRefreshPort() {
     let msg = this.props.intl.formatMessage({ id: "param.wait" });
     this.setState({ comevent: msg })
-    window.pywebview.api.gcode_get_serial().then(list => {
+    GetBackend ().gcode_get_serial().then(list => {
       let portinfo = JSON.parse(list);
       let success = this.props.intl.formatMessage({ id: "param.comportrefreshed" });
       this.setState({ data: portinfo, comevent: success })

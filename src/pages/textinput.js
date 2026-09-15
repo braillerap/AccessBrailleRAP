@@ -74,7 +74,7 @@ class TextInput extends React.Component {
   async handlesave(event) {
     event.preventDefault();
 
-    console.log(window.pywebview);
+    
 
     let dialogtitle = this.props.intl.formatMessage({ id: "input.dialog_saveas_file" })
     let filter = [
@@ -82,7 +82,7 @@ class TextInput extends React.Component {
       this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
     ]
 
-    let ret = await window.pywebview.api.save_file(this.state.txt, dialogtitle, filter);
+    let ret = await this.context.GetBackend ().save_file(this.state.txt, dialogtitle, filter);
 
   }
   /*!
@@ -97,7 +97,7 @@ class TextInput extends React.Component {
       this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
     ]
 
-    let ret = await window.pywebview.api.saveas_file(this.state.txt, dialogtitle, filter);
+    let ret = await this.context.GetBackend ().saveas_file(this.state.txt, dialogtitle, filter);
 
   }
   /*!
@@ -112,7 +112,7 @@ class TextInput extends React.Component {
       this.props.intl.formatMessage({ id: "input.dialog_file_filter_text" }),
       this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
     ]
-    let ret = await window.pywebview.api.load_file(dialogtitle, filter);
+    let ret = await this.context.GetBackend ().load_file(dialogtitle, filter);
     console.log(ret);
     if (ret.length > 0) {
       let data = JSON.parse(ret);
@@ -134,7 +134,7 @@ class TextInput extends React.Component {
       this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
     ]
 
-    let ret = await window.pywebview.api.import_pandoc(dialogtitle, filter);
+    let ret = await this.context.GetBackend().import_pandoc(dialogtitle, filter);
     console.log(ret);
     if (ret.length > 0) {
       let data = JSON.parse(ret);

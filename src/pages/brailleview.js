@@ -263,7 +263,7 @@ class BrailleView extends React.Component {
     //}, 10000);
 
     // request backend to print gcode
-    window.pywebview.api.PrintGcode(gcode, this.props.options.comport).then(status => {
+    this.context.GetBackend().AsyncPrintGcode(gcode, this.props.options.comport).then(status => {
       // remove modal status screen
       console.log(status);
       
