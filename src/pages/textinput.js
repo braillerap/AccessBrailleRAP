@@ -41,6 +41,9 @@ import { FormattedMessage } from 'react-intl';
 import { injectIntl } from 'react-intl';
 import { IntlContext } from '../components/intlwrapper.js';
 import { Link } from "react-router-dom";
+import FileSaver from 'file-saver';
+
+const pywebview_env = `${process.env.REACT_APP_PYWEBVIEW}` === "true";
 
 class TextInput extends React.Component {
   static contextType = IntlContext;
@@ -70,25 +73,29 @@ class TextInput extends React.Component {
   /*!
      *\brief Event callback for save action. Save the current text in current file.
      *
-     */ 
+     */
   async handlesave(event) {
     event.preventDefault();
 
-    
+    if (pywebview_env === false || process.env.REACT_APP_LOCALWEB) {
+      let blob = new Blob([this.state.txt], { type: "text/plain;charset=utf-8" });
+      FileSaver.saveAs(blob, "page.txt");
+    }
+    else {
 
-    let dialogtitle = this.props.intl.formatMessage({ id: "input.dialog_saveas_file" })
-    let filter = [
-      this.props.intl.formatMessage({ id: "input.dialog_file_filter_text" }),
-      this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
-    ]
+      let dialogtitle = this.props.intl.formatMessage({ id: "input.dialog_saveas_file" })
+      let filter = [
+        this.props.intl.formatMessage({ id: "input.dialog_file_filter_text" }),
+        this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
+      ]
 
-    let ret = await this.context.GetBackend ().save_file(this.state.txt, dialogtitle, filter);
-
+      let ret = await this.context.GetBackend().save_file(this.state.txt, dialogtitle, filter);
+    }
   }
   /*!
      *\brief Event callback for save as action. Open a dialog box to select a file, save the current text in selected file.
      *
-     */ 
+     */
   async handlesaveas(event) {
     event.preventDefault();
     let dialogtitle = this.props.intl.formatMessage({ id: "input.dialog_saveas_file" })
@@ -97,13 +104,13 @@ class TextInput extends React.Component {
       this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
     ]
 
-    let ret = await this.context.GetBackend ().saveas_file(this.state.txt, dialogtitle, filter);
+    let ret = await this.context.GetBackend().saveas_file(this.state.txt, dialogtitle, filter);
 
   }
   /*!
      *\brief Event callback for load action. Open a dialog box to select a file, then load the file in memory.
      *
-     */ 
+     */
   async handleload(event) {
     event.preventDefault();
 
@@ -112,7 +119,7 @@ class TextInput extends React.Component {
       this.props.intl.formatMessage({ id: "input.dialog_file_filter_text" }),
       this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
     ]
-    let ret = await this.context.GetBackend ().load_file(dialogtitle, filter);
+    let ret = await this.context.GetBackend().load_file(dialogtitle, filter);
     console.log(ret);
     if (ret.length > 0) {
       let data = JSON.parse(ret);
@@ -126,7 +133,7 @@ class TextInput extends React.Component {
   /*!
      *\brief Event callback import action. Open a dialog box to select a file, then process the file with pandoc.
      *
-     */ 
+     */
   async handleimport(event) {
     event.preventDefault();
     let dialogtitle = this.props.intl.formatMessage({ id: "input.dialog_import_file" })
@@ -148,19 +155,19 @@ class TextInput extends React.Component {
         alert(data.error);
     }
   }
-    /*!
-     *\brief Event callback for keyboard event 'Submit'. Discard event to avoid default processing of the html event
-     *
-     */ 
+  /*!
+   *\brief Event callback for keyboard event 'Submit'. Discard event to avoid default processing of the html event
+   *
+   */
   handleSubmit(event) {
     event.preventDefault();
   }
 
 
-    /*!
-     *\brief Event callback for keyboard event 'Key Down'. Process the key for special Braille input
-     *
-     */ 
+  /*!
+   *\brief Event callback for keyboard event 'Key Down'. Process the key for special Braille input
+   *
+   */
   handleKeyDown(event) {
     const hexachar = '0123456789abcdef';
     const braillechar = '12345678';
@@ -215,10 +222,10 @@ class TextInput extends React.Component {
       }
     }
   }
-   /*!
-     *\brief Event callback for keyboard event 'Key Up'. Process the key for special Braille input
-     *
-     */ 
+  /*!
+    *\brief Event callback for keyboard event 'Key Up'. Process the key for special Braille input
+    *
+    */
   handleKeyUp(event) {
     if (event.key === "Control") {
       if (this.altcode.length > 0) {
@@ -265,7 +272,7 @@ class TextInput extends React.Component {
     }
 
   }
-  
+
   handleChange(event) {
     //console.log (event.target.value)
     this.setState({ txt: event.target.value });
@@ -277,7 +284,7 @@ class TextInput extends React.Component {
       this.props.focusref.current.focus();
 
     // check liblouis options
-    
+
     if (this.props.glouis) {
       let louis = this.props.glouis();
 
@@ -298,6 +305,24 @@ class TextInput extends React.Component {
       this.props.focuscb();
   }
 
+  handleFileRead() {
+    
+    if (fileinput) {
+
+      //console.log("call import json :" + fileinput.result);
+      
+      let text = fileinput.result;
+      console.log ("load ", text);
+      this.props.textcb(text);
+      this.setState({ txt: text });
+    }
+  }
+  handleFileChange(e) {
+    fileinput = new FileReader();
+    fileinput.onload = handleFileRead;
+    fileinput.readAsText(e.target.files[0]);
+  }
+
   render() {
 
     //console.log (this.props.options);
@@ -310,17 +335,17 @@ class TextInput extends React.Component {
           </h1>
           <ul className={this.context.getStyleClass('menu')}>
             <li >
-              <Link to="/parametre" 
+              <Link to="/parametre"
                 onClick={this.handleClickParam}
                 ref={this.props.focusref}
               >
                 <FormattedMessage id="param.checkliblouis" defaultMessage="Braille transcription table is not consistent, please check parameters" />
               </Link>
-               <Link to="/parametre" 
+              <Link to="/parametre"
                 onClick={this.handleClickParam}
-                
+
               >
-                <FormattedMessage id="layout.param_menu" defaultMessage="Paramètres"/>
+                <FormattedMessage id="layout.param_menu" defaultMessage="Paramètres" />
               </Link>
             </li>
           </ul>
@@ -363,8 +388,9 @@ class TextInput extends React.Component {
         <div className={this.context.getStyleClass('general')}>
           <h1 aria-hidden={true}></h1>
 
-          <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>
-          <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.savefile" })}</button>
+          {pywebview_env === false && <input type="file" onChange={handleFileChange} className='btn btn-blue' />}
+          {! pywebview_env && <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>}
+          {! pywebview_env && <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.savefile" })}</button>}
           <button onClick={this.handlesaveas} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.saveasfile" })}</button>
           <button onClick={this.handleimport} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.importfile" })}</button>
 
@@ -377,7 +403,7 @@ class TextInput extends React.Component {
             <textarea aria-label={this.props.intl.formatMessage({ id: "input.text_aria" })}
               value={this.state.txt}
               onChange={this.handleChange}
-              
+
               onKeyDown={this.handleKeyDown}
               onKeyUp={this.handleKeyUp}
               rows={nlines}
