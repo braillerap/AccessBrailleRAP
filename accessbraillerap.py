@@ -111,7 +111,7 @@ class Api:
             return string
         return string[: string.index(";")]
 
-    def gcode_get_parameters(self):
+    def get_parameters(self):
         js = json.dumps(app_options)
         return js
 

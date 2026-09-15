@@ -21,7 +21,7 @@ const _local = "fr"; //navigator.language;
 let _lang = French;
 let _localinfo = locales[1];
 let _theme = "dark";
-let backend = Backend ();
+let backend = new Backend ();
 
 const _themedb = {
     "dark":{
@@ -69,6 +69,7 @@ const IntlWrapper = (props) => {
    const [localeinfo, setLocaleInfo] = useState(_localinfo);
    const [theme, setTheme] = useState (_theme);
    
+
    function selectLanguage(e) {
        const newLocale = e.target.value;
        setLocale(newLocale);
@@ -199,7 +200,7 @@ const IntlWrapper = (props) => {
         })
    }
 
-   function getBackend ()
+   function GetBackend ()
    {
         return backend;
    }
@@ -207,7 +208,7 @@ const IntlWrapper = (props) => {
    
    return (
 
-       <IntlContext.Provider value = {{locale, localeinfo, theme, setTheme, selectLanguage, setLanguage, getStyleClass, getBackend}}>
+       <IntlContext.Provider value = {{locale, localeinfo, theme, setTheme, selectLanguage, setLanguage, getStyleClass, GetBackend}}>
            <IntlProvider messages={messages} locale={locale} localeinfo={localeinfo}>
                {props.children}
            </IntlProvider>

@@ -1,3 +1,40 @@
+/**
+ * \file            BrailleToGeometry.js
+ * \brief           Implement BrailleToGeometry class to build dot x,y positions from Braille unicode char.
+
+/*
+ * GNU GENERAL PUBLIC LICENSE
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge,
+ * publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS LICENSED UNDER
+ *                  GNU GENERAL PUBLIC LICENSE
+ *                   Version 3, 29 June 2007
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * This file is part of AccessBrailleRAP software.
+ *
+ * SPDX-FileCopyrightText: 2025-2026 Stephane GODIN <stephane@braillerap.org>
+ * 
+ * SPDX-License-Identifier: GPL-3.0 
+ */
 import GeomPoint from "./GeomPoint";
 
 const _dots = [
@@ -29,7 +66,10 @@ class BrailleToGeometry
         this.orientation = LANDSCAPE;
         
     }
-
+    /*!
+     *\brief Build an array of x,y point from an unicode Braille character.
+     *
+     */
     BrailleCharToGeom (char, offsetx, offsety)
     {
         let val = char.charCodeAt (0);
@@ -62,13 +102,22 @@ class BrailleToGeometry
         console.log ("Orientation:", this.orientation);
     }
     
+    /*!
+     *\brief Set document bounds and landscape x position
+     *
+     */
     setGeometry (nbcols, nblines, xmax)
     {
-        console.log ("setGeometry", nbcols, nblines)
+        
         this.nb_cols = nbcols;
         this.nb_lines = nblines;
         this.xmax = xmax;
     }
+
+    /*!
+     *\brief Sort x,y points according to their y position then x. 
+     *
+     */
     SortGeom (geom)
     {
         geom.sort (function (a,b) {
@@ -77,6 +126,11 @@ class BrailleToGeometry
 		});
         return geom;
     }
+
+    /*!
+     *\brief Sort x,y points according to their y position then x. Alterning the x sorting order from line to line.
+     *
+     */
     SortGeomZigZag (inputgeom)
     {
         let i;
@@ -137,6 +191,10 @@ class BrailleToGeometry
 		return (sorted);
     }
 
+    /*!
+     *\brief Build an array of sorted x,y points from a page of unicode Braille character.
+     *
+     */
     BraillePageToGeom (lines, offsetx, offsety)
     {
         
