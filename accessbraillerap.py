@@ -115,7 +115,7 @@ class Api:
         js = json.dumps(app_options)
         return js
 
-    def gcode_set_parameters(self, opt):
+    def set_parameters(self, opt):
         print ("parameters", opt, type(opt))
         try:
             for k, v in opt.items():

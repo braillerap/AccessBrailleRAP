@@ -182,7 +182,7 @@ class App extends Component {
     //console.log ("option received " + opt.toString());
     this.setState({ option: opt });
     //console.log (opt);
-    window.pywebview.api.gcode_set_parameters(opt);
+    GetBackend().set_parameters(opt);
   }
   SetStatus(status) {
     this.setState({ serialstatus: status })
