@@ -257,10 +257,16 @@ class Backend {
     constructor() {
         this.backendready = false;
 
-        if (process.env.REACT_APP_LOCALWEB)
+        if (process.env.REACT_APP_LOCALWEB === true || process.env.REACT_APP_LOCALWEB === 'true')
+        {
+            console.log ("web backend");
             this.backend = new BackendWebLocal();
+        }
         else
+        {
+            console.log ("pywebview backend");
             this.backend = new BackendPyWebview();
+        }
     }
 
     isbackendready() {

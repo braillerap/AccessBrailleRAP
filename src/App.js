@@ -122,7 +122,7 @@ class App extends Component {
 
     console.log("componentDidMount event");
 
-    if (process.env.REACT_APP_LOCALWEB) {
+    if (process.env.REACT_APP_LOCALWEB === true || process.env.REACT_APP_LOCALWEB === 'true') {
       this.webviewloaded(); // direct call for distant backend
     }
     else {
@@ -131,13 +131,13 @@ class App extends Component {
         this.webviewloaded(); // direct call we are late to register event
       }
       else {
-        if (!process.env.REACT_APP_LOCALWEB)
+        if (process.env.REACT_APP_PYWEBVIEW === true || process.env.REACT_APP_PYWEBVIEW === 'true')
           window.addEventListener('pywebviewready', this.webviewloaded);
 
         // start a timer to secure loading
         this.timerload = setInterval(() => {
-          console.log("check loaded");
-          if (process.env.REACT_APP_PYWEBVIEW) {
+          console.log("check loaded"); 
+          if (process.env.REACT_APP_PYWEBVIEW === true || process.env.REACT_APP_PYWEBVIEW === 'true') {
             if (window.pywebview) {
               clearInterval(this.timerload);
               console.log("webview detected on timer");
@@ -209,12 +209,14 @@ class App extends Component {
     if (!this.state.backendready)
       return (
         <h1>
+          
           <FormattedMessage id="app.loading" defaultMessage="Waiting backend..." />
         </h1>);
 
     if (!this.state.louisloaded)
       return (
         <h1>
+          
           <FormattedMessage id="app.loading" defaultMessage="Loading..." />
         </h1>);
 

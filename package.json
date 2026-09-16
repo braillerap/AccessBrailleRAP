@@ -8,6 +8,7 @@
   "license": "GPL-3.0-only",
   "private": true,
   "dependencies": {
+    "dotenv": "^17.4.2",
     "file-saver": "^2.0.5",
     "purecss": "^3.0.0",
     "react": "^18.3.1",

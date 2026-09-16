@@ -43,7 +43,7 @@ import { IntlContext } from '../components/intlwrapper.js';
 import { Link } from "react-router-dom";
 import FileSaver from 'file-saver';
 
-const pywebview_env = `${process.env.REACT_APP_PYWEBVIEW}` === "true";
+const pywebview_env = (process.env.REACT_APP_PYWEBVIEW === "true");
 
 class TextInput extends React.Component {
   static contextType = IntlContext;
@@ -78,7 +78,7 @@ class TextInput extends React.Component {
   async handlesave(event) {
     event.preventDefault();
 
-    if (pywebview_env === false || process.env.REACT_APP_LOCALWEB) {
+    if (pywebview_env === false || process.env.REACT_APP_LOCALWEB === 'true') {
       let blob = new Blob([this.state.txt], { type: "text/plain;charset=utf-8" });
       FileSaver.saveAs(blob, "page.txt");
     }
@@ -390,8 +390,8 @@ class TextInput extends React.Component {
           <h1 aria-hidden={true}></h1>
 
           {pywebview_env === false && <input type="file" onChange={this.handleFileChange} className='btn btn-blue' />}
-          {! pywebview_env && <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>}
-          {! pywebview_env && <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.savefile" })}</button>}
+          {pywebview_env && <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>}
+          {pywebview_env && <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.savefile" })}</button>}
           <button onClick={this.handlesaveas} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.saveasfile" })}</button>
           <button onClick={this.handleimport} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.importfile" })}</button>
 
@@ -404,7 +404,6 @@ class TextInput extends React.Component {
             <textarea aria-label={this.props.intl.formatMessage({ id: "input.text_aria" })}
               value={this.state.txt}
               onChange={this.handleChange}
-
               onKeyDown={this.handleKeyDown}
               onKeyUp={this.handleKeyUp}
               rows={nlines}
