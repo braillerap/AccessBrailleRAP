@@ -43,7 +43,7 @@ import { IntlContext } from '../components/intlwrapper.js';
 import { Link } from "react-router-dom";
 import FileSaver from 'file-saver';
 
-const pywebview_env = (process.env.REACT_APP_PYWEBVIEW === "true");
+const pywebview_env = (process.env.REACT_APP_PYWEBVIEW === "true" || process.env.REACT_APP_PYWEBVIEW === true);
 
 class TextInput extends React.Component {
   static contextType = IntlContext;
@@ -76,6 +76,7 @@ class TextInput extends React.Component {
 
     this.altcode = ""; // unicode key value for alternate input with control
 
+    this.fileinput = null;
   }
 
   /*!
@@ -325,20 +326,21 @@ class TextInput extends React.Component {
 
   handleFileRead() {
     
-    if (fileinput) {
+    if (this.fileinput) {
 
       //console.log("call import json :" + fileinput.result);
       
-      let text = fileinput.result;
+      let text = this.fileinput.result;
       console.log ("load ", text);
       this.props.textcb(text);
       this.setState({ txt: text });
+      this.fileinput = null;
     }
   }
   handleFileChange(e) {
-    fileinput = new FileReader();
-    fileinput.onload = this.handleFileRead;
-    fileinput.readAsText(e.target.files[0]);
+    this.fileinput = new FileReader();
+    this.fileinput.onload = this.handleFileRead;
+    this.fileinput.readAsText(e.target.files[0]);
   }
 
   render() {
