@@ -73,7 +73,7 @@ class TextInput extends React.Component {
     this.handleKeyUp = this.handleKeyUp.bind(this);
     this.handleClickParam = this.handleClickParam.bind(this);
     this.handleFileChange = this.handleFileChange.bind (this);
-
+    this.handleFileRead = this.handleFileRead.bind (this);
     this.altcode = ""; // unicode key value for alternate input with control
 
     this.fileinput = null;
