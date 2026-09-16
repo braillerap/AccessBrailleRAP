@@ -328,10 +328,10 @@ class TextInput extends React.Component {
     
     if (this.fileinput) {
 
-      console.log("call import :" + this.fileinput.result);
+      //console.log("call import :" + this.fileinput.result);
       
       let text = this.fileinput.result;
-      console.log ("load ", text);
+      //console.log ("load ", text);
       this.props.textcb(text);
       this.setState({ txt: text });
       this.fileinput = null;
@@ -342,7 +342,7 @@ class TextInput extends React.Component {
     }
   }
   handleFileChange(e) {
-    console.log ("file change ", e.target.files);
+    //console.log ("file change ", e.target.files);
     this.fileinput = new FileReader();
     this.fileinput.onload = this.handleFileRead;
     this.fileinput.readAsText(e.target.files[0]);
@@ -413,7 +413,7 @@ class TextInput extends React.Component {
         <div className={this.context.getStyleClass('general')}>
           <h1 aria-hidden={true}></h1>
 
-          {pywebview_env === false && <input type="file"  ref={this.fileopenref} onChange={this.handleFileChange} className='btn btn-blue' />}
+          {pywebview_env === false && <input hidden={true} type="file"  ref={this.fileopenref} onChange={this.handleFileChange} className='btn btn-blue' />}
           <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>
           {pywebview_env && <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.savefile" })}</button>}
           <button onClick={this.handlesaveas} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.saveasfile" })}</button>
