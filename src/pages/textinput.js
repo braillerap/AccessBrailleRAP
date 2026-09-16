@@ -328,7 +328,7 @@ class TextInput extends React.Component {
     
     if (this.fileinput) {
 
-      //console.log("call import json :" + fileinput.result);
+      console.log("call import :" + fileinput.result);
       
       let text = this.fileinput.result;
       console.log ("load ", text);
@@ -336,8 +336,13 @@ class TextInput extends React.Component {
       this.setState({ txt: text });
       this.fileinput = null;
     }
+    else
+    {
+      console.log ("fileinput is invalid");
+    }
   }
   handleFileChange(e) {
+    console.log ("file change ", e.target.files);
     this.fileinput = new FileReader();
     this.fileinput.onload = this.handleFileRead;
     this.fileinput.readAsText(e.target.files[0]);
