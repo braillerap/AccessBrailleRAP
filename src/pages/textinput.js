@@ -328,7 +328,7 @@ class TextInput extends React.Component {
     
     if (this.fileinput) {
 
-      console.log("call import :" + fileinput.result);
+      console.log("call import :" + this.fileinput.result);
       
       let text = this.fileinput.result;
       console.log ("load ", text);
