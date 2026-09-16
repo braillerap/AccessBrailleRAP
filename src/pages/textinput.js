@@ -36,7 +36,7 @@
  * 
  * SPDX-License-Identifier: GPL-3.0 
  */
-import React from 'react';
+import React, { createRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { injectIntl } from 'react-intl';
 import { IntlContext } from '../components/intlwrapper.js';
@@ -54,8 +54,15 @@ class TextInput extends React.Component {
 
     this.state = {
       txt: this.props.src,
-      goparam: false
+      goparam: false,
+      fileopen_name:"",
+      fileimport_name:""
     };
+
+    // create reference to hide standard file upload input
+    this.fileopenref = createRef ();
+    this.fileimportref = createRef();
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleimport = this.handleimport.bind(this);
@@ -114,22 +121,32 @@ class TextInput extends React.Component {
      */
   async handleload(event) {
     event.preventDefault();
-
-    let dialogtitle = this.props.intl.formatMessage({ id: "input.dialog_open_file" })
-    let filter = [
-      this.props.intl.formatMessage({ id: "input.dialog_file_filter_text" }),
-      this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
-    ]
-    let ret = await this.context.GetBackend().load_file(dialogtitle, filter);
-    console.log(ret);
-    if (ret.length > 0) {
-      let data = JSON.parse(ret);
-      //console.log (data);
-
-      this.props.textcb(data.data);
-
-      this.setState({ txt: data.data });
+    if (pywebview_env === false)
+    {
+      // simulate a click on file upload control
+      if (this.fileopenref)
+        this.fileopenref.current.click ();
     }
+    else
+    {
+      // load the file via backend
+      let dialogtitle = this.props.intl.formatMessage({ id: "input.dialog_open_file" })
+      let filter = [
+        this.props.intl.formatMessage({ id: "input.dialog_file_filter_text" }),
+        this.props.intl.formatMessage({ id: "input.dialog_file_filter_generic" }),
+      ]
+      let ret = await this.context.GetBackend().load_file(dialogtitle, filter);
+      console.log(ret);
+      if (ret.length > 0) {
+        let data = JSON.parse(ret);
+        //console.log (data);
+
+        this.props.textcb(data.data);
+
+        this.setState({ txt: data.data });
+      }
+    }
+    
   }
   /*!
      *\brief Event callback import action. Open a dialog box to select a file, then process the file with pandoc.
@@ -389,8 +406,8 @@ class TextInput extends React.Component {
         <div className={this.context.getStyleClass('general')}>
           <h1 aria-hidden={true}></h1>
 
-          {pywebview_env === false && <input type="file" onChange={this.handleFileChange} className='btn btn-blue' />}
-          {pywebview_env && <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>}
+          {pywebview_env === false && <input type="file"  ref={this.fileopenref} onChange={this.handleFileChange} className='btn btn-blue' />}
+          <button onClick={this.handleload} className={this.context.getStyleClass('pad-button') + " pure-button "}>{this.props.intl.formatMessage({ id: "input.loadfile" })}</button>
           {pywebview_env && <button onClick={this.handlesave} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.savefile" })}</button>}
           <button onClick={this.handlesaveas} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.saveasfile" })}</button>
           <button onClick={this.handleimport} className={this.context.getStyleClass('pad-button') + " pure-button "} >{this.props.intl.formatMessage({ id: "input.importfile" })}</button>
