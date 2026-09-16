@@ -353,13 +353,13 @@ class TextInput extends React.Component {
           </h1>
           <ul className={this.context.getStyleClass('menu')}>
             <li >
-              <Link to="/parametre"
+              <Link to={process.env.PUBLIC_URL + "/parametre"}
                 onClick={this.handleClickParam}
                 ref={this.props.focusref}
               >
                 <FormattedMessage id="param.checkliblouis" defaultMessage="Braille transcription table is not consistent, please check parameters" />
               </Link>
-              <Link to="/parametre"
+              <Link to={process.env.PUBLIC_URL + "/parametre"}
                 onClick={this.handleClickParam}
 
               >
