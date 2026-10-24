@@ -1,5 +1,6 @@
 
 
-it ("simple test", ()=> {
-    console.log ("hey, here is a test");
+it ("simple test for test runner", ()=> {
+    let t = 4;
+    expect (t).toEqual
 })
