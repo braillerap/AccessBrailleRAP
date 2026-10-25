@@ -7,5 +7,6 @@ Les principales fonctionnalités de AccessBrailleRAP sont:
 - Enregistrer un texte au format .txt.
 - Traduire le texte en Braille dans le standard sélectionné.
 - Déterminer la pagination du document qui peut contenir plusieurs pages.
+- Afficher la transcription Braille associée avec le texte en noir.
 - Embosser (imprimer) le document en Braille sur une BrailleRAP connectée en USB.
 

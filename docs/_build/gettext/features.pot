@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) GPL V3 - BrailleRAP Team
+# Copyright (C) BrailleRAP Team - GPL V3
 # This file is distributed under the same license as the AccessBrailleRAP package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: AccessBrailleRAP 0.8.1\n"
+"Project-Id-Version: AccessBrailleRAP 0.9.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-27 20:20+0000\n"
+"POT-Creation-Date: 2026-06-01 12:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,5 +49,9 @@ msgid "Déterminer la pagination du document qui peut contenir plusieurs pages."
 msgstr ""
 
 #: ../../features.md:10
+msgid "Afficher la transcription Braille associée avec le texte en noir."
+msgstr ""
+
+#: ../../features.md:11
 msgid "Embosser (imprimer) le document en Braille sur une BrailleRAP connectée en USB."
 msgstr ""

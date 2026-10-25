@@ -13,6 +13,7 @@ import Turkish from '../translations/tr.json'
 import Ukrainian from '../translations/uk.json';
 import SimplifiedChineese from '../translations/zh_Hans.json';
 import { locales } from '../components/locale.js';
+import Backend from './backend.js';
 
 export const IntlContext = React.createContext();
 
@@ -20,6 +21,7 @@ const _local = "fr"; //navigator.language;
 let _lang = French;
 let _localinfo = locales[1];
 let _theme = "dark";
+let backend = new Backend ();
 
 const _themedb = {
     "dark":{
@@ -67,6 +69,7 @@ const IntlWrapper = (props) => {
    const [localeinfo, setLocaleInfo] = useState(_localinfo);
    const [theme, setTheme] = useState (_theme);
    
+
    function selectLanguage(e) {
        const newLocale = e.target.value;
        setLocale(newLocale);
@@ -127,11 +130,9 @@ const IntlWrapper = (props) => {
 
    function getStyleClass (styleclass)
    {
-        //if (_themedb[theme].has (styleclass))
         return (_themedb[theme][styleclass]);
-        console.log ("Error: unknown styleclass " + styleclass);
-        return styleclass;
    }
+   
    function setLanguage (lang)
    {
         setLocale(lang);
@@ -199,14 +200,19 @@ const IntlWrapper = (props) => {
         })
    }
 
+   function GetBackend ()
+   {
+        return backend;
+   }
+
    
    return (
 
-       <IntlContext.Provider value = {{locale, localeinfo, theme, setTheme, selectLanguage, setLanguage, getStyleClass}}>
+       <IntlContext.Provider value = {{locale, localeinfo, theme, setTheme, selectLanguage, setLanguage, getStyleClass, GetBackend}}>
            <IntlProvider messages={messages} locale={locale} localeinfo={localeinfo}>
                {props.children}
            </IntlProvider>
        </IntlContext.Provider>
-   );
+   )
 }
 export default IntlWrapper;
