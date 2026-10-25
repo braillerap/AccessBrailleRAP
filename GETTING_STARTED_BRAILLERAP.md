@@ -29,7 +29,7 @@ The easiest and recommended way to install AccessBrailleRAP is by downloading th
 3. Download the appropriate executable file for your system (e.g., `.exe` for Windows, `.deb` for Linux).
 4. Follow your operating system's standard procedure for installing software from a downloaded package.
 
-![](/Users/jonmcgreevy/Library/Application%20Support/marktext/images/2026-01-30-01-48-23-image.png)
+
 
 For detailed instructions on building AccessBrailleRAP from source, using Docker, or for specific operating system configurations, please refer to the [Detailed AccessBrailleRAP Installation Guide](DETAILED_INSTALLATION_BRAILLERAP.md).
 
@@ -38,7 +38,7 @@ For detailed instructions on building AccessBrailleRAP from source, using Docker
 Once AccessBrailleRAP is installed via the pre-built binaries, simply execute the downloaded and installed application as you would any other software on your operating system.
 
 **Note: By default, the application will launch in French. To change this, select 'Paramétres', then choose your language from the 'Langue de l'application' drop-down.**
-![](/Users/jonmcgreevy/Library/Application%20Support/marktext/images/2026-01-30-01-57-55-image.png)
+
 
 ## 5. Basic Usage: From Text to Tactile Braille
 
@@ -49,7 +49,7 @@ Once AccessBrailleRAP is successfully installed and running, you're ready to sta
 2. **Input Your Text:**
    
    * Type directly into the **'Text input form'** area or paste text from another source. For example, type: `Hello, World! This is a test of BrailleRAP.`
-     ![](/Users/jonmcgreevy/Library/Application%20Support/marktext/images/2026-01-30-02-02-59-image.png)
+     
 
 3. **Translate to Braille:**
    
@@ -59,7 +59,6 @@ Once AccessBrailleRAP is successfully installed and running, you're ready to sta
 4. **Review the Braille Output:**
    
    * Below or beside the input area, you will see a new section displaying the translated Braille. This might appear as Braille dots, simulated Braille characters, or a visual representation of the Braille cells.
-     ![](/Users/jonmcgreevy/Library/Application%20Support/marktext/images/2026-01-30-02-04-03-image.png)
    * Carefully review this output to make sure it's correct (if possible).
 
 5. **Adjust Settings (Optional, but Recommended for optimal printing):**
@@ -74,11 +73,13 @@ Once AccessBrailleRAP is successfully installed and running, you're ready to sta
      * **Top margin:** How big a space you need at the top of the Braille
      * **Maximum right position:** This specified the last usable cell on a line of Braille
      * **Orientation:** You can choose between Portrait or Landscape for your Braille printing
+     * **Braille Display** You can choose to display translated text associated with Braille
+     * **Braille back translation** How is generated the text associated with Braille
+     * **Braille / Text alignment** How the text and Braille are displayed 
      * **Communication serial port:** The USB virtual serial port (COM port) your software uses to communicate with the BrailleRAP machine
      * **Application language:** Select your preferred language
      * **Theme:** You can choose between a light and dark theme for the UI
    * Make any necessary adjustments you need, and the changes will automatically be applied.
-     ![](/Users/jonmcgreevy/Library/Application%20Support/marktext/images/2026-01-30-02-43-27-image.png)
      6* **Connect Your BrailleRAP Embosser:**
    - Ensure your BrailleRAP embosser is powered on and correctly connected to your computer via a USB cable.
    * Load the appropriate Braille paper into your embosser.
