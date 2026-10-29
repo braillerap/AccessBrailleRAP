@@ -58,7 +58,7 @@ class BrailleBlackAlignmentGuess extends BrailleBlackAlignmentStrategy
      *\brief Build a string of text aligned with the Braille string
      *
      *\param BrailleWord a string containing a word in unicode Braille char.
-     *\param TextWord   a string containing the translation in black of he Braille word.
+     *\param TextWord   a string containing the translation in black of the Braille word.
      * 
      *\return A string containing the black text, aligned with the Braille word by adding space before or after.
      */
