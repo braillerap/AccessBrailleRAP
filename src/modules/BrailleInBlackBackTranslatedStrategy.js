@@ -38,7 +38,14 @@
  */
 import BrailleInBlackTextStrategy from "./BrailleInBlackTextStrategy";
 
-
+ /*!
+     *\brief Build an array of word in black associated with the array of Braille words
+     *
+     *\param braille_words_array An array of Braille word to translate in black word with back translation.
+     *\param original_text_line  The text string source for braille_words_array.
+     * 
+     *\return The array of words black (ie standard text).
+     */
 class BrailleInBlackBackTranslatedStrategy extends BrailleInBlackTextStrategy
 {
     constructor ()
