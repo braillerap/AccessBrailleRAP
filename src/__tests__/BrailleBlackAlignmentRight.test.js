@@ -34,20 +34,7 @@ const tests_contracted = [
     {input:'⠏⠝⠎', black:"personnes", translated:"⠏⠝⠎"}
 ]
 
-class MockBrailleContractedTranslator
-{
-    translate_single_string (word)
-    {
-        for (let i = 0; i < tests_contracted.length; i++)
-        {
-            if (tests_contracted[i].black === word)
-            {
-                return (tests_contracted[i].translated);
-            }
-        }
-        return '???';
-    }
-}
+
 it ("BrailleBlackAlignmentRight contracted test", ()=> {
     
     let align = new BrailleBlackAlignmentRight (null);
