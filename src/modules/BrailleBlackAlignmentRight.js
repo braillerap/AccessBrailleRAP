@@ -50,13 +50,13 @@ class BrailleBlackAlignmentRight extends BrailleBlackAlignmentStrategy
 
         if (TextWord.length > BrailleWord.length)
         {
-            word = TextWord.slice (1, BrailleWord.length - 1);
-            word += "*";
+            word = TextWord.slice (0, BrailleWord.length - 1);
+            word += "…";
 
         }
         else if (TextWord.length < BrailleWord.length)
         {
-           word=  TextWord.padStart(BrailleWord.length, ' ');
+           word =  TextWord.padStart(BrailleWord.length, ' ');
         }
         else
         {

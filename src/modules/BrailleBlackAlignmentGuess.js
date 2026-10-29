@@ -94,6 +94,13 @@ class BrailleBlackAlignmentGuess extends BrailleBlackAlignmentStrategy
             // pad the end of the word if previous processing is not enough
             word = word.padEnd (BrailleWord.length, ' ');
         }
+        if (word.length > BrailleWord.length)
+        {
+            
+            word = word.slice (0, BrailleWord.length - 1);
+            word += "…";
+        }
+
         //console.log ("guess strategy result:", BrailleWord, word);
         
         return word;
