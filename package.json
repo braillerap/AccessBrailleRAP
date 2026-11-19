@@ -1,6 +1,6 @@
 {
   "name": "accessbraillerap",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "AccessBrailleRAP",
   "main": "index.js",
   "repository": "https://github.com/AccessBrailleRAP/AccessBrailleRAP",
@@ -79,5 +79,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "allowScripts": {
+    "core-js-pure@3.37.0": true,
+    "core-js@3.37.0": true
   }
 }
