@@ -66,7 +66,7 @@
     "param.orientation": "Orientasi",
     "param.orientation.portrait": "Potret",
     "param.orientation.landscape": "Lanskap",
-    "param.checkliblouis": "Tabel transkripsi Braille tidak konsisten, harap periksa parameter dan pilih tabel Braille yang sesuai",
+    "param.checkliblouis": "Tabel transkripsi Braille tidak konsisten, harap periksa parameter dan pilih tabel Braille yang sesuai.",
     "param.backtranslation_aria": "Pemilihan terjemahan balik Braille",
     "param.backtranslation": "Terjemahan kembali braille",
     "param.backtranslation_geniune": "Dari teks asli",
@@ -83,5 +83,6 @@
     "param.numbering_top": "Di halaman atas",
     "param.numbering_bottom": "Di halaman bawah",
     "param.pagenumber_aria": "Opsi untuk penomoran halaman",
-    "param.pagenumber": "Nomor halaman"
+    "param.pagenumber": "Nomor halaman",
+    "layout.exit_menu": "Keluar"
 }

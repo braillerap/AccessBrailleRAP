@@ -83,5 +83,6 @@
     "param.numbering_top": "في أعلى الصفحة",
     "param.numbering_bottom": "في أسفل الصفحة",
     "param.pagenumber_aria": "خيار ترقيم الصفحات",
-    "param.pagenumber": "رقم الصفحة"
+    "param.pagenumber": "رقم الصفحة",
+    "layout.exit_menu": "مخرج"
 }

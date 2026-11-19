@@ -83,5 +83,6 @@
     "param.numbering_top": "Sayfanın üst kısmında",
     "param.numbering_bottom": "Sayfanın alt kısmında",
     "param.pagenumber_aria": "Sayfa numaralandırma seçeneği",
-    "param.pagenumber": "Sayfa numarası"
+    "param.pagenumber": "Sayfa numarası",
+    "layout.exit_menu": "çıkış"
 }

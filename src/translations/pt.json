@@ -66,7 +66,7 @@
     "param.orientation": "Orientação",
     "param.orientation.portrait": "Retrato",
     "param.orientation.landscape": "Paisagem",
-    "param.checkliblouis": "Braille transkripsiyon tablosu tutarlı değil, lütfen parametreleri kontrol edin ve bir Braille tablosu seçin.",
+    "param.checkliblouis": "Braille transkripsiyon tablosu tutarlı değil, lütfen parametreleri kontrol edin ve bir Braille tablosu seçin",
     "param.backtranslation_aria": "seleção de tradução inversa em Braille",
     "param.backtranslation": "Tradução inversa em Braille",
     "param.backtranslation_geniune": "Do texto original",
@@ -83,5 +83,6 @@
     "param.numbering_top": "No topo da página",
     "param.numbering_bottom": "No final da página",
     "param.pagenumber_aria": "Opção para numeração de páginas",
-    "param.pagenumber": "Número da página"
+    "param.pagenumber": "Número da página",
+    "layout.exit_menu": "Saída"
 }

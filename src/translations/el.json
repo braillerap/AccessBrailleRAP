@@ -66,7 +66,7 @@
     "param.orientation": "Προσανατολισμός",
     "param.orientation.portrait": "Πορτρέτο",
     "param.orientation.landscape": "Τοπίο",
-    "param.checkliblouis": "Ο πίνακας μεταγραφής Braille δεν είναι συνεπής, ελέγξτε τις παραμέτρους και επιλέξτε έναν πίνακα Braille.",
+    "param.checkliblouis": "Ο πίνακας μεταγραφής Braille δεν είναι συνεπής, ελέγξτε τις παραμέτρους και επιλέξτε έναν πίνακα Braille",
     "param.backtranslation_aria": "Επιλογή μετάφρασης Braille σε οπίσθια όψη",
     "param.backtranslation": "Πίσω μετάφραση Braille",
     "param.backtranslation_geniune": "Από το αρχικό κείμενο",
@@ -83,5 +83,6 @@
     "param.numbering_top": "Στην κορυφή της σελίδας",
     "param.numbering_bottom": "Στο κάτω μέρος της σελίδας",
     "param.pagenumber_aria": "Επιλογή για αρίθμηση σελίδων",
-    "param.pagenumber": "Αριθμός σελίδας"
+    "param.pagenumber": "Αριθμός σελίδας",
+    "layout.exit_menu": "Εξοδος"
 }

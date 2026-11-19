@@ -83,5 +83,6 @@
     "param.numbering_top": "在页面顶部",
     "param.numbering_bottom": "在页面底部",
     "param.pagenumber_aria": "选择页码",
-    "param.pagenumber": "页码"
+    "param.pagenumber": "页码",
+    "layout.exit_menu": "退出"
 }

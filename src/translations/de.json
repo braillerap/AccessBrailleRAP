@@ -83,5 +83,6 @@
     "param.numbering_top": "Oben auf der Seite",
     "param.numbering_bottom": "Unten auf der Seite",
     "param.pagenumber_aria": "Option zur Seitennummerierung",
-    "param.pagenumber": "Seitenzahl"
+    "param.pagenumber": "Seitenzahl",
+    "layout.exit_menu": "Schließen"
 }

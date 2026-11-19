@@ -66,7 +66,7 @@
     "param.orientation": "Oriëntatie",
     "param.orientation.portrait": "Portret",
     "param.orientation.landscape": "Landschap",
-    "param.checkliblouis": "De tabel voor braille-transcriptie is niet consistent. Controleer de parameters en selecteer een braille-tabel.",
+    "param.checkliblouis": "De tabel voor braille-transcriptie is niet consistent. Controleer de parameters en selecteer een braille-tabel",
     "param.backtranslation_aria": "Selectie van terugvertaling in Braille",
     "param.backtranslation": "Braille-terugvertaling",
     "param.backtranslation_geniune": "Uit originele tekst",
@@ -83,5 +83,6 @@
     "param.numbering_top": "Op pagina bovenaan",
     "param.numbering_bottom": "Onderaan de pagina",
     "param.pagenumber_aria": "Optie voor paginanummering",
-    "param.pagenumber": "Paginanummer"
+    "param.pagenumber": "Paginanummer",
+    "layout.exit_menu": "Verlaten"
 }

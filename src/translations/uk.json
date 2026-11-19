@@ -83,5 +83,6 @@
     "param.numbering_no": "Без нумерації",
     "param.numbering_bottom": "Унизу сторінки",
     "param.numbering_top": "Угорі сторінки",
-    "param.pagenumber_aria": "Налаштування нумерації сторінок"
+    "param.pagenumber_aria": "Налаштування нумерації сторінок",
+    "layout.exit_menu": "Вихід"
 }
