@@ -44,6 +44,8 @@
     "layout.param_input": "Text input",
     "layout.print_in_progress": "Print in progress",
     "layout.print_not_progress": "No current print",
+    "layout.exit_menu" : "Exit",
+
     "input.title": "Text input",
     "input.title2": "Text input form",
     "input.text_aria": "Input text area for transcription",

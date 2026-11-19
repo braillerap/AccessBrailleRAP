@@ -86,7 +86,13 @@ def load_parameters():
 class Api:
     def fullscreen(self):
         webview.windows[0].toggle_fullscreen()
+    
+    def quit (self):
+         self._window.destroy()
 
+    def set_window (self, window):
+        self._window = window
+    
     def save_content(self, content):
         filename = webview.windows[0].create_file_dialog(webview.SAVE_DIALOG)
         if not filename:
@@ -94,6 +100,7 @@ class Api:
 
         with open(filename, "w") as f:
             f.write(content)
+
     def save_content_unicode(self, content):
         filename = webview.windows[0].create_file_dialog(webview.SAVE_DIALOG)
         if not filename:
@@ -429,7 +436,8 @@ if __name__ == "__main__":
         window = webview.create_window(
             "AccessBrailleRAP", entry, js_api=api, maximized=True, focus=True
         )
- 
+    api.set_window (window)
+    
     # print ("created", time())
     if platform.system() == "Windows":
         print ("starting Windows GUI")

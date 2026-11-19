@@ -251,6 +251,7 @@ class BackendPyWebview {
     {
         return await window.pywebview.api.import_pandoc(dialogtitle, filter)
     }
+   
 };
 
 class Backend {
@@ -284,6 +285,10 @@ class Backend {
     getService ()
     {
         return (this.backend.getService());
+    }
+    async quit() {
+        if (this.backendready)
+            this.backend.quit();
     }
     async confirm_dialog(title, message) {
         if (this.backendready) {

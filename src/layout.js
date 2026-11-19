@@ -17,6 +17,7 @@ class Layout extends Component
     super (props);
 
     this.onClickMenu = this.onClickMenu.bind(this);
+    this.onClickExit = this.onClickExit.bind (this);
   }
 
   onClickMenu ()
@@ -24,6 +25,11 @@ class Layout extends Component
     if (this.props.focuscb)
       this.props.focuscb ();
   }
+  onClickExit ()
+  {
+    this.context.GetBackend().quit()
+  }
+
   fstatus ()
   {
     if (this.props.status === 0)
@@ -82,6 +88,12 @@ class Layout extends Component
                         </Link>
                       </li>
                     
+                       <li>  
+                        <Link to={process.env.PUBLIC_URL +"/"} onClick={this.onClickExit}>
+                          
+                          <FormattedMessage id="layout.exit_menu" defaultMessage="Exit"/>
+                        </Link>
+                      </li>
                     </ul>
                   </nav>
                   
