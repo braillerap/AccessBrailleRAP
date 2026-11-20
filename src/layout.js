@@ -25,9 +25,14 @@ class Layout extends Component
     if (this.props.focuscb)
       this.props.focuscb ();
   }
-  onClickExit ()
+  
+  async onClickExit(e) 
   {
-    this.context.GetBackend().quit()
+    e.preventDefault();
+    let msg = this.props.intl.formatMessage({ id: "app.confirquit" });
+    let ret = await this.context.GetBackend().confirm_dialog("AccessBrailleRAP", msg)
+    if (ret === true || ret === 'true')
+      this.context.GetBackend().quit()
   }
 
   fstatus ()

@@ -1,5 +1,6 @@
 {
     "app.loading": "Chargement…",
+    "app.confirquit": "Voulez-vous vraiment quitter l'application ?",
     "param.header": "Paramètres de l'application",
     "param.nocomport": "Aucun port de communication",
     "param.labelport": "Port de communication Série ",

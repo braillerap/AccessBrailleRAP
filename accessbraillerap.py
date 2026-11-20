@@ -84,6 +84,9 @@ def load_parameters():
 
 
 class Api:
+    def confirm_dialog (self, title, message):
+        return window.create_confirmation_dialog(title, message)
+    
     def fullscreen(self):
         webview.windows[0].toggle_fullscreen()
     

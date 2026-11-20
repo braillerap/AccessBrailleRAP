@@ -1,5 +1,6 @@
 {
     "app.loading": "Loading…",
+    "app.confirquit": "Are you sure you want to quit ?",
     "param.header": "Application parameters",
     "param.nocomport": "No serial port",
     "param.labelport": "Communication serial port ",
