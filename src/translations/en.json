@@ -1,6 +1,5 @@
 {
     "app.loading": "Loading…",
-    "app.confirquit": "Are you sure you want to quit ?",
     "param.header": "Application parameters",
     "param.nocomport": "No serial port",
     "param.labelport": "Communication serial port ",
@@ -85,5 +84,6 @@
     "param.numbering_bottom": "On page bottom",
     "param.pagenumber_aria": "Option for page numbering",
     "param.pagenumber": "Page number",
-    "layout.exit_menu": "Exit"
+    "layout.exit_menu": "Exit",
+    "app.confirquit": "Are you sure you want to quit ?"
 }

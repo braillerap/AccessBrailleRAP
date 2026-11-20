@@ -84,5 +84,6 @@
     "param.numbering_bottom": "في أسفل الصفحة",
     "param.pagenumber_aria": "خيار ترقيم الصفحات",
     "param.pagenumber": "رقم الصفحة",
-    "layout.exit_menu": "مخرج"
+    "layout.exit_menu": "مخرج",
+    "app.confirquit": "هل أنت متأكد أنك تريد الإقلاع عن التدخين؟"
 }

@@ -84,5 +84,6 @@
     "param.numbering_bottom": "Στο κάτω μέρος της σελίδας",
     "param.pagenumber_aria": "Επιλογή για αρίθμηση σελίδων",
     "param.pagenumber": "Αριθμός σελίδας",
-    "layout.exit_menu": "Εξοδος"
+    "layout.exit_menu": "Εξοδος",
+    "app.confirquit": "Είστε σίγουροι ότι θέλετε να τα παρατήσετε;"
 }

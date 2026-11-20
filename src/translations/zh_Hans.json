@@ -84,5 +84,6 @@
     "param.numbering_bottom": "在页面底部",
     "param.pagenumber_aria": "选择页码",
     "param.pagenumber": "页码",
-    "layout.exit_menu": "退出"
+    "layout.exit_menu": "退出",
+    "app.confirquit": "是否确定要退出本应用？"
 }

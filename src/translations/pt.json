@@ -84,5 +84,6 @@
     "param.numbering_bottom": "No final da página",
     "param.pagenumber_aria": "Opção para numeração de páginas",
     "param.pagenumber": "Número da página",
-    "layout.exit_menu": "Saída"
+    "layout.exit_menu": "Saída",
+    "app.confirquit": "Tem a certeza de que pretende sair da aplicação?"
 }

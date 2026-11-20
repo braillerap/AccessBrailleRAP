@@ -1,6 +1,5 @@
 {
     "app.loading": "Chargement…",
-    "app.confirquit": "Voulez-vous vraiment quitter l'application ?",
     "param.header": "Paramètres de l'application",
     "param.nocomport": "Aucun port de communication",
     "param.labelport": "Port de communication Série ",
@@ -85,5 +84,6 @@
     "param.numbering_bottom": "En bas de page",
     "param.pagenumber_aria": "Sélection de la numérotation des pages",
     "param.pagenumber": "Numérotation des pages",
-    "layout.exit_menu": "Quitter"
+    "layout.exit_menu": "Quitter",
+    "app.confirquit": "Voulez-vous vraiment quitter l'application ?"
 }

@@ -84,5 +84,6 @@
     "param.numbering_bottom": "Onderaan de pagina",
     "param.pagenumber_aria": "Optie voor paginanummering",
     "param.pagenumber": "Paginanummer",
-    "layout.exit_menu": "Verlaten"
+    "layout.exit_menu": "Verlaten",
+    "app.confirquit": "Weet u zeker dat u de app wilt afsluiten?"
 }

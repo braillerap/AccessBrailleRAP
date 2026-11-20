@@ -84,5 +84,6 @@
     "param.numbering_bottom": "Unten auf der Seite",
     "param.pagenumber_aria": "Option zur Seitennummerierung",
     "param.pagenumber": "Seitenzahl",
-    "layout.exit_menu": "Schließen"
+    "layout.exit_menu": "Schließen",
+    "app.confirquit": "Möchten Sie die App wirklich beenden?"
 }

@@ -84,5 +84,6 @@
     "param.numbering_bottom": "Sayfanın alt kısmında",
     "param.pagenumber_aria": "Sayfa numaralandırma seçeneği",
     "param.pagenumber": "Sayfa numarası",
-    "layout.exit_menu": "çıkış"
+    "layout.exit_menu": "çıkış",
+    "app.confirquit": "Çıkmak istediğinizden emin misiniz?"
 }

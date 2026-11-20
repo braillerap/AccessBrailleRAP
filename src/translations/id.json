@@ -84,5 +84,6 @@
     "param.numbering_bottom": "Di halaman bawah",
     "param.pagenumber_aria": "Opsi untuk penomoran halaman",
     "param.pagenumber": "Nomor halaman",
-    "layout.exit_menu": "Keluar"
+    "layout.exit_menu": "Keluar",
+    "app.confirquit": "Apakah Anda yakin ingin berhenti?"
 }
